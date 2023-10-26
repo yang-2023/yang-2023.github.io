@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  
+  <title>2023/10/26 主流AI绘画尝试 | Hexo</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="AI绘画采样比例、预测模式、预测强度这三个概念主要涉及深度学习中的计算机视觉任务，尤其是图像生成和图像预测方面。  ​    1.采样比例（Sampling Ratio）：在图像生成任务中，采样比例指的是在生成图像时使用的特征图（Feature Map）的分辨率。较高的采样比例意味着更大的特征图分辨率，这可以帮助模型捕捉到更多细节，从而生成更高质量的图像。但较高的采样比例也会增加计算复杂度和内存">
+<meta property="og:type" content="article">
+<meta property="og:title" content="2023&#x2F;10&#x2F;26 主流AI绘画尝试">
+<meta property="og:url" content="http://example.com/2023/10/26/2023-10-26-%E4%B8%BB%E6%B5%81AI%E7%BB%98%E7%94%BB%E5%B0%9D%E8%AF%95/index.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="AI绘画采样比例、预测模式、预测强度这三个概念主要涉及深度学习中的计算机视觉任务，尤其是图像生成和图像预测方面。  ​    1.采样比例（Sampling Ratio）：在图像生成任务中，采样比例指的是在生成图像时使用的特征图（Feature Map）的分辨率。较高的采样比例意味着更大的特征图分辨率，这可以帮助模型捕捉到更多细节，从而生成更高质量的图像。但较高的采样比例也会增加计算复杂度和内存">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://gitee.com/picggggggg_0/pic/raw/master/20231026190758.png">
+<meta property="og:image" content="https://gitee.com/picggggggg_0/pic/raw/master/20231026190817.png">
+<meta property="og:image" content="https://gitee.com/picggggggg_0/pic/raw/master/20231026190829.png">
+<meta property="og:image" content="https://gitee.com/picggggggg_0/pic/raw/master/20231026191128.png">
+<meta property="og:image" content="https://gitee.com/picggggggg_0/pic/raw/master/1dd8ab717f2147850ca7ebe2fc6ae2fc82346bef.png">
+<meta property="og:image" content="https://gitee.com/picggggggg_0/pic/raw/master/20231026192715.png">
+<meta property="og:image" content="https://gitee.com/picggggggg_0/pic/raw/master/20231026192820.png">
+<meta property="og:image" content="https://gitee.com/picggggggg_0/pic/raw/master/20231026203455.png">
+<meta property="og:image" content="https://gitee.com/picggggggg_0/pic/raw/master/20231026203645.png">
+<meta property="og:image" content="https://gitee.com/picggggggg_0/pic/raw/master/20231026204913.png">
+<meta property="article:published_time" content="2023-10-26T07:57:50.000Z">
+<meta property="article:modified_time" content="2023-10-26T13:18:33.520Z">
+<meta property="article:author" content="John Doe">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://gitee.com/picggggggg_0/pic/raw/master/20231026190758.png">
+  
+    <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
+  
+  
+    <link rel="shortcut icon" href="/favicon.png">
+  
+  
+    
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/typeface-source-code-pro@0.0.71/index.min.css">
+
+  
+  
+<link rel="stylesheet" href="/css/style.css">
+
+  
+    
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.min.css">
+
+  
+  
+<meta name="generator" content="Hexo 6.3.0"></head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">Hexo</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"><span class="fa fa-bars"></span></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+        
+          <a class="nav-icon" href="/atom.xml" title="RSS 订阅"><span class="fa fa-rss"></span></a>
+        
+        <a class="nav-icon nav-search-btn" title="搜索"><span class="fa fa-search"></span></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="搜索"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://example.com"></form>
+      </div>
+    </div>
+  </div>
+</header>
+
+      <div class="outer">
+        <section id="main"><article id="post-2023-10-26-主流AI绘画尝试" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2023/10/26/2023-10-26-%E4%B8%BB%E6%B5%81AI%E7%BB%98%E7%94%BB%E5%B0%9D%E8%AF%95/" class="article-date">
+  <time class="dt-published" datetime="2023-10-26T07:57:50.000Z" itemprop="datePublished">2023-10-26</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="p-name article-title" itemprop="headline name">
+      2023/10/26 主流AI绘画尝试
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <blockquote>
+<p>AI绘画采样比例、预测模式、预测强度这三个概念主要涉及深度学习中的计算机视觉任务，尤其是图像生成和图像预测方面。</p>
+</blockquote>
+<p>​    1.采样比例（Sampling Ratio）：在图像生成任务中，采样比例指的是在生成图像时使用的特征图（Feature Map）的分辨率。较高的采样比例意味着更大的特征图分辨率，这可以帮助模型捕捉到更多细节，从而生成更高质量的图像。但较高的采样比例也会增加计算复杂度和内存需求。</p>
+<p>   2.预测模式（Prediction Mode）：在图像生成和图像预测任务中，预测模式指的是模型对未来帧或图像的预测方式。不同的预测模式可能导致生成图像的质量和速度有所不同。常见的预测模式包括：</p>
+<ul>
+<li><p>单向预测：模型仅使用过去的信息来进行预测，这种模式比较简单，但可能无法捕捉到长期依赖关系。</p>
+</li>
+<li><p>双向预测：模型同时使用过去和将来的信息来进行预测，这种模式可以捕捉到更复杂的依赖关系，但计算复杂度较高。</p>
+</li>
+<li><p>多步预测：模型通过多次预测来完成对未来帧或图像的生成，这种模式可以提高生成的质量，但计算复杂度也较高。</p>
+<p>3.预测强度（Prediction Strength）：预测强度指的是模型对未来帧或图像预测的可信度。较高的预测强度意味着模型对未来的预测更加自信，这可能会导致生成的图像更加清晰和稳定。但过高的预测强度可能导致模型过度自信，从而生成一些不符合实际情况的图像。</p>
+</li>
+</ul>
+<h2 id="https-www-seaart-me-（国内网站）"><a href="#https-www-seaart-me-（国内网站）" class="headerlink" title="https://www.seaart.me/（国内网站）"></a><a target="_blank" rel="noopener" href="https://www.seaart.me/%EF%BC%88%E5%9B%BD%E5%86%85%E7%BD%91%E7%AB%99%EF%BC%89">https://www.seaart.me/（国内网站）</a></h2><blockquote>
+<p>关键词：环形世界,科幻类,科幻电影,火炮,远程导弹,根据电影基金会改编 ,女人,成年的,主角,28岁的,充满希望的面孔,茶色眼睛,短髮发型,黑发，白灰色,科学家制服,白色研究员外套,旷阔的草地,造反,混沌,未来世界,社会主义世界,被雪,浑沌</p>
+<p>采样比例我是拉到满的.细节多一点。</p>
+</blockquote>
+<h3 id="复古朋克"><a href="#复古朋克" class="headerlink" title="复古朋克"></a>复古朋克</h3><p><img src="https://gitee.com/picggggggg_0/pic/raw/master/20231026190758.png"></p>
+<h3 id="新海诚"><a href="#新海诚" class="headerlink" title="新海诚"></a>新海诚</h3><p><img src="https://gitee.com/picggggggg_0/pic/raw/master/20231026190817.png"></p>
+<h3 id="真人"><a href="#真人" class="headerlink" title="真人"></a>真人</h3><p><img src="https://gitee.com/picggggggg_0/pic/raw/master/20231026190829.png"></p>
+<h4 id="预测强度调到1之后"><a href="#预测强度调到1之后" class="headerlink" title="预测强度调到1之后"></a>预测强度调到1之后</h4><p><img src="https://gitee.com/picggggggg_0/pic/raw/master/20231026191128.png"></p>
+<p>出现明显的肢体错误，有一部分原因是因为网站算力不够，创建尚早。</p>
+<p><img src="https://gitee.com/picggggggg_0/pic/raw/master/1dd8ab717f2147850ca7ebe2fc6ae2fc82346bef.png"></p>
+<h4 id="进行图生图"><a href="#进行图生图" class="headerlink" title="进行图生图"></a>进行图生图</h4><p>拟人化，可爱，大眼，带帽子，穿jk服装，学习状态，女性，人物，jojo画风<br>但是重绘强度为1<br><img src="https://gitee.com/picggggggg_0/pic/raw/master/20231026192715.png"></p>
+<h4 id="重绘强度为0-6"><a href="#重绘强度为0-6" class="headerlink" title="重绘强度为0.6"></a>重绘强度为0.6</h4><p><img src="https://gitee.com/picggggggg_0/pic/raw/master/20231026192820.png"></p>
+<blockquote>
+<p>ai创作的能力对模型进行优化和改进.提高生成的质量和稳定性.增加关键词可以起到非同凡响的效果</p>
+</blockquote>
+<p><img src="https://gitee.com/picggggggg_0/pic/raw/master/20231026203455.png"></p>
+<p><img src="https://gitee.com/picggggggg_0/pic/raw/master/20231026203645.png"></p>
+<blockquote>
+<p>一些独特的风格进行细节调整已经可以避免过多的错误，达到以假乱真的效果</p>
+</blockquote>
+<p><img src="https://gitee.com/picggggggg_0/pic/raw/master/20231026204913.png"></p>
+<blockquote>
+<p>ai绘画在艺术品生成，动画制作和游戏设计中也会逐渐提高它的作用</p>
+</blockquote>
+<h4 id="ai的学习过程是一个迭代的过程"><a href="#ai的学习过程是一个迭代的过程" class="headerlink" title="ai的学习过程是一个迭代的过程"></a>ai的学习过程是一个迭代的过程</h4><ol>
+<li><p>数据收集：首先需要收集大量用于训练的图像数据。这些数据可以是任何类型的图像，例如照片、插画、素描等。数据收集过程中可能需要对图像进行预处理，如调整大小、颜色空间统一、裁剪等。</p>
+</li>
+<li><p>模型构建：接下来需要构建一个AI绘图模型。通常，这类模型是基于深度学习技术构建的，例如卷积神经网络（CNN）、自编码器（Autoencoder）、生成对抗网络（GAN）等。这些模型需要定义网络架构、图层、激活函数等。</p>
+</li>
+<li><p>特征提取：AI绘图模型通过卷积层、池化层等对图像数据进行特征提取。这些特征包括边缘、纹理、形状等信息。</p>
+</li>
+<li><p>训练过程：在训练过程中，模型会不断调整其参数，以尽可能地预测出图像的数据分布。训练过程通常包括以下几个步骤：</p>
+<p>a. 前向传播：将图像数据输入模型，进行特征提取和预测。</p>
+<p>b. 损失计算：将模型的预测结果与实际图像进行比较，计算损失函数。损失函数测量模型预测结果与实际图像之间的差异。</p>
+<p>c. 反向传播：将损失函数传导至模型各层，调整模型参数，以减小损失值。</p>
+<p>d. 更新参数：根据反向传播的结果，调整模型参数，以提高模型的准确性。</p>
+</li>
+</ol>
+<p>尝试从百度搜索到的100张人像添加到训练内容中.训练内容过于少.成像无法按照我的意愿产生图像，人物形象不明显.生成图像准确性不高.数据太少。</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://example.com/2023/10/26/2023-10-26-%E4%B8%BB%E6%B5%81AI%E7%BB%98%E7%94%BB%E5%B0%9D%E8%AF%95/" data-id="clo78wh250000l8ul0fk4cn50" data-title="2023/10/26 主流AI绘画尝试" class="article-share-link"><span class="fa fa-share">分享</span></a>
+      
+      
+      
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+  
+    <a href="/2023/10/11/hello-world/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">后一篇</strong>
+      <div class="article-nav-title">Hello World</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+
+  
+    
+
+  
+    
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">归档</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2023/10/">十月 2023</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">最新文章</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2023/10/26/2023-10-26-%E4%B8%BB%E6%B5%81AI%E7%BB%98%E7%94%BB%E5%B0%9D%E8%AF%95/">2023/10/26 主流AI绘画尝试</a>
+          </li>
+        
+          <li>
+            <a href="/2023/10/11/hello-world/">Hello World</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      
+      &copy; 2023 John Doe<br>
+      Powered by <a href="https://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+
+<script src="/js/jquery-3.6.4.min.js"></script>
+
+
+
+  
+<script src="/fancybox/jquery.fancybox.min.js"></script>
+
+
+
+
+<script src="/js/script.js"></script>
+
+
+
+
+
+  </div>
+</body>
+</html>
