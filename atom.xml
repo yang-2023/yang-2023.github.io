@@ -35,18 +35,20 @@
   </entry>
   
   <entry>
-    <title>Hello World</title>
-    <link href="http://example.com/2023/10/11/hello-world/"/>
-    <id>http://example.com/2023/10/11/hello-world/</id>
+    <title>ai唱歌技术</title>
+    <link href="http://example.com/2023/10/11/ai%E5%94%B1%E6%AD%8C/"/>
+    <id>http://example.com/2023/10/11/ai%E5%94%B1%E6%AD%8C/</id>
     <published>2023-10-11T13:28:42.215Z</published>
-    <updated>2023-10-11T13:28:42.215Z</updated>
+    <updated>2023-10-27T06:29:43.525Z</updated>
     
-    <content type="html"><![CDATA[<p>Welcome to <a href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p><h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">&quot;My New Post&quot;</span></span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/writing.html">Writing</a></p><h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/server.html">Server</a></p><h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/generating.html">Generating</a></p><h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>]]></content>
+    <content type="html"><![CDATA[<p>目前ai唱歌的三大技术软件</p><p>Sovits Diff-SVC DDSP</p><p>Sovits 项目地址 <a href="https://github.com/svc-develop-team/so-vits-svc">https://github.com/svc-develop-team/so-vits-svc</a></p><p>ddsp 项目地址 <a href="https://github.com/yxlllc/DDSP-SVC">https://github.com/yxlllc/DDSP-SVC</a></p><p>其中so的性能最为强大，质量最高，但训练推理时间需要较长，一次大概需要20小时左右，且对于显卡独显内存要求大，至少要6G独显内存，笔记本难达标，可以在云端租一张显卡</p><p>ddsp更新到3.0后质量有了飞跃般的提升，并且最突出的是训练推理时间很快，只需2小时就能达到很好效果，并且对电脑配置要求低，3G独显内存即可</p><p>ai变声分为几个固定流程</p><p>1.准备数据集</p><p>数据集的要求每种SVC项目大差不差，约1-2小时的干声素材，切片为3-15秒的音频文件。</p><p>需要注意的是，你需要按照100:1的比例手动划分训练集(train)和验证集(val)</p><p>干声素材的提取推荐使用uvr5软件，可自行下载</p><p>2.训练</p><p>训练时所设定的参数与流程不同软件会有不同标准，需要依据自身电脑配置进行设置</p><p>需要注意的是Tensorboard内的生成音频是未经过声码器增强输出后的原始音频，不代表实际效果。</p><p>3.推理（DDSP版）</p><p>DDSP的完整推理流程需要用到刚才训练的两个模型，但得益于DDSP优秀的向前兼容性，你甚至可以单独使用任意模型进行推理（纯DDSP推理和纯扩散推理）：</p><p>推荐的做法是同时加载两个模型进行DDSP推理，但即使你只有其中任意一种模型，程序也会自动进入相应的兼容推理模式（两个模型都没有？你可以坐太阳底下晒晒看看能不能光合作用输出音频来）。当你选择模型时，程序会自动选择对应的配置文件。与So-VITS不同，DDSP的配置文件和模型均应对应放在exp&#x2F;diffusion-test（扩散模型）和exp&#x2F;combsub-test（DDSP模型）文件夹下，程序才可以自动识别。</p><p>4.实时变声</p><p>你上传一段你想要让ai变声的音频，即可完成变声，达到翻唱歌曲效果<a href="https://hexo.io/docs/one-command-deployment.html">https://hexo.io/docs/one-command-deployment.html</a>)</p>]]></content>
     
     
       
       
-    <summary type="html">&lt;p&gt;Welcome to &lt;a href=&quot;https://hexo.io/&quot;&gt;Hexo&lt;/a&gt;! This is your very first post. Check &lt;a href=&quot;https://hexo.io/docs/&quot;&gt;documentation&lt;/a&gt; for</summary>
+    <summary type="html">&lt;p&gt;目前ai唱歌的三大技术软件&lt;/p&gt;
+&lt;p&gt;Sovits Diff-SVC DDSP&lt;/p&gt;
+&lt;p&gt;Sovits 项目地址 &lt;a href=&quot;https://github.com/svc-develop-team/so-vits-svc&quot;&gt;https://github.com</summary>
       
     
     

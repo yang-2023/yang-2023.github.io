@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="cn">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Text</title>
+    <!-- 导入css -->
+    <link rel="icon" href="/text.png">
+    <link rel="stylesheet" href="/style.css"/>
+  <meta name="generator" content="Hexo 6.3.0"><link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
+</head>
+  <body>
+
+  <div id="page-container">
+    <span class="pai">
+    <a class="kong" href="/"> 主页 </a>
+    <a class="kong" href="/archives"> 分类 </a>
+    <a class="kong" href="/about"> 关于 </a>
+</span>
+
+  <meta name="referrer" content="no-referrer">
+    <div id="content-wrap">
+        <div class="container">
+          <!-- 点击文章 -->
+<div>
+  <h1>ai唱歌技术</h1>
+  <wenzhang>
+      <div class="contents">
+        
+      </div>
+      <p>目前ai唱歌的三大技术软件</p>
+<p>Sovits Diff-SVC DDSP</p>
+<p>Sovits 项目地址 <a target="_blank" rel="noopener" href="https://github.com/svc-develop-team/so-vits-svc">https://github.com/svc-develop-team/so-vits-svc</a></p>
+<p>ddsp 项目地址 <a target="_blank" rel="noopener" href="https://github.com/yxlllc/DDSP-SVC">https://github.com/yxlllc/DDSP-SVC</a></p>
+<p>其中so的性能最为强大，质量最高，但训练推理时间需要较长，一次大概需要20小时左右，且对于显卡独显内存要求大，至少要6G独显内存，笔记本难达标，可以在云端租一张显卡</p>
+<p>ddsp更新到3.0后质量有了飞跃般的提升，并且最突出的是训练推理时间很快，只需2小时就能达到很好效果，并且对电脑配置要求低，3G独显内存即可</p>
+<p>ai变声分为几个固定流程</p>
+<p>1.准备数据集</p>
+<p>数据集的要求每种SVC项目大差不差，约1-2小时的干声素材，切片为3-15秒的音频文件。</p>
+<p>需要注意的是，你需要按照100:1的比例手动划分训练集(train)和验证集(val)</p>
+<p>干声素材的提取推荐使用uvr5软件，可自行下载</p>
+<p>2.训练</p>
+<p>训练时所设定的参数与流程不同软件会有不同标准，需要依据自身电脑配置进行设置</p>
+<p>需要注意的是Tensorboard内的生成音频是未经过声码器增强输出后的原始音频，不代表实际效果。</p>
+<p>3.推理（DDSP版）</p>
+<p>DDSP的完整推理流程需要用到刚才训练的两个模型，但得益于DDSP优秀的向前兼容性，你甚至可以单独使用任意模型进行推理（纯DDSP推理和纯扩散推理）：</p>
+<p>推荐的做法是同时加载两个模型进行DDSP推理，但即使你只有其中任意一种模型，程序也会自动进入相应的兼容推理模式（两个模型都没有？你可以坐太阳底下晒晒看看能不能光合作用输出音频来）。当你选择模型时，程序会自动选择对应的配置文件。与So-VITS不同，DDSP的配置文件和模型均应对应放在exp&#x2F;diffusion-test（扩散模型）和exp&#x2F;combsub-test（DDSP模型）文件夹下，程序才可以自动识别。</p>
+<p>4.实时变声</p>
+<p>你上传一段你想要让ai变声的音频，即可完成变声，达到翻唱歌曲效果<a target="_blank" rel="noopener" href="https://hexo.io/docs/one-command-deployment.html">https://hexo.io/docs/one-command-deployment.html</a>)</p>
+
+      <div id="lv-container" data-id="city" data-uid="MTAyMC80NTk3NS8yMjQ4Ng==">
+  <!-- 评论系统 -->
+  <script type="text/javascript">
+     (function(d, s) {
+         var j, e = d.getElementsByTagName(s)[0];
+         if (typeof LivereTower === 'function') { return; }
+  
+         j = d.createElement(s);
+         j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
+         j.async = true;
+  
+         e.parentNode.insertBefore(j, e);
+     })(document, 'script');
+  </script>
+
+
+  </wenzhang>
+
+
+
+
+
+
+        </div>
+    </div>
+    
+<footer id="footer" >
+    <span class="konga">
+        <a class="jiao"  href="."><</a>
+            <input type="text" id="text_input"  placeholder="搜索" >
+
+        <a class="jiao"  href=".">></a>
+    </span>
+    <span class="konga2">
+    <div id="text_output"  text_="center";></div>
+    </div>
+</span>
+
+</footer>
+
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+
+<bokebangquan>
+<!-- 博客版权 -->
+<p><strong>
+  作者: yang-2023
+  <br>
+  </p>
+
+
+
+</bokebangqua>
+
+
+  </div>
+  
+<script src="/jquery.min.js"></script>
+
+  
+<script src="/main.js"></script>
+
+  </body>
+</html>
