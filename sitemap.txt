@@ -1,3 +1,4 @@
+http://example.com/2023/11/23/goland-struct%E5%92%8Cinterface/
 http://example.com/2023/11/21/goland-%E5%87%BD%E6%95%B0%E5%92%8C%E6%96%B9%E6%B3%95/
 http://example.com/2023/11/21/goland-%E9%9B%86%E5%90%88%E7%B1%BB%E5%9E%8B/
 http://example.com/2023/11/17/goland-%E5%8F%98%E9%87%8F%E5%B8%B8%E9%87%8F/
