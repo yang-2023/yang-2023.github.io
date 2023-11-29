@@ -2,18 +2,27 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
-    <loc>http://example.com/2023/11/27/file%E5%88%9D%E8%AF%86%E5%8C%BA%E5%9D%97%E9%93%BE-%E5%8A%A8%E6%89%8B%E5%88%B6%E4%BD%9C%E4%B8%80%E4%B8%AA%E7%AE%80%E5%8D%95%E7%9A%84%E5%8C%BA%E5%9D%97%E9%93%BE/</loc>
+    <loc>http://example.com/2023/11/26/goland-%E9%94%99%E8%AF%AF/</loc>
     
-    <lastmod>2023-11-28</lastmod>
+    <lastmod>2023-11-29</lastmod>
     
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
-    <loc>http://example.com/2023/11/26/goland-%E9%94%99%E8%AF%AF/</loc>
+    <loc>http://example.com/2023/11/29/filegoland-goroutine%E5%92%8Cchannel%EF%BC%9A%E5%B9%B6%E5%8F%91%E7%9A%84%E5%9F%BA%E7%A1%80/</loc>
     
-    <lastmod>2023-11-27</lastmod>
+    <lastmod>2023-11-29</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>http://example.com/2023/11/27/file%E5%88%9D%E8%AF%86%E5%8C%BA%E5%9D%97%E9%93%BE-%E5%8A%A8%E6%89%8B%E5%88%B6%E4%BD%9C%E4%B8%80%E4%B8%AA%E7%AE%80%E5%8D%95%E7%9A%84%E5%8C%BA%E5%9D%97%E9%93%BE/</loc>
+    
+    <lastmod>2023-11-28</lastmod>
     
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
@@ -76,7 +85,7 @@
 
   <url>
     <loc>http://example.com/</loc>
-    <lastmod>2023-11-28</lastmod>
+    <lastmod>2023-11-29</lastmod>
     <changefreq>daily</changefreq>
     <priority>1.0</priority>
   </url>
