@@ -128,14 +128,14 @@
 
   
   <url>
-    <loc>http://example.com/tags/goland/</loc>
+    <loc>http://example.com/tags/%E5%8C%BA%E5%9D%97%E9%93%BE/</loc>
     <lastmod>2023-12-05</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
-    <loc>http://example.com/tags/%E5%8C%BA%E5%9D%97%E9%93%BE/</loc>
+    <loc>http://example.com/tags/goland/</loc>
     <lastmod>2023-12-05</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
