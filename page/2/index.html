@@ -3,21 +3,21 @@
 <head>
   <meta charset="utf-8">
   
-  <title>Hexo</title>
+  <title>😀</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   
   
   
   
   <meta property="og:type" content="website">
-<meta property="og:title" content="Hexo">
+<meta property="og:title" content="😀">
 <meta property="og:url" content="http://example.com/page/2/index.html">
-<meta property="og:site_name" content="Hexo">
+<meta property="og:site_name" content="😀">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:author" content="yangyan">
 <meta name="twitter:card" content="summary">
   
-    <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
+    <link rel="alternate" href="/atom.xml" title="😀" type="application/atom+xml">
   
 
   
@@ -62,8 +62,6 @@
   
   
   
-    <link rel="stylesheet" href="/css/vdonate.css" >
-  
 
 <meta name="generator" content="Hexo 6.3.0"></head>
 
@@ -79,105 +77,7 @@
 	
 
     
-      <div id="intrologo" class="intro-logo" style="background-position:center; background-repeat:no-repeat; background-image: url(); background-size: auto 100%;">
-
-      <!-- Support rolling -->  
-        
-        <section class="awSlider">
-          <div class="carousel slide carousel-fade " data-ride="carousel">
-
-            <!-- Wrapper for slides -->
-            <div class="carousel-inner">
-               
-                  
-                    <div class="item active">
-                  
-                    <img id="carousel-img0" src="/css/images/home-bg.jpg">
-                  </div>
-
-                  <!-- 自适应大图 -->
-                  <script>
-                      var img0 = new Image();
-                      var imageTag0 = document.getElementById("carousel-img0");
-                      img0.src = imageTag0.src;
-                      img0.onload=function(){
-                        if (img0.width / img0.height <= document.body.clientWidth / document.body.clientHeight) {
-                          imageTag0.style.width = document.body.clientWidth + "px";
-                        } else {
-                          imageTag0.style.height = document.body.clientHeight + "px";
-                          imageTag0.style.marginLeft = -(document.body.clientHeight * img0.width / img0.height - document.body.clientWidth) / 2 + "px";
-                        }
-                      };
-                  </script>
-                
-                  
-                    <div class="item">
-                  
-                    <img id="carousel-img1" src="/css/images/sample.jpg">
-                  </div>
-
-                  <!-- 自适应大图 -->
-                  <script>
-                      var img1 = new Image();
-                      var imageTag1 = document.getElementById("carousel-img1");
-                      img1.src = imageTag1.src;
-                      img1.onload=function(){
-                        if (img1.width / img1.height <= document.body.clientWidth / document.body.clientHeight) {
-                          imageTag1.style.width = document.body.clientWidth + "px";
-                        } else {
-                          imageTag1.style.height = document.body.clientHeight + "px";
-                          imageTag1.style.marginLeft = -(document.body.clientHeight * img1.width / img1.height - document.body.clientWidth) / 2 + "px";
-                        }
-                      };
-                  </script>
-                
-                  
-                    <div class="item">
-                  
-                    <img id="carousel-img2" src="https://source.unsplash.com/collection/954550/1920x1080">
-                  </div>
-
-                  <!-- 自适应大图 -->
-                  <script>
-                      var img2 = new Image();
-                      var imageTag2 = document.getElementById("carousel-img2");
-                      img2.src = imageTag2.src;
-                      img2.onload=function(){
-                        if (img2.width / img2.height <= document.body.clientWidth / document.body.clientHeight) {
-                          imageTag2.style.width = document.body.clientWidth + "px";
-                        } else {
-                          imageTag2.style.height = document.body.clientHeight + "px";
-                          imageTag2.style.marginLeft = -(document.body.clientHeight * img2.width / img2.height - document.body.clientWidth) / 2 + "px";
-                        }
-                      };
-                  </script>
-                
-            </div>
-
-            <!-- Controls -->
-            <a class="left carousel-control" href=".carousel" role="button" data-slide="prev">
-              <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
-              <span class="sr-only">Geri</span>
-            </a>
-            <a class="right carousel-control" href=".carousel" role="button" data-slide="next">
-              <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
-              <span class="sr-only">İleri</span>
-            </a>
-          </div>
-        </section>
-        <script>
-          $('section.awSlider .carousel').carousel({
-              pause: '',
-              interval: 5000
-          });
-          var startImage = $('section.awSlider .item.active > img').attr('src');
-          $('section.awSlider .carousel').on('slid.bs.carousel', function () {
-              var bscn = $(this).find('.item.active > img').attr('src');
-              $('section.awSlider > img').attr('src', bscn);
-          });
-        </script>
-      
-
+      <div id="intrologo" class="intro-logo">
     
  
 
@@ -203,16 +103,45 @@
 
       <!-- 折线Polyline背景 -->
       
+        function i(){
+            x.clearRect(0,0,w,h)
+            q=[{x:0,y:h*.7+f},{x:0,y:h*.7-f}]
+            while(q[1].x<w+f) d(q[0], q[1])
+        }
+        function d(i,j){   
+            x.beginPath()
+            x.moveTo(i.x, i.y)
+            x.lineTo(j.x, j.y)
+            var k = j.x + (z()*2-0.25)*f,
+                n = y(j.y)
+            x.lineTo(k, n)
+            x.closePath()
+            r-=u/-50
+            x.fillStyle = '#'+(v(r)*127+128<<16 | v(r+u/3)*127+128<<8 | v(r+u/3*2)*127+128).toString(16)
+            x.fill()
+            q[0] = q[1]
+            q[1] = {x:k,y:n}
+        }
+        function y(p){
+            var t = p + (z()*2-1.1)*f
+            return (t>h||t<0) ? y(p) : t
+        }
+        document.getElementById("intrologo").onclick = i
+        document.getElementById("intrologo").ontouchstart = i
+        i()
+
+      <!-- 多边形trianglify背景 -->
+      
     </script>
     
 
     
-      <div id="homelogo" class="homelogo" style="background: rgba(255,255,255,1);"> 
+      <div id="homelogo" class="homelogo"> 
     
 
         
-          <div class="homelogoback"  style="border: 1px solid #404040;" >
-            <h1><a href="#content" id="logo">Hexo</a></h1>
+          <div class="homelogoback" >
+            <h1><a href="#content" id="logo">😀</a></h1>
             <h3></h3>
             <h5>yangyan</h5>
             <!-- <p><a href="https://github.com/iTimeTraveler" target="_blank">Github</a></p> -->
@@ -242,15 +171,15 @@
   <div class="intro-navigate">
       <p class="navigater-list">
         
-          <a id="beautifont" class="main-nav-link" href="/">Home</a>
+          <a id="beautifont" class="main-nav-link" href="/">首页</a>
         
-          <a id="beautifont" class="main-nav-link" href="/archives">Archives</a>
+          <a id="beautifont" class="main-nav-link" href="/archives">归档</a>
         
-          <a id="beautifont" class="main-nav-link" href="/categories">Categories</a>
+          <a id="beautifont" class="main-nav-link" href="/categories">分类</a>
         
-          <a id="beautifont" class="main-nav-link" href="/tags">Tags</a>
+          <a id="beautifont" class="main-nav-link" href="/tags">标签</a>
         
-          <a id="beautifont" class="main-nav-link" href="/about">About</a>
+          <a id="beautifont" class="main-nav-link" href="/about">关于</a>
         
       </p>
   </div>
@@ -296,7 +225,7 @@
           尝试用python爬取bilibili的视频。123456789101112131415161718192021222324252627282930313233343536373839404142434445import os#用于操作系统的交换模块import requests#发送http请求模块import json#解析jsonimport re#正则表达式from pprint import pprint#美观打印输出json#输入视频网址.只输入前半部分。#网址格式最后到/BV...
         </p>
         <p class="article-more-link">
-          <a href="/2023/11/15/%E7%88%AC%E8%99%AB%E7%88%AC%E5%8F%96b%E7%AB%99%E8%A7%86%E9%A2%91/#more">Read More</a>
+          <a href="/2023/11/15/%E7%88%AC%E8%99%AB%E7%88%AC%E5%8F%96b%E7%AB%99%E8%A7%86%E9%A2%91/#more">阅读全文</a>
         </p>
       
     </div>
@@ -319,7 +248,7 @@
 
   <nav id="page-nav">
     
-    <a class="extend prev" rel="prev" href="/">&amp;laquo; Prev</a><a class="page-number" href="/">1</a><span class="page-number current">2</span>
+    <a class="extend prev" rel="prev" href="/">&amp;laquo; 上一页</a><a class="page-number" href="/">1</a><span class="page-number current">2</span>
   </nav>
 
 </section>
@@ -334,12 +263,12 @@
   <div class="container">
       	<div class="row">
 	      <p> Powered by <a href="http://hexo.io/" target="_blank">Hexo</a> and <a href="https://github.com/iTimeTraveler/hexo-theme-hiker" target="_blank">Hexo-theme-hiker</a> </p>
-	      <p id="copyRightEn">Copyright &copy; 2013 - 2023 Hexo All Rights Reserved.</p>
+	      <p id="copyRightEn">Copyright &copy; 2013 - 2023 😀 All Rights Reserved.</p>
 	      
 	      
     		<p class="busuanzi_uv">
-				UV : <span id="busuanzi_value_site_uv"></span> |  
-				PV : <span id="busuanzi_value_site_pv"></span>
+				访客数 : <span id="busuanzi_value_site_uv"></span> |  
+				访问量 : <span id="busuanzi_value_site_pv"></span>
 		    </p>
   		   
 		</div>
@@ -493,7 +422,7 @@
         </div>
          <div id="collapseThree" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingThree">
           <div class="panel-body">
-            Hexo
+            😀
           </div>
           <div class="panel-body">
             Copyright © 2023 yangyan All Rights Reserved.
