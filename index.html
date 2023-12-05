@@ -1,194 +1,1293 @@
 <!DOCTYPE html>
-<html lang="cn">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Text</title>
-    <!-- 导入css -->
-    <link rel="icon" href="/text.png">
-    <link rel="stylesheet" href="/style.css"/>
-  <meta name="generator" content="Hexo 6.3.0"><link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width">
+<meta name="theme-color" content="#222"><meta name="generator" content="Hexo 6.3.0">
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" integrity="sha256-yIDrPSXHZdOZhAqiBP7CKzIwMQmRCJ8UeB8Jo17YC4o=" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.1.1/animate.min.css" integrity="sha256-PR7ttpcvz8qrF57fur/yAx1qXMFJeJFiA6pSzWi0OIE=" crossorigin="anonymous">
+
+<script class="next-config" data-name="main" type="application/json">{"hostname":"example.com","root":"/","images":"/images","scheme":"Muse","darkmode":false,"version":"8.19.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":{"enable":false,"style":null},"fold":{"enable":false,"height":500},"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"menu_item":"fadeInDown","post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"}}</script><script src="/js/config.js"></script>
+
+    <meta property="og:type" content="website">
+<meta property="og:title" content="Hexo">
+<meta property="og:url" content="http://example.com/index.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:locale" content="zh_CN">
+<meta name="twitter:card" content="summary">
+
+
+<link rel="canonical" href="http://example.com/">
+
+
+
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":true,"isPost":false,"lang":"zh-CN","comments":"","permalink":"","path":"index.html","title":""}</script>
+
+<script class="next-config" data-name="calendar" type="application/json">""</script>
+<title>Hexo</title>
+  
+
+
+
+
+
+
+
+
+  <noscript>
+    <link rel="stylesheet" href="/css/noscript.css">
+  </noscript>
+<link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
 </head>
-  <body>
 
-  <div id="page-container">
-    <span class="pai">
-    <a class="kong" href="/"> 主页 </a>
-    <a class="kong" href="/archives"> 分类 </a>
-    <a class="kong" href="/about"> 关于 </a>
-</span>
+<body itemscope itemtype="http://schema.org/WebPage" class="use-motion">
+  <div class="headband"></div>
 
-  <meta name="referrer" content="no-referrer">
-    <div id="content-wrap">
-        <div class="container">
-          
-  
-        <div class="box">
-            <wenzhang>
-                <div class="media-content">
-                    <div>
-                      <div class="Text"><a href="/2023/12/02/%E7%AE%80%E5%8D%95%E5%8C%BA%E5%9D%97%E9%93%BE%E7%9A%84pow%E9%AA%8C%E8%AF%81%E6%9C%BA%E5%88%B6%E7%9A%84%E6%B7%BB%E5%8A%A0/">简单区块链的pow验证机制的添加</a></div>
-                        
-                        <a class="bx" href="/archives/2023/12">2023-12-02</a>
-                    </div>
-                </div>
-            </wenzhang>
-        </div>
-
-        <div class="box">
-            <wenzhang>
-                <div class="media-content">
-                    <div>
-                      <div class="Text"><a href="/2023/11/29/filegoland-goroutine%E5%92%8Cchannel%EF%BC%9A%E5%B9%B6%E5%8F%91%E7%9A%84%E5%9F%BA%E7%A1%80/">goland-goroutine和channel：并发的基础</a></div>
-                        
-                        <a class="bx" href="/archives/2023/11">2023-11-29</a>
-                    </div>
-                </div>
-            </wenzhang>
-        </div>
-
-        <div class="box">
-            <wenzhang>
-                <div class="media-content">
-                    <div>
-                      <div class="Text"><a href="/2023/11/27/file%E5%88%9D%E8%AF%86%E5%8C%BA%E5%9D%97%E9%93%BE-%E5%8A%A8%E6%89%8B%E5%88%B6%E4%BD%9C%E4%B8%80%E4%B8%AA%E7%AE%80%E5%8D%95%E7%9A%84%E5%8C%BA%E5%9D%97%E9%93%BE/">初识区块链-动手制作一个简单的区块链</a></div>
-                        
-                        <a class="bx" href="/archives/2023/11">2023-11-27</a>
-                    </div>
-                </div>
-            </wenzhang>
-        </div>
-
-        <div class="box">
-            <wenzhang>
-                <div class="media-content">
-                    <div>
-                      <div class="Text"><a href="/2023/11/26/goland-%E9%94%99%E8%AF%AF/">goland-错误</a></div>
-                        
-                        <a class="bx" href="/archives/2023/11">2023-11-26</a>
-                    </div>
-                </div>
-            </wenzhang>
-        </div>
-
-        <div class="box">
-            <wenzhang>
-                <div class="media-content">
-                    <div>
-                      <div class="Text"><a href="/2023/11/23/goland-struct%E5%92%8Cinterface/">goland-struct和interface</a></div>
-                        
-                        <a class="bx" href="/archives/2023/11">2023-11-23</a>
-                    </div>
-                </div>
-            </wenzhang>
-        </div>
-
-        <div class="box">
-            <wenzhang>
-                <div class="media-content">
-                    <div>
-                      <div class="Text"><a href="/2023/11/21/goland-%E5%87%BD%E6%95%B0%E5%92%8C%E6%96%B9%E6%B3%95/">goland-函数和方法</a></div>
-                        
-                        <a class="bx" href="/archives/2023/11">2023-11-21</a>
-                    </div>
-                </div>
-            </wenzhang>
-        </div>
-
-        <div class="box">
-            <wenzhang>
-                <div class="media-content">
-                    <div>
-                      <div class="Text"><a href="/2023/11/21/goland-%E9%9B%86%E5%90%88%E7%B1%BB%E5%9E%8B/">goland-集合类型</a></div>
-                        
-                        <a class="bx" href="/archives/2023/11">2023-11-21</a>
-                    </div>
-                </div>
-            </wenzhang>
-        </div>
-
-        <div class="box">
-            <wenzhang>
-                <div class="media-content">
-                    <div>
-                      <div class="Text"><a href="/2023/11/21/goland-%E6%8E%A7%E5%88%B6%E7%BB%93%E6%9E%84/">goland-控制结构</a></div>
-                        
-                        <a class="bx" href="/archives/2023/11">2023-11-21</a>
-                    </div>
-                </div>
-            </wenzhang>
-        </div>
-
-        <div class="box">
-            <wenzhang>
-                <div class="media-content">
-                    <div>
-                      <div class="Text"><a href="/2023/11/17/goland-%E5%8F%98%E9%87%8F%E5%B8%B8%E9%87%8F/">goland-变量常量</a></div>
-                        
-                        <a class="bx" href="/archives/2023/11">2023-11-17</a>
-                    </div>
-                </div>
-            </wenzhang>
-        </div>
-
-        <div class="box">
-            <wenzhang>
-                <div class="media-content">
-                    <div>
-                      <div class="Text"><a href="/2023/11/15/%E7%88%AC%E8%99%AB%E7%88%AC%E5%8F%96b%E7%AB%99%E8%A7%86%E9%A2%91/">爬虫爬取b站视频</a></div>
-                        
-                        <a class="bx" href="/archives/2023/11">2023-11-15</a>
-                    </div>
-                </div>
-            </wenzhang>
-        </div>
- 
-
-
-        </div>
+  <main class="main">
+    <div class="column">
+      <header class="header" itemscope itemtype="http://schema.org/WPHeader"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏" role="button">
     </div>
-    
-<footer id="footer" >
-    <span class="konga">
-        <a class="jiao"  href="."><</a>
-            <input type="text" id="text_input"  placeholder="搜索" >
-
-        <a class="jiao"  href=".">></a>
-    </span>
-    <span class="konga2">
-    <div id="text_output"  text_="center";></div>
-    </div>
-</span>
-
-</footer>
-
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-
-<bokebangquan>
-<!-- 博客版权 -->
-<p><strong>
-  作者: yang-2023
-  <br>
-  </p>
-
-
-
-</bokebangqua>
-
-
   </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <i class="logo-line"></i>
+      <h1 class="site-title">Hexo</h1>
+      <i class="logo-line"></i>
+    </a>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger" aria-label="搜索" role="button">
+    </div>
+  </div>
+</div>
+
+
+
+
+
+
+
+</header>
+        
   
-<script src="/jquery.min.js"></script>
+  <aside class="sidebar">
+
+    <div class="sidebar-inner sidebar-overview-active">
+      <ul class="sidebar-nav">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <div class="sidebar-panel-container">
+        <!--noindex-->
+        <div class="post-toc-wrap sidebar-panel">
+        </div>
+        <!--/noindex-->
+
+        <div class="site-overview-wrap sidebar-panel">
+          <div class="site-author animated" itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <p class="site-author-name" itemprop="name"></p>
+  <div class="site-description" itemprop="description"></div>
+</div>
+<div class="site-state-wrap animated">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+        <a href="/archives/">
+          <span class="site-state-item-count">11</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+  </nav>
+</div>
+
+        </div>
+      </div>
+    </div>
+
+    
+  </aside>
+
+
+    </div>
+
+    <div class="main-inner index posts-expand">
+
+    
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2023/12/03/fileUTXO%E4%BB%A3%E7%A0%81%E7%9A%84%E5%8A%A0%E5%85%A5/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Hexo">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="undefined | Hexo">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          <a href="/2023/12/03/fileUTXO%E4%BB%A3%E7%A0%81%E7%9A%84%E5%8A%A0%E5%85%A5/" class="post-title-link" itemprop="url">fileUTXO代码的加入</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">发表于</span>
+
+      <time title="创建时间：2023-12-03 13:28:37" itemprop="dateCreated datePublished" datetime="2023-12-03T13:28:37+08:00">2023-12-03</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar-check"></i>
+      </span>
+      <span class="post-meta-item-text">更新于</span>
+      <time title="修改时间：2023-12-05 20:21:42" itemprop="dateModified" datetime="2023-12-05T20:21:42+08:00">2023-12-05</time>
+    </span>
 
   
-<script src="/main.js"></script>
+</div>
 
-  </body>
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <h1 id="交易信息与UTXO模型"><a href="#交易信息与UTXO模型" class="headerlink" title="交易信息与UTXO模型"></a>交易信息与UTXO模型</h1>
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+</div>
+
+
+
+
+    
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2023/12/02/%E7%AE%80%E5%8D%95%E5%8C%BA%E5%9D%97%E9%93%BE%E7%9A%84pow%E9%AA%8C%E8%AF%81%E6%9C%BA%E5%88%B6%E7%9A%84%E6%B7%BB%E5%8A%A0/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Hexo">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="undefined | Hexo">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          <a href="/2023/12/02/%E7%AE%80%E5%8D%95%E5%8C%BA%E5%9D%97%E9%93%BE%E7%9A%84pow%E9%AA%8C%E8%AF%81%E6%9C%BA%E5%88%B6%E7%9A%84%E6%B7%BB%E5%8A%A0/" class="post-title-link" itemprop="url">简单区块链的pow验证机制的添加</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">发表于</span>
+
+      <time title="创建时间：2023-12-02 21:04:48" itemprop="dateCreated datePublished" datetime="2023-12-02T21:04:48+08:00">2023-12-02</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar-check"></i>
+      </span>
+      <span class="post-meta-item-text">更新于</span>
+      <time title="修改时间：2023-12-03 13:14:53" itemprop="dateModified" datetime="2023-12-03T13:14:53+08:00">2023-12-03</time>
+    </span>
+
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <h4 id="pow工作量证明机制"><a href="#pow工作量证明机制" class="headerlink" title="pow工作量证明机制"></a>pow工作量证明机制</h4><p>工作量证明机制加到区块链里就是整个随机数，随机数在矿工挖矿时决定了下一个区块会给到谁的手里，随机数加到数据里边然后进行哈希值的计算，看看是不是在一个范围里边。</p>
+<p><em>进行pow扩展之前先给代码规范一下，创建一些文件夹进行代码的管理</em></p>
+<p>先整个文件夹constcoe然后整个全局变量，用来装挖矿的难度。</p>
+<figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//constcoe.go</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">package</span> constcoe</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> (</span><br><span class="line">	Difficulty = <span class="number">12</span></span><br><span class="line">)</span><br></pre></td></tr></table></figure>
+
+<p>整个函数包。先整个错误函数，错误直接停止。</p>
+<figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">Handle</span><span class="params">(err <span class="type">error</span>)</span></span> &#123;</span><br><span class="line">	<span class="keyword">if</span> err != <span class="literal">nil</span> &#123;</span><br><span class="line">		log.Panic(err)</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>把int64位转字节串函数移动过来和那个结构体什么的。</p>
+<p>候选区块加入到区块链是需要pow证明的，如果一个区块可以控制下一个区块是不是自己的时候，他就有了可以双重支付的能力。如果用了工作量证明机制，就可以避免这种情况的发生，首先矿工会筛选交易，然后因为存在随机值，谁也不能确定到底谁会获得下一个区块，这时候就可以解决双花问题了。</p>
+<p>首先我们要增加一些区块的头部信息。</p>
+<figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">type</span> Block <span class="keyword">struct</span> &#123;</span><br><span class="line">	Timestamp <span class="type">int64</span></span><br><span class="line">	Hash      []<span class="type">byte</span></span><br><span class="line">	PrevHash  []<span class="type">byte</span></span><br><span class="line">	Target    []<span class="type">byte</span> <span class="comment">//This line is new</span></span><br><span class="line">	Nonce     <span class="type">int64</span>  <span class="comment">//This line is new</span></span><br><span class="line">	Data      []<span class="type">byte</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>target作为结果哈希值的比较难度。nonce作为计算哈希值的随机数。</p>
+<p>创建一个proofofwork.go，内容放我们之前说的pow共识机制。</p>
+<p>首先我们需要一个可以返回目标难度值得函数，我们使用之前设定的一个常量difficulty来构造目标难度，<em>在实际区块链中目标难度之会根据网络情况定时进行调整</em>。</p>
+<figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">func</span> <span class="params">(b *Block)</span></span> GetTarget() []<span class="type">byte</span> &#123;</span><br><span class="line">	target := big.NewInt(<span class="number">1</span>)</span><br><span class="line">	target.Lsh(target, <span class="type">uint</span>(<span class="number">256</span>-constcoe.Difficulty))</span><br><span class="line">	<span class="keyword">return</span> target.Bytes()</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p><em>Lsh函数就是向左移位，移的越多目标难度值越大，哈希取值落在的空间就更多也就越容易找到符合条件的nonce。</em></p>
+<p>下面的函数是用作输入一段nonce值，进行区块的哈希值运算。不同的nonce值会返回不同的哈希值</p>
+<figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">func</span> <span class="params">(b *Block)</span></span> GetBase4Nonce(nonce <span class="type">int64</span>) []<span class="type">byte</span> &#123;</span><br><span class="line">	data := bytes.Join([][]<span class="type">byte</span>&#123;</span><br><span class="line">		utils.ToHexInt(b.Timestamp),</span><br><span class="line">		b.PrevHash,</span><br><span class="line">		utils.ToHexInt(<span class="type">int64</span>(nonce)),</span><br><span class="line">		b.Target,</span><br><span class="line">		b.Data,</span><br><span class="line">	&#125;,</span><br><span class="line">		[]<span class="type">byte</span>&#123;&#125;,</span><br><span class="line">	)</span><br><span class="line">	<span class="keyword">return</span> data</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>现在对于任意一个区块，我们都能去寻找一个合适的nonce了。</p>
+<figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">func</span> <span class="params">(b *Block)</span></span> FindNonce() <span class="type">int64</span> &#123;</span><br><span class="line">	<span class="keyword">var</span> intHash big.Int</span><br><span class="line">	<span class="keyword">var</span> intTarget big.Int</span><br><span class="line">	<span class="keyword">var</span> hash [<span class="number">32</span>]<span class="type">byte</span></span><br><span class="line">	<span class="keyword">var</span> nonce <span class="type">int64</span></span><br><span class="line">	nonce = <span class="number">0</span></span><br><span class="line">	intTarget.SetBytes(b.Target)</span><br><span class="line"></span><br><span class="line">	<span class="keyword">for</span> nonce &lt; math.MaxInt64 &#123;</span><br><span class="line">		data := b.GetBase4Nonce(nonce)</span><br><span class="line">		hash = sha256.Sum256(data)</span><br><span class="line">		intHash.SetBytes(hash[:])</span><br><span class="line">		<span class="keyword">if</span> intHash.Cmp(&amp;intTarget) == <span class="number">-1</span> &#123;</span><br><span class="line">			<span class="keyword">break</span></span><br><span class="line">		&#125; <span class="keyword">else</span> &#123;</span><br><span class="line">			nonce++</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">return</span> nonce</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>比较两个整数的大小。如果<code>intHash.Cmp(&amp;intTarget)</code>返回-1，表示<code>intHash</code>小于<code>intTarget</code>。</p>
+<p>PoW我们已经实现了。回到block.go，调整以下函数。</p>
+<figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">func</span> <span class="params">(b *Block)</span></span> SetHash() &#123;</span><br><span class="line">	information := bytes.Join([][]<span class="type">byte</span>&#123;utils.ToHexInt(b.Timestamp), b.PrevHash, b.Target, utils.ToHexInt(b.Nonce), b.Data&#125;, []<span class="type">byte</span>&#123;&#125;)</span><br><span class="line">	hash := sha256.Sum256(information)</span><br><span class="line">	b.Hash = hash[:]</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">CreateBlock</span><span class="params">(prevhash, data []<span class="type">byte</span>)</span></span> *Block &#123;</span><br><span class="line">	block := Block&#123;time.Now().Unix(), []<span class="type">byte</span>&#123;&#125;, prevhash, []<span class="type">byte</span>&#123;&#125;, <span class="number">0</span>, data&#125;</span><br><span class="line">	block.Target = block.GetTarget()</span><br><span class="line">	block.Nonce = block.FindNonce()</span><br><span class="line">	block.SetHash()</span><br><span class="line">	<span class="keyword">return</span> &amp;block</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>然后就可以启动系统了，通过更改difficulty来调整难度。</p>
+
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+</div>
+
+
+
+
+    
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2023/11/29/filegoland-goroutine%E5%92%8Cchannel%EF%BC%9A%E5%B9%B6%E5%8F%91%E7%9A%84%E5%9F%BA%E7%A1%80/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Hexo">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="undefined | Hexo">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          <a href="/2023/11/29/filegoland-goroutine%E5%92%8Cchannel%EF%BC%9A%E5%B9%B6%E5%8F%91%E7%9A%84%E5%9F%BA%E7%A1%80/" class="post-title-link" itemprop="url">goland-goroutine和channel：并发的基础</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">发表于</span>
+
+      <time title="创建时间：2023-11-29 21:37:11" itemprop="dateCreated datePublished" datetime="2023-11-29T21:37:11+08:00">2023-11-29</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar-check"></i>
+      </span>
+      <span class="post-meta-item-text">更新于</span>
+      <time title="修改时间：2023-12-01 19:41:22" itemprop="dateModified" datetime="2023-12-01T19:41:22+08:00">2023-12-01</time>
+    </span>
+
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <h3 id="goroutine和channel：并发的基础"><a href="#goroutine和channel：并发的基础" class="headerlink" title="goroutine和channel：并发的基础"></a>goroutine和channel：并发的基础</h3><h4 id="啥是并发"><a href="#啥是并发" class="headerlink" title="啥是并发"></a>啥是并发</h4><p>听说很有特点的就是goland的并发，所写的代码都按照顺序执行，也就是上一句代码执行完，才会执行下一句，这样的代码逻辑简单，也符合我们的阅读习惯。但这样是不够的，因为计算机很强大，如果只让它干完一件事情再干另外一件事情就太浪费了。比如一款音乐软件，使用它听音乐的时候还想让它下载歌曲，同一时刻做了两件事，在编程中，这就是并发。并发可以让你编写的程序在同一时刻多做几件事情。</p>
+<h4 id="进程和线程"><a href="#进程和线程" class="headerlink" title="进程和线程"></a>进程和线程</h4><h5 id="进程"><a href="#进程" class="headerlink" title="进程"></a>进程</h5><p>操作系统中，进程是非常重要的概念。当你启动一个软件，操作同会自动创建一个进程，进程是如阿健的工作空间，它包含了软件运行所需的所有资源。</p>
+<h5 id="线程"><a href="#线程" class="headerlink" title="线程"></a>线程</h5><p>线程是进程的执行空间，一个进程可以有多个线程，线程被操作系统调度执行，一些计算机桑德行为就会有多个线程被操作系统同时调度执行的情况，这就是线程的并发。</p>
+<h4 id="协程"><a href="#协程" class="headerlink" title="协程"></a>协程</h4><p>Go语言中没有线程的概念，只有协程，也称为goroutine。相比线程来说，协程更加轻量，一个程序可以随意启动成千上万个goroutine。</p>
+<p>goroutine被Go runtime所调度，这一点与线程不一样。也就是说，Go语言的并发是由Go自己调度的，自己决定同时执行多少个goroutine、什么时候执行哪几个。这些对于我们开发者来说完全透明，只需要在编码的时候告诉Go语言要启动几个goroutine，至于如何调度执行，我们不用关心。</p>
+<p>启动一个goroutine非常简单，go语言为我们提供了go关键字，相比其他语言简单许多。</p>
+<figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">go</span> fmt.Println(<span class="string">&quot;sad&quot;</span>)</span><br><span class="line">fmt.Println(<span class="string">&quot;qwe&quot;</span>)</span><br><span class="line">time.Sleep(time.Second)</span><br></pre></td></tr></table></figure>
+
+<p>这样启动一个协程，调用fmt.println函数打印sad。所以这段代码有两个协程，一个是main的，一个是go挂剪子启动的。</p>
+<p>语法就是go之后跟一个方法或者函数的调用。</p>
+<p>上边代码的输出情况是qwe 然后sad，</p>
+<p>示例中的time.Sleep(time.Second)表示等待一秒，这里是让main goroutine等一秒，不然main goroutine执行完毕程序就退出了</p>
+<p>意思就是另外找个线路执行我的sad，所以先后顺序看情况吧可能。</p>
+<h4 id="管道"><a href="#管道" class="headerlink" title="管道"></a>管道</h4><p>如果很多个协程，他们怎么通信呢？这就是channel要结局的问题</p>
+<h5 id="声明一个管道"><a href="#声明一个管道" class="headerlink" title="声明一个管道"></a>声明一个管道</h5><p>声明一个管道很简单</p>
+<figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pipe:<span class="built_in">make</span>(<span class="keyword">chan</span> <span class="type">string</span>)</span><br></pre></td></tr></table></figure>
+
+<p>chan是一个关键字，表示是channel类型。后面的string表示channel里的数据是string。通过channel声明可以看到，chan是一个集合类型。</p>
+<p>定义好一个管道就可以操作了。</p>
+<p>它只有两种操作，接受和发送</p>
+<p>1)接收：获取chan中的值，操作符为＜-chan。</p>
+<p>2)发送：向chan发送值，把值放在chan中，操作符为chan＜-。</p>
+<figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">main</span><span class="params">()</span></span>  &#123;</span><br><span class="line">ch:=<span class="built_in">make</span>(<span class="keyword">chan</span> <span class="type">string</span>)</span><br><span class="line"><span class="keyword">go</span> <span class="function"><span class="keyword">func</span><span class="params">()</span></span> &#123;</span><br><span class="line">   fmt.Println(<span class="string">&quot;asd00&quot;</span>)</span><br><span class="line">   ch &lt;-<span class="string">&quot;okokok&quot;</span></span><br><span class="line">&#125;()</span><br><span class="line">fmt.Println(<span class="string">&quot;我是协程&quot;</span>)</span><br><span class="line">v:=&lt;-ch</span><br><span class="line">fmt.Println(<span class="string">&quot;接受chan中的值是：&quot;</span>,v)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>程序不会在新的goroutine完成之前退出了，因为通过make创建的chan中没有值，而main goroutine又想从chan中获取值，获取不到就一直等待，等到另一个goroutine向chan发送值为止。</p>
+<p>因为最后一个print里的是想要接受v的值，但是v此时此刻没有值，所以一直等到另一个协程给v输送值。</p>
+<h5 id="无缓冲管道"><a href="#无缓冲管道" class="headerlink" title="无缓冲管道"></a>无缓冲管道</h5><p>在上面的示例中，使用make创建的chan就是一个无缓冲管道，它的容量是0，不能存储任何数据。所以无缓冲管道只起到传输数据的作用，数据并不会在管道中做任何停留。这也意味着，无缓冲管道的发送和接收操作是同时进行的，它也可以称为同步管道。</p>
+<h5 id="有缓冲管道"><a href="#有缓冲管道" class="headerlink" title="有缓冲管道"></a>有缓冲管道</h5><p>有缓冲通道是类似于一个可阻塞的队列，内部的元素先进先出。通过make第二个参数可以指定容量，进而创建一个有缓冲的管道。</p>
+<figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ch:=<span class="built_in">make</span>(<span class="keyword">chan</span> <span class="type">int</span>,<span class="number">5</span>)</span><br></pre></td></tr></table></figure>
+
+<p>我创建了一个容量为5的管道，内部的元素类型是int，也就是说管道内部存放5个类型的int元素，先进先出。</p>
+<p>一个有缓冲管道具备以下特点：</p>
+<p>1)有缓冲管道的内部有一个缓冲队列。</p>
+<p>2)发送操作是向队列的尾部插入元素，如果队列已满，则阻塞等待，直到另一个goroutine执行接收操作释放队列的空间。</p>
+<p>3)接收操作是从队列的头部获取元素并把它从队列中删除，如果队列为空，则阻塞等待，直到另一个goroutine执行，发送操作插入新的元素。</p>
+<p><em>缓冲管道类似一个队列，可以获取他的容量和里面元素的个数和容量。</em></p>
+<figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">ch:=<span class="built_in">make</span>(<span class="keyword">chan</span> <span class="type">int</span>,<span class="number">5</span>)</span><br><span class="line">ch&lt;<span class="number">-2</span></span><br><span class="line">ch&lt;<span class="number">-3</span></span><br><span class="line">fmt.Println(<span class="built_in">cap</span>(ch),<span class="built_in">len</span>(ch))</span><br></pre></td></tr></table></figure>
+
+<p><strong>无缓冲管道其实就是一个容量大小为0的管道。比如make(chan int，0)。</strong></p>
+<h5 id="关闭通道"><a href="#关闭通道" class="headerlink" title="关闭通道"></a>关闭通道</h5><figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">close</span>(ch)</span><br></pre></td></tr></table></figure>
+
+<p>如果一个管道被关闭，就不能向里面发送数据了，如果发送的话，会引起panic异常。但是我们还可以接收管道里的数据，如果管道里没有数据的话，接收的数据是元素类型的零值。</p>
+<h5 id="单向通道"><a href="#单向通道" class="headerlink" title="单向通道"></a>单向通道</h5><p>maybe有时候我们的特殊需求限制一个管道只能接受不能发送，或者限制一个管道只能发送不能接收，就叫做单向管道</p>
+<figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">onlysend:=<span class="built_in">make</span>(<span class="keyword">chan</span>&lt;- <span class="type">int</span>,<span class="number">5</span>)</span><br><span class="line">onlyreceive:=<span class="built_in">make</span>(&lt;-<span class="keyword">chan</span> <span class="type">int</span>,<span class="number">5</span>)</span><br></pre></td></tr></table></figure>
+
+<p>单向管道的声明也很简单，只需要在声明的时候带上＜-操作符即可。</p>
+<figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">conter</span><span class="params">(out <span class="keyword">chan</span>&lt;- <span class="type">int</span>)</span></span>  &#123;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>函数体内所用的参数out是一个只能发送的管道，所以函数体内只能对out函数进行发送操作，如果执行接受操作就不能编译通过了。</p>
+<h4 id="select-channel示例"><a href="#select-channel示例" class="headerlink" title="select+channel示例"></a>select+channel示例</h4><p>假设要从网上下载一个文件，我启动了3个goroutine进行下载，并把结果发送到3个channel（管道）中。其中，哪个先下载好，就会使用哪个channel的结果。</p>
+<p>在这种情况下，如果我们尝试获取第一个channel的结果，程序就会被阻塞，无法获取剩下两个channel的结果，也无法判断哪个先下载好。这个时候就需要用到多路复用操作了，在Go语言中，通过select语句可以实现多路复用</p>
+<figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> urls = []<span class="type">string</span>&#123;<span class="string">&quot;http://example.com/file1&quot;</span>, <span class="string">&quot;http://example.com/file2&quot;</span>, <span class="string">&quot;http://example.com/file3&quot;</span>&#125;</span><br><span class="line">	<span class="keyword">var</span> resultChannels = <span class="built_in">make</span>([]<span class="keyword">chan</span> <span class="type">string</span>, <span class="number">3</span>)</span><br><span class="line"></span><br><span class="line">	<span class="keyword">for</span> i := <span class="number">0</span>; i &lt; <span class="number">3</span>; i++ &#123;</span><br><span class="line">		<span class="keyword">go</span> downloadFile(urls[i], resultChannels[i])</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	<span class="keyword">for</span> i := <span class="number">0</span>; i &lt; <span class="number">3</span>; i++ &#123;</span><br><span class="line">		<span class="keyword">select</span> &#123;</span><br><span class="line">		<span class="keyword">case</span> result := &lt;-resultChannels[i]:</span><br><span class="line">			fmt.Println(<span class="string">&quot;Downloaded file:&quot;</span>, result)</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">    </span><br></pre></td></tr></table></figure>
+
+<p>在上面的代码中，我们定义了一个<code>downloadFile</code>函数来模拟文件下载任务，并将结果发送到对应的通道中。在<code>main</code>函数中，我们创建了3个通道，并启动了3个goroutine来执行下载任务。然后，我们使用<code>select</code>语句来监听每个通道，当某个通道有数据时，就立即获取到结果并打印出来。</p>
+
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+</div>
+
+
+
+
+    
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2023/11/27/file%E5%88%9D%E8%AF%86%E5%8C%BA%E5%9D%97%E9%93%BE-%E5%8A%A8%E6%89%8B%E5%88%B6%E4%BD%9C%E4%B8%80%E4%B8%AA%E7%AE%80%E5%8D%95%E7%9A%84%E5%8C%BA%E5%9D%97%E9%93%BE/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Hexo">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="undefined | Hexo">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          <a href="/2023/11/27/file%E5%88%9D%E8%AF%86%E5%8C%BA%E5%9D%97%E9%93%BE-%E5%8A%A8%E6%89%8B%E5%88%B6%E4%BD%9C%E4%B8%80%E4%B8%AA%E7%AE%80%E5%8D%95%E7%9A%84%E5%8C%BA%E5%9D%97%E9%93%BE/" class="post-title-link" itemprop="url">初识区块链-动手制作一个简单的区块链</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">发表于</span>
+
+      <time title="创建时间：2023-11-27 22:58:45" itemprop="dateCreated datePublished" datetime="2023-11-27T22:58:45+08:00">2023-11-27</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar-check"></i>
+      </span>
+      <span class="post-meta-item-text">更新于</span>
+      <time title="修改时间：2023-11-28 14:17:42" itemprop="dateModified" datetime="2023-11-28T14:17:42+08:00">2023-11-28</time>
+    </span>
+
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <h4 id="尝试制作一个简单的区块链"><a href="#尝试制作一个简单的区块链" class="headerlink" title="尝试制作一个简单的区块链"></a>尝试制作一个简单的区块链</h4><p><em>其实主要是对于go的基础语法刚刚学完所以拿来练手</em></p>
+<p>1.用struct函数制作一个块，块在区块链中用来储存数据信息，它内部包含上一个区块的hash值连接上一个区块，包含头部信息总结区块，然后再区块数据的存放区存放要保存的重要数据。</p>
+<figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">type</span> Block <span class="keyword">struct</span> &#123;</span><br><span class="line">   Timestamp <span class="type">int64</span><span class="comment">//时间戳</span></span><br><span class="line">   Hash []<span class="type">byte</span><span class="comment">//本身哈希值</span></span><br><span class="line">   PrevHash []<span class="type">byte</span><span class="comment">//指向上一个区块</span></span><br><span class="line">   Data []<span class="type">byte</span><span class="comment">//属性</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>2.得到区块之后我们就可以定义一条区块链了。</p>
+<figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">type</span> BlockChain <span class="keyword">struct</span> &#123;</span><br><span class="line">   Blocks []*Block</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>这里我们可以看到区块链就是区块的一个集合。创建一个切片用来储存每个区块。</p>
+<p>掌握了块和区块链就可以给区块家电细节，观察他们是如何连接起来的。对于一个区块而言，可以通过哈希算法概括全部的信心，哈希值就是区块的id值，同时用来检查区块所包含的信息的完整性。</p>
+<p>3.hash函数</p>
+<p>首先创造一个函数，接受区块的信息。区块的信息要讲所有的信息合并成一条字节串供计算哈希值。join函数是bytes包中的一个函数，用作将许多的切片连接在一起。</p>
+<p>然后利用哈希计算出哈希值，</p>
+<figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">func</span> <span class="params">(b *Block)</span></span> SetHash() &#123;</span><br><span class="line">   information :=bytes.Join([][]<span class="type">byte</span>&#123;ToHexInt(b.Timestamp),b.PrevHash,b.Data&#125;,[]<span class="type">byte</span>&#123;&#125;)</span><br><span class="line">    <span class="comment">//information是把区块各项属性串联之后的字节串</span></span><br><span class="line">    <span class="comment">//bytes.join可以把多个字符串链接</span></span><br><span class="line">   hash:=sha256.Sum256(information)</span><br><span class="line">    b.Hash=hash[:]</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>TOHexInt我们自定义一个函数用作将int类型转换byte类型。</p>
+<figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">ToHexInt</span><span class="params">(num <span class="type">int64</span>)</span></span> []<span class="type">byte</span> &#123;</span><br><span class="line">   buff := <span class="built_in">new</span>(bytes.Buffer)</span><br><span class="line">   err := binary.Write(buff, binary.BigEndian, num)</span><br><span class="line">   <span class="keyword">if</span> err != <span class="literal">nil</span> &#123;</span><br><span class="line">      log.Panic(err)</span><br><span class="line">   &#125;</span><br><span class="line">   <span class="keyword">return</span>  buff.Bytes()</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>创建bytes.Buffer变量的主要用途是用于高效地处理字节数据。</p>
+<p>大端字节序（Big Endian）是指最高位字节在内存中的低地址处，低位字节在高地址处。与之相对的是小端字节序（Little Endian），即最低位字节在内存中的低地址处，高位字节在高地址处。</p>
+<figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">log.Panic(err)</span><br></pre></td></tr></table></figure>
+
+<p><em>用来停止程序输出错误。</em></p>
+<p>如果需要频繁进行字符串拼接操作，使用普通的字符串拼接方式会导致效率低下。这时就可以使用缓冲区（Buffer）来优化。因为<code>bytes.Buffer</code>是一个具有读取和写入方法的可变大小的字节缓冲区。例如，可以先将需要拼接的字符串写入到缓冲区中，当缓冲区满了或者需要将缓冲区的内容输出时，再进行实际的IO操作。这样就可以大大提高程序的运行效率。</p>
+<p>而缓冲区是一个可以接受多个值的通道，用作可变大小的切片，不强制必须完成发送和接受。</p>
+<p>4.区块创建与创始区块</p>
+<p> 可以获得区块的哈希值了，我们就能够创建区块了。</p>
+<figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">CreateBlock</span><span class="params">(prevhash, data []<span class="type">byte</span>)</span></span> *Block &#123;</span><br><span class="line">	block := Block&#123;time.Now().Unix(), []<span class="type">byte</span>&#123;&#125;, prevhash, data&#125;</span><br><span class="line">	block.SetHash()</span><br><span class="line">	<span class="keyword">return</span> &amp;block</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>一定要引用前一个区块的哈希值。</p>
+<p>新的区块要有时间戳和上一个区块的哈希值，以及这个区块的数据</p>
+<figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">GenesisBlock</span><span class="params">()</span></span> *Block &#123;</span><br><span class="line">	genesisWords := <span class="string">&quot;Hello, blockchain!&quot;</span></span><br><span class="line">	<span class="keyword">return</span> CreateBlock([]<span class="type">byte</span>&#123;&#125;, []<span class="type">byte</span>(genesisWords))</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>创世区块里存放hello这段信息，构建函数使得区块链可以根据其他的信息创建区块进行储存。</p>
+<figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">func</span> <span class="params">(bc *BlockChain)</span></span> AddBlock(data <span class="type">string</span>) &#123;</span><br><span class="line">	newBlock := CreateBlock(bc.Blocks[<span class="built_in">len</span>(bc.Blocks)<span class="number">-1</span>].Hash, []<span class="type">byte</span>(data))</span><br><span class="line">	bc.Blocks = <span class="built_in">append</span>(bc.Blocks, newBlock)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>append用来在列表末尾添加一个或者多个元素。</p>
+<p>创建区块链函数，首先把创世区块作为第一个区块</p>
+<figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">CreateBlockChain</span><span class="params">()</span></span> *BlockChain &#123;</span><br><span class="line">	blockchain := BlockChain&#123;&#125;</span><br><span class="line">	blockchain.Blocks = <span class="built_in">append</span>(blockchain.Blocks, GenesisBlock())</span><br><span class="line">	<span class="keyword">return</span> &amp;blockchain</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>运作一下。</p>
+<figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">main</span><span class="params">()</span></span> &#123;</span><br><span class="line">	blockchain := CreateBlockChain()<span class="comment">// 创建一个区块链对象</span></span><br><span class="line">	time.Sleep(time.Second)<span class="comment">// 等待一段时间（1秒）</span></span><br><span class="line">	blockchain.AddBlock(<span class="string">&quot;A&quot;</span>)</span><br><span class="line">	time.Sleep(time.Second)<span class="comment">// 等待一段时间（1秒）</span></span><br><span class="line">	blockchain.AddBlock(<span class="string">&quot;B&quot;</span>)</span><br><span class="line">	time.Sleep(time.Second)<span class="comment">// 等待一段时间（1秒）</span></span><br><span class="line">	blockchain.AddBlock(<span class="string">&quot;C&quot;</span>)</span><br><span class="line">	time.Sleep(time.Second)<span class="comment">// 等待一段时间（1秒）</span></span><br><span class="line"><span class="comment">//遍历区块</span></span><br><span class="line">	<span class="keyword">for</span> _, block := <span class="keyword">range</span> blockchain.Blocks &#123;</span><br><span class="line">		fmt.Printf(<span class="string">&quot;Timestamp: %d\n&quot;</span>, block.Timestamp)</span><br><span class="line">		fmt.Printf(<span class="string">&quot;hash: %x\n&quot;</span>, block.Hash)</span><br><span class="line">		fmt.Printf(<span class="string">&quot;Previous hash: %x\n&quot;</span>, block.PrevHash)</span><br><span class="line">		fmt.Printf(<span class="string">&quot;data: %s\n&quot;</span>, block.Data)</span><br><span class="line"></span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+</div>
+
+
+
+
+    
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2023/11/26/goland-%E9%94%99%E8%AF%AF/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Hexo">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="undefined | Hexo">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          <a href="/2023/11/26/goland-%E9%94%99%E8%AF%AF/" class="post-title-link" itemprop="url">goland-错误</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">发表于</span>
+
+      <time title="创建时间：2023-11-26 16:33:26" itemprop="dateCreated datePublished" datetime="2023-11-26T16:33:26+08:00">2023-11-26</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar-check"></i>
+      </span>
+      <span class="post-meta-item-text">更新于</span>
+      <time title="修改时间：2023-11-29 21:53:31" itemprop="dateModified" datetime="2023-11-29T21:53:31+08:00">2023-11-29</time>
+    </span>
+
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <h4 id="错误"><a href="#错误" class="headerlink" title="错误"></a>错误</h4><p>在Go语言中，错误是通过内置的error接口表示的。</p>
+<p>只有一个Error()方法用来返回具体的错误信息。</p>
+<h5 id="error工厂函数"><a href="#error工厂函数" class="headerlink" title="error工厂函数"></a>error工厂函数</h5><p>除了可以使用其他函数，自己定义的函数也可以发挥错误信息给调用者。</p>
+<p>add函数会在a或者b任何一个为负数的情况下，返回一个错误信息；如果a、b都不为负数，错误信息部分会返回nil，这也是常见的做法。所以调用者可以通过错误信息是否为nil进行判断。下面的add函数示例是使用errors.New这个工厂函数来生成错误信息的。errors.New函数接收一个字符串参数，返回一个error接口。</p>
+<figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">func</span>  <span class="title">add</span><span class="params">(a,b <span class="type">int</span>)</span></span> (<span class="type">int</span>,<span class="type">error</span>)&#123;</span><br><span class="line">   <span class="keyword">if</span> a&lt;<span class="number">0</span>||b&lt;<span class="number">0</span>&#123;</span><br><span class="line">      <span class="keyword">return</span> <span class="number">0</span>,errors.New(<span class="string">&quot;a.b不能为负数&quot;</span>)</span><br><span class="line">   &#125;<span class="keyword">else</span>&#123;</span><br><span class="line">      <span class="keyword">return</span> a+b,<span class="literal">nil</span></span><br><span class="line">   &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">sum,err:=add(<span class="number">-1</span>,<span class="number">2</span>)</span><br><span class="line"><span class="keyword">if</span> err!=<span class="literal">nil</span>&#123;</span><br><span class="line">   fmt.Println(err)</span><br><span class="line">&#125;<span class="keyword">else</span> &#123;</span><br><span class="line">   fmt.Println(sum)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h5 id="自定义error"><a href="#自定义error" class="headerlink" title="自定义error"></a>自定义error</h5><p>上面的工厂函数返回错误信息只能穿第一个字符串，如果i昂要携带更多信息，姿势自定义error。</p>
+<figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">type</span> commonerror <span class="keyword">struct</span> &#123;</span><br><span class="line">   errorcode <span class="type">int</span><span class="comment">//错误编号</span></span><br><span class="line">   errormsg <span class="type">string</span><span class="comment">//报错内容</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="params">(ce *commonerror)</span></span> Error()<span class="type">string</span> &#123;</span><br><span class="line">   <span class="keyword">return</span> ce.errormsg</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">func</span>  <span class="title">add</span><span class="params">(a,b <span class="type">int</span>)</span></span> (<span class="type">int</span>,<span class="type">error</span>)&#123;</span><br><span class="line">   <span class="keyword">if</span> a&lt;<span class="number">0</span>||b&lt;<span class="number">0</span>&#123;</span><br><span class="line">      <span class="keyword">return</span> <span class="number">0</span>,&amp;commonerror&#123;</span><br><span class="line">         errormsg: <span class="string">&quot;asd&quot;</span>,</span><br><span class="line">         errorcode:<span class="number">1</span>&#125;</span><br><span class="line">   &#125;<span class="keyword">else</span>&#123;</span><br><span class="line">      <span class="keyword">return</span> a+b,<span class="literal">nil</span></span><br><span class="line">   &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>意思就是我程序犯错，commonerror就会把内容写成asd和1。</p>
+<h5 id="error断言"><a href="#error断言" class="headerlink" title="error断言"></a>error断言</h5><p>拥有了自定义的error，携带了更多的错误信息后，就可以使用这些信息。需要先把返回的error接口转换为自定义的错误类型。</p>
+<figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">sum,err:=add(<span class="number">-1</span>,<span class="number">20</span>)</span><br><span class="line"><span class="keyword">if</span> cm,ok:=err.(*commonerror);ok&#123;</span><br><span class="line">   fmt.Println(<span class="string">&quot;错误代码&quot;</span>,cm.errorcode,<span class="string">&quot;错误信息&quot;</span>,cm.errormsg)</span><br><span class="line">&#125;<span class="keyword">else</span> &#123;</span><br><span class="line">   fmt.Println(sum)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>意思就是实现了error接口，我们可以自定义error的效果。</p>
+<p>读起来真是不太理解，找半天我的Error用在哪了，原来是实现了底层的接口，我干。😓</p>
+<figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">cm,ok:=err.(*commonerror)</span><br></pre></td></tr></table></figure>
+
+<p>更是重量级，这是个类型断言，如果err是这个的类型，就给赋值cm。不然就输出sum了。</p>
+<p>不实现那个Error接口就不能返回error值，就不能自定义了。</p>
+<hr>
+<p><em>存个档，错误太抽象了。现在用不到太多，以下的部分以后再来探索吧——2023.11.29</em></p>
+<h5 id="错误嵌套"><a href="#错误嵌套" class="headerlink" title="错误嵌套"></a>错误嵌套</h5><h6 id="error-wrapping功能"><a href="#error-wrapping功能" class="headerlink" title="error wrapping功能"></a>error wrapping功能</h6><h6 id="errors-unwrap函数"><a href="#errors-unwrap函数" class="headerlink" title="errors.unwrap函数"></a>errors.unwrap函数</h6><h6 id="errors-ls函数"><a href="#errors-ls函数" class="headerlink" title="errors.ls函数"></a>errors.ls函数</h6><h6 id="errors-As函数"><a href="#errors-As函数" class="headerlink" title="errors.As函数"></a>errors.As函数</h6><h6 id="defer函数"><a href="#defer函数" class="headerlink" title="defer函数"></a>defer函数</h6><h6 id="panic函数"><a href="#panic函数" class="headerlink" title="panic函数"></a>panic函数</h6>
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+</div>
+
+
+
+
+    
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2023/11/23/goland-struct%E5%92%8Cinterface/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Hexo">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="undefined | Hexo">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          <a href="/2023/11/23/goland-struct%E5%92%8Cinterface/" class="post-title-link" itemprop="url">goland-struct和interface</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">发表于</span>
+
+      <time title="创建时间：2023-11-23 12:30:38" itemprop="dateCreated datePublished" datetime="2023-11-23T12:30:38+08:00">2023-11-23</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar-check"></i>
+      </span>
+      <span class="post-meta-item-text">更新于</span>
+      <time title="修改时间：2023-11-25 21:51:56" itemprop="dateModified" datetime="2023-11-25T21:51:56+08:00">2023-11-25</time>
+    </span>
+
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <h4 id="结构体"><a href="#结构体" class="headerlink" title="结构体"></a>结构体</h4><h5 id="结构体的定义"><a href="#结构体的定义" class="headerlink" title="结构体的定义"></a>结构体的定义</h5><p>这里我们定义了一个结构体类型，名称为IPhone，含有字段name</p>
+<figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">type</span> Phone <span class="keyword">struct</span> &#123;</span><br><span class="line">  name <span class="type">string</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>在定义结构体时，字段的声明方法与平时声明一个变量是一样的，都是变量名在前，类型在后，只不过在结构体中，变量名称为成员名或字段名。</p>
+<h5 id="声明和使用"><a href="#声明和使用" class="headerlink" title="声明和使用"></a>声明和使用</h5><figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">p:=IPhone&#123;</span><br><span class="line">   name: <span class="string">&quot;ASD&quot;</span>&#125;</span><br><span class="line">fmt.Println(p.name)</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">p:=IPhone&#123;&quot;ASD&quot;&#125;</span><br></pre></td></tr></table></figure>
+
+<p>两种情况都可以编译通过，甚至可以只声明其中的一部分，那么没声明的部分就默认零值</p>
+<h5 id="结构体的字段"><a href="#结构体的字段" class="headerlink" title="结构体的字段"></a>结构体的字段</h5><figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">type</span> IPhone <span class="keyword">struct</span> &#123;</span><br><span class="line">   name <span class="type">string</span></span><br><span class="line">   aa kk</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">type</span> kk <span class="keyword">struct</span> &#123;</span><br><span class="line">   id <span class="type">int</span></span><br></pre></td></tr></table></figure>
+
+<p>用代码描述现实中的实体会更匹配，复用程度也更高。对于嵌套结构体字段的结构体，其初始化与正常的结构体大同小异，只需要根据字段对应的类型初始化即可。</p>
+<figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">p:=IPhone&#123;</span><br><span class="line">name: <span class="string">&quot;s&quot;</span>,</span><br><span class="line">aa: kk&#123;</span><br><span class="line"><span class="number">6</span>&#125;,</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>利用点操作符调用字段的值</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">fmt.Println(p.aa.id)</span><br></pre></td></tr></table></figure>
+
+<h4 id="接口"><a href="#接口" class="headerlink" title="接口"></a>接口</h4><h5 id="接口的定义"><a href="#接口的定义" class="headerlink" title="接口的定义"></a>接口的定义</h5><p>接口要做的是定义好约定，告诉调用方自己可以做什么，但调用方不用知道它的内部实现。</p>
+<p>接口的定义与结构体稍微有些差别，虽然都以type关键字开始，但接口的关键字是interface。</p>
+<figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">type</span> Phone <span class="keyword">interface</span> &#123;</span><br><span class="line">   speak()</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>定义一个接口Phone 拥有speak方法，Phone接口告诉调用者他拥有方法speak，至于谁speak如何speak调用者不用关心，这是由接口实现者来做的。</p>
+<h5 id="接口的实现"><a href="#接口的实现" class="headerlink" title="接口的实现"></a>接口的实现</h5><p>接口的实现者必须是一个具体的类型</p>
+<figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">func</span> <span class="params">(a IPhone)</span></span> speak() <span class="type">string</span>&#123;</span><br><span class="line">	<span class="keyword">return</span> <span class="string">&quot;iiii&quot;</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>这里用Iphone来做示例，让他实现Phone接口。</p>
+<p>给Iphone定义一个方法，这个方法与接口里的方法的签名一样，这样的结构体Iphone就实现了这个Phone的接口，接口并没有通过任何的关键词来实现，所以go的接口是隐式实现的。</p>
+<p><strong>如果一个接口有许多个方法，那么需要实现接口的每个方法才是实现了这个接口。</strong></p>
+<p>实现了接口之后我们就可以使用它了。</p>
+<figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">print</span><span class="params">(p Phone)</span></span>&#123;</span><br><span class="line">	fmt.Println(p.speak())</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>定义一个接口可以用来打印实现Phone接口的函数，它接受一个Phone接口类型的参数，然后打印出，不用考虑具体的类型实现。</p>
+<figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">a:=IPhone&#123;<span class="string">&quot;ASD&quot;</span>&#125;</span><br><span class="line"><span class="built_in">print</span>(a)</span><br></pre></td></tr></table></figure>
+
+<h5 id="值和指针类型接收者"><a href="#值和指针类型接收者" class="headerlink" title="值和指针类型接收者"></a>值和指针类型接收者</h5><p>有值类型接收者和指针类型接收者两种。二者都可以调用方法，因为Go语言编译器自动做了转换，所以值类型接收者和指针类型接收者是等价的。但是在接口的实现中，值类型接收者和指针类型接收者不一样。</p>
+<p>把实现过程改成指针，依旧可以编译运行正常。这就证明了以值类型接收者实现接口的时候，不管是类型本身，还是该类型的指针类型，都实现了该接口。</p>
+<figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">print</span>(&amp;a)</span><br></pre></td></tr></table></figure>
+
+
+
+<p>实例中接收者（a Iphone）实现了Phone接口，那么Iphone和他的指针类型*Iphone都实现了Phone接口。</p>
+<p>接下来把接收者改为指针类型。</p>
+<figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">func</span> <span class="params">(a *IPhone)</span></span> speak() <span class="type">string</span>&#123;</span><br><span class="line">   <span class="keyword">return</span> <span class="string">&quot;iiii&quot;</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>修改成指针赖兴接收者后会发现，实例中的print（a），没办法编译成功，错误是IPhone没有实现Phone接口，这就证明了以指针类型接收者实现接口的时候，只有对应的指针类型才被认为实现了接口。</p>
+<p>可以这样解读：当值类型作为接收者时，person类型和<em>person类型都实现了该接口。当指针类型作为接收者时，只有</em>person类型实现了该接口。可以发现，实现接口的类型都有*person，这也表明指针类型比较万能，不管哪一种接收者，它都能实现该接口。</p>
+<h6 id="接口的理解是一个困难的过程-以下是我理解接口的过程和程序。"><a href="#接口的理解是一个困难的过程-以下是我理解接口的过程和程序。" class="headerlink" title="接口的理解是一个困难的过程,以下是我理解接口的过程和程序。"></a>接口的理解是一个困难的过程,以下是我理解接口的过程和程序。</h6><p>1.使用接口和不使用接口的两种方式：</p>
+<ol>
+<li>使用接口：</li>
+</ol>
+<figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> main</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> <span class="string">&quot;fmt&quot;</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">type</span> Doer <span class="keyword">interface</span> &#123;</span><br><span class="line">    Do()</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">type</span> Foo <span class="keyword">struct</span>&#123;&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="params">(f Foo)</span></span> Do() &#123;</span><br><span class="line">    fmt.Println(<span class="string">&quot;Foo does something.&quot;</span>)</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">type</span> Bar <span class="keyword">struct</span>&#123;&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="params">(b Bar)</span></span> Do() &#123;</span><br><span class="line">    fmt.Println(<span class="string">&quot;Bar does something else.&quot;</span>)</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">DoSomething</span><span class="params">(d Doer)</span></span> &#123;</span><br><span class="line">    d.Do()</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">main</span><span class="params">()</span></span> &#123;</span><br><span class="line">    f := Foo&#123;&#125;</span><br><span class="line">    b := Bar&#123;&#125;</span><br><span class="line"></span><br><span class="line">    DoSomething(f)</span><br><span class="line">    DoSomething(b)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>在这个例子中，我们定义了一个接口 <code>Doer</code> 和两个结构体 <code>Foo</code> 和 <code>Bar</code>。<code>Foo</code> 和 <code>Bar</code> 分别实现了 <code>Doer</code> 接口。在 <code>DoSomething</code> 函数中，我们接收一个 <code>Doer</code> 类型的参数，并调用其 <code>Do</code> 方法。这样，我们可以在 <code>main</code> 函数中传入 <code>Foo</code> 或 <code>Bar</code> 的实例，从而使得代码具有更好的灵活性。</p>
+<ol start="2">
+<li>不使用接口：</li>
+</ol>
+<figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> main</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> <span class="string">&quot;fmt&quot;</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">type</span> Foo <span class="keyword">struct</span>&#123;&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="params">(f Foo)</span></span> Do() &#123;</span><br><span class="line">    fmt.Println(<span class="string">&quot;Foo does something.&quot;</span>)</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">type</span> Bar <span class="keyword">struct</span>&#123;&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="params">(b Bar)</span></span> Do() &#123;</span><br><span class="line">    fmt.Println(<span class="string">&quot;Bar does something else.&quot;</span>)</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">DoSomethingWithFoo</span><span class="params">(f Foo)</span></span> &#123;</span><br><span class="line">    f.Do()</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">DoSomethingWithBar</span><span class="params">(b Bar)</span></span> &#123;</span><br><span class="line">    b.Do()</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">main</span><span class="params">()</span></span> &#123;</span><br><span class="line">    f := Foo&#123;&#125;</span><br><span class="line">    b := Bar&#123;&#125;</span><br><span class="line"></span><br><span class="line">    DoSomethingWithFoo(f)</span><br><span class="line">    DoSomethingWithBar(b)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>在这个例子中，我们没有使用接口。取而代之的是，我们为 <code>Foo</code> 和 <code>Bar</code> 分别定义了两个函数 <code>DoSomethingWithFoo</code> 和 <code>DoSomethingWithBar</code>。这样，我们也可以在 <code>main</code> 函数中调用这些函数，但相比于使用接口的方式，这种设计缺乏灵活性，因为每个函数只能处理一种类型的值。</p>
+<p>通过以上两个示例的对比，我们可以看到，使用接口可以使得我们的代码更具有抽象性、可替换性和灵活性。在需要抽象、可替换性或灵活性的场景中，使用接口是一个不错的选择。</p>
+<p><em>实现接口的作用是让用户的代码更具可读性，相同的代码出现的频率变低，更低的耦合度。</em></p>
+<h5 id="工厂函数"><a href="#工厂函数" class="headerlink" title="工厂函数"></a>工厂函数</h5><p>工厂函数一般用于创建自定义的结构体，便于使用者调用。</p>
+<figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">new</span><span class="params">(a <span class="type">string</span>)</span></span> *IPhone&#123;</span><br><span class="line">   <span class="keyword">return</span> &amp;IPhone&#123;name: a&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>我定义了一个工厂函数new,接受一个string的类型的参数，用于表示手机的名字，同时返回一个*Iphone。</p>
+<p>通过工厂函数创建自定义结构的方式，让调用者不用太关注结构体内部的字段，只用传给工厂函数就可以了。</p>
+<figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> main</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> <span class="string">&quot;fmt&quot;</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">type</span> Animal <span class="keyword">interface</span> &#123;</span><br><span class="line">    Speak() <span class="type">string</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">type</span> Dog <span class="keyword">struct</span>&#123;&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="params">(d Dog)</span></span> Speak() <span class="type">string</span> &#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="string">&quot;Woof!&quot;</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">type</span> Cat <span class="keyword">struct</span>&#123;&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="params">(c Cat)</span></span> Speak() <span class="type">string</span> &#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="string">&quot;Meow!&quot;</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">CreateAnimal</span><span class="params">(kind <span class="type">string</span>)</span></span> Animal &#123;</span><br><span class="line">    <span class="keyword">switch</span> kind &#123;</span><br><span class="line">    <span class="keyword">case</span> <span class="string">&quot;dog&quot;</span>:</span><br><span class="line">        <span class="keyword">return</span> Dog&#123;&#125;</span><br><span class="line">    <span class="keyword">case</span> <span class="string">&quot;cat&quot;</span>:</span><br><span class="line">        <span class="keyword">return</span> Cat&#123;&#125;</span><br><span class="line">    <span class="keyword">default</span>:</span><br><span class="line">        <span class="keyword">return</span> <span class="literal">nil</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">main</span><span class="params">()</span></span> &#123;</span><br><span class="line">    dog := CreateAnimal(<span class="string">&quot;dog&quot;</span>)</span><br><span class="line">    fmt.Println(dog.Speak()) <span class="comment">// 输出：Woof!</span></span><br><span class="line"></span><br><span class="line">    cat := CreateAnimal(<span class="string">&quot;cat&quot;</span>)</span><br><span class="line">    fmt.Println(cat.Speak()) <span class="comment">// 输出：Meow!</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>我们并不需要在意结构体内部的字段，只需要传给工厂函数就行了。</p>
+<h4 id="继承和组合"><a href="#继承和组合" class="headerlink" title="继承和组合"></a>继承和组合</h4><p>在Go语言中没有继承的概念，所以结构体、接口之间也没有父子关系，Go语言提倡的是组合，利用组合达到代码复用的目的，这也更灵活。类型的组合就是可以称之为嵌套。</p>
+<p>当然可以。以下是一个使用 Go 语言实现的简单嵌套示例。这个例子定义了一个嵌套结构体，用于表示学生和课程信息。</p>
+<figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> main</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> <span class="string">&quot;fmt&quot;</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">type</span> Student <span class="keyword">struct</span> &#123;</span><br><span class="line">    Name <span class="type">string</span></span><br><span class="line">    Age <span class="type">int</span></span><br><span class="line">    Course []Course</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">type</span> Course <span class="keyword">struct</span> &#123;</span><br><span class="line">    Name <span class="type">string</span></span><br><span class="line">    Credit <span class="type">int</span></span><br><span class="line">&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>我们先定义了一个名为 <code>Student</code> 的结构体，其中包含了姓名（Name）、年龄（Age）和课程（Course）信息。课程信息是由一个嵌套结构体 <code>Course</code> 表示。</p>
+<h4 id="类型断言"><a href="#类型断言" class="headerlink" title="类型断言"></a>类型断言</h4><p>有了接口和实现接口的类型，就会有类型断言。类型断言用来判断一个接口的值是否是实现该接口的某个具体类型。类型断言（Type Assertion）用于确定一个接口变量（interface{}）实际指向的类型。类型断言的语法形式如下：</p>
+<figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">value, ok := <span class="keyword">interface</span>&#123;&#125;.(T)</span><br></pre></td></tr></table></figure>
+
+<p>其中的 <code>value</code> 是类型为 <code>T</code> 的值，<code>ok</code> 是一个布尔值，表示断言是否成功。如果断言成功，<code>ok</code> 为 <code>true</code>，<code>value</code> 包含接口变量实际指向的值；如果断言失败，<code>ok</code> 为 <code>false</code>，<code>value</code> 为 <code>T</code> 类型的零值。</p>
+<p>以下是一个使用类型断言的示例：</p>
+<figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> main</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> <span class="string">&quot;fmt&quot;</span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">main</span><span class="params">()</span></span> &#123;</span><br><span class="line">    <span class="keyword">var</span> x <span class="keyword">interface</span>&#123;&#125; = <span class="string">&quot;Hello, World!&quot;</span></span><br><span class="line"></span><br><span class="line">    s, ok := x.(<span class="type">string</span>)</span><br><span class="line">    <span class="keyword">if</span> ok &#123;</span><br><span class="line">        fmt.Println(s)</span><br><span class="line">    &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">        fmt.Println(<span class="string">&quot;断言失败&quot;</span>)</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    i, ok := x.(<span class="type">int</span>)</span><br><span class="line">    <span class="keyword">if</span> ok &#123;</span><br><span class="line">        fmt.Println(i)</span><br><span class="line">    &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">        fmt.Println(<span class="string">&quot;断言失败&quot;</span>)</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>在这个例子中，我们首先定义了一个接口变量 <code>x</code>，并将其赋值为字符串 “Hello, World!”。然后，我们使用类型断言尝试将该接口变量转换为字符串类型和整数类型。成功时，<code>ok</code> 为 <code>true</code>，<code>value</code> 包含实际值；失败时，<code>ok</code> 为 <code>false</code>，<code>value</code> 为相应类型的零值。。</p>
+
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+</div>
+
+
+
+
+    
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2023/11/21/goland-%E5%87%BD%E6%95%B0%E5%92%8C%E6%96%B9%E6%B3%95/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Hexo">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="undefined | Hexo">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          <a href="/2023/11/21/goland-%E5%87%BD%E6%95%B0%E5%92%8C%E6%96%B9%E6%B3%95/" class="post-title-link" itemprop="url">goland-函数和方法</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">发表于</span>
+      
+
+      <time title="创建时间：2023-11-21 19:52:23 / 修改时间：23:16:25" itemprop="dateCreated datePublished" datetime="2023-11-21T19:52:23+08:00">2023-11-21</time>
+    </span>
+
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <h4 id="函数"><a href="#函数" class="headerlink" title="函数"></a>函数</h4><h5 id="函数声明"><a href="#函数声明" class="headerlink" title="函数声明"></a>函数声明</h5><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">func sum(a int,b int) int&#123;</span><br><span class="line">   return a+b</span><br></pre></td></tr></table></figure>
+
+<p><em>注意形参名后加类型</em></p>
+<p>函数定义以下部分：</p>
+<p>1.关键词func</p>
+<p>2.函数名sum</p>
+<p>3.函数参数a，b</p>
+<p>4.返回值</p>
+<p>5.代码实体</p>
+<h5 id="多值返回"><a href="#多值返回" class="headerlink" title="多值返回"></a>多值返回</h5><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">func sum(a int,b int) (int,error)&#123;</span><br><span class="line">   return a+b,errors.New(&quot;f&quot;)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p><em>error是go语言内置的错误信息</em></p>
+<h5 id="可变参数"><a href="#可变参数" class="headerlink" title="可变参数"></a>可变参数</h5><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">func sum(a ...int) int&#123;</span><br><span class="line">   sum:=0</span><br><span class="line">   for _,a:= range params&#123;</span><br><span class="line">      sum +=a</span><br><span class="line">   &#125;</span><br><span class="line">   return sum</span><br></pre></td></tr></table></figure>
+
+<p>该可变参数通过for range函数循环计算这些参数值和，可变参数类型其实就是切片，a的参数类型是【】int，所以可以通过for range进行循环。</p>
+<p>注意：如果参数中有可变参数和普通参数，那么可变参数放在末尾。</p>
+<h5 id="包级函数"><a href="#包级函数" class="headerlink" title="包级函数"></a>包级函数</h5><p>不落实我们使用的sum还是println，都是从属于一个包，sum函数属于main包，println属于fmt包，同一个包可以调用，当不同的包函数要调用，必须是属于共有的，也就是函数的首字母要大写。</p>
+<p><em>go语言没有public和private来区别共有私有</em></p>
+<h5 id="匿名函数和闭包"><a href="#匿名函数和闭包" class="headerlink" title="匿名函数和闭包"></a>匿名函数和闭包</h5><p>匿名函数就是没有名字的函数，这是它与正常函数的区别。</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">func main() &#123;</span><br><span class="line">   sum:= func(a,b int) int &#123;</span><br><span class="line">      return a+b</span><br><span class="line">   &#125;</span><br><span class="line">   fmt.Println(sum(1,2))</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>sum就是弥明函数，有了匿名函数就可以在函数中进行函数嵌套，定义的匿名函数叫做内部函数，更重要的是，<strong>函数内定义的内部函数，可以用外部函数的变量，这种方式也叫做闭包</strong></p>
+<h4 id="方法"><a href="#方法" class="headerlink" title="方法"></a>方法</h4><p>方法和函数的区别在于方法必须要有一个接收者，接收者是一个类型，这样方法就与这个类型绑定在一起，称为这个类型的方法</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">import &quot;fmt&quot;</span><br><span class="line">type Age uint</span><br><span class="line">func (age Age)String()&#123;</span><br><span class="line">   fmt.Println(age)</span><br><span class="line">&#125;</span><br><span class="line">func main() &#123;</span><br><span class="line">a:=Age(1)</span><br><span class="line">a.String()</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>如同于类一样，必须使用特定类型的接收者才能被调用</p>
+<p>具有更好的可读性，简便性。</p>
+<h5 id="值和指针类型的接收者"><a href="#值和指针类型的接收者" class="headerlink" title="值和指针类型的接收者"></a>值和指针类型的接收者</h5><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">func (age *Age)S()&#123;</span><br><span class="line">   *age=Age(30)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">a := Age(25)</span><br><span class="line">a.String()</span><br><span class="line">a.S()</span><br><span class="line">a.String()</span><br></pre></td></tr></table></figure>
+
+<p>发现值变化了，因为指针对应的更改。</p>
+<p>示例中的变量a并不是指针类型，而是go自动更改的。</p>
+<p>也可以这样</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">(&amp;a).S()</span><br></pre></td></tr></table></figure>
+
+<p>所以使用时，根据自己的需求进行接收者类型的选择，调用者的类型会自己转变，大大提高效率。</p>
+
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+</div>
+
+
+
+
+    
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2023/11/21/goland-%E9%9B%86%E5%90%88%E7%B1%BB%E5%9E%8B/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Hexo">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="undefined | Hexo">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          <a href="/2023/11/21/goland-%E9%9B%86%E5%90%88%E7%B1%BB%E5%9E%8B/" class="post-title-link" itemprop="url">goland-集合类型</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">发表于</span>
+      
+
+      <time title="创建时间：2023-11-21 18:37:49 / 修改时间：19:48:23" itemprop="dateCreated datePublished" datetime="2023-11-21T18:37:49+08:00">2023-11-21</time>
+    </span>
+
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <h4 id="数组的声明"><a href="#数组的声明" class="headerlink" title="数组的声明"></a>数组的声明</h4><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">array:=[5]string&#123;&quot;s&quot;,&quot;a&quot;,&quot;a&quot;,&quot;f&quot;&#125;</span><br></pre></td></tr></table></figure>
+
+<p><em>数组在内存中是连续存放的.每个元素有自己的下标i（ndex），从0开始</em></p>
+<p>长度在定义时可以取消，它会根据内容数量自己进行计数。</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">array:=[]string&#123;&quot;s&quot;,&quot;a&quot;,&quot;a&quot;,&quot;f&quot;&#125;</span><br></pre></td></tr></table></figure>
+
+<p><em>只用于所有元素都被初始化的场景，如果有特定的索引元素被初始化的情况，就不适合了</em></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">array:=[]string&#123;1:&quot;s&quot;,3:&quot;a&quot;&#125;</span><br></pre></td></tr></table></figure>
+
+<p>元素长度为4，不一定符合标准</p>
+<h4 id="数组的循环"><a href="#数组的循环" class="headerlink" title="数组的循环"></a>数组的循环</h4><p>利用range进行遍历，i是索引值，v是具体值</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">array:=[]string&#123;1:&quot;s&quot;,3:&quot;a&quot;&#125;</span><br><span class="line">for i,v:=range array&#123;</span><br><span class="line">   fmt.Printf(&quot;索引 :%d,对应 :%v\n&quot;,i,v)</span><br><span class="line">   &#125;</span><br></pre></td></tr></table></figure>
+
+<p>相比之下for range更为简便</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">for _,v:=range array &#123;</span><br><span class="line">   fmt.Printf(&quot;值:%v\n&quot;,v)</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p><em>_表示被丢弃的值</em></p>
+<h4 id="切片"><a href="#切片" class="headerlink" title="切片"></a>切片</h4><p><em>底层就是数组，对数组的任意分割得到切片，动态数组</em></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">array:=[]string&#123;&quot;s&quot;,&quot;a&quot;,&quot;q&quot;,&quot;g&quot;&#125;</span><br><span class="line">slice:= array[2:4]</span><br><span class="line">fmt.Println(slice)</span><br></pre></td></tr></table></figure>
+
+<p><em>包含2不包含4索引下的值</em></p>
+<p>切片和数组的操作是差不多的，同样可以经过索引定位值，只不过这里的值是重新从0开始定位的</p>
+<h5 id="切片的修改"><a href="#切片的修改" class="headerlink" title="切片的修改"></a>切片的修改</h5><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">array:=[]string&#123;&quot;s&quot;,&quot;a&quot;,&quot;q&quot;,&quot;g&quot;&#125;</span><br><span class="line">slice:= array[2:4]</span><br><span class="line">slice[0]=&quot;l&quot;</span><br><span class="line">fmt.Println(array)</span><br></pre></td></tr></table></figure>
+
+<p>切片所运用的依旧是数组的底层数据，切片的值更改，相应的数组也会被修改</p>
+<h5 id="切片的声明"><a href="#切片的声明" class="headerlink" title="切片的声明"></a>切片的声明</h5><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">slice:=make([]string,1,2)</span><br></pre></td></tr></table></figure>
+
+<p>1是长度，2是容量，意思是开阔一个容量为8的空间，但是只有一个有数据，其他的属于空闲状态</p>
+<p>切片属于动态数组，相比于数组更为灵活，数组属于值类型，动态数组是指针类型</p>
+<h5 id="切片的追加"><a href="#切片的追加" class="headerlink" title="切片的追加"></a>切片的追加</h5><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"> silce2:=append(slice1,&quot;f&quot;)</span><br><span class="line">silce2:=append(slice1,&quot;f&quot;,&quot;g&quot;)</span><br><span class="line">silce2:=append(slice1,slice3...)</span><br></pre></td></tr></table></figure>
+
+
+
+<h4 id="映射"><a href="#映射" class="headerlink" title="映射"></a>映射</h4><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">nameAgeMap:=make(map[string]int)</span><br></pre></td></tr></table></figure>
+
+<p>key值是string类型，value则是int类型,然后可以进行操作了</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">nameAgeMap[&quot;SS&quot;=2]</span><br></pre></td></tr></table></figure>
+
+<p> 验证是否存在，asd是value值，ok是key值</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">nameAgeMap:=make(map[string]int)</span><br><span class="line">nameAgeMap[&quot;SS&quot;]=2</span><br><span class="line">asd,ok:=nameAgeMap[&quot;SS&quot;]</span><br><span class="line">if ok&#123;</span><br><span class="line">   fmt.Println(asd)</span><br><span class="line">   &#125;</span><br></pre></td></tr></table></figure>
+
+<p>map是可以用for range遍历的，主义的是遍历是无序的</p>
+
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+</div>
+
+
+
+
+    
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2023/11/21/goland-%E6%8E%A7%E5%88%B6%E7%BB%93%E6%9E%84/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Hexo">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="undefined | Hexo">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          <a href="/2023/11/21/goland-%E6%8E%A7%E5%88%B6%E7%BB%93%E6%9E%84/" class="post-title-link" itemprop="url">goland-控制结构</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">发表于</span>
+      
+
+      <time title="创建时间：2023-11-21 18:15:47 / 修改时间：18:36:21" itemprop="dateCreated datePublished" datetime="2023-11-21T18:15:47+08:00">2023-11-21</time>
+    </span>
+
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <h4 id="1-if语句"><a href="#1-if语句" class="headerlink" title="1.if语句"></a>1.if语句</h4><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">if 条件语句 &#123;</span><br><span class="line">   </span><br><span class="line">&#125;erse if 条件语句&#123;</span><br><span class="line">   &#125;else &#123;</span><br><span class="line">      </span><br><span class="line">   &#125;</span><br></pre></td></tr></table></figure>
+
+<h4 id="2-switch选择语句"><a href="#2-switch选择语句" class="headerlink" title="2.switch选择语句"></a>2.switch选择语句</h4><p>1.分支较多选择switch语句.默认从上到下逐一分析.一旦满足条件就会执行并且返回.自带break。</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">switch i:=6; &#123;</span><br><span class="line">   case i&gt;10:</span><br><span class="line">      fmt.Println(i)</span><br><span class="line">   case i&gt;5 &amp;&amp; i&lt;10:</span><br><span class="line">      fmt.Println(i)</span><br><span class="line">    default:</span><br><span class="line">      fmt.Println(&quot;i&lt;=5&quot;)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>2.switch后带表达式.</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">switch i:=6;j</span><br></pre></td></tr></table></figure>
+
+<p>假如设置</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">var j=3.66</span><br></pre></td></tr></table></figure>
+
+<p>那么</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">switch i:=6;j &#123;</span><br><span class="line">   case i&gt;10:</span><br><span class="line">      fmt.Println(i)</span><br><span class="line">   case i&gt;5 &amp;&amp; i&lt;10:</span><br><span class="line">      fmt.Println(i)</span><br><span class="line">    default:</span><br><span class="line">      fmt.Println(&quot;i&lt;=5&quot;)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>会整体报错.因为case后的值的类型必须是和；后的j类型一样</p>
+<p>同样也可以是字符串类型等</p>
+<p>3.switch语句较为强大</p>
+<p>所以表达式可以很随意</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">switch 1&lt;5 &#123;</span><br><span class="line">   case true:</span><br><span class="line">      fmt.Println(&quot;t&quot;)</span><br><span class="line">   case false:</span><br><span class="line">      fmt.Println(&quot;f&quot;)</span><br><span class="line">    default:</span><br><span class="line">      fmt.Println(&quot;n&quot;)</span><br><span class="line"></span><br><span class="line">   &#125;</span><br></pre></td></tr></table></figure>
+
+<h4 id="3-for语句"><a href="#3-for语句" class="headerlink" title="3.for语句"></a>3.for语句</h4><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">for 简单语句;条件;更新语句 &#123;</span><br><span class="line">     </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+</div>
+
+
+
+
+    
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2023/11/17/goland-%E5%8F%98%E9%87%8F%E5%B8%B8%E9%87%8F/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Hexo">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="undefined | Hexo">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          <a href="/2023/11/17/goland-%E5%8F%98%E9%87%8F%E5%B8%B8%E9%87%8F/" class="post-title-link" itemprop="url">goland-变量常量</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">发表于</span>
+
+      <time title="创建时间：2023-11-17 14:32:30" itemprop="dateCreated datePublished" datetime="2023-11-17T14:32:30+08:00">2023-11-17</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar-check"></i>
+      </span>
+      <span class="post-meta-item-text">更新于</span>
+      <time title="修改时间：2023-11-21 18:44:15" itemprop="dateModified" datetime="2023-11-21T18:44:15+08:00">2023-11-21</time>
+    </span>
+
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <h4 id="变量常量"><a href="#变量常量" class="headerlink" title="变量常量"></a>变量常量</h4><h5 id="定义"><a href="#定义" class="headerlink" title="定义"></a>定义</h5><p>1.普通定义方法<!--方法定义的变量必须使用--></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">var i int = 2</span><br></pre></td></tr></table></figure>
+
+<p>2.默认int类型.go语言有类型推导的作用</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">var i=10</span><br></pre></td></tr></table></figure>
+
+<p>3.简短声明</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">i:=10</span><br></pre></td></tr></table></figure>
+
+<p>4.一次多个声明</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">var(</span><br><span class="line">j int=0</span><br><span class="line">k =0</span><br><span class="line">)</span><br></pre></td></tr></table></figure>
+
+<h5 id="类型"><a href="#类型" class="headerlink" title="类型"></a>类型</h5><p>1.整形：分为有符号和无符号类型 有符号类型int,int8,int16…无符号类型uint,uint8…  差别在于有符号整形的表示可以为负数</p>
+<p>2.浮点型：相较于float32而言float64是更常用的浮点型.相比之下精度更高.误差更小</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">var f32 float32 =6.3663363663</span><br><span class="line">var f64 float64 =5.662626</span><br><span class="line">fmt.Println(f32,f64)</span><br></pre></td></tr></table></figure>
+
+<p><em>实行代码发现64位丢失数据更少</em></p>
+<p>3.布尔类型</p>
+<p>布尔类型只有false和true两种.也可用于一元操作符！ 二元操作符&amp;&amp;和||逻辑与和逻辑或</p>
+<p>4.字符串</p>
+<p>字符串类型通过string来声明.+号可以用来字符串的相加</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">var s1=&quot;sss&quot;</span><br><span class="line">var s2 = &quot;aaa&quot;</span><br><span class="line">println(s1+s2)</span><br></pre></td></tr></table></figure>
+
+<h5 id="地址"><a href="#地址" class="headerlink" title="地址"></a>地址</h5><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">pi:=&amp;i</span><br><span class="line">//pi指向i的地址</span><br></pre></td></tr></table></figure>
+
+<h5 id="常量"><a href="#常量" class="headerlink" title="常量"></a>常量</h5><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">//const定义常量</span><br><span class="line">//iota用来初始化常量的</span><br><span class="line">const(</span><br><span class="line">one=1</span><br><span class="line">two=2</span><br><span class="line">three=3</span><br><span class="line">)</span><br><span class="line">const(</span><br><span class="line">one=1+itoa</span><br><span class="line">two </span><br><span class="line">three)</span><br><span class="line">//两个代码效果是一样的</span><br></pre></td></tr></table></figure>
+
+<h5 id="格式转换"><a href="#格式转换" class="headerlink" title="格式转换"></a>格式转换</h5><p><em>go进行使用和计算式同类型的变量必须进行转换</em></p>
+<p>下面是int类型和string类型的转换方式</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">var i=3</span><br><span class="line">s:=strconv.Itoa(i)</span><br><span class="line">d,err:=strconv.Atoi(s)</span><br><span class="line">fmt.Println(s,d,err)</span><br></pre></td></tr></table></figure>
+
+<p>强制转换int和float类型</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">i2f:=float64(i)</span><br><span class="line">f2i:=int(f64)</span><br></pre></td></tr></table></figure>
+
+
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+</div>
+
+
+
+
+  <nav class="pagination">
+    <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="extend next" rel="next" title="下一页" aria-label="下一页" href="/page/2/"><i class="fa fa-angle-right"></i></a>
+  </nav>
+
+</div>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-inner">
+
+  <div class="copyright">
+    &copy; 
+    <span itemprop="copyrightYear">2023</span>
+    <span class="with-love">
+      <i class="fa fa-heart"></i>
+    </span>
+    <span class="author" itemprop="copyrightHolder"></span>
+  </div>
+  <div class="powered-by">由 <a href="https://hexo.io/" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.js.org/muse/" rel="noopener" target="_blank">NexT.Muse</a> 强力驱动
+  </div>
+
+    </div>
+  </footer>
+
+  
+  <div class="toggle sidebar-toggle" role="button">
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+  </div>
+  <div class="sidebar-dimmer"></div>
+  <div class="back-to-top" role="button" aria-label="返回顶部">
+    <i class="fa fa-arrow-up fa-lg"></i>
+    <span>0%</span>
+  </div>
+
+<noscript>
+  <div class="noscript-warning">Theme NexT works best with JavaScript enabled</div>
+</noscript>
+
+
+  
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.2/anime.min.js" integrity="sha256-tc4b48P1MPGS4PJXHRlChGCW1mEZy62jS/3JEsSHPzU=" crossorigin="anonymous"></script>
+<script src="/js/comments.js"></script><script src="/js/utils.js"></script><script src="/js/motion.js"></script><script src="/js/schemes/muse.js"></script><script src="/js/next-boot.js"></script>
+
+  
+
+
+
+
+
+
+  
+
+
+
+
+
+</body>
 </html>

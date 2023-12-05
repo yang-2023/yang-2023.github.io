@@ -6,10 +6,30 @@
   <link href="http://example.com/atom.xml" rel="self"/>
   
   <link href="http://example.com/"/>
-  <updated>2023-12-03T05:14:53.935Z</updated>
+  <updated>2023-12-05T12:21:42.308Z</updated>
   <id>http://example.com/</id>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>fileUTXO代码的加入</title>
+    <link href="http://example.com/2023/12/03/fileUTXO%E4%BB%A3%E7%A0%81%E7%9A%84%E5%8A%A0%E5%85%A5/"/>
+    <id>http://example.com/2023/12/03/fileUTXO%E4%BB%A3%E7%A0%81%E7%9A%84%E5%8A%A0%E5%85%A5/</id>
+    <published>2023-12-03T05:28:37.000Z</published>
+    <updated>2023-12-05T12:21:42.308Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="交易信息与UTXO模型"><a href="#交易信息与UTXO模型" class="headerlink" title="交易信息与UTXO模型"></a>交易信息与UTXO模型</h1>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;h1 id=&quot;交易信息与UTXO模型&quot;&gt;&lt;a href=&quot;#交易信息与UTXO模型&quot; class=&quot;headerlink&quot; title=&quot;交易信息与UTXO模型&quot;&gt;&lt;/a&gt;交易信息与UTXO模型&lt;/h1&gt;</summary>
+      
+    
+    
+    
+    
+  </entry>
   
   <entry>
     <title>简单区块链的pow验证机制的添加</title>

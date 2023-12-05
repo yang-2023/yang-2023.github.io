@@ -1,34 +1,199 @@
 <!DOCTYPE html>
-<html lang="cn">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Text</title>
-    <!-- 导入css -->
-    <link rel="icon" href="/text.png">
-    <link rel="stylesheet" href="/style.css"/>
-  <meta name="generator" content="Hexo 6.3.0"><link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width">
+<meta name="theme-color" content="#222"><meta name="generator" content="Hexo 6.3.0">
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" integrity="sha256-yIDrPSXHZdOZhAqiBP7CKzIwMQmRCJ8UeB8Jo17YC4o=" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.1.1/animate.min.css" integrity="sha256-PR7ttpcvz8qrF57fur/yAx1qXMFJeJFiA6pSzWi0OIE=" crossorigin="anonymous">
+
+<script class="next-config" data-name="main" type="application/json">{"hostname":"example.com","root":"/","images":"/images","scheme":"Muse","darkmode":false,"version":"8.19.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":{"enable":false,"style":null},"fold":{"enable":false,"height":500},"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"menu_item":"fadeInDown","post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"}}</script><script src="/js/config.js"></script>
+
+    <meta name="description" content="结构体结构体的定义这里我们定义了一个结构体类型，名称为IPhone，含有字段name 123type Phone struct &amp;#123;  name string&amp;#125;  在定义结构体时，字段的声明方法与平时声明一个变量是一样的，都是变量名在前，类型在后，只不过在结构体中，变量名称为成员名或字段名。 声明和使用123p:&#x3D;IPhone&amp;#123;   name: &quot;ASD&amp;qu">
+<meta property="og:type" content="article">
+<meta property="og:title" content="goland-struct和interface">
+<meta property="og:url" content="http://example.com/2023/11/23/goland-struct%E5%92%8Cinterface/index.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="结构体结构体的定义这里我们定义了一个结构体类型，名称为IPhone，含有字段name 123type Phone struct &amp;#123;  name string&amp;#125;  在定义结构体时，字段的声明方法与平时声明一个变量是一样的，都是变量名在前，类型在后，只不过在结构体中，变量名称为成员名或字段名。 声明和使用123p:&#x3D;IPhone&amp;#123;   name: &quot;ASD&amp;qu">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2023-11-23T04:30:38.000Z">
+<meta property="article:modified_time" content="2023-11-25T13:51:56.876Z">
+<meta name="twitter:card" content="summary">
+
+
+<link rel="canonical" href="http://example.com/2023/11/23/goland-struct%E5%92%8Cinterface/">
+
+
+
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"zh-CN","comments":true,"permalink":"http://example.com/2023/11/23/goland-struct%E5%92%8Cinterface/","path":"2023/11/23/goland-struct和interface/","title":"goland-struct和interface"}</script>
+
+<script class="next-config" data-name="calendar" type="application/json">""</script>
+<title>goland-struct和interface | Hexo</title>
+  
+
+
+
+
+
+
+
+
+  <noscript>
+    <link rel="stylesheet" href="/css/noscript.css">
+  </noscript>
+<link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
 </head>
-  <body>
 
-  <div id="page-container">
-    <span class="pai">
-    <a class="kong" href="/"> 主页 </a>
-    <a class="kong" href="/archives"> 分类 </a>
-    <a class="kong" href="/about"> 关于 </a>
-</span>
+<body itemscope itemtype="http://schema.org/WebPage" class="use-motion">
+  <div class="headband"></div>
 
-  <meta name="referrer" content="no-referrer">
-    <div id="content-wrap">
-        <div class="container">
-          <!-- 点击文章 -->
-<div>
-  <h1>goland-struct和interface</h1>
-  <wenzhang>
-      <div class="contents">
-        <ol class="toc"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E7%BB%93%E6%9E%84%E4%BD%93"><span class="toc-text">结构体</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#%E7%BB%93%E6%9E%84%E4%BD%93%E7%9A%84%E5%AE%9A%E4%B9%89"><span class="toc-text">结构体的定义</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E5%A3%B0%E6%98%8E%E5%92%8C%E4%BD%BF%E7%94%A8"><span class="toc-text">声明和使用</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E7%BB%93%E6%9E%84%E4%BD%93%E7%9A%84%E5%AD%97%E6%AE%B5"><span class="toc-text">结构体的字段</span></a></li></ol></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%8E%A5%E5%8F%A3"><span class="toc-text">接口</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#%E6%8E%A5%E5%8F%A3%E7%9A%84%E5%AE%9A%E4%B9%89"><span class="toc-text">接口的定义</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E6%8E%A5%E5%8F%A3%E7%9A%84%E5%AE%9E%E7%8E%B0"><span class="toc-text">接口的实现</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E5%80%BC%E5%92%8C%E6%8C%87%E9%92%88%E7%B1%BB%E5%9E%8B%E6%8E%A5%E6%94%B6%E8%80%85"><span class="toc-text">值和指针类型接收者</span></a><ol class="toc-child"><li class="toc-item toc-level-6"><a class="toc-link" href="#%E6%8E%A5%E5%8F%A3%E7%9A%84%E7%90%86%E8%A7%A3%E6%98%AF%E4%B8%80%E4%B8%AA%E5%9B%B0%E9%9A%BE%E7%9A%84%E8%BF%87%E7%A8%8B-%E4%BB%A5%E4%B8%8B%E6%98%AF%E6%88%91%E7%90%86%E8%A7%A3%E6%8E%A5%E5%8F%A3%E7%9A%84%E8%BF%87%E7%A8%8B%E5%92%8C%E7%A8%8B%E5%BA%8F%E3%80%82"><span class="toc-text">接口的理解是一个困难的过程,以下是我理解接口的过程和程序。</span></a></li></ol></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E5%B7%A5%E5%8E%82%E5%87%BD%E6%95%B0"><span class="toc-text">工厂函数</span></a></li></ol></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E7%BB%A7%E6%89%BF%E5%92%8C%E7%BB%84%E5%90%88"><span class="toc-text">继承和组合</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E7%B1%BB%E5%9E%8B%E6%96%AD%E8%A8%80"><span class="toc-text">类型断言</span></a></li></ol>
+  <main class="main">
+    <div class="column">
+      <header class="header" itemscope itemtype="http://schema.org/WPHeader"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏" role="button">
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <i class="logo-line"></i>
+      <p class="site-title">Hexo</p>
+      <i class="logo-line"></i>
+    </a>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger" aria-label="搜索" role="button">
+    </div>
+  </div>
+</div>
+
+
+
+
+
+
+
+</header>
+        
+  
+  <aside class="sidebar">
+
+    <div class="sidebar-inner sidebar-nav-active sidebar-toc-active">
+      <ul class="sidebar-nav">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <div class="sidebar-panel-container">
+        <!--noindex-->
+        <div class="post-toc-wrap sidebar-panel">
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E7%BB%93%E6%9E%84%E4%BD%93"><span class="nav-number">1.</span> <span class="nav-text">结构体</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#%E7%BB%93%E6%9E%84%E4%BD%93%E7%9A%84%E5%AE%9A%E4%B9%89"><span class="nav-number">1.1.</span> <span class="nav-text">结构体的定义</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#%E5%A3%B0%E6%98%8E%E5%92%8C%E4%BD%BF%E7%94%A8"><span class="nav-number">1.2.</span> <span class="nav-text">声明和使用</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#%E7%BB%93%E6%9E%84%E4%BD%93%E7%9A%84%E5%AD%97%E6%AE%B5"><span class="nav-number">1.3.</span> <span class="nav-text">结构体的字段</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E6%8E%A5%E5%8F%A3"><span class="nav-number">2.</span> <span class="nav-text">接口</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#%E6%8E%A5%E5%8F%A3%E7%9A%84%E5%AE%9A%E4%B9%89"><span class="nav-number">2.1.</span> <span class="nav-text">接口的定义</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#%E6%8E%A5%E5%8F%A3%E7%9A%84%E5%AE%9E%E7%8E%B0"><span class="nav-number">2.2.</span> <span class="nav-text">接口的实现</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#%E5%80%BC%E5%92%8C%E6%8C%87%E9%92%88%E7%B1%BB%E5%9E%8B%E6%8E%A5%E6%94%B6%E8%80%85"><span class="nav-number">2.3.</span> <span class="nav-text">值和指针类型接收者</span></a><ol class="nav-child"><li class="nav-item nav-level-6"><a class="nav-link" href="#%E6%8E%A5%E5%8F%A3%E7%9A%84%E7%90%86%E8%A7%A3%E6%98%AF%E4%B8%80%E4%B8%AA%E5%9B%B0%E9%9A%BE%E7%9A%84%E8%BF%87%E7%A8%8B-%E4%BB%A5%E4%B8%8B%E6%98%AF%E6%88%91%E7%90%86%E8%A7%A3%E6%8E%A5%E5%8F%A3%E7%9A%84%E8%BF%87%E7%A8%8B%E5%92%8C%E7%A8%8B%E5%BA%8F%E3%80%82"><span class="nav-number">2.3.1.</span> <span class="nav-text">接口的理解是一个困难的过程,以下是我理解接口的过程和程序。</span></a></li></ol></li><li class="nav-item nav-level-5"><a class="nav-link" href="#%E5%B7%A5%E5%8E%82%E5%87%BD%E6%95%B0"><span class="nav-number">2.4.</span> <span class="nav-text">工厂函数</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E7%BB%A7%E6%89%BF%E5%92%8C%E7%BB%84%E5%90%88"><span class="nav-number">3.</span> <span class="nav-text">继承和组合</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E7%B1%BB%E5%9E%8B%E6%96%AD%E8%A8%80"><span class="nav-number">4.</span> <span class="nav-text">类型断言</span></a></li></ol></div>
+        </div>
+        <!--/noindex-->
+
+        <div class="site-overview-wrap sidebar-panel">
+          <div class="site-author animated" itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <p class="site-author-name" itemprop="name"></p>
+  <div class="site-description" itemprop="description"></div>
+</div>
+<div class="site-state-wrap animated">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+        <a href="/archives/">
+          <span class="site-state-item-count">11</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
       </div>
-      <h4 id="结构体"><a href="#结构体" class="headerlink" title="结构体"></a>结构体</h4><h5 id="结构体的定义"><a href="#结构体的定义" class="headerlink" title="结构体的定义"></a>结构体的定义</h5><p>这里我们定义了一个结构体类型，名称为IPhone，含有字段name</p>
+  </nav>
+</div>
+
+        </div>
+      </div>
+    </div>
+
+    
+  </aside>
+
+
+    </div>
+
+    <div class="main-inner post posts-expand">
+
+
+  
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2023/11/23/goland-struct%E5%92%8Cinterface/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Hexo">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="goland-struct和interface | Hexo">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          goland-struct和interface
+        </h1>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">发表于</span>
+
+      <time title="创建时间：2023-11-23 12:30:38" itemprop="dateCreated datePublished" datetime="2023-11-23T12:30:38+08:00">2023-11-23</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar-check"></i>
+      </span>
+      <span class="post-meta-item-text">更新于</span>
+      <time title="修改时间：2023-11-25 21:51:56" itemprop="dateModified" datetime="2023-11-25T21:51:56+08:00">2023-11-25</time>
+    </span>
+
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody"><h4 id="结构体"><a href="#结构体" class="headerlink" title="结构体"></a>结构体</h4><h5 id="结构体的定义"><a href="#结构体的定义" class="headerlink" title="结构体的定义"></a>结构体的定义</h5><p>这里我们定义了一个结构体类型，名称为IPhone，含有字段name</p>
 <figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">type</span> Phone <span class="keyword">struct</span> &#123;</span><br><span class="line">  name <span class="type">string</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
 <p>在定义结构体时，字段的声明方法与平时声明一个变量是一样的，都是变量名在前，类型在后，只不过在结构体中，变量名称为成员名或字段名。</p>
@@ -111,73 +276,90 @@
 
 <p>在这个例子中，我们首先定义了一个接口变量 <code>x</code>，并将其赋值为字符串 “Hello, World!”。然后，我们使用类型断言尝试将该接口变量转换为字符串类型和整数类型。成功时，<code>ok</code> 为 <code>true</code>，<code>value</code> 包含实际值；失败时，<code>ok</code> 为 <code>false</code>，<code>value</code> 为相应类型的零值。。</p>
 
-      <div id="lv-container" data-id="city" data-uid="MTAyMC80NTk3NS8yMjQ4Ng==">
-  <!-- 评论系统 -->
-  <script type="text/javascript">
-     (function(d, s) {
-         var j, e = d.getElementsByTagName(s)[0];
-         if (typeof LivereTower === 'function') { return; }
-  
-         j = d.createElement(s);
-         j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
-         j.async = true;
-  
-         e.parentNode.insertBefore(j, e);
-     })(document, 'script');
-  </script>
-
-
-  </wenzhang>
-
-
-
-
-
-
-        </div>
     </div>
+
     
-<footer id="footer" >
-    <span class="konga">
-        <a class="jiao"  href="."><</a>
-            <input type="text" id="text_input"  placeholder="搜索" >
+    
+    
 
-        <a class="jiao"  href=".">></a>
+    <footer class="post-footer">
+
+        
+
+          <div class="post-nav">
+            <div class="post-nav-item">
+                <a href="/2023/11/21/goland-%E5%87%BD%E6%95%B0%E5%92%8C%E6%96%B9%E6%B3%95/" rel="prev" title="goland-函数和方法">
+                  <i class="fa fa-angle-left"></i> goland-函数和方法
+                </a>
+            </div>
+            <div class="post-nav-item">
+                <a href="/2023/11/26/goland-%E9%94%99%E8%AF%AF/" rel="next" title="goland-错误">
+                  goland-错误 <i class="fa fa-angle-right"></i>
+                </a>
+            </div>
+          </div>
+    </footer>
+  </article>
+</div>
+
+
+
+
+
+
+</div>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-inner">
+
+  <div class="copyright">
+    &copy; 
+    <span itemprop="copyrightYear">2023</span>
+    <span class="with-love">
+      <i class="fa fa-heart"></i>
     </span>
-    <span class="konga2">
-    <div id="text_output"  text_="center";></div>
-    </div>
-</span>
-
-</footer>
-
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-
-<bokebangquan>
-<!-- 博客版权 -->
-<p><strong>
-  作者: yang-2023
-  <br>
-  </p>
-
-
-
-</bokebangqua>
-
-
+    <span class="author" itemprop="copyrightHolder"></span>
   </div>
-  
-<script src="/jquery.min.js"></script>
+  <div class="powered-by">由 <a href="https://hexo.io/" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.js.org/muse/" rel="noopener" target="_blank">NexT.Muse</a> 强力驱动
+  </div>
+
+    </div>
+  </footer>
 
   
-<script src="/main.js"></script>
+  <div class="toggle sidebar-toggle" role="button">
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+  </div>
+  <div class="sidebar-dimmer"></div>
+  <div class="back-to-top" role="button" aria-label="返回顶部">
+    <i class="fa fa-arrow-up fa-lg"></i>
+    <span>0%</span>
+  </div>
 
-  </body>
+<noscript>
+  <div class="noscript-warning">Theme NexT works best with JavaScript enabled</div>
+</noscript>
+
+
+  
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.2/anime.min.js" integrity="sha256-tc4b48P1MPGS4PJXHRlChGCW1mEZy62jS/3JEsSHPzU=" crossorigin="anonymous"></script>
+<script src="/js/comments.js"></script><script src="/js/utils.js"></script><script src="/js/motion.js"></script><script src="/js/schemes/muse.js"></script><script src="/js/next-boot.js"></script>
+
+  
+
+
+
+
+
+
+  
+
+
+
+
+
+</body>
 </html>
