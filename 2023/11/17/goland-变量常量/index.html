@@ -1,10 +1,174 @@
-{% extends "_layout.swig" %}
-{% import '_macro/post.swig' as post_template %}
+<!DOCTYPE HTML>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>goland-变量常量 | Hexo</title>
 
-{% block title %} {{ page.title }} - {{ config.title }} {% endblock %}
+  
+  <meta name="author" content="yangyan">
+  
 
-{% block content %}
-    <div id="primary">
-        {{ post_template.render(page) }}
+  
+  <meta name="description" content="变量常量定义1.普通定义方法
+1var i int = 2
+
+2.默认int类型.go语言有类型推导的作用
+1var i=10
+
+3.简短声明
+1i:=10
+
+4.一次多个声明
+1234var(j int=0k =0)
+
+类型1.整形：分为有符号和无符号类型 有符号类型int,int8,int16…">
+  
+
+  
+  
+  <meta name="keywords" content="">
+  
+
+  <meta id="viewport" name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no, minimal-ui">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+
+  <meta property="og:title" content="goland-变量常量"/>
+
+  <meta property="og:site_name" content="Hexo"/>
+
+  
+  <meta property="og:image" content="/favicon.ico"/>
+  
+
+  <link href="/favicon.ico" rel="icon">
+  <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
+  <link rel="stylesheet" href="/css/style.css" media="screen" type="text/css">
+<meta name="generator" content="Hexo 6.3.0"></head>
+
+
+<body>
+<div class="blog">
+  <div class="content">
+
+    <header>
+  <div class="site-branding">
+    <h1 class="site-title">
+      <a href="/">Hexo</a>
+    </h1>
+    <p class="site-description"></p>
+  </div>
+  <nav class="site-navigation">
+    <ul>
+      
+    </ul>
+  </nav>
+</header>
+
+    <main class="site-main posts-loop">
+    <article>
+
+  
+    
+    <h3 class="article-title"><span>goland-变量常量</span></h3>
+    
+  
+
+  <div class="article-top-meta">
+    <span class="posted-on">
+      <a href="/2023/11/17/goland-变量常量/" rel="bookmark">
+        <time class="entry-date published" datetime="2023-11-17T06:32:30.000Z">
+          2023-11-17
+        </time>
+      </a>
+    </span>
+  </div>
+
+
+  
+
+  <div class="article-content">
+    <div class="entry">
+      
+        <h4 id="变量常量"><a href="#变量常量" class="headerlink" title="变量常量"></a>变量常量</h4><h5 id="定义"><a href="#定义" class="headerlink" title="定义"></a>定义</h5><p>1.普通定义方法<!--方法定义的变量必须使用--></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">var i int = 2</span><br></pre></td></tr></table></figure>
+
+<p>2.默认int类型.go语言有类型推导的作用</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">var i=10</span><br></pre></td></tr></table></figure>
+
+<p>3.简短声明</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">i:=10</span><br></pre></td></tr></table></figure>
+
+<p>4.一次多个声明</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">var(</span><br><span class="line">j int=0</span><br><span class="line">k =0</span><br><span class="line">)</span><br></pre></td></tr></table></figure>
+
+<h5 id="类型"><a href="#类型" class="headerlink" title="类型"></a>类型</h5><p>1.整形：分为有符号和无符号类型 有符号类型int,int8,int16…无符号类型uint,uint8…  差别在于有符号整形的表示可以为负数</p>
+<p>2.浮点型：相较于float32而言float64是更常用的浮点型.相比之下精度更高.误差更小</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">var f32 float32 =6.3663363663</span><br><span class="line">var f64 float64 =5.662626</span><br><span class="line">fmt.Println(f32,f64)</span><br></pre></td></tr></table></figure>
+
+<p><em>实行代码发现64位丢失数据更少</em></p>
+<p>3.布尔类型</p>
+<p>布尔类型只有false和true两种.也可用于一元操作符！ 二元操作符&amp;&amp;和||逻辑与和逻辑或</p>
+<p>4.字符串</p>
+<p>字符串类型通过string来声明.+号可以用来字符串的相加</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">var s1=&quot;sss&quot;</span><br><span class="line">var s2 = &quot;aaa&quot;</span><br><span class="line">println(s1+s2)</span><br></pre></td></tr></table></figure>
+
+<h5 id="地址"><a href="#地址" class="headerlink" title="地址"></a>地址</h5><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">pi:=&amp;i</span><br><span class="line">//pi指向i的地址</span><br></pre></td></tr></table></figure>
+
+<h5 id="常量"><a href="#常量" class="headerlink" title="常量"></a>常量</h5><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">//const定义常量</span><br><span class="line">//iota用来初始化常量的</span><br><span class="line">const(</span><br><span class="line">one=1</span><br><span class="line">two=2</span><br><span class="line">three=3</span><br><span class="line">)</span><br><span class="line">const(</span><br><span class="line">one=1+itoa</span><br><span class="line">two </span><br><span class="line">three)</span><br><span class="line">//两个代码效果是一样的</span><br></pre></td></tr></table></figure>
+
+<h5 id="格式转换"><a href="#格式转换" class="headerlink" title="格式转换"></a>格式转换</h5><p><em>go进行使用和计算式同类型的变量必须进行转换</em></p>
+<p>下面是int类型和string类型的转换方式</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">var i=3</span><br><span class="line">s:=strconv.Itoa(i)</span><br><span class="line">d,err:=strconv.Atoi(s)</span><br><span class="line">fmt.Println(s,d,err)</span><br></pre></td></tr></table></figure>
+
+<p>强制转换int和float类型</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">i2f:=float64(i)</span><br><span class="line">f2i:=int(f64)</span><br></pre></td></tr></table></figure>
+
+
+      
     </div>
-{% endblock %}
+
+  </div>
+
+  <div class="article-footer">
+    <div class="article-meta pull-left">
+
+    
+
+    
+
+    </div>
+
+    
+  </div>
+</article>
+
+  
+
+
+
+
+
+
+
+
+
+    </main>
+
+    <footer class="site-footer">
+  <p class="site-info">
+    Proudly powered by <a href="https://hexo.io/" target="_blank">Hexo</a> and
+    Theme by <a href="https://github.com/CodeDaraW/Hacker" target="_blank">Hacker</a>
+    </br>
+    
+    &copy; 2023 yangyan
+    
+  </p>
+</footer>
+    
+    
+  </div>
+</div>
+</body>
+</html>

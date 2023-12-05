@@ -1,10 +1,160 @@
-{% extends "_layout.swig" %}
-{% import '_macro/post.swig' as post_template %}
+<!DOCTYPE HTML>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>简单区块链的pow验证机制的添加 | Hexo</title>
 
-{% block title %} {{ page.title }} - {{ config.title }} {% endblock %}
+  
+  <meta name="author" content="yangyan">
+  
 
-{% block content %}
-    <div id="primary">
-        {{ post_template.render(page) }}
+  
+  <meta name="description" content="pow工作量证明机制工作量证明机制加到区块链里就是整个随机数，随机数在矿工挖矿时决定了下一个区块会给到谁的手里，随机数加到数据里边然后进行哈希值的计算，看看是不是在一个范围里边。
+进行pow扩展之前先给代码规范一下，创建一些文件夹进行代码的管理
+先整个文件夹constcoe然后整个全局变量，用来装挖">
+  
+
+  
+  
+  <meta name="keywords" content="">
+  
+
+  <meta id="viewport" name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no, minimal-ui">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+
+  <meta property="og:title" content="简单区块链的pow验证机制的添加"/>
+
+  <meta property="og:site_name" content="Hexo"/>
+
+  
+  <meta property="og:image" content="/favicon.ico"/>
+  
+
+  <link href="/favicon.ico" rel="icon">
+  <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
+  <link rel="stylesheet" href="/css/style.css" media="screen" type="text/css">
+<meta name="generator" content="Hexo 6.3.0"></head>
+
+
+<body>
+<div class="blog">
+  <div class="content">
+
+    <header>
+  <div class="site-branding">
+    <h1 class="site-title">
+      <a href="/">Hexo</a>
+    </h1>
+    <p class="site-description"></p>
+  </div>
+  <nav class="site-navigation">
+    <ul>
+      
+    </ul>
+  </nav>
+</header>
+
+    <main class="site-main posts-loop">
+    <article>
+
+  
+    
+    <h3 class="article-title"><span>简单区块链的pow验证机制的添加</span></h3>
+    
+  
+
+  <div class="article-top-meta">
+    <span class="posted-on">
+      <a href="/2023/12/02/简单区块链的pow验证机制的添加/" rel="bookmark">
+        <time class="entry-date published" datetime="2023-12-02T13:04:48.000Z">
+          2023-12-02
+        </time>
+      </a>
+    </span>
+  </div>
+
+
+  
+
+  <div class="article-content">
+    <div class="entry">
+      
+        <h4 id="pow工作量证明机制"><a href="#pow工作量证明机制" class="headerlink" title="pow工作量证明机制"></a>pow工作量证明机制</h4><p>工作量证明机制加到区块链里就是整个随机数，随机数在矿工挖矿时决定了下一个区块会给到谁的手里，随机数加到数据里边然后进行哈希值的计算，看看是不是在一个范围里边。</p>
+<p><em>进行pow扩展之前先给代码规范一下，创建一些文件夹进行代码的管理</em></p>
+<p>先整个文件夹constcoe然后整个全局变量，用来装挖矿的难度。</p>
+<figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//constcoe.go</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">package</span> constcoe</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> (</span><br><span class="line">	Difficulty = <span class="number">12</span></span><br><span class="line">)</span><br></pre></td></tr></table></figure>
+
+<p>整个函数包。先整个错误函数，错误直接停止。</p>
+<figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">Handle</span><span class="params">(err <span class="type">error</span>)</span></span> &#123;</span><br><span class="line">	<span class="keyword">if</span> err != <span class="literal">nil</span> &#123;</span><br><span class="line">		log.Panic(err)</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>把int64位转字节串函数移动过来和那个结构体什么的。</p>
+<p>候选区块加入到区块链是需要pow证明的，如果一个区块可以控制下一个区块是不是自己的时候，他就有了可以双重支付的能力。如果用了工作量证明机制，就可以避免这种情况的发生，首先矿工会筛选交易，然后因为存在随机值，谁也不能确定到底谁会获得下一个区块，这时候就可以解决双花问题了。</p>
+<p>首先我们要增加一些区块的头部信息。</p>
+<figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">type</span> Block <span class="keyword">struct</span> &#123;</span><br><span class="line">	Timestamp <span class="type">int64</span></span><br><span class="line">	Hash      []<span class="type">byte</span></span><br><span class="line">	PrevHash  []<span class="type">byte</span></span><br><span class="line">	Target    []<span class="type">byte</span> <span class="comment">//This line is new</span></span><br><span class="line">	Nonce     <span class="type">int64</span>  <span class="comment">//This line is new</span></span><br><span class="line">	Data      []<span class="type">byte</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>target作为结果哈希值的比较难度。nonce作为计算哈希值的随机数。</p>
+<p>创建一个proofofwork.go，内容放我们之前说的pow共识机制。</p>
+<p>首先我们需要一个可以返回目标难度值得函数，我们使用之前设定的一个常量difficulty来构造目标难度，<em>在实际区块链中目标难度之会根据网络情况定时进行调整</em>。</p>
+<figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">func</span> <span class="params">(b *Block)</span></span> GetTarget() []<span class="type">byte</span> &#123;</span><br><span class="line">	target := big.NewInt(<span class="number">1</span>)</span><br><span class="line">	target.Lsh(target, <span class="type">uint</span>(<span class="number">256</span>-constcoe.Difficulty))</span><br><span class="line">	<span class="keyword">return</span> target.Bytes()</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p><em>Lsh函数就是向左移位，移的越多目标难度值越大，哈希取值落在的空间就更多也就越容易找到符合条件的nonce。</em></p>
+<p>下面的函数是用作输入一段nonce值，进行区块的哈希值运算。不同的nonce值会返回不同的哈希值</p>
+<figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">func</span> <span class="params">(b *Block)</span></span> GetBase4Nonce(nonce <span class="type">int64</span>) []<span class="type">byte</span> &#123;</span><br><span class="line">	data := bytes.Join([][]<span class="type">byte</span>&#123;</span><br><span class="line">		utils.ToHexInt(b.Timestamp),</span><br><span class="line">		b.PrevHash,</span><br><span class="line">		utils.ToHexInt(<span class="type">int64</span>(nonce)),</span><br><span class="line">		b.Target,</span><br><span class="line">		b.Data,</span><br><span class="line">	&#125;,</span><br><span class="line">		[]<span class="type">byte</span>&#123;&#125;,</span><br><span class="line">	)</span><br><span class="line">	<span class="keyword">return</span> data</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>现在对于任意一个区块，我们都能去寻找一个合适的nonce了。</p>
+<figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">func</span> <span class="params">(b *Block)</span></span> FindNonce() <span class="type">int64</span> &#123;</span><br><span class="line">	<span class="keyword">var</span> intHash big.Int</span><br><span class="line">	<span class="keyword">var</span> intTarget big.Int</span><br><span class="line">	<span class="keyword">var</span> hash [<span class="number">32</span>]<span class="type">byte</span></span><br><span class="line">	<span class="keyword">var</span> nonce <span class="type">int64</span></span><br><span class="line">	nonce = <span class="number">0</span></span><br><span class="line">	intTarget.SetBytes(b.Target)</span><br><span class="line"></span><br><span class="line">	<span class="keyword">for</span> nonce &lt; math.MaxInt64 &#123;</span><br><span class="line">		data := b.GetBase4Nonce(nonce)</span><br><span class="line">		hash = sha256.Sum256(data)</span><br><span class="line">		intHash.SetBytes(hash[:])</span><br><span class="line">		<span class="keyword">if</span> intHash.Cmp(&amp;intTarget) == <span class="number">-1</span> &#123;</span><br><span class="line">			<span class="keyword">break</span></span><br><span class="line">		&#125; <span class="keyword">else</span> &#123;</span><br><span class="line">			nonce++</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">return</span> nonce</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>比较两个整数的大小。如果<code>intHash.Cmp(&amp;intTarget)</code>返回-1，表示<code>intHash</code>小于<code>intTarget</code>。</p>
+<p>PoW我们已经实现了。回到block.go，调整以下函数。</p>
+<figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">func</span> <span class="params">(b *Block)</span></span> SetHash() &#123;</span><br><span class="line">	information := bytes.Join([][]<span class="type">byte</span>&#123;utils.ToHexInt(b.Timestamp), b.PrevHash, b.Target, utils.ToHexInt(b.Nonce), b.Data&#125;, []<span class="type">byte</span>&#123;&#125;)</span><br><span class="line">	hash := sha256.Sum256(information)</span><br><span class="line">	b.Hash = hash[:]</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">CreateBlock</span><span class="params">(prevhash, data []<span class="type">byte</span>)</span></span> *Block &#123;</span><br><span class="line">	block := Block&#123;time.Now().Unix(), []<span class="type">byte</span>&#123;&#125;, prevhash, []<span class="type">byte</span>&#123;&#125;, <span class="number">0</span>, data&#125;</span><br><span class="line">	block.Target = block.GetTarget()</span><br><span class="line">	block.Nonce = block.FindNonce()</span><br><span class="line">	block.SetHash()</span><br><span class="line">	<span class="keyword">return</span> &amp;block</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>然后就可以启动系统了，通过更改difficulty来调整难度。</p>
+
+      
     </div>
-{% endblock %}
+
+  </div>
+
+  <div class="article-footer">
+    <div class="article-meta pull-left">
+
+    
+
+    
+
+    </div>
+
+    
+  </div>
+</article>
+
+  
+
+
+
+
+
+
+
+
+
+    </main>
+
+    <footer class="site-footer">
+  <p class="site-info">
+    Proudly powered by <a href="https://hexo.io/" target="_blank">Hexo</a> and
+    Theme by <a href="https://github.com/CodeDaraW/Hacker" target="_blank">Hacker</a>
+    </br>
+    
+    &copy; 2023 yangyan
+    
+  </p>
+</footer>
+    
+    
+  </div>
+</div>
+</body>
+</html>

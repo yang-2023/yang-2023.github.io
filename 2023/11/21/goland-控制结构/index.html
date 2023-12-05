@@ -1,10 +1,150 @@
-{% extends "_layout.swig" %}
-{% import '_macro/post.swig' as post_template %}
+<!DOCTYPE HTML>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>goland-控制结构 | Hexo</title>
 
-{% block title %} {{ page.title }} - {{ config.title }} {% endblock %}
+  
+  <meta name="author" content="yangyan">
+  
 
-{% block content %}
-    <div id="primary">
-        {{ post_template.render(page) }}
+  
+  <meta name="description" content="1.if语句123456if 条件语句 &amp;#123;   &amp;#125;erse if 条件语句&amp;#123;   &amp;#125;else &amp;#123;         &amp;#125;
+
+2.switch选择语句1.分支较多选择switch语句.默认从上到下逐一分析.一旦满足条件就会执行并且返回.自带bre">
+  
+
+  
+  
+  <meta name="keywords" content="">
+  
+
+  <meta id="viewport" name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no, minimal-ui">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+
+  <meta property="og:title" content="goland-控制结构"/>
+
+  <meta property="og:site_name" content="Hexo"/>
+
+  
+  <meta property="og:image" content="/favicon.ico"/>
+  
+
+  <link href="/favicon.ico" rel="icon">
+  <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
+  <link rel="stylesheet" href="/css/style.css" media="screen" type="text/css">
+<meta name="generator" content="Hexo 6.3.0"></head>
+
+
+<body>
+<div class="blog">
+  <div class="content">
+
+    <header>
+  <div class="site-branding">
+    <h1 class="site-title">
+      <a href="/">Hexo</a>
+    </h1>
+    <p class="site-description"></p>
+  </div>
+  <nav class="site-navigation">
+    <ul>
+      
+    </ul>
+  </nav>
+</header>
+
+    <main class="site-main posts-loop">
+    <article>
+
+  
+    
+    <h3 class="article-title"><span>goland-控制结构</span></h3>
+    
+  
+
+  <div class="article-top-meta">
+    <span class="posted-on">
+      <a href="/2023/11/21/goland-控制结构/" rel="bookmark">
+        <time class="entry-date published" datetime="2023-11-21T10:15:47.000Z">
+          2023-11-21
+        </time>
+      </a>
+    </span>
+  </div>
+
+
+  
+
+  <div class="article-content">
+    <div class="entry">
+      
+        <h4 id="1-if语句"><a href="#1-if语句" class="headerlink" title="1.if语句"></a>1.if语句</h4><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">if 条件语句 &#123;</span><br><span class="line">   </span><br><span class="line">&#125;erse if 条件语句&#123;</span><br><span class="line">   &#125;else &#123;</span><br><span class="line">      </span><br><span class="line">   &#125;</span><br></pre></td></tr></table></figure>
+
+<h4 id="2-switch选择语句"><a href="#2-switch选择语句" class="headerlink" title="2.switch选择语句"></a>2.switch选择语句</h4><p>1.分支较多选择switch语句.默认从上到下逐一分析.一旦满足条件就会执行并且返回.自带break。</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">switch i:=6; &#123;</span><br><span class="line">   case i&gt;10:</span><br><span class="line">      fmt.Println(i)</span><br><span class="line">   case i&gt;5 &amp;&amp; i&lt;10:</span><br><span class="line">      fmt.Println(i)</span><br><span class="line">    default:</span><br><span class="line">      fmt.Println(&quot;i&lt;=5&quot;)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>2.switch后带表达式.</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">switch i:=6;j</span><br></pre></td></tr></table></figure>
+
+<p>假如设置</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">var j=3.66</span><br></pre></td></tr></table></figure>
+
+<p>那么</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">switch i:=6;j &#123;</span><br><span class="line">   case i&gt;10:</span><br><span class="line">      fmt.Println(i)</span><br><span class="line">   case i&gt;5 &amp;&amp; i&lt;10:</span><br><span class="line">      fmt.Println(i)</span><br><span class="line">    default:</span><br><span class="line">      fmt.Println(&quot;i&lt;=5&quot;)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>会整体报错.因为case后的值的类型必须是和；后的j类型一样</p>
+<p>同样也可以是字符串类型等</p>
+<p>3.switch语句较为强大</p>
+<p>所以表达式可以很随意</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">switch 1&lt;5 &#123;</span><br><span class="line">   case true:</span><br><span class="line">      fmt.Println(&quot;t&quot;)</span><br><span class="line">   case false:</span><br><span class="line">      fmt.Println(&quot;f&quot;)</span><br><span class="line">    default:</span><br><span class="line">      fmt.Println(&quot;n&quot;)</span><br><span class="line"></span><br><span class="line">   &#125;</span><br></pre></td></tr></table></figure>
+
+<h4 id="3-for语句"><a href="#3-for语句" class="headerlink" title="3.for语句"></a>3.for语句</h4><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">for 简单语句;条件;更新语句 &#123;</span><br><span class="line">     </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+      
     </div>
-{% endblock %}
+
+  </div>
+
+  <div class="article-footer">
+    <div class="article-meta pull-left">
+
+    
+
+    
+
+    </div>
+
+    
+  </div>
+</article>
+
+  
+
+
+
+
+
+
+
+
+
+    </main>
+
+    <footer class="site-footer">
+  <p class="site-info">
+    Proudly powered by <a href="https://hexo.io/" target="_blank">Hexo</a> and
+    Theme by <a href="https://github.com/CodeDaraW/Hacker" target="_blank">Hacker</a>
+    </br>
+    
+    &copy; 2023 yangyan
+    
+  </p>
+</footer>
+    
+    
+  </div>
+</div>
+</body>
+</html>

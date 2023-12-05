@@ -1,10 +1,213 @@
-{% extends "_layout.swig" %}
-{% import '_macro/post.swig' as post_template %}
+<!DOCTYPE HTML>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>goland-struct和interface | Hexo</title>
 
-{% block title %} {{ page.title }} - {{ config.title }} {% endblock %}
+  
+  <meta name="author" content="yangyan">
+  
 
-{% block content %}
-    <div id="primary">
-        {{ post_template.render(page) }}
+  
+  <meta name="description" content="结构体结构体的定义这里我们定义了一个结构体类型，名称为IPhone，含有字段name
+123type Phone struct &amp;#123;  name string&amp;#125;
+
+在定义结构体时，字段的声明方法与平时声明一个变量是一样的，都是变量名在前，类型在后，只不过在结构体中，变量名称为成员名">
+  
+
+  
+  
+  <meta name="keywords" content="">
+  
+
+  <meta id="viewport" name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no, minimal-ui">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+
+  <meta property="og:title" content="goland-struct和interface"/>
+
+  <meta property="og:site_name" content="Hexo"/>
+
+  
+  <meta property="og:image" content="/favicon.ico"/>
+  
+
+  <link href="/favicon.ico" rel="icon">
+  <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
+  <link rel="stylesheet" href="/css/style.css" media="screen" type="text/css">
+<meta name="generator" content="Hexo 6.3.0"></head>
+
+
+<body>
+<div class="blog">
+  <div class="content">
+
+    <header>
+  <div class="site-branding">
+    <h1 class="site-title">
+      <a href="/">Hexo</a>
+    </h1>
+    <p class="site-description"></p>
+  </div>
+  <nav class="site-navigation">
+    <ul>
+      
+    </ul>
+  </nav>
+</header>
+
+    <main class="site-main posts-loop">
+    <article>
+
+  
+    
+    <h3 class="article-title"><span>goland-struct和interface</span></h3>
+    
+  
+
+  <div class="article-top-meta">
+    <span class="posted-on">
+      <a href="/2023/11/23/goland-struct和interface/" rel="bookmark">
+        <time class="entry-date published" datetime="2023-11-23T04:30:38.000Z">
+          2023-11-23
+        </time>
+      </a>
+    </span>
+  </div>
+
+
+  
+
+  <div class="article-content">
+    <div class="entry">
+      
+        <h4 id="结构体"><a href="#结构体" class="headerlink" title="结构体"></a>结构体</h4><h5 id="结构体的定义"><a href="#结构体的定义" class="headerlink" title="结构体的定义"></a>结构体的定义</h5><p>这里我们定义了一个结构体类型，名称为IPhone，含有字段name</p>
+<figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">type</span> Phone <span class="keyword">struct</span> &#123;</span><br><span class="line">  name <span class="type">string</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>在定义结构体时，字段的声明方法与平时声明一个变量是一样的，都是变量名在前，类型在后，只不过在结构体中，变量名称为成员名或字段名。</p>
+<h5 id="声明和使用"><a href="#声明和使用" class="headerlink" title="声明和使用"></a>声明和使用</h5><figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">p:=IPhone&#123;</span><br><span class="line">   name: <span class="string">&quot;ASD&quot;</span>&#125;</span><br><span class="line">fmt.Println(p.name)</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">p:=IPhone&#123;&quot;ASD&quot;&#125;</span><br></pre></td></tr></table></figure>
+
+<p>两种情况都可以编译通过，甚至可以只声明其中的一部分，那么没声明的部分就默认零值</p>
+<h5 id="结构体的字段"><a href="#结构体的字段" class="headerlink" title="结构体的字段"></a>结构体的字段</h5><figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">type</span> IPhone <span class="keyword">struct</span> &#123;</span><br><span class="line">   name <span class="type">string</span></span><br><span class="line">   aa kk</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">type</span> kk <span class="keyword">struct</span> &#123;</span><br><span class="line">   id <span class="type">int</span></span><br></pre></td></tr></table></figure>
+
+<p>用代码描述现实中的实体会更匹配，复用程度也更高。对于嵌套结构体字段的结构体，其初始化与正常的结构体大同小异，只需要根据字段对应的类型初始化即可。</p>
+<figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">p:=IPhone&#123;</span><br><span class="line">name: <span class="string">&quot;s&quot;</span>,</span><br><span class="line">aa: kk&#123;</span><br><span class="line"><span class="number">6</span>&#125;,</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>利用点操作符调用字段的值</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">fmt.Println(p.aa.id)</span><br></pre></td></tr></table></figure>
+
+<h4 id="接口"><a href="#接口" class="headerlink" title="接口"></a>接口</h4><h5 id="接口的定义"><a href="#接口的定义" class="headerlink" title="接口的定义"></a>接口的定义</h5><p>接口要做的是定义好约定，告诉调用方自己可以做什么，但调用方不用知道它的内部实现。</p>
+<p>接口的定义与结构体稍微有些差别，虽然都以type关键字开始，但接口的关键字是interface。</p>
+<figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">type</span> Phone <span class="keyword">interface</span> &#123;</span><br><span class="line">   speak()</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>定义一个接口Phone 拥有speak方法，Phone接口告诉调用者他拥有方法speak，至于谁speak如何speak调用者不用关心，这是由接口实现者来做的。</p>
+<h5 id="接口的实现"><a href="#接口的实现" class="headerlink" title="接口的实现"></a>接口的实现</h5><p>接口的实现者必须是一个具体的类型</p>
+<figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">func</span> <span class="params">(a IPhone)</span></span> speak() <span class="type">string</span>&#123;</span><br><span class="line">	<span class="keyword">return</span> <span class="string">&quot;iiii&quot;</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>这里用Iphone来做示例，让他实现Phone接口。</p>
+<p>给Iphone定义一个方法，这个方法与接口里的方法的签名一样，这样的结构体Iphone就实现了这个Phone的接口，接口并没有通过任何的关键词来实现，所以go的接口是隐式实现的。</p>
+<p><strong>如果一个接口有许多个方法，那么需要实现接口的每个方法才是实现了这个接口。</strong></p>
+<p>实现了接口之后我们就可以使用它了。</p>
+<figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">print</span><span class="params">(p Phone)</span></span>&#123;</span><br><span class="line">	fmt.Println(p.speak())</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>定义一个接口可以用来打印实现Phone接口的函数，它接受一个Phone接口类型的参数，然后打印出，不用考虑具体的类型实现。</p>
+<figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">a:=IPhone&#123;<span class="string">&quot;ASD&quot;</span>&#125;</span><br><span class="line"><span class="built_in">print</span>(a)</span><br></pre></td></tr></table></figure>
+
+<h5 id="值和指针类型接收者"><a href="#值和指针类型接收者" class="headerlink" title="值和指针类型接收者"></a>值和指针类型接收者</h5><p>有值类型接收者和指针类型接收者两种。二者都可以调用方法，因为Go语言编译器自动做了转换，所以值类型接收者和指针类型接收者是等价的。但是在接口的实现中，值类型接收者和指针类型接收者不一样。</p>
+<p>把实现过程改成指针，依旧可以编译运行正常。这就证明了以值类型接收者实现接口的时候，不管是类型本身，还是该类型的指针类型，都实现了该接口。</p>
+<figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">print</span>(&amp;a)</span><br></pre></td></tr></table></figure>
+
+
+
+<p>实例中接收者（a Iphone）实现了Phone接口，那么Iphone和他的指针类型*Iphone都实现了Phone接口。</p>
+<p>接下来把接收者改为指针类型。</p>
+<figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">func</span> <span class="params">(a *IPhone)</span></span> speak() <span class="type">string</span>&#123;</span><br><span class="line">   <span class="keyword">return</span> <span class="string">&quot;iiii&quot;</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>修改成指针赖兴接收者后会发现，实例中的print（a），没办法编译成功，错误是IPhone没有实现Phone接口，这就证明了以指针类型接收者实现接口的时候，只有对应的指针类型才被认为实现了接口。</p>
+<p>可以这样解读：当值类型作为接收者时，person类型和<em>person类型都实现了该接口。当指针类型作为接收者时，只有</em>person类型实现了该接口。可以发现，实现接口的类型都有*person，这也表明指针类型比较万能，不管哪一种接收者，它都能实现该接口。</p>
+<h6 id="接口的理解是一个困难的过程-以下是我理解接口的过程和程序。"><a href="#接口的理解是一个困难的过程-以下是我理解接口的过程和程序。" class="headerlink" title="接口的理解是一个困难的过程,以下是我理解接口的过程和程序。"></a>接口的理解是一个困难的过程,以下是我理解接口的过程和程序。</h6><p>1.使用接口和不使用接口的两种方式：</p>
+<ol>
+<li>使用接口：</li>
+</ol>
+<figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> main</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> <span class="string">&quot;fmt&quot;</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">type</span> Doer <span class="keyword">interface</span> &#123;</span><br><span class="line">    Do()</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">type</span> Foo <span class="keyword">struct</span>&#123;&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="params">(f Foo)</span></span> Do() &#123;</span><br><span class="line">    fmt.Println(<span class="string">&quot;Foo does something.&quot;</span>)</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">type</span> Bar <span class="keyword">struct</span>&#123;&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="params">(b Bar)</span></span> Do() &#123;</span><br><span class="line">    fmt.Println(<span class="string">&quot;Bar does something else.&quot;</span>)</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">DoSomething</span><span class="params">(d Doer)</span></span> &#123;</span><br><span class="line">    d.Do()</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">main</span><span class="params">()</span></span> &#123;</span><br><span class="line">    f := Foo&#123;&#125;</span><br><span class="line">    b := Bar&#123;&#125;</span><br><span class="line"></span><br><span class="line">    DoSomething(f)</span><br><span class="line">    DoSomething(b)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>在这个例子中，我们定义了一个接口 <code>Doer</code> 和两个结构体 <code>Foo</code> 和 <code>Bar</code>。<code>Foo</code> 和 <code>Bar</code> 分别实现了 <code>Doer</code> 接口。在 <code>DoSomething</code> 函数中，我们接收一个 <code>Doer</code> 类型的参数，并调用其 <code>Do</code> 方法。这样，我们可以在 <code>main</code> 函数中传入 <code>Foo</code> 或 <code>Bar</code> 的实例，从而使得代码具有更好的灵活性。</p>
+<ol start="2">
+<li>不使用接口：</li>
+</ol>
+<figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> main</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> <span class="string">&quot;fmt&quot;</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">type</span> Foo <span class="keyword">struct</span>&#123;&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="params">(f Foo)</span></span> Do() &#123;</span><br><span class="line">    fmt.Println(<span class="string">&quot;Foo does something.&quot;</span>)</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">type</span> Bar <span class="keyword">struct</span>&#123;&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="params">(b Bar)</span></span> Do() &#123;</span><br><span class="line">    fmt.Println(<span class="string">&quot;Bar does something else.&quot;</span>)</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">DoSomethingWithFoo</span><span class="params">(f Foo)</span></span> &#123;</span><br><span class="line">    f.Do()</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">DoSomethingWithBar</span><span class="params">(b Bar)</span></span> &#123;</span><br><span class="line">    b.Do()</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">main</span><span class="params">()</span></span> &#123;</span><br><span class="line">    f := Foo&#123;&#125;</span><br><span class="line">    b := Bar&#123;&#125;</span><br><span class="line"></span><br><span class="line">    DoSomethingWithFoo(f)</span><br><span class="line">    DoSomethingWithBar(b)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>在这个例子中，我们没有使用接口。取而代之的是，我们为 <code>Foo</code> 和 <code>Bar</code> 分别定义了两个函数 <code>DoSomethingWithFoo</code> 和 <code>DoSomethingWithBar</code>。这样，我们也可以在 <code>main</code> 函数中调用这些函数，但相比于使用接口的方式，这种设计缺乏灵活性，因为每个函数只能处理一种类型的值。</p>
+<p>通过以上两个示例的对比，我们可以看到，使用接口可以使得我们的代码更具有抽象性、可替换性和灵活性。在需要抽象、可替换性或灵活性的场景中，使用接口是一个不错的选择。</p>
+<p><em>实现接口的作用是让用户的代码更具可读性，相同的代码出现的频率变低，更低的耦合度。</em></p>
+<h5 id="工厂函数"><a href="#工厂函数" class="headerlink" title="工厂函数"></a>工厂函数</h5><p>工厂函数一般用于创建自定义的结构体，便于使用者调用。</p>
+<figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">new</span><span class="params">(a <span class="type">string</span>)</span></span> *IPhone&#123;</span><br><span class="line">   <span class="keyword">return</span> &amp;IPhone&#123;name: a&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>我定义了一个工厂函数new,接受一个string的类型的参数，用于表示手机的名字，同时返回一个*Iphone。</p>
+<p>通过工厂函数创建自定义结构的方式，让调用者不用太关注结构体内部的字段，只用传给工厂函数就可以了。</p>
+<figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> main</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> <span class="string">&quot;fmt&quot;</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">type</span> Animal <span class="keyword">interface</span> &#123;</span><br><span class="line">    Speak() <span class="type">string</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">type</span> Dog <span class="keyword">struct</span>&#123;&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="params">(d Dog)</span></span> Speak() <span class="type">string</span> &#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="string">&quot;Woof!&quot;</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">type</span> Cat <span class="keyword">struct</span>&#123;&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="params">(c Cat)</span></span> Speak() <span class="type">string</span> &#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="string">&quot;Meow!&quot;</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">CreateAnimal</span><span class="params">(kind <span class="type">string</span>)</span></span> Animal &#123;</span><br><span class="line">    <span class="keyword">switch</span> kind &#123;</span><br><span class="line">    <span class="keyword">case</span> <span class="string">&quot;dog&quot;</span>:</span><br><span class="line">        <span class="keyword">return</span> Dog&#123;&#125;</span><br><span class="line">    <span class="keyword">case</span> <span class="string">&quot;cat&quot;</span>:</span><br><span class="line">        <span class="keyword">return</span> Cat&#123;&#125;</span><br><span class="line">    <span class="keyword">default</span>:</span><br><span class="line">        <span class="keyword">return</span> <span class="literal">nil</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">main</span><span class="params">()</span></span> &#123;</span><br><span class="line">    dog := CreateAnimal(<span class="string">&quot;dog&quot;</span>)</span><br><span class="line">    fmt.Println(dog.Speak()) <span class="comment">// 输出：Woof!</span></span><br><span class="line"></span><br><span class="line">    cat := CreateAnimal(<span class="string">&quot;cat&quot;</span>)</span><br><span class="line">    fmt.Println(cat.Speak()) <span class="comment">// 输出：Meow!</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>我们并不需要在意结构体内部的字段，只需要传给工厂函数就行了。</p>
+<h4 id="继承和组合"><a href="#继承和组合" class="headerlink" title="继承和组合"></a>继承和组合</h4><p>在Go语言中没有继承的概念，所以结构体、接口之间也没有父子关系，Go语言提倡的是组合，利用组合达到代码复用的目的，这也更灵活。类型的组合就是可以称之为嵌套。</p>
+<p>当然可以。以下是一个使用 Go 语言实现的简单嵌套示例。这个例子定义了一个嵌套结构体，用于表示学生和课程信息。</p>
+<figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> main</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> <span class="string">&quot;fmt&quot;</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">type</span> Student <span class="keyword">struct</span> &#123;</span><br><span class="line">    Name <span class="type">string</span></span><br><span class="line">    Age <span class="type">int</span></span><br><span class="line">    Course []Course</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">type</span> Course <span class="keyword">struct</span> &#123;</span><br><span class="line">    Name <span class="type">string</span></span><br><span class="line">    Credit <span class="type">int</span></span><br><span class="line">&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>我们先定义了一个名为 <code>Student</code> 的结构体，其中包含了姓名（Name）、年龄（Age）和课程（Course）信息。课程信息是由一个嵌套结构体 <code>Course</code> 表示。</p>
+<h4 id="类型断言"><a href="#类型断言" class="headerlink" title="类型断言"></a>类型断言</h4><p>有了接口和实现接口的类型，就会有类型断言。类型断言用来判断一个接口的值是否是实现该接口的某个具体类型。类型断言（Type Assertion）用于确定一个接口变量（interface{}）实际指向的类型。类型断言的语法形式如下：</p>
+<figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">value, ok := <span class="keyword">interface</span>&#123;&#125;.(T)</span><br></pre></td></tr></table></figure>
+
+<p>其中的 <code>value</code> 是类型为 <code>T</code> 的值，<code>ok</code> 是一个布尔值，表示断言是否成功。如果断言成功，<code>ok</code> 为 <code>true</code>，<code>value</code> 包含接口变量实际指向的值；如果断言失败，<code>ok</code> 为 <code>false</code>，<code>value</code> 为 <code>T</code> 类型的零值。</p>
+<p>以下是一个使用类型断言的示例：</p>
+<figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> main</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> <span class="string">&quot;fmt&quot;</span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">main</span><span class="params">()</span></span> &#123;</span><br><span class="line">    <span class="keyword">var</span> x <span class="keyword">interface</span>&#123;&#125; = <span class="string">&quot;Hello, World!&quot;</span></span><br><span class="line"></span><br><span class="line">    s, ok := x.(<span class="type">string</span>)</span><br><span class="line">    <span class="keyword">if</span> ok &#123;</span><br><span class="line">        fmt.Println(s)</span><br><span class="line">    &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">        fmt.Println(<span class="string">&quot;断言失败&quot;</span>)</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    i, ok := x.(<span class="type">int</span>)</span><br><span class="line">    <span class="keyword">if</span> ok &#123;</span><br><span class="line">        fmt.Println(i)</span><br><span class="line">    &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">        fmt.Println(<span class="string">&quot;断言失败&quot;</span>)</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>在这个例子中，我们首先定义了一个接口变量 <code>x</code>，并将其赋值为字符串 “Hello, World!”。然后，我们使用类型断言尝试将该接口变量转换为字符串类型和整数类型。成功时，<code>ok</code> 为 <code>true</code>，<code>value</code> 包含实际值；失败时，<code>ok</code> 为 <code>false</code>，<code>value</code> 为相应类型的零值。。</p>
+
+      
     </div>
-{% endblock %}
+
+  </div>
+
+  <div class="article-footer">
+    <div class="article-meta pull-left">
+
+    
+
+    
+
+    </div>
+
+    
+  </div>
+</article>
+
+  
+
+
+
+
+
+
+
+
+
+    </main>
+
+    <footer class="site-footer">
+  <p class="site-info">
+    Proudly powered by <a href="https://hexo.io/" target="_blank">Hexo</a> and
+    Theme by <a href="https://github.com/CodeDaraW/Hacker" target="_blank">Hacker</a>
+    </br>
+    
+    &copy; 2023 yangyan
+    
+  </p>
+</footer>
+    
+    
+  </div>
+</div>
+</body>
+</html>

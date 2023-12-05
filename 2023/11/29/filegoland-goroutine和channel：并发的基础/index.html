@@ -1,10 +1,184 @@
-{% extends "_layout.swig" %}
-{% import '_macro/post.swig' as post_template %}
+<!DOCTYPE HTML>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>goland-goroutine和channel：并发的基础 | Hexo</title>
 
-{% block title %} {{ page.title }} - {{ config.title }} {% endblock %}
+  
+  <meta name="author" content="yangyan">
+  
 
-{% block content %}
-    <div id="primary">
-        {{ post_template.render(page) }}
+  
+  <meta name="description" content="goroutine和channel：并发的基础啥是并发听说很有特点的就是goland的并发，所写的代码都按照顺序执行，也就是上一句代码执行完，才会执行下一句，这样的代码逻辑简单，也符合我们的阅读习惯。但这样是不够的，因为计算机很强大，如果只让它干完一件事情再干另外一件事情就太浪费了。比如一款音乐软件">
+  
+
+  
+  
+  <meta name="keywords" content="">
+  
+
+  <meta id="viewport" name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no, minimal-ui">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+
+  <meta property="og:title" content="goland-goroutine和channel：并发的基础"/>
+
+  <meta property="og:site_name" content="Hexo"/>
+
+  
+  <meta property="og:image" content="/favicon.ico"/>
+  
+
+  <link href="/favicon.ico" rel="icon">
+  <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
+  <link rel="stylesheet" href="/css/style.css" media="screen" type="text/css">
+<meta name="generator" content="Hexo 6.3.0"></head>
+
+
+<body>
+<div class="blog">
+  <div class="content">
+
+    <header>
+  <div class="site-branding">
+    <h1 class="site-title">
+      <a href="/">Hexo</a>
+    </h1>
+    <p class="site-description"></p>
+  </div>
+  <nav class="site-navigation">
+    <ul>
+      
+    </ul>
+  </nav>
+</header>
+
+    <main class="site-main posts-loop">
+    <article>
+
+  
+    
+    <h3 class="article-title"><span>goland-goroutine和channel：并发的基础</span></h3>
+    
+  
+
+  <div class="article-top-meta">
+    <span class="posted-on">
+      <a href="/2023/11/29/filegoland-goroutine和channel：并发的基础/" rel="bookmark">
+        <time class="entry-date published" datetime="2023-11-29T13:37:11.000Z">
+          2023-11-29
+        </time>
+      </a>
+    </span>
+  </div>
+
+
+  
+
+  <div class="article-content">
+    <div class="entry">
+      
+        <h3 id="goroutine和channel：并发的基础"><a href="#goroutine和channel：并发的基础" class="headerlink" title="goroutine和channel：并发的基础"></a>goroutine和channel：并发的基础</h3><h4 id="啥是并发"><a href="#啥是并发" class="headerlink" title="啥是并发"></a>啥是并发</h4><p>听说很有特点的就是goland的并发，所写的代码都按照顺序执行，也就是上一句代码执行完，才会执行下一句，这样的代码逻辑简单，也符合我们的阅读习惯。但这样是不够的，因为计算机很强大，如果只让它干完一件事情再干另外一件事情就太浪费了。比如一款音乐软件，使用它听音乐的时候还想让它下载歌曲，同一时刻做了两件事，在编程中，这就是并发。并发可以让你编写的程序在同一时刻多做几件事情。</p>
+<h4 id="进程和线程"><a href="#进程和线程" class="headerlink" title="进程和线程"></a>进程和线程</h4><h5 id="进程"><a href="#进程" class="headerlink" title="进程"></a>进程</h5><p>操作系统中，进程是非常重要的概念。当你启动一个软件，操作同会自动创建一个进程，进程是如阿健的工作空间，它包含了软件运行所需的所有资源。</p>
+<h5 id="线程"><a href="#线程" class="headerlink" title="线程"></a>线程</h5><p>线程是进程的执行空间，一个进程可以有多个线程，线程被操作系统调度执行，一些计算机桑德行为就会有多个线程被操作系统同时调度执行的情况，这就是线程的并发。</p>
+<h4 id="协程"><a href="#协程" class="headerlink" title="协程"></a>协程</h4><p>Go语言中没有线程的概念，只有协程，也称为goroutine。相比线程来说，协程更加轻量，一个程序可以随意启动成千上万个goroutine。</p>
+<p>goroutine被Go runtime所调度，这一点与线程不一样。也就是说，Go语言的并发是由Go自己调度的，自己决定同时执行多少个goroutine、什么时候执行哪几个。这些对于我们开发者来说完全透明，只需要在编码的时候告诉Go语言要启动几个goroutine，至于如何调度执行，我们不用关心。</p>
+<p>启动一个goroutine非常简单，go语言为我们提供了go关键字，相比其他语言简单许多。</p>
+<figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">go</span> fmt.Println(<span class="string">&quot;sad&quot;</span>)</span><br><span class="line">fmt.Println(<span class="string">&quot;qwe&quot;</span>)</span><br><span class="line">time.Sleep(time.Second)</span><br></pre></td></tr></table></figure>
+
+<p>这样启动一个协程，调用fmt.println函数打印sad。所以这段代码有两个协程，一个是main的，一个是go挂剪子启动的。</p>
+<p>语法就是go之后跟一个方法或者函数的调用。</p>
+<p>上边代码的输出情况是qwe 然后sad，</p>
+<p>示例中的time.Sleep(time.Second)表示等待一秒，这里是让main goroutine等一秒，不然main goroutine执行完毕程序就退出了</p>
+<p>意思就是另外找个线路执行我的sad，所以先后顺序看情况吧可能。</p>
+<h4 id="管道"><a href="#管道" class="headerlink" title="管道"></a>管道</h4><p>如果很多个协程，他们怎么通信呢？这就是channel要结局的问题</p>
+<h5 id="声明一个管道"><a href="#声明一个管道" class="headerlink" title="声明一个管道"></a>声明一个管道</h5><p>声明一个管道很简单</p>
+<figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pipe:<span class="built_in">make</span>(<span class="keyword">chan</span> <span class="type">string</span>)</span><br></pre></td></tr></table></figure>
+
+<p>chan是一个关键字，表示是channel类型。后面的string表示channel里的数据是string。通过channel声明可以看到，chan是一个集合类型。</p>
+<p>定义好一个管道就可以操作了。</p>
+<p>它只有两种操作，接受和发送</p>
+<p>1)接收：获取chan中的值，操作符为＜-chan。</p>
+<p>2)发送：向chan发送值，把值放在chan中，操作符为chan＜-。</p>
+<figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">main</span><span class="params">()</span></span>  &#123;</span><br><span class="line">ch:=<span class="built_in">make</span>(<span class="keyword">chan</span> <span class="type">string</span>)</span><br><span class="line"><span class="keyword">go</span> <span class="function"><span class="keyword">func</span><span class="params">()</span></span> &#123;</span><br><span class="line">   fmt.Println(<span class="string">&quot;asd00&quot;</span>)</span><br><span class="line">   ch &lt;-<span class="string">&quot;okokok&quot;</span></span><br><span class="line">&#125;()</span><br><span class="line">fmt.Println(<span class="string">&quot;我是协程&quot;</span>)</span><br><span class="line">v:=&lt;-ch</span><br><span class="line">fmt.Println(<span class="string">&quot;接受chan中的值是：&quot;</span>,v)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>程序不会在新的goroutine完成之前退出了，因为通过make创建的chan中没有值，而main goroutine又想从chan中获取值，获取不到就一直等待，等到另一个goroutine向chan发送值为止。</p>
+<p>因为最后一个print里的是想要接受v的值，但是v此时此刻没有值，所以一直等到另一个协程给v输送值。</p>
+<h5 id="无缓冲管道"><a href="#无缓冲管道" class="headerlink" title="无缓冲管道"></a>无缓冲管道</h5><p>在上面的示例中，使用make创建的chan就是一个无缓冲管道，它的容量是0，不能存储任何数据。所以无缓冲管道只起到传输数据的作用，数据并不会在管道中做任何停留。这也意味着，无缓冲管道的发送和接收操作是同时进行的，它也可以称为同步管道。</p>
+<h5 id="有缓冲管道"><a href="#有缓冲管道" class="headerlink" title="有缓冲管道"></a>有缓冲管道</h5><p>有缓冲通道是类似于一个可阻塞的队列，内部的元素先进先出。通过make第二个参数可以指定容量，进而创建一个有缓冲的管道。</p>
+<figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ch:=<span class="built_in">make</span>(<span class="keyword">chan</span> <span class="type">int</span>,<span class="number">5</span>)</span><br></pre></td></tr></table></figure>
+
+<p>我创建了一个容量为5的管道，内部的元素类型是int，也就是说管道内部存放5个类型的int元素，先进先出。</p>
+<p>一个有缓冲管道具备以下特点：</p>
+<p>1)有缓冲管道的内部有一个缓冲队列。</p>
+<p>2)发送操作是向队列的尾部插入元素，如果队列已满，则阻塞等待，直到另一个goroutine执行接收操作释放队列的空间。</p>
+<p>3)接收操作是从队列的头部获取元素并把它从队列中删除，如果队列为空，则阻塞等待，直到另一个goroutine执行，发送操作插入新的元素。</p>
+<p><em>缓冲管道类似一个队列，可以获取他的容量和里面元素的个数和容量。</em></p>
+<figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">ch:=<span class="built_in">make</span>(<span class="keyword">chan</span> <span class="type">int</span>,<span class="number">5</span>)</span><br><span class="line">ch&lt;<span class="number">-2</span></span><br><span class="line">ch&lt;<span class="number">-3</span></span><br><span class="line">fmt.Println(<span class="built_in">cap</span>(ch),<span class="built_in">len</span>(ch))</span><br></pre></td></tr></table></figure>
+
+<p><strong>无缓冲管道其实就是一个容量大小为0的管道。比如make(chan int，0)。</strong></p>
+<h5 id="关闭通道"><a href="#关闭通道" class="headerlink" title="关闭通道"></a>关闭通道</h5><figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">close</span>(ch)</span><br></pre></td></tr></table></figure>
+
+<p>如果一个管道被关闭，就不能向里面发送数据了，如果发送的话，会引起panic异常。但是我们还可以接收管道里的数据，如果管道里没有数据的话，接收的数据是元素类型的零值。</p>
+<h5 id="单向通道"><a href="#单向通道" class="headerlink" title="单向通道"></a>单向通道</h5><p>maybe有时候我们的特殊需求限制一个管道只能接受不能发送，或者限制一个管道只能发送不能接收，就叫做单向管道</p>
+<figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">onlysend:=<span class="built_in">make</span>(<span class="keyword">chan</span>&lt;- <span class="type">int</span>,<span class="number">5</span>)</span><br><span class="line">onlyreceive:=<span class="built_in">make</span>(&lt;-<span class="keyword">chan</span> <span class="type">int</span>,<span class="number">5</span>)</span><br></pre></td></tr></table></figure>
+
+<p>单向管道的声明也很简单，只需要在声明的时候带上＜-操作符即可。</p>
+<figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">conter</span><span class="params">(out <span class="keyword">chan</span>&lt;- <span class="type">int</span>)</span></span>  &#123;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>函数体内所用的参数out是一个只能发送的管道，所以函数体内只能对out函数进行发送操作，如果执行接受操作就不能编译通过了。</p>
+<h4 id="select-channel示例"><a href="#select-channel示例" class="headerlink" title="select+channel示例"></a>select+channel示例</h4><p>假设要从网上下载一个文件，我启动了3个goroutine进行下载，并把结果发送到3个channel（管道）中。其中，哪个先下载好，就会使用哪个channel的结果。</p>
+<p>在这种情况下，如果我们尝试获取第一个channel的结果，程序就会被阻塞，无法获取剩下两个channel的结果，也无法判断哪个先下载好。这个时候就需要用到多路复用操作了，在Go语言中，通过select语句可以实现多路复用</p>
+<figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> urls = []<span class="type">string</span>&#123;<span class="string">&quot;http://example.com/file1&quot;</span>, <span class="string">&quot;http://example.com/file2&quot;</span>, <span class="string">&quot;http://example.com/file3&quot;</span>&#125;</span><br><span class="line">	<span class="keyword">var</span> resultChannels = <span class="built_in">make</span>([]<span class="keyword">chan</span> <span class="type">string</span>, <span class="number">3</span>)</span><br><span class="line"></span><br><span class="line">	<span class="keyword">for</span> i := <span class="number">0</span>; i &lt; <span class="number">3</span>; i++ &#123;</span><br><span class="line">		<span class="keyword">go</span> downloadFile(urls[i], resultChannels[i])</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	<span class="keyword">for</span> i := <span class="number">0</span>; i &lt; <span class="number">3</span>; i++ &#123;</span><br><span class="line">		<span class="keyword">select</span> &#123;</span><br><span class="line">		<span class="keyword">case</span> result := &lt;-resultChannels[i]:</span><br><span class="line">			fmt.Println(<span class="string">&quot;Downloaded file:&quot;</span>, result)</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">    </span><br></pre></td></tr></table></figure>
+
+<p>在上面的代码中，我们定义了一个<code>downloadFile</code>函数来模拟文件下载任务，并将结果发送到对应的通道中。在<code>main</code>函数中，我们创建了3个通道，并启动了3个goroutine来执行下载任务。然后，我们使用<code>select</code>语句来监听每个通道，当某个通道有数据时，就立即获取到结果并打印出来。</p>
+
+      
     </div>
-{% endblock %}
+
+  </div>
+
+  <div class="article-footer">
+    <div class="article-meta pull-left">
+
+    
+
+    
+
+    </div>
+
+    
+  </div>
+</article>
+
+  
+
+
+
+
+
+
+
+
+
+    </main>
+
+    <footer class="site-footer">
+  <p class="site-info">
+    Proudly powered by <a href="https://hexo.io/" target="_blank">Hexo</a> and
+    Theme by <a href="https://github.com/CodeDaraW/Hacker" target="_blank">Hacker</a>
+    </br>
+    
+    &copy; 2023 yangyan
+    
+  </p>
+</footer>
+    
+    
+  </div>
+</div>
+</body>
+</html>
