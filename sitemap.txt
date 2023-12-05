@@ -1,3 +1,4 @@
+http://example.com/categories/index.html
 http://example.com/2023/11/15/%E7%88%AC%E8%99%AB%E7%88%AC%E5%8F%96b%E7%AB%99%E8%A7%86%E9%A2%91/
 http://example.com/tags/index.html
 http://example.com/2023/11/29/filegoland-goroutine%E5%92%8Cchannel%EF%BC%9A%E5%B9%B6%E5%8F%91%E7%9A%84%E5%9F%BA%E7%A1%80/
