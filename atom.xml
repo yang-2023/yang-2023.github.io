@@ -9,6 +9,11 @@
   <updated>2023-12-05T12:21:42.308Z</updated>
   <id>http://example.com/</id>
   
+  <author>
+    <name>yangyan</name>
+    
+  </author>
+  
   <generator uri="https://hexo.io/">Hexo</generator>
   
   <entry>
