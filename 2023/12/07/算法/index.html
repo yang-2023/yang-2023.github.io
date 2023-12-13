@@ -1,0 +1,564 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>算法 | 😀</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  
+  <meta name="keywords" content="goland算法" />
+  
+  
+  
+  
+  <meta name="description" content="1.请你用字符画的形式输出超级玛丽中的一个场景。1234567package mainimport &quot;fmt&quot;func main()  &amp;#123;fmt.Println(&quot;                ********\n               ************\n               ####....#.\n             #..">
+<meta property="og:type" content="article">
+<meta property="og:title" content="算法">
+<meta property="og:url" content="http://example.com/2023/12/07/%E7%AE%97%E6%B3%95/index.html">
+<meta property="og:site_name" content="😀">
+<meta property="og:description" content="1.请你用字符画的形式输出超级玛丽中的一个场景。1234567package mainimport &quot;fmt&quot;func main()  &amp;#123;fmt.Println(&quot;                ********\n               ************\n               ####....#.\n             #..">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://cdn.luogu.com.cn/upload/image_hosting/0bpummja.png">
+<meta property="article:published_time" content="2023-12-07T11:27:53.000Z">
+<meta property="article:modified_time" content="2023-12-13T13:10:44.511Z">
+<meta property="article:author" content="yangyan">
+<meta property="article:tag" content="goland">
+<meta property="article:tag" content="算法">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://cdn.luogu.com.cn/upload/image_hosting/0bpummja.png">
+  
+    <link rel="alternate" href="/atom.xml" title="😀" type="application/atom+xml">
+  
+
+  
+
+  <link rel="icon" href="/css/images/mylogo.jpg">
+  <link rel="apple-touch-icon" href="/css/images/mylogo.jpg">
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans|Montserrat:700" rel="stylesheet" type="text/css">
+  <link href="https://fonts.googleapis.com/css?family=Roboto:400,300,300italic,400italic" rel="stylesheet" type="text/css">
+  <link href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" rel="stylesheet">
+  <style type="text/css">
+    @font-face{font-family:futura-pt; src:url("/css/fonts/FuturaPTBold.otf") format("woff");font-weight:500;font-style:normal;}
+    @font-face{font-family:futura-pt-light; src:url("/css/fonts/FuturaPTBook.otf") format("woff");font-weight:lighter;font-style:normal;}
+    @font-face{font-family:futura-pt-italic; src:url("/css/fonts/FuturaPTBookOblique.otf") format("woff");font-weight:400;font-style:italic;}
+}
+
+  </style>
+  
+<link rel="stylesheet" href="/css/style.css">
+
+
+  
+<script src="/js/jquery-3.1.1.min.js"></script>
+
+  
+<script src="/js/bootstrap.js"></script>
+
+
+  <!-- Bootstrap core CSS -->
+  <link rel="stylesheet" href="/css/bootstrap.css" >
+
+  
+    
+<link rel="stylesheet" href="/css/dialog.css">
+
+  
+
+  
+
+  
+    <link rel="stylesheet" href="/css/header-post.css" >
+  
+
+  
+  
+  
+
+<meta name="generator" content="Hexo 6.3.0"></head>
+
+
+
+  <body data-spy="scroll" data-target="#toc" data-offset="50">
+
+
+  
+  <div id="container">
+    <div id="wrap">
+      
+        <header>
+
+    <div id="allheader" class="navbar navbar-default navbar-static-top" role="navigation">
+        <div class="navbar-inner">
+          
+          <div class="container"> 
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+              <span class="sr-only">Toggle navigation</span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+            </button>
+
+            
+              <a class="brand" style="
+                 margin-top: 0px;"  
+                href="#" data-toggle="modal" data-target="#myModal" >
+                  <img width="124px" height="124px" alt="Hike News" src="/css/images/mylogo.jpg">
+              </a>
+            
+            
+            <div class="navbar-collapse collapse">
+              <ul class="hnav navbar-nav">
+                
+                  <li> <a class="main-nav-link" href="/">首页</a> </li>
+                
+                  <li> <a class="main-nav-link" href="/archives">归档</a> </li>
+                
+                  <li> <a class="main-nav-link" href="/categories">分类</a> </li>
+                
+                  <li> <a class="main-nav-link" href="/tags">标签</a> </li>
+                
+                  <li> <a class="main-nav-link" href="/about">关于</a> </li>
+                
+                  <li><div id="search-form-wrap">
+
+    <form class="search-form">
+        <input type="text" class="ins-search-input search-form-input" placeholder="" />
+        <button type="submit" class="search-form-submit"></button>
+    </form>
+    <div class="ins-search">
+    <div class="ins-search-mask"></div>
+    <div class="ins-search-container">
+        <div class="ins-input-wrapper">
+            <input type="text" class="ins-search-input" placeholder="请输入关键词..." />
+            <span class="ins-close ins-selectable"><i class="fa fa-times-circle"></i></span>
+        </div>
+        <div class="ins-section-wrapper">
+            <div class="ins-section-container"></div>
+        </div>
+    </div>
+</div>
+<script>
+(function (window) {
+    var INSIGHT_CONFIG = {
+        TRANSLATION: {
+            POSTS: '文章',
+            PAGES: '页面',
+            CATEGORIES: '分类',
+            TAGS: '标签',
+            UNTITLED: '(无标题)',
+        },
+        ROOT_URL: '/',
+        CONTENT_URL: '/content.json',
+    };
+    window.INSIGHT_CONFIG = INSIGHT_CONFIG;
+})(window);
+</script>
+
+<script src="/js/insight.js"></script>
+
+
+</div></li>
+            </div>
+          </div>
+                
+      </div>
+    </div>
+
+</header>
+
+
+
+      
+            
+      <div id="content" class="outer">
+        
+          <section id="main" style="float:none;"><article id="file-算法" style="width: 75%; float:left;" class="article article-type-file" itemscope itemprop="blogPost" >
+  <div id="articleInner" class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="thumb" class="article-title" itemprop="name">
+      算法
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-meta">
+      
+	<a href="/2023/12/07/%E7%AE%97%E6%B3%95/" class="article-date">
+	  <time datetime="2023-12-07T11:27:53.000Z" itemprop="datePublished">2023-12-07</time>
+	</a>
+
+      
+    <a class="article-category-link" href="/categories/%E7%AE%97%E6%B3%95/">算法</a>
+
+      
+	<a class="article-views">
+	<span id="busuanzi_container_page_pv">
+		阅读量<span id="busuanzi_value_page_pv"></span>
+	</span>
+	</a>
+
+      
+
+    </div>
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="1-请你用字符画的形式输出超级玛丽中的一个场景。"><a href="#1-请你用字符画的形式输出超级玛丽中的一个场景。" class="headerlink" title="1.请你用字符画的形式输出超级玛丽中的一个场景。"></a>1.请你用字符画的形式输出超级玛丽中的一个场景。</h1><figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> main</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> <span class="string">&quot;fmt&quot;</span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">main</span><span class="params">()</span></span>  &#123;</span><br><span class="line">fmt.Println(<span class="string">&quot;                ********\n               ************\n               ####....#.\n             #..###.....##....\n             ###.......######              ###            ###\n                ...........               #...#          #...#\n               ##*#######                 #.#.#          #.#.#\n            ####*******######             #.#.#          #.#.#\n           ...#***.****.*###....          #...#          #...#\n           ....**********##.....           ###            ###\n           ....****    *****....\n             ####        ####\n           ######        ######\n##############################################################\n#...#......#.##...#......#.##...#......#.##------------------#\n###########################################------------------#\n#..#....#....##..#....#....##..#....#....#####################\n##########################################    #----------#\n#.....#......##.....#......##.....#......#    #----------#\n##########################################    #----------#\n#.#..#....#..##.#..#....#..##.#..#....#..#    #----------#\n##########################################    ############&quot;</span>)&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<h1 id="2-输入两个整数-�-�a-b，输出它们的和"><a href="#2-输入两个整数-�-�a-b，输出它们的和" class="headerlink" title="2.输入两个整数 �,�a,b，输出它们的和"></a>2.输入两个整数 �,�<em>a</em>,<em>b</em>，输出它们的和</h1><figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> main</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> <span class="string">&quot;fmt&quot;</span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">main</span><span class="params">()</span></span>  &#123;</span><br><span class="line">	<span class="keyword">var</span> a <span class="type">int</span></span><br><span class="line">	<span class="keyword">var</span> b <span class="type">int</span></span><br><span class="line">_,_=fmt.Scanln(&amp;a,&amp;b)</span><br><span class="line">	<span class="keyword">var</span> sum = a+b</span><br><span class="line">fmt.Println(sum)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h1 id="3"><a href="#3" class="headerlink" title="3."></a>3.</h1><p>“彼得·潘框架”是一种装饰文字，每一个字母都是由一个菱形框架。一个彼得·潘框架看起来像这样 （x是字母，#是框架）：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">..#..</span><br><span class="line">.#.#.</span><br><span class="line">#.X.#</span><br><span class="line">.#.#.</span><br><span class="line">..#..</span><br></pre></td></tr></table></figure>
+
+<p>然而，只是一个框架会有些沉闷，所以我们每遇到三个字母会把第三个字母用温迪框架把它框起来。温迪框架看起来像这样：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">..*..</span><br><span class="line">.*.*.</span><br><span class="line">*.X.*</span><br><span class="line">.*.*.</span><br><span class="line">..*..</span><br></pre></td></tr></table></figure>
+
+<p>当温迪和彼得·潘的框架重叠时，温迪框架覆盖在上面。 （见样例3和4）</p>
+<p>输入格式： 一行包含至多15个英文字母的大写字母。</p>
+<p>输出格式： 输出使用彼得·潘和温迪框架写成的5行文字。</p>
+<h2 id="输入输出样例"><a href="#输入输出样例" class="headerlink" title="输入输出样例"></a>输入输出样例</h2><p><strong>输入 #1</strong>复制</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">A</span><br></pre></td></tr></table></figure>
+
+<p><strong>输出 #1</strong>复制</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">..#..</span><br><span class="line">.#.#.</span><br><span class="line">#.A.#</span><br><span class="line">.#.#.</span><br><span class="line">..#..</span><br></pre></td></tr></table></figure>
+
+<p><strong>输入 #2</strong>复制</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">DOG</span><br></pre></td></tr></table></figure>
+
+<p><strong>输出 #2</strong>复制</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">..#...#...*..</span><br><span class="line">.#.#.#.#.*.*.</span><br><span class="line">#.D.#.O.*.G.*</span><br><span class="line">.#.#.#.#.*.*.</span><br><span class="line">..#...#...*..</span><br></pre></td></tr></table></figure>
+
+<p><strong>输入 #3</strong>复制</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ABCD</span><br></pre></td></tr></table></figure>
+
+<p><strong>输出 #3</strong>复制</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">..#...#...*...#..</span><br><span class="line">.#.#.#.#.*.*.#.#.</span><br><span class="line">#.A.#.B.*.C.*.D.#</span><br><span class="line">.#.#.#.#.*.*.#.#.</span><br><span class="line">..#...#...*...#..</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> main</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> (</span><br><span class="line">   <span class="string">&quot;fmt&quot;</span></span><br><span class="line">   <span class="string">&quot;strings&quot;</span></span><br><span class="line">)</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">main</span><span class="params">()</span></span> &#123;</span><br><span class="line">   <span class="keyword">var</span> input <span class="type">string</span></span><br><span class="line">   fmt.Scan(&amp;input)</span><br><span class="line">   input = strings.ToUpper(input)</span><br><span class="line">   <span class="keyword">for</span> g, _ := <span class="keyword">range</span> input &#123;</span><br><span class="line"></span><br><span class="line">      fmt.Print(<span class="string">&quot;.&quot;</span>)</span><br><span class="line">      <span class="keyword">if</span> (g+<span class="number">1</span>)%<span class="number">3</span> == <span class="number">0</span> &#123;</span><br><span class="line">         fmt.Print(<span class="string">&quot;.*.&quot;</span>)</span><br><span class="line">         <span class="keyword">continue</span></span><br><span class="line">      &#125;</span><br><span class="line">      fmt.Print(<span class="string">&quot;.#.&quot;</span>)</span><br><span class="line">   &#125;</span><br><span class="line">   fmt.Print(<span class="string">&quot;.&quot;</span>)</span><br><span class="line">   fmt.Println(<span class="string">&quot;&quot;</span>)</span><br><span class="line">   fmt.Print(<span class="string">&quot;.&quot;</span>)</span><br><span class="line">   <span class="keyword">for</span> g, _ := <span class="keyword">range</span> input &#123;</span><br><span class="line">      <span class="keyword">if</span> (g+<span class="number">1</span>)%<span class="number">3</span> == <span class="number">0</span> &#123;</span><br><span class="line">         fmt.Print(<span class="string">&quot;*.*.&quot;</span>)</span><br><span class="line">         <span class="keyword">continue</span></span><br><span class="line">      &#125;</span><br><span class="line">      fmt.Print(<span class="string">&quot;#.#.&quot;</span>)</span><br><span class="line">   &#125;</span><br><span class="line">   fmt.Println(<span class="string">&quot;&quot;</span>)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">   fmt.Print(<span class="string">&quot;#&quot;</span>)</span><br><span class="line">   <span class="keyword">for</span> g, va := <span class="keyword">range</span> input &#123;</span><br><span class="line">      <span class="keyword">if</span> (g+<span class="number">2</span>)%<span class="number">3</span> == <span class="number">0</span> || (g+<span class="number">1</span>)%<span class="number">3</span>==<span class="number">0</span>&#123;</span><br><span class="line">         <span class="keyword">if</span> g+<span class="number">1</span>==<span class="built_in">len</span>(input)&amp;&amp;(g+<span class="number">1</span>)%<span class="number">3</span>!=<span class="number">0</span> &#123;</span><br><span class="line">            fmt.Printf(<span class="string">&quot;.%c.#&quot;</span>, va)</span><br><span class="line">            <span class="keyword">continue</span></span><br><span class="line">         &#125;</span><br><span class="line">         fmt.Printf(<span class="string">&quot;.%c.*&quot;</span>, va)</span><br><span class="line">         <span class="keyword">continue</span></span><br><span class="line">      &#125;</span><br><span class="line">      fmt.Printf(<span class="string">&quot;.%c.#&quot;</span>,va)</span><br><span class="line">   &#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">   fmt.Println(<span class="string">&quot;&quot;</span>)</span><br><span class="line">   fmt.Print(<span class="string">&quot;.&quot;</span>)</span><br><span class="line">   <span class="keyword">for</span> g, _ := <span class="keyword">range</span> input &#123;</span><br><span class="line">      <span class="keyword">if</span> (g+<span class="number">1</span>)%<span class="number">3</span> == <span class="number">0</span> &#123;</span><br><span class="line">         fmt.Print(<span class="string">&quot;*.*.&quot;</span>)</span><br><span class="line">         <span class="keyword">continue</span></span><br><span class="line">      &#125;</span><br><span class="line">      fmt.Print(<span class="string">&quot;#.#.&quot;</span>)</span><br><span class="line">   &#125;</span><br><span class="line">   fmt.Println(<span class="string">&quot;&quot;</span>)</span><br><span class="line">   <span class="keyword">for</span> g, _ := <span class="keyword">range</span> input &#123;</span><br><span class="line"></span><br><span class="line">      fmt.Print(<span class="string">&quot;.&quot;</span>)</span><br><span class="line">      <span class="keyword">if</span> (g+<span class="number">1</span>)%<span class="number">3</span> == <span class="number">0</span> &#123;</span><br><span class="line">         fmt.Print(<span class="string">&quot;.*.&quot;</span>)</span><br><span class="line">         <span class="keyword">continue</span></span><br><span class="line">      &#125;</span><br><span class="line">      fmt.Print(<span class="string">&quot;.#.&quot;</span>)</span><br><span class="line">   &#125;</span><br><span class="line">   fmt.Print(<span class="string">&quot;.&quot;</span>)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>真的麻烦啊我超，差点没死了，不过就是控制语句的充分利用，成功了就觉得其实没什么难度了😶。</p>
+<h1 id="4-题目描述"><a href="#4-题目描述" class="headerlink" title="4.题目描述"></a>4.题目描述</h1><p>为了准备一个独特的颁奖典礼，组织者在会场的一片矩形区域（可看做是平面直角坐标系的第一象限）铺上一些矩形地毯。一共有 �<em>n</em> 张地毯，编号从 11 到 �<em>n</em>。现在将这些地毯按照编号从小到大的顺序平行于坐标轴先后铺设，后铺的地毯覆盖在前面已经铺好的地毯之上。</p>
+<p>地毯铺设完成后，组织者想知道覆盖地面某个点的最上面的那张地毯的编号。注意：在矩形地毯边界和四个顶点上的点也算被地毯覆盖。</p>
+<h2 id="输入格式"><a href="#输入格式" class="headerlink" title="输入格式"></a>输入格式</h2><p>输入共 �+2<em>n</em>+2 行。</p>
+<p>第一行，一个整数 �<em>n</em>，表示总共有 �<em>n</em> 张地毯。</p>
+<p>接下来的 �<em>n</em> 行中，第 �+1<em>i</em>+1 行表示编号 �<em>i</em> 的地毯的信息，包含四个整数 �,�,�,�<em>a</em>,<em>b</em>,<em>g</em>,<em>k</em>，每两个整数之间用一个空格隔开，分别表示铺设地毯的左下角的坐标 (�,�)(<em>a</em>,<em>b</em>) 以及地毯在 �<em>x</em> 轴和 �<em>y</em> 轴方向的长度。</p>
+<p>第 �+2<em>n</em>+2 行包含两个整数 �<em>x</em> 和 �<em>y</em>，表示所求的地面的点的坐标 (�,�)(<em>x</em>,<em>y</em>)。</p>
+<h2 id="输出格式"><a href="#输出格式" class="headerlink" title="输出格式"></a>输出格式</h2><p>输出共 11 行，一个整数，表示所求的地毯的编号；若此处没有被地毯覆盖则输出 <code>-1</code>。</p>
+<h2 id="输入输出样例-1"><a href="#输入输出样例-1" class="headerlink" title="输入输出样例"></a>输入输出样例</h2><p><strong>输入 #1</strong>复制</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">3</span><br><span class="line">1 0 2 3</span><br><span class="line">0 2 3 3</span><br><span class="line">2 1 3 3</span><br><span class="line">2 2</span><br></pre></td></tr></table></figure>
+
+<p><strong>输出 #1</strong>复制</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">3</span><br></pre></td></tr></table></figure>
+
+<p><strong>输入 #2</strong>复制</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">3</span><br><span class="line">1 0 2 3</span><br><span class="line">0 2 3 3</span><br><span class="line">2 1 3 3</span><br><span class="line">4 5</span><br></pre></td></tr></table></figure>
+
+<p><strong>输出 #2</strong>复制</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">-1</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> main</span><br><span class="line"><span class="keyword">import</span> (<span class="string">&quot;fmt&quot;</span>)</span><br><span class="line"><span class="keyword">type</span> di <span class="keyword">struct</span> &#123;ditans []*ditan&#125;</span><br><span class="line"><span class="keyword">type</span> ditan <span class="keyword">struct</span> &#123;</span><br><span class="line">   a <span class="type">int</span></span><br><span class="line">   b <span class="type">int</span></span><br><span class="line">   g <span class="type">int</span></span><br><span class="line">   k <span class="type">int</span></span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">creatditan</span><span class="params">(a,b,g,k <span class="type">int</span>)</span></span> *ditan &#123;ditan:=ditan&#123;a,b,g,k&#125;</span><br><span class="line"><span class="keyword">return</span> &amp;ditan&#125;</span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="params">(dit *di)</span></span>addditan(a,b,g,k <span class="type">int</span>)&#123;newditan:=creatditan(a,b,g,k)</span><br><span class="line">dit.ditans=<span class="built_in">append</span>(dit.ditans,newditan)</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">main</span><span class="params">()</span></span> &#123;</span><br><span class="line">   <span class="keyword">var</span> (n <span class="type">int</span></span><br><span class="line">   l <span class="type">int</span></span><br><span class="line">   a, b, g, k <span class="type">int</span></span><br><span class="line">   )</span><br><span class="line">   fmt.Scan(&amp;n)</span><br><span class="line">   <span class="keyword">var</span> newditan di</span><br><span class="line">   <span class="keyword">for</span> l = <span class="number">0</span>; l &lt; n; l++ &#123;fmt.Scan(&amp;a, &amp;b, &amp;g, &amp;k)</span><br><span class="line">   newditan.addditan(a, b, g, k)</span><br><span class="line">   &#125;</span><br><span class="line">   <span class="keyword">var</span> (x,y <span class="type">int</span>)</span><br><span class="line">    fmt.Scan(&amp;x,&amp;y)</span><br><span class="line">   <span class="keyword">var</span> q = <span class="number">0</span></span><br><span class="line">   <span class="keyword">for</span> num,bb:=<span class="keyword">range</span> newditan.ditans&#123;</span><br><span class="line">      <span class="keyword">if</span> (x&gt;=bb.a &amp;&amp; x&lt;=(bb.g+bb.a))&amp;&amp;(y&gt;=bb.b &amp;&amp; y&lt;=(bb.k+bb.b))&#123;</span><br><span class="line">         q+=<span class="number">1</span></span><br><span class="line">         fmt.Print(n-num)</span><br><span class="line">         <span class="keyword">break</span>&#125;</span><br><span class="line">   &#125;</span><br><span class="line">   <span class="keyword">if</span> q==<span class="number">0</span> &#123;fmt.Print(<span class="number">-1</span>)&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>这第一种方法，对结构体嵌套的那个算个扩展，实际下边的方法对于切片的使用更合适。</p>
+<p>还有第二个方法</p>
+<figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> main</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> (</span><br><span class="line">   <span class="string">&quot;fmt&quot;</span></span><br><span class="line">)</span><br><span class="line"></span><br><span class="line"><span class="keyword">type</span> Carpet <span class="keyword">struct</span> &#123;</span><br><span class="line">x1, y1, x2, y2 <span class="type">int</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">main</span><span class="params">()</span></span> &#123;</span><br><span class="line">   <span class="keyword">var</span> x,y <span class="type">int</span></span><br><span class="line">n := <span class="number">0</span></span><br><span class="line">fmt.Scan(&amp;n)</span><br><span class="line">carpets := <span class="built_in">make</span>([]Carpet, n)</span><br><span class="line"><span class="keyword">for</span> i := <span class="number">0</span>; i &lt; n; i++ &#123;</span><br><span class="line">fmt.Scan(&amp;carpets[i].x1, &amp;carpets[i].y1, &amp;carpets[i].x2, &amp;carpets[i].y2)</span><br><span class="line">&#125;</span><br><span class="line">fmt.Scan(&amp;x, &amp;y)</span><br><span class="line"></span><br><span class="line">maxCovered := <span class="number">-1</span></span><br><span class="line">covered := <span class="literal">false</span></span><br><span class="line"><span class="keyword">for</span> i := n - <span class="number">1</span>; i &gt;= <span class="number">0</span>; i-- &#123;</span><br><span class="line"><span class="keyword">if</span> x &gt;= carpets[i].x1 &amp;&amp; x &lt;= (carpets[i].x2+carpets[i].x1) &amp;&amp; y &gt;= carpets[i].y1 &amp;&amp; y &lt;= (carpets[i].y2+carpets[i].y1) &#123;</span><br><span class="line">covered = <span class="literal">true</span></span><br><span class="line">maxCovered = i + <span class="number">1</span></span><br><span class="line"><span class="keyword">break</span></span><br><span class="line">&#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> covered &#123;</span><br><span class="line">fmt.Println(maxCovered)</span><br><span class="line">&#125; <span class="keyword">else</span> &#123;</span><br><span class="line">fmt.Println(<span class="number">-1</span>)</span><br><span class="line">&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>下边的方法更简单，因为上边的是我从区块链学的，忘了怎么整这个切片了😔。</p>
+<h1 id="5-P1004-NOIP2000-提高组-方格取数"><a href="#5-P1004-NOIP2000-提高组-方格取数" class="headerlink" title="5.P1004 [NOIP2000 提高组] 方格取数"></a>5.P1004 [NOIP2000 提高组] 方格取数</h1><h2 id="题目背景"><a href="#题目背景" class="headerlink" title="题目背景"></a>题目背景</h2><p>NOIP 2000 提高组 T4</p>
+<h2 id="题目描述"><a href="#题目描述" class="headerlink" title="题目描述"></a>题目描述</h2><p>设有 �×�<em>N</em>×<em>N</em> 的方格图 (�≤9)(<em>N</em>≤9)，我们将其中的某些方格中填入正整数，而其他的方格中则放入数字 00。如下图所示（见样例）:</p>
+<p><img src="https://cdn.luogu.com.cn/upload/image_hosting/0bpummja.png" alt="img"></p>
+<p>某人从图的左上角的 �<em>A</em> 点出发，可以向下行走，也可以向右走，直到到达右下角的 �<em>B</em> 点。在走过的路上，他可以取走方格中的数（取走后的方格中将变为数字 00）。<br>此人从 �<em>A</em> 点到 �<em>B</em> 点共走两次，试找出 22 条这样的路径，使得取得的数之和为最大。</p>
+<h2 id="输入格式-1"><a href="#输入格式-1" class="headerlink" title="输入格式"></a>输入格式</h2><p>输入的第一行为一个整数 �<em>N</em>（表示 �×�<em>N</em>×<em>N</em> 的方格图），接下来的每行有三个整数，前两个表示位置，第三个数为该位置上所放的数。一行单独的 00 表示输入结束。</p>
+<h2 id="输出格式-1"><a href="#输出格式-1" class="headerlink" title="输出格式"></a>输出格式</h2><p>只需输出一个整数，表示 22 条路径上取得的最大的和。</p>
+<h2 id="输入输出样例-2"><a href="#输入输出样例-2" class="headerlink" title="输入输出样例"></a>输入输出样例</h2><p><strong>输入 #1</strong>复制</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">8</span><br><span class="line">2 3 13</span><br><span class="line">2 6  6</span><br><span class="line">3 5  7</span><br><span class="line">4 4 14</span><br><span class="line">5 2 21</span><br><span class="line">5 6  4</span><br><span class="line">6 3 15</span><br><span class="line">7 2 14</span><br><span class="line">0 0  0</span><br></pre></td></tr></table></figure>
+
+<p><strong>输出 #1</strong>复制</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">67</span><br></pre></td></tr></table></figure>
+
+<h2 id="说明-提示"><a href="#说明-提示" class="headerlink" title="说明&#x2F;提示"></a>说明&#x2F;提示</h2><p>数据范围：1≤�≤91≤<em>N</em>≤9。</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      
+      
+      <div>
+        <ul class="post-copyright">
+          <li class="post-copyright-author">
+          <strong>本文作者:  </strong>yangyan</a>
+          </li>
+          <li class="post-copyright-link">
+          <strong>本文链接:  </strong>
+          <a href="/2023/12/07/算法/" target="_blank" title="算法">http://example.com/2023/12/07/算法/</a>
+          </li>
+          <li class="post-copyright-license">
+            <strong>版权声明:   </strong>
+            本博客所有文章除特别声明外，均采用 <a rel="license" href="https://creativecommons.org/licenses/by-nc-nd/4.0/" target="_blank" title="Attribution-NonCommercial-NoDerivatives 4.0 International (CC BY-NC-ND 4.0)">CC BY-NC-ND 4.0</a>
+            许可协议。转载请注明出处
+          </li>
+         
+        </ul>
+<div>
+
+      
+      
+        
+	<div id="comment">
+		<!-- 来必力City版安装代码 -->
+		<div id="lv-container" data-id="city" data-uid="MTAyMC8yOTQ4MS82MDQ5">
+		<script type="text/javascript">
+		   (function(d, s) {
+		       var j, e = d.getElementsByTagName(s)[0];
+
+		       if (typeof LivereTower === 'function') { return; }
+
+		       j = d.createElement(s);
+		       j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
+		       j.async = true;
+
+		       e.parentNode.insertBefore(j, e);
+		   })(document, 'script');
+		</script>
+		<noscript>为正常使用来必力评论功能请激活JavaScript</noscript>
+		</div>
+		<!-- City版安装代码已完成 -->
+	</div>
+
+
+
+      
+      
+        
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/goland/" rel="tag">goland</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E7%AE%97%E6%B3%95/" rel="tag">算法</a></li></ul>
+
+      
+
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+  
+    <a href="/2023/12/03/fileUTXO%E4%BB%A3%E7%A0%81%E7%9A%84%E5%8A%A0%E5%85%A5/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">下一篇</strong>
+      <div class="article-nav-title">UTXO代码的加入</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+<!-- Table of Contents -->
+
+  <aside id="toc-sidebar">
+    <div id="toc" class="toc-article">
+    <strong class="toc-title">文章目录</strong>
+    
+        <ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#1-%E8%AF%B7%E4%BD%A0%E7%94%A8%E5%AD%97%E7%AC%A6%E7%94%BB%E7%9A%84%E5%BD%A2%E5%BC%8F%E8%BE%93%E5%87%BA%E8%B6%85%E7%BA%A7%E7%8E%9B%E4%B8%BD%E4%B8%AD%E7%9A%84%E4%B8%80%E4%B8%AA%E5%9C%BA%E6%99%AF%E3%80%82"><span class="nav-number">1.</span> <span class="nav-text">1.请你用字符画的形式输出超级玛丽中的一个场景。</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#2-%E8%BE%93%E5%85%A5%E4%B8%A4%E4%B8%AA%E6%95%B4%E6%95%B0-%EF%BF%BD-%EF%BF%BDa-b%EF%BC%8C%E8%BE%93%E5%87%BA%E5%AE%83%E4%BB%AC%E7%9A%84%E5%92%8C"><span class="nav-number">2.</span> <span class="nav-text">2.输入两个整数 �,�a,b，输出它们的和</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#3"><span class="nav-number">3.</span> <span class="nav-text">3.</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%BE%93%E5%85%A5%E8%BE%93%E5%87%BA%E6%A0%B7%E4%BE%8B"><span class="nav-number">3.1.</span> <span class="nav-text">输入输出样例</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#4-%E9%A2%98%E7%9B%AE%E6%8F%8F%E8%BF%B0"><span class="nav-number">4.</span> <span class="nav-text">4.题目描述</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%BE%93%E5%85%A5%E6%A0%BC%E5%BC%8F"><span class="nav-number">4.1.</span> <span class="nav-text">输入格式</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%BE%93%E5%87%BA%E6%A0%BC%E5%BC%8F"><span class="nav-number">4.2.</span> <span class="nav-text">输出格式</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%BE%93%E5%85%A5%E8%BE%93%E5%87%BA%E6%A0%B7%E4%BE%8B-1"><span class="nav-number">4.3.</span> <span class="nav-text">输入输出样例</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#5-P1004-NOIP2000-%E6%8F%90%E9%AB%98%E7%BB%84-%E6%96%B9%E6%A0%BC%E5%8F%96%E6%95%B0"><span class="nav-number">5.</span> <span class="nav-text">5.P1004 [NOIP2000 提高组] 方格取数</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%A2%98%E7%9B%AE%E8%83%8C%E6%99%AF"><span class="nav-number">5.1.</span> <span class="nav-text">题目背景</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%A2%98%E7%9B%AE%E6%8F%8F%E8%BF%B0"><span class="nav-number">5.2.</span> <span class="nav-text">题目描述</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%BE%93%E5%85%A5%E6%A0%BC%E5%BC%8F-1"><span class="nav-number">5.3.</span> <span class="nav-text">输入格式</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%BE%93%E5%87%BA%E6%A0%BC%E5%BC%8F-1"><span class="nav-number">5.4.</span> <span class="nav-text">输出格式</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%BE%93%E5%85%A5%E8%BE%93%E5%87%BA%E6%A0%B7%E4%BE%8B-2"><span class="nav-number">5.5.</span> <span class="nav-text">输入输出样例</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%AF%B4%E6%98%8E-%E6%8F%90%E7%A4%BA"><span class="nav-number">5.6.</span> <span class="nav-text">说明&#x2F;提示</span></a></li></ol></li></ol>
+    
+    </div>
+  </aside>
+
+</section>
+        
+      </div>
+      
+      <footer id="footer">
+  
+
+  <div class="container">
+      	<div class="row">
+	      <p> Powered by <a href="http://hexo.io/" target="_blank">Hexo</a> and <a href="https://github.com/iTimeTraveler/hexo-theme-hiker" target="_blank">Hexo-theme-hiker</a> </p>
+	      <p id="copyRightEn">Copyright &copy; 2023 - 2023 😀 All Rights Reserved.</p>
+	      
+	      
+    		<p class="busuanzi_uv">
+				访客数 : <span id="busuanzi_value_site_uv"></span> |  
+				访问量 : <span id="busuanzi_value_site_pv"></span>
+		    </p>
+  		   
+		</div>
+
+		
+  </div>
+</footer>
+
+
+<!-- min height -->
+
+<script>
+    var wrapdiv = document.getElementById("wrap");
+    var contentdiv = document.getElementById("content");
+    var allheader = document.getElementById("allheader");
+
+    wrapdiv.style.minHeight = document.body.offsetHeight + "px";
+    if (allheader != null) {
+      contentdiv.style.minHeight = document.body.offsetHeight - allheader.offsetHeight - document.getElementById("footer").offsetHeight + "px";
+    } else {
+      contentdiv.style.minHeight = document.body.offsetHeight - document.getElementById("footer").offsetHeight + "px";
+    }
+</script>
+    </div>
+    <!-- <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+    <a href="/categories" class="mobile-nav-link">Categories</a>
+  
+    <a href="/tags" class="mobile-nav-link">Tags</a>
+  
+    <a href="/about" class="mobile-nav-link">About</a>
+  
+</nav> -->
+    
+
+<!-- mathjax config similar to math.stackexchange -->
+
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+    tex2jax: {
+      inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+      processEscapes: true
+    }
+  });
+</script>
+
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+      tex2jax: {
+        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+      }
+    });
+</script>
+
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax(), i;
+        for(i=0; i < all.length; i += 1) {
+            all[i].SourceElement().parentNode.className += ' has-jax';
+        }
+    });
+</script>
+
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
+
+
+  
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+
+  
+<script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+
+
+<script src="/js/scripts.js"></script>
+
+
+
+
+
+  
+<script src="/js/dialog.js"></script>
+
+
+
+
+
+
+
+
+
+	<div style="display: none;">
+    <script src="https://s95.cnzz.com/z_stat.php?id=1260716016&web_id=1260716016" language="JavaScript"></script>
+  </div>
+
+
+
+	<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js">
+	</script>
+
+
+
+
+
+
+  </div>
+
+  <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" style="display: none;">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h2 class="modal-title" id="myModalLabel">设置</h2>
+      </div>
+      <hr style="margin-top:0px; margin-bottom:0px; width:80%; border-top: 3px solid #000;">
+      <hr style="margin-top:2px; margin-bottom:0px; width:80%; border-top: 1px solid #000;">
+
+
+      <div class="modal-body">
+          <div style="margin:6px;">
+            <a data-toggle="collapse" data-parent="#accordion" href="#collapseOne" onclick="javascript:setFontSize();" aria-expanded="true" aria-controls="collapseOne">
+              正文字号大小
+            </a>
+          </div>
+          <div id="collapseOne" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingOne">
+          <div class="panel-body">
+            您已调整页面字体大小
+          </div>
+        </div>
+      
+
+
+          <div style="margin:6px;">
+            <a data-toggle="collapse" data-parent="#accordion" href="#collapseTwo" onclick="javascript:setBackground();" aria-expanded="true" aria-controls="collapseTwo">
+              夜间护眼模式
+            </a>
+        </div>
+          <div id="collapseTwo" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingTwo">
+          <div class="panel-body">
+            夜间模式已经开启，再次单击按钮即可关闭 
+          </div>
+        </div>
+
+        <div>
+            <a data-toggle="collapse" data-parent="#accordion" href="#collapseThree" aria-expanded="true" aria-controls="collapseThree">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;关 于&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</a>
+        </div>
+         <div id="collapseThree" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingThree">
+          <div class="panel-body">
+            😀
+          </div>
+          <div class="panel-body">
+            Copyright © 2023 yangyan All Rights Reserved.
+          </div>
+        </div>
+      </div>
+
+
+      <hr style="margin-top:0px; margin-bottom:0px; width:80%; border-top: 1px solid #000;">
+      <hr style="margin-top:2px; margin-bottom:0px; width:80%; border-top: 3px solid #000;">
+      <div class="modal-footer">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button>
+      </div>
+    </div>
+  </div>
+</div>
+  
+  <a id="rocket" href="#top" class=""></a>
+  <script type="text/javascript" src="/js/totop.js?v=1.0.0" async=""></script>
+  
+    <a id="menu-switch"><i class="fa fa-bars fa-lg"></i></a>
+  
+</body>
+</html>
