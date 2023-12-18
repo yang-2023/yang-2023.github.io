@@ -194,7 +194,7 @@
         
           <section id="main" style="float:none;">
   
-    <article id="file-算法"  class="article article-type-file" itemscope itemprop="blogPost" >
+    <article id="file-区块链的存储、读取和管理"  class="article article-type-file" itemscope itemprop="blogPost" >
   <div id="articleInner" class="article-inner">
     
     
@@ -202,7 +202,7 @@
         
   
     <h1 class="thumb" itemprop="name">
-      <a class="article-title" href="/2023/12/07/%E7%AE%97%E6%B3%95/">算法</a>
+      <a class="article-title" href="/2023/12/18/%E5%8C%BA%E5%9D%97%E9%93%BE%E7%9A%84%E5%AD%98%E5%82%A8%E3%80%81%E8%AF%BB%E5%8F%96%E5%92%8C%E7%AE%A1%E7%90%86/">区块链的存储、读取和管理</a>
     </h1>
   
 
@@ -210,12 +210,12 @@
     
     <div class="article-meta">
       
-	<a href="/2023/12/07/%E7%AE%97%E6%B3%95/" class="article-date">
-	  <time datetime="2023-12-07T11:27:53.000Z" itemprop="datePublished">2023-12-07</time>
+	<a href="/2023/12/18/%E5%8C%BA%E5%9D%97%E9%93%BE%E7%9A%84%E5%AD%98%E5%82%A8%E3%80%81%E8%AF%BB%E5%8F%96%E5%92%8C%E7%AE%A1%E7%90%86/" class="article-date">
+	  <time datetime="2023-12-18T08:33:06.000Z" itemprop="datePublished">2023-12-18</time>
 	</a>
 
       
-    <a class="article-category-link" href="/categories/%E7%AE%97%E6%B3%95/">算法</a>
+    <a class="article-category-link" href="/categories/%E5%8C%BA%E5%9D%97%E9%93%BE/">区块链</a>
 
       
       
@@ -224,10 +224,14 @@
     <div class="article-entry" itemprop="articleBody">
       
         <p class="article-excerpt-content">
-          1.请你用字符画的形式输出超级玛丽中的一个场景。1234567package mainimport &quot;fmt&quot;func main()  &#123;fmt.Println(&quot;                ********\n               ************\n               ####....#.\n             #..###.....##....\n             ###.......######  ...
+          Go语言实现区块链存储、读取与管理。之前了解的基本结构，我们每次调试都要创建，重构区块链，但是区块链并没有的到保存，这与实际的区块链系统不符，伴随我们扩展我们的区块链，我们需要一个统一的功能管理模块来操作。
+Badger键值对数据库对于区块链的储存，一种想法是序列化，然后用每个区块的哈希值作为文件名储存在磁盘上，但是考虑到我们频繁的对已经存储的区块进行查询，我们用数据库方式存储管理区块。
+
+数据库还没学，这里只能先埋坑了 T _T
+
         </p>
         <p class="article-more-link">
-          <a href="/2023/12/07/%E7%AE%97%E6%B3%95/#more">阅读全文</a>
+          <a href="/2023/12/18/%E5%8C%BA%E5%9D%97%E9%93%BE%E7%9A%84%E5%AD%98%E5%82%A8%E3%80%81%E8%AF%BB%E5%8F%96%E5%92%8C%E7%AE%A1%E7%90%86/#more">阅读全文</a>
         </p>
       
     </div>
