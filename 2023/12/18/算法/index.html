@@ -14,12 +14,12 @@
   <meta name="description" content="1.P1000 超级玛丽游戏P1000 超级玛丽游戏 - 洛谷 | 计算机科学教育新生态 (luogu.com.cn) 1234567package mainimport &quot;fmt&quot;func main()  &amp;#123;fmt.Println(&quot;                ********\n               ************\n">
 <meta property="og:type" content="article">
 <meta property="og:title" content="算法">
-<meta property="og:url" content="http://example.com/2023/12/07/%E7%AE%97%E6%B3%95/index.html">
+<meta property="og:url" content="http://example.com/2023/12/18/%E7%AE%97%E6%B3%95/index.html">
 <meta property="og:site_name" content="😀">
 <meta property="og:description" content="1.P1000 超级玛丽游戏P1000 超级玛丽游戏 - 洛谷 | 计算机科学教育新生态 (luogu.com.cn) 1234567package mainimport &quot;fmt&quot;func main()  &amp;#123;fmt.Println(&quot;                ********\n               ************\n">
 <meta property="og:locale" content="zh_CN">
-<meta property="article:published_time" content="2023-12-07T11:27:53.000Z">
-<meta property="article:modified_time" content="2023-12-21T10:46:35.777Z">
+<meta property="article:published_time" content="2023-12-18T11:27:53.000Z">
+<meta property="article:modified_time" content="2023-12-21T14:05:52.771Z">
 <meta property="article:author" content="yangyan">
 <meta property="article:tag" content="goland">
 <meta property="article:tag" content="算法">
@@ -189,8 +189,8 @@
     
     <div class="article-meta">
       
-	<a href="/2023/12/07/%E7%AE%97%E6%B3%95/" class="article-date">
-	  <time datetime="2023-12-07T11:27:53.000Z" itemprop="datePublished">2023-12-07</time>
+	<a href="/2023/12/18/%E7%AE%97%E6%B3%95/" class="article-date">
+	  <time datetime="2023-12-18T11:27:53.000Z" itemprop="datePublished">2023-12-18</time>
 	</a>
 
       
@@ -239,6 +239,17 @@
 
 <p>这道题如果用那种划分范围的比大小太麻烦了，这种用切片的方法好像更好一点。</p>
 <p>这道题出现一个错误就是定义list切片那一行，不然树木总数不一样。因为容量是从1开始的如果不加1的话就少一个了。</p>
+<h1 id="8-P1075-NOIP2012-普及组-质因数分解"><a href="#8-P1075-NOIP2012-普及组-质因数分解" class="headerlink" title="8.P1075 [NOIP2012 普及组] 质因数分解"></a>8.P1075 [NOIP2012 普及组] 质因数分解</h1><p>[P1075 <a target="_blank" rel="noopener" href="https://www.luogu.com.cn/problem/P1075">NOIP2012 普及组] 质因数分解 - 洛谷 | 计算机科学教育新生态 (luogu.com.cn)</a></p>
+<p>傻方法但是超时</p>
+<figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> main</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> <span class="string">&quot;fmt&quot;</span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">zhishu</span><span class="params">(int2 <span class="type">int</span>)</span></span> <span class="type">bool</span> &#123;</span><br><span class="line">    <span class="keyword">if</span> int2 &lt;= <span class="number">1</span> &#123;</span><br><span class="line">       <span class="keyword">return</span> <span class="literal">false</span></span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">for</span> i := <span class="number">2</span>; i &lt; int2; i++ &#123;</span><br><span class="line">       <span class="keyword">if</span> int2%i == <span class="number">0</span> &#123;</span><br><span class="line">          <span class="keyword">return</span> <span class="literal">false</span></span><br><span class="line">       &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="literal">true</span></span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">maxzhishu</span><span class="params">(int2 <span class="type">int</span>)</span></span> (<span class="type">int</span>, <span class="type">bool</span>) &#123;</span><br><span class="line">    <span class="keyword">for</span> n := int2; n &gt;= <span class="number">0</span>; n-- &#123;</span><br><span class="line">       <span class="keyword">if</span> zhishu(n) &#123;</span><br><span class="line">          <span class="keyword">if</span> int2%n == <span class="number">0</span> &#123;</span><br><span class="line">             <span class="keyword">if</span> zhishu(int2 / n) &#123;</span><br><span class="line">                <span class="keyword">return</span> n, <span class="literal">true</span></span><br><span class="line">             &#125;</span><br><span class="line">          &#125;</span><br><span class="line">       &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>, <span class="literal">false</span></span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">main</span><span class="params">()</span></span> &#123;</span><br><span class="line">    <span class="keyword">var</span> num <span class="type">int</span></span><br><span class="line">    fmt.Scan(&amp;num)</span><br><span class="line">    num, <span class="type">bool</span> := maxzhishu(num)</span><br><span class="line">    <span class="keyword">if</span> <span class="type">bool</span> &#123;</span><br><span class="line">       fmt.Print(num)</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>二解，其实我觉得他这个不太合适这个题。可能题目有问题。</p>
+<figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> main</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> <span class="string">&quot;fmt&quot;</span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">main</span><span class="params">()</span></span> &#123;</span><br><span class="line">    <span class="keyword">var</span> n, i <span class="type">int64</span></span><br><span class="line">    fmt.Scan(&amp;n)</span><br><span class="line">    <span class="keyword">for</span> i = <span class="number">2</span>; i &lt;= n; i++ &#123;</span><br><span class="line">       <span class="keyword">if</span> n%i == <span class="number">0</span> &#123;</span><br><span class="line">          fmt.Println(n / i)</span><br><span class="line">          <span class="keyword">break</span></span><br><span class="line">       &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h1 id="9-P1085-NOIP2004-普及组-不高兴的津津"><a href="#9-P1085-NOIP2004-普及组-不高兴的津津" class="headerlink" title="9.P1085 [NOIP2004 普及组] 不高兴的津津"></a>9.P1085 [NOIP2004 普及组] 不高兴的津津</h1><p>[P1085 <a target="_blank" rel="noopener" href="https://www.luogu.com.cn/problem/P1085">NOIP2004 普及组] 不高兴的津津 - 洛谷 | 计算机科学教育新生态 (luogu.com.cn)</a></p>
+<figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> main</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> (</span><br><span class="line">    <span class="string">&quot;fmt&quot;</span></span><br><span class="line">)</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">main</span><span class="params">()</span></span> &#123;</span><br><span class="line">    <span class="keyword">var</span> a, b, num <span class="type">int</span></span><br><span class="line">    <span class="keyword">var</span> n []<span class="type">int</span></span><br><span class="line">    <span class="keyword">for</span> i := <span class="number">1</span>; i &lt;= <span class="number">7</span>; i++ &#123;</span><br><span class="line">       fmt.Scan(&amp;a, &amp;b)</span><br><span class="line">       num = a + b</span><br><span class="line">       n = <span class="built_in">append</span>(n, num)</span><br><span class="line">    &#125;</span><br><span class="line">    max := <span class="number">8</span></span><br><span class="line">    xingqi := <span class="number">0</span></span><br><span class="line">    <span class="keyword">for</span> we, time := <span class="keyword">range</span> n &#123;</span><br><span class="line">       <span class="keyword">if</span> time &gt; max &#123;</span><br><span class="line">          max = time</span><br><span class="line">          xingqi = we + <span class="number">1</span></span><br><span class="line">       &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">if</span> max &gt; <span class="number">8</span> &#123;</span><br><span class="line">       fmt.Print(xingqi)</span><br><span class="line">    &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">       fmt.Print(<span class="number">0</span>)</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>注意比较大小，没有难度。</p>
 
       
     </div>
@@ -252,7 +263,7 @@
           </li>
           <li class="post-copyright-link">
           <strong>本文链接:  </strong>
-          <a href="/2023/12/07/算法/" target="_blank" title="算法">http://example.com/2023/12/07/算法/</a>
+          <a href="/2023/12/18/算法/" target="_blank" title="算法">http://example.com/2023/12/18/算法/</a>
           </li>
           <li class="post-copyright-license">
             <strong>版权声明:   </strong>
@@ -302,19 +313,10 @@
     
 <nav id="article-nav">
   
-    <a href="/2023/12/18/%E5%8C%BA%E5%9D%97%E9%93%BE%E7%9A%84%E5%AD%98%E5%82%A8%E3%80%81%E8%AF%BB%E5%8F%96%E5%92%8C%E7%AE%A1%E7%90%86/" id="article-nav-newer" class="article-nav-link-wrap">
-      <strong class="article-nav-caption">上一篇</strong>
-      <div class="article-nav-title">
-        
-          区块链的存储、读取和管理
-        
-      </div>
-    </a>
   
-  
-    <a href="/2023/12/03/fileUTXO%E4%BB%A3%E7%A0%81%E7%9A%84%E5%8A%A0%E5%85%A5/" id="article-nav-older" class="article-nav-link-wrap">
+    <a href="/2023/12/18/Badger%E5%AD%A6%E4%B9%A0%E4%BD%BF%E7%94%A8/" id="article-nav-older" class="article-nav-link-wrap">
       <strong class="article-nav-caption">下一篇</strong>
-      <div class="article-nav-title">UTXO代码的加入</div>
+      <div class="article-nav-title">Badger学习使用</div>
     </a>
   
 </nav>
@@ -328,7 +330,7 @@
     <div id="toc" class="toc-article">
     <strong class="toc-title">文章目录</strong>
     
-        <ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#1-P1000-%E8%B6%85%E7%BA%A7%E7%8E%9B%E4%B8%BD%E6%B8%B8%E6%88%8F"><span class="nav-number">1.</span> <span class="nav-text">1.P1000 超级玛丽游戏</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#2-P1001-A-B-Problem"><span class="nav-number">2.</span> <span class="nav-text">2.P1001 A+B Problem</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#3-P4327-COCI2006-2007-1-Okviri"><span class="nav-number">3.</span> <span class="nav-text">3.P4327 [COCI2006-2007#1] Okviri</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#4-P1003-NOIP2011-%E6%8F%90%E9%AB%98%E7%BB%84-%E9%93%BA%E5%9C%B0%E6%AF%AF"><span class="nav-number">4.</span> <span class="nav-text">4.P1003 [NOIP2011 提高组] 铺地毯</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#5-P1035-NOIP2002-%E6%99%AE%E5%8F%8A%E7%BB%84-%E7%BA%A7%E6%95%B0%E6%B1%82%E5%92%8C"><span class="nav-number">5.</span> <span class="nav-text">5.P1035 [NOIP2002 普及组] 级数求和</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#6-P1046-NOIP2005-%E6%99%AE%E5%8F%8A%E7%BB%84-%E9%99%B6%E9%99%B6%E6%91%98%E8%8B%B9%E6%9E%9C"><span class="nav-number">6.</span> <span class="nav-text">6.P1046 [NOIP2005 普及组] 陶陶摘苹果</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#7-P1047-NOIP2005-%E6%99%AE%E5%8F%8A%E7%BB%84-%E6%A0%A1%E9%97%A8%E5%A4%96%E7%9A%84%E6%A0%91"><span class="nav-number">7.</span> <span class="nav-text">7.P1047 [NOIP2005 普及组] 校门外的树</span></a></li></ol>
+        <ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#1-P1000-%E8%B6%85%E7%BA%A7%E7%8E%9B%E4%B8%BD%E6%B8%B8%E6%88%8F"><span class="nav-number">1.</span> <span class="nav-text">1.P1000 超级玛丽游戏</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#2-P1001-A-B-Problem"><span class="nav-number">2.</span> <span class="nav-text">2.P1001 A+B Problem</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#3-P4327-COCI2006-2007-1-Okviri"><span class="nav-number">3.</span> <span class="nav-text">3.P4327 [COCI2006-2007#1] Okviri</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#4-P1003-NOIP2011-%E6%8F%90%E9%AB%98%E7%BB%84-%E9%93%BA%E5%9C%B0%E6%AF%AF"><span class="nav-number">4.</span> <span class="nav-text">4.P1003 [NOIP2011 提高组] 铺地毯</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#5-P1035-NOIP2002-%E6%99%AE%E5%8F%8A%E7%BB%84-%E7%BA%A7%E6%95%B0%E6%B1%82%E5%92%8C"><span class="nav-number">5.</span> <span class="nav-text">5.P1035 [NOIP2002 普及组] 级数求和</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#6-P1046-NOIP2005-%E6%99%AE%E5%8F%8A%E7%BB%84-%E9%99%B6%E9%99%B6%E6%91%98%E8%8B%B9%E6%9E%9C"><span class="nav-number">6.</span> <span class="nav-text">6.P1046 [NOIP2005 普及组] 陶陶摘苹果</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#7-P1047-NOIP2005-%E6%99%AE%E5%8F%8A%E7%BB%84-%E6%A0%A1%E9%97%A8%E5%A4%96%E7%9A%84%E6%A0%91"><span class="nav-number">7.</span> <span class="nav-text">7.P1047 [NOIP2005 普及组] 校门外的树</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#8-P1075-NOIP2012-%E6%99%AE%E5%8F%8A%E7%BB%84-%E8%B4%A8%E5%9B%A0%E6%95%B0%E5%88%86%E8%A7%A3"><span class="nav-number">8.</span> <span class="nav-text">8.P1075 [NOIP2012 普及组] 质因数分解</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#9-P1085-NOIP2004-%E6%99%AE%E5%8F%8A%E7%BB%84-%E4%B8%8D%E9%AB%98%E5%85%B4%E7%9A%84%E6%B4%A5%E6%B4%A5"><span class="nav-number">9.</span> <span class="nav-text">9.P1085 [NOIP2004 普及组] 不高兴的津津</span></a></li></ol>
     
     </div>
   </aside>
