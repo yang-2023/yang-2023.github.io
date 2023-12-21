@@ -3,26 +3,18 @@
 <head>
   <meta charset="utf-8">
   
-  <title>区块链的存储、读取和管理 | 😀</title>
+  <title>category: 算法 | 😀</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   
-  <meta name="keywords" content="区块链goland" />
   
   
   
-  
-  <meta name="description" content="Go语言实现区块链存储、读取与管理。之前了解的基本结构，我们每次调试都要创建，重构区块链，但是区块链并没有的到保存，这与实际的区块链系统不符，伴随我们扩展我们的区块链，我们需要一个统一的功能管理模块来操作。 Badger键值对数据库对于区块链的储存，一种想法是序列化，然后用每个区块的哈希值作为文件名储存在磁盘上，但是考虑到我们频繁的对已经存储的区块进行查询，我们用数据库方式存储管理区块。  数据库">
-<meta property="og:type" content="article">
-<meta property="og:title" content="区块链的存储、读取和管理">
-<meta property="og:url" content="http://example.com/2023/12/18/%E5%8C%BA%E5%9D%97%E9%93%BE%E7%9A%84%E5%AD%98%E5%82%A8%E3%80%81%E8%AF%BB%E5%8F%96%E5%92%8C%E7%AE%A1%E7%90%86/index.html">
+  <meta property="og:type" content="website">
+<meta property="og:title" content="😀">
+<meta property="og:url" content="http://example.com/categories/%E7%AE%97%E6%B3%95/index.html">
 <meta property="og:site_name" content="😀">
-<meta property="og:description" content="Go语言实现区块链存储、读取与管理。之前了解的基本结构，我们每次调试都要创建，重构区块链，但是区块链并没有的到保存，这与实际的区块链系统不符，伴随我们扩展我们的区块链，我们需要一个统一的功能管理模块来操作。 Badger键值对数据库对于区块链的储存，一种想法是序列化，然后用每个区块的哈希值作为文件名储存在磁盘上，但是考虑到我们频繁的对已经存储的区块进行查询，我们用数据库方式存储管理区块。  数据库">
 <meta property="og:locale" content="zh_CN">
-<meta property="article:published_time" content="2023-12-18T08:33:06.000Z">
-<meta property="article:modified_time" content="2023-12-18T08:45:38.025Z">
 <meta property="article:author" content="yangyan">
-<meta property="article:tag" content="区块链">
-<meta property="article:tag" content="goland">
 <meta name="twitter:card" content="summary">
   
     <link rel="alternate" href="/atom.xml" title="😀" type="application/atom+xml">
@@ -72,6 +64,8 @@
   
 
   
+    <link rel="stylesheet" href="/css/archive.css" >
+  
   
   
 
@@ -79,7 +73,7 @@
 
 
 
-  <body data-spy="scroll" data-target="#toc" data-offset="50">
+  <body>
 
 
   
@@ -102,7 +96,7 @@
             
               <a class="brand" style="
                  margin-top: 0px;"  
-                href="#" data-toggle="modal" data-target="#myModal" >
+                 >
                   <img width="124px" height="124px" alt="Hike News" src="/css/images/mylogo.jpg">
               </a>
             
@@ -173,138 +167,43 @@
             
       <div id="content" class="outer">
         
-          <section id="main" style="float:none;"><article id="file-区块链的存储、读取和管理" style="width: 75%; float:left;" class="article article-type-file" itemscope itemprop="blogPost" >
-  <div id="articleInner" class="article-inner">
-    
-    
-      <header class="article-header">
-        
+          <section id="main" style="float:none;">
   
-    <h1 class="thumb" class="article-title" itemprop="name">
-      区块链的存储、读取和管理
+  
+  
+    
+    
+      
+      
+      <section class="archives-wrap">
+        <div class="archive-year-wrap">
+          <h1><a href="/archives/2023" class="archive-year">2023</a></h1>
+        </div>
+        <div class="archives">
+    
+    <article class="archive-article archive-type-file">
+  <div class="archive-article-inner">
+    <header class="archive-article-header">
+      
+	<a href="/2023/12/07/%E7%AE%97%E6%B3%95/" class="archive-article-date">
+	  <time datetime="2023-12-07T11:27:53.000Z" itemprop="datePublished">2023-12-07</time>
+	</a>
+
+      
+  
+    <h1 class="thumb" itemprop="name">
+      <a class="archive-article-title" href="/2023/12/07/%E7%AE%97%E6%B3%95/">算法</a>
     </h1>
   
 
-      </header>
-    
-    <div class="article-meta">
-      
-	<a href="/2023/12/18/%E5%8C%BA%E5%9D%97%E9%93%BE%E7%9A%84%E5%AD%98%E5%82%A8%E3%80%81%E8%AF%BB%E5%8F%96%E5%92%8C%E7%AE%A1%E7%90%86/" class="article-date">
-	  <time datetime="2023-12-18T08:33:06.000Z" itemprop="datePublished">2023-12-18</time>
-	</a>
-
-      
-    <a class="article-category-link" href="/categories/%E5%8C%BA%E5%9D%97%E9%93%BE/">区块链</a>
-
-      
-	<a class="article-views">
-	<span id="busuanzi_container_page_pv">
-		阅读量<span id="busuanzi_value_page_pv"></span>
-	</span>
-	</a>
-
-      
-
-    </div>
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h3 id="Go语言实现区块链存储、读取与管理。"><a href="#Go语言实现区块链存储、读取与管理。" class="headerlink" title="Go语言实现区块链存储、读取与管理。"></a>Go语言实现区块链存储、读取与管理。</h3><p>之前了解的基本结构，我们每次调试都要创建，重构区块链，但是区块链并没有的到保存，这与实际的区块链系统不符，伴随我们扩展我们的区块链，我们需要一个统一的功能管理模块来操作。</p>
-<h4 id="Badger键值对数据库"><a href="#Badger键值对数据库" class="headerlink" title="Badger键值对数据库"></a>Badger键值对数据库</h4><p>对于区块链的储存，一种想法是序列化，然后用每个区块的哈希值作为文件名储存在磁盘上，但是考虑到我们频繁的对已经存储的区块进行查询，我们用数据库方式存储管理区块。</p>
-<hr>
-<p><em>数据库还没学，这里只能先埋坑了 T _T</em></p>
-
-      
-    </div>
-    <footer class="article-footer">
-      
-      
-      <div>
-        <ul class="post-copyright">
-          <li class="post-copyright-author">
-          <strong>本文作者:  </strong>yangyan</a>
-          </li>
-          <li class="post-copyright-link">
-          <strong>本文链接:  </strong>
-          <a href="/2023/12/18/区块链的存储、读取和管理/" target="_blank" title="区块链的存储、读取和管理">http://example.com/2023/12/18/区块链的存储、读取和管理/</a>
-          </li>
-          <li class="post-copyright-license">
-            <strong>版权声明:   </strong>
-            本博客所有文章除特别声明外，均采用 <a rel="license" href="https://creativecommons.org/licenses/by-nc-nd/4.0/" target="_blank" title="Attribution-NonCommercial-NoDerivatives 4.0 International (CC BY-NC-ND 4.0)">CC BY-NC-ND 4.0</a>
-            许可协议。转载请注明出处
-          </li>
-         
-        </ul>
-<div>
-
-      
-      
-        
-	<div id="comment">
-		<!-- 来必力City版安装代码 -->
-		<div id="lv-container" data-id="city" data-uid="MTAyMC8yOTQ4MS82MDQ5">
-		<script type="text/javascript">
-		   (function(d, s) {
-		       var j, e = d.getElementsByTagName(s)[0];
-
-		       if (typeof LivereTower === 'function') { return; }
-
-		       j = d.createElement(s);
-		       j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
-		       j.async = true;
-
-		       e.parentNode.insertBefore(j, e);
-		   })(document, 'script');
-		</script>
-		<noscript>为正常使用来必力评论功能请激活JavaScript</noscript>
-		</div>
-		<!-- City版安装代码已完成 -->
-	</div>
-
-
-
-      
-      
-        
-  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/goland/" rel="tag">goland</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E5%8C%BA%E5%9D%97%E9%93%BE/" rel="tag">区块链</a></li></ul>
-
-      
-
-    </footer>
+    </header>
   </div>
-  
-    
-<nav id="article-nav">
-  
-    <a href="/2023/12/18/Badger%E5%AD%A6%E4%B9%A0%E4%BD%BF%E7%94%A8/" id="article-nav-newer" class="article-nav-link-wrap">
-      <strong class="article-nav-caption">上一篇</strong>
-      <div class="article-nav-title">
-        
-          Badger学习使用
-        
-      </div>
-    </a>
-  
-  
-    <a href="/2023/12/07/%E7%AE%97%E6%B3%95/" id="article-nav-older" class="article-nav-link-wrap">
-      <strong class="article-nav-caption">下一篇</strong>
-      <div class="article-nav-title">算法</div>
-    </a>
-  
-</nav>
-
-  
 </article>
+  
+  
+    </div></section>
+  
 
-<!-- Table of Contents -->
-
-  <aside id="toc-sidebar">
-    <div id="toc" class="toc-article">
-    <strong class="toc-title">文章目录</strong>
-    
-        <ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#Go%E8%AF%AD%E8%A8%80%E5%AE%9E%E7%8E%B0%E5%8C%BA%E5%9D%97%E9%93%BE%E5%AD%98%E5%82%A8%E3%80%81%E8%AF%BB%E5%8F%96%E4%B8%8E%E7%AE%A1%E7%90%86%E3%80%82"><span class="nav-number">1.</span> <span class="nav-text">Go语言实现区块链存储、读取与管理。</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#Badger%E9%94%AE%E5%80%BC%E5%AF%B9%E6%95%B0%E6%8D%AE%E5%BA%93"><span class="nav-number">1.1.</span> <span class="nav-text">Badger键值对数据库</span></a></li></ol></li></ol>
-    
-    </div>
-  </aside>
 
 </section>
         
@@ -408,10 +307,6 @@
 
 
 
-  
-<script src="/js/dialog.js"></script>
-
-
 
 
 
@@ -495,8 +390,6 @@
   
   <a id="rocket" href="#top" class=""></a>
   <script type="text/javascript" src="/js/totop.js?v=1.0.0" async=""></script>
-  
-    <a id="menu-switch"><i class="fa fa-bars fa-lg"></i></a>
   
 </body>
 </html>
