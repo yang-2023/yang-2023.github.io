@@ -1,0 +1,579 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>goland-struct和interface | 😀</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  
+  <meta name="keywords" content="goland" />
+  
+  
+  
+  
+  <meta name="description" content="结构体结构体的定义这里我们定义了一个结构体类型，名称为IPhone，含有字段name 123type Phone struct &amp;#123;  name string&amp;#125;  在定义结构体时，字段的声明方法与平时声明一个变量是一样的，都是变量名在前，类型在后，只不过在结构体中，变量名称为成员名或字段名。 声明和使用123p:&#x3D;IPhone&amp;#123;   name: &quot;ASD&amp;qu">
+<meta property="og:type" content="article">
+<meta property="og:title" content="goland-struct和interface">
+<meta property="og:url" content="http://example.com/2023/11/23/goland-struct%E5%92%8Cinterface/index.html">
+<meta property="og:site_name" content="😀">
+<meta property="og:description" content="结构体结构体的定义这里我们定义了一个结构体类型，名称为IPhone，含有字段name 123type Phone struct &amp;#123;  name string&amp;#125;  在定义结构体时，字段的声明方法与平时声明一个变量是一样的，都是变量名在前，类型在后，只不过在结构体中，变量名称为成员名或字段名。 声明和使用123p:&#x3D;IPhone&amp;#123;   name: &quot;ASD&amp;qu">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2023-11-23T04:30:38.000Z">
+<meta property="article:modified_time" content="2023-12-06T07:51:00.711Z">
+<meta property="article:author" content="yangyan">
+<meta property="article:tag" content="goland">
+<meta name="twitter:card" content="summary">
+  
+    <link rel="alternate" href="/atom.xml" title="😀" type="application/atom+xml">
+  
+
+  
+
+  <link rel="icon" href="/css/images/mylogo.jpg">
+  <link rel="apple-touch-icon" href="/css/images/mylogo.jpg">
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans|Montserrat:700" rel="stylesheet" type="text/css">
+  <link href="https://fonts.googleapis.com/css?family=Roboto:400,300,300italic,400italic" rel="stylesheet" type="text/css">
+  <link href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" rel="stylesheet">
+  <style type="text/css">
+    @font-face{font-family:futura-pt; src:url("/css/fonts/FuturaPTBold.otf") format("woff");font-weight:500;font-style:normal;}
+    @font-face{font-family:futura-pt-light; src:url("/css/fonts/FuturaPTBook.otf") format("woff");font-weight:lighter;font-style:normal;}
+    @font-face{font-family:futura-pt-italic; src:url("/css/fonts/FuturaPTBookOblique.otf") format("woff");font-weight:400;font-style:italic;}
+}
+
+  </style>
+  
+<link rel="stylesheet" href="/css/style.css">
+
+
+  
+<script src="/js/jquery-3.1.1.min.js"></script>
+
+  
+<script src="/js/bootstrap.js"></script>
+
+
+  <!-- Bootstrap core CSS -->
+  <link rel="stylesheet" href="/css/bootstrap.css" >
+
+  
+    
+<link rel="stylesheet" href="/css/dialog.css">
+
+  
+
+  
+
+  
+    <link rel="stylesheet" href="/css/header-post.css" >
+  
+
+  
+  
+  
+
+<meta name="generator" content="Hexo 6.3.0"></head>
+
+
+
+  <body data-spy="scroll" data-target="#toc" data-offset="50">
+
+
+  
+  <div id="container">
+    <div id="wrap">
+      
+        <header>
+
+    <div id="allheader" class="navbar navbar-default navbar-static-top" role="navigation">
+        <div class="navbar-inner">
+          
+          <div class="container"> 
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+              <span class="sr-only">Toggle navigation</span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+            </button>
+
+            
+              <a class="brand" style="
+                 margin-top: 0px;"  
+                href="#" data-toggle="modal" data-target="#myModal" >
+                  <img width="124px" height="124px" alt="Hike News" src="/css/images/mylogo.jpg">
+              </a>
+            
+            
+            <div class="navbar-collapse collapse">
+              <ul class="hnav navbar-nav">
+                
+                  <li> <a class="main-nav-link" href="/">首页</a> </li>
+                
+                  <li> <a class="main-nav-link" href="/archives">归档</a> </li>
+                
+                  <li> <a class="main-nav-link" href="/categories">分类</a> </li>
+                
+                  <li> <a class="main-nav-link" href="/tags">标签</a> </li>
+                
+                  <li> <a class="main-nav-link" href="/about">关于</a> </li>
+                
+                  <li><div id="search-form-wrap">
+
+    <form class="search-form">
+        <input type="text" class="ins-search-input search-form-input" placeholder="" />
+        <button type="submit" class="search-form-submit"></button>
+    </form>
+    <div class="ins-search">
+    <div class="ins-search-mask"></div>
+    <div class="ins-search-container">
+        <div class="ins-input-wrapper">
+            <input type="text" class="ins-search-input" placeholder="请输入关键词..." />
+            <span class="ins-close ins-selectable"><i class="fa fa-times-circle"></i></span>
+        </div>
+        <div class="ins-section-wrapper">
+            <div class="ins-section-container"></div>
+        </div>
+    </div>
+</div>
+<script>
+(function (window) {
+    var INSIGHT_CONFIG = {
+        TRANSLATION: {
+            POSTS: '文章',
+            PAGES: '页面',
+            CATEGORIES: '分类',
+            TAGS: '标签',
+            UNTITLED: '(无标题)',
+        },
+        ROOT_URL: '/',
+        CONTENT_URL: '/content.json',
+    };
+    window.INSIGHT_CONFIG = INSIGHT_CONFIG;
+})(window);
+</script>
+
+<script src="/js/insight.js"></script>
+
+
+</div></li>
+            </div>
+          </div>
+                
+      </div>
+    </div>
+
+</header>
+
+
+
+      
+            
+      <div id="content" class="outer">
+        
+          <section id="main" style="float:none;"><article id="file-goland-struct和interface" style="width: 75%; float:left;" class="article article-type-file" itemscope itemprop="blogPost" >
+  <div id="articleInner" class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="thumb" class="article-title" itemprop="name">
+      goland-struct和interface
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-meta">
+      
+	<a href="/2023/11/23/goland-struct%E5%92%8Cinterface/" class="article-date">
+	  <time datetime="2023-11-23T04:30:38.000Z" itemprop="datePublished">2023-11-23</time>
+	</a>
+
+      
+    <a class="article-category-link" href="/categories/goland/">goland</a>
+
+      
+	<a class="article-views">
+	<span id="busuanzi_container_page_pv">
+		阅读量<span id="busuanzi_value_page_pv"></span>
+	</span>
+	</a>
+
+      
+
+    </div>
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h4 id="结构体"><a href="#结构体" class="headerlink" title="结构体"></a>结构体</h4><h5 id="结构体的定义"><a href="#结构体的定义" class="headerlink" title="结构体的定义"></a>结构体的定义</h5><p>这里我们定义了一个结构体类型，名称为IPhone，含有字段name</p>
+<figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">type</span> Phone <span class="keyword">struct</span> &#123;</span><br><span class="line">  name <span class="type">string</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>在定义结构体时，字段的声明方法与平时声明一个变量是一样的，都是变量名在前，类型在后，只不过在结构体中，变量名称为成员名或字段名。</p>
+<h5 id="声明和使用"><a href="#声明和使用" class="headerlink" title="声明和使用"></a>声明和使用</h5><figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">p:=IPhone&#123;</span><br><span class="line">   name: <span class="string">&quot;ASD&quot;</span>&#125;</span><br><span class="line">fmt.Println(p.name)</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">p:=IPhone&#123;&quot;ASD&quot;&#125;</span><br></pre></td></tr></table></figure>
+
+<p>两种情况都可以编译通过，甚至可以只声明其中的一部分，那么没声明的部分就默认零值</p>
+<h5 id="结构体的字段"><a href="#结构体的字段" class="headerlink" title="结构体的字段"></a>结构体的字段</h5><figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">type</span> IPhone <span class="keyword">struct</span> &#123;</span><br><span class="line">   name <span class="type">string</span></span><br><span class="line">   aa kk</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">type</span> kk <span class="keyword">struct</span> &#123;</span><br><span class="line">   id <span class="type">int</span></span><br></pre></td></tr></table></figure>
+
+<p>用代码描述现实中的实体会更匹配，复用程度也更高。对于嵌套结构体字段的结构体，其初始化与正常的结构体大同小异，只需要根据字段对应的类型初始化即可。</p>
+<figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">p:=IPhone&#123;</span><br><span class="line">name: <span class="string">&quot;s&quot;</span>,</span><br><span class="line">aa: kk&#123;</span><br><span class="line"><span class="number">6</span>&#125;,</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>利用点操作符调用字段的值</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">fmt.Println(p.aa.id)</span><br></pre></td></tr></table></figure>
+
+<h4 id="接口"><a href="#接口" class="headerlink" title="接口"></a>接口</h4><h5 id="接口的定义"><a href="#接口的定义" class="headerlink" title="接口的定义"></a>接口的定义</h5><p>接口要做的是定义好约定，告诉调用方自己可以做什么，但调用方不用知道它的内部实现。</p>
+<p>接口的定义与结构体稍微有些差别，虽然都以type关键字开始，但接口的关键字是interface。</p>
+<figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">type</span> Phone <span class="keyword">interface</span> &#123;</span><br><span class="line">   speak()</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>定义一个接口Phone 拥有speak方法，Phone接口告诉调用者他拥有方法speak，至于谁speak如何speak调用者不用关心，这是由接口实现者来做的。</p>
+<h5 id="接口的实现"><a href="#接口的实现" class="headerlink" title="接口的实现"></a>接口的实现</h5><p>接口的实现者必须是一个具体的类型</p>
+<figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">func</span> <span class="params">(a IPhone)</span></span> speak() <span class="type">string</span>&#123;</span><br><span class="line">	<span class="keyword">return</span> <span class="string">&quot;iiii&quot;</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>这里用Iphone来做示例，让他实现Phone接口。</p>
+<p>给Iphone定义一个方法，这个方法与接口里的方法的签名一样，这样的结构体Iphone就实现了这个Phone的接口，接口并没有通过任何的关键词来实现，所以go的接口是隐式实现的。</p>
+<p><strong>如果一个接口有许多个方法，那么需要实现接口的每个方法才是实现了这个接口。</strong></p>
+<p>实现了接口之后我们就可以使用它了。</p>
+<figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">print</span><span class="params">(p Phone)</span></span>&#123;</span><br><span class="line">	fmt.Println(p.speak())</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>定义一个接口可以用来打印实现Phone接口的函数，它接受一个Phone接口类型的参数，然后打印出，不用考虑具体的类型实现。</p>
+<figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">a:=IPhone&#123;<span class="string">&quot;ASD&quot;</span>&#125;</span><br><span class="line"><span class="built_in">print</span>(a)</span><br></pre></td></tr></table></figure>
+
+<h5 id="值和指针类型接收者"><a href="#值和指针类型接收者" class="headerlink" title="值和指针类型接收者"></a>值和指针类型接收者</h5><p>有值类型接收者和指针类型接收者两种。二者都可以调用方法，因为Go语言编译器自动做了转换，所以值类型接收者和指针类型接收者是等价的。但是在接口的实现中，值类型接收者和指针类型接收者不一样。</p>
+<p>把实现过程改成指针，依旧可以编译运行正常。这就证明了以值类型接收者实现接口的时候，不管是类型本身，还是该类型的指针类型，都实现了该接口。</p>
+<figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">print</span>(&amp;a)</span><br></pre></td></tr></table></figure>
+
+
+
+<p>实例中接收者（a Iphone）实现了Phone接口，那么Iphone和他的指针类型*Iphone都实现了Phone接口。</p>
+<p>接下来把接收者改为指针类型。</p>
+<figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">func</span> <span class="params">(a *IPhone)</span></span> speak() <span class="type">string</span>&#123;</span><br><span class="line">   <span class="keyword">return</span> <span class="string">&quot;iiii&quot;</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>修改成指针赖兴接收者后会发现，实例中的print（a），没办法编译成功，错误是IPhone没有实现Phone接口，这就证明了以指针类型接收者实现接口的时候，只有对应的指针类型才被认为实现了接口。</p>
+<p>可以这样解读：当值类型作为接收者时，person类型和<em>person类型都实现了该接口。当指针类型作为接收者时，只有</em>person类型实现了该接口。可以发现，实现接口的类型都有*person，这也表明指针类型比较万能，不管哪一种接收者，它都能实现该接口。</p>
+<h6 id="接口的理解是一个困难的过程-以下是我理解接口的过程和程序。"><a href="#接口的理解是一个困难的过程-以下是我理解接口的过程和程序。" class="headerlink" title="接口的理解是一个困难的过程,以下是我理解接口的过程和程序。"></a>接口的理解是一个困难的过程,以下是我理解接口的过程和程序。</h6><p>1.使用接口和不使用接口的两种方式：</p>
+<ol>
+<li>使用接口：</li>
+</ol>
+<figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> main</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> <span class="string">&quot;fmt&quot;</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">type</span> Doer <span class="keyword">interface</span> &#123;</span><br><span class="line">    Do()</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">type</span> Foo <span class="keyword">struct</span>&#123;&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="params">(f Foo)</span></span> Do() &#123;</span><br><span class="line">    fmt.Println(<span class="string">&quot;Foo does something.&quot;</span>)</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">type</span> Bar <span class="keyword">struct</span>&#123;&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="params">(b Bar)</span></span> Do() &#123;</span><br><span class="line">    fmt.Println(<span class="string">&quot;Bar does something else.&quot;</span>)</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">DoSomething</span><span class="params">(d Doer)</span></span> &#123;</span><br><span class="line">    d.Do()</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">main</span><span class="params">()</span></span> &#123;</span><br><span class="line">    f := Foo&#123;&#125;</span><br><span class="line">    b := Bar&#123;&#125;</span><br><span class="line"></span><br><span class="line">    DoSomething(f)</span><br><span class="line">    DoSomething(b)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>在这个例子中，我们定义了一个接口 <code>Doer</code> 和两个结构体 <code>Foo</code> 和 <code>Bar</code>。<code>Foo</code> 和 <code>Bar</code> 分别实现了 <code>Doer</code> 接口。在 <code>DoSomething</code> 函数中，我们接收一个 <code>Doer</code> 类型的参数，并调用其 <code>Do</code> 方法。这样，我们可以在 <code>main</code> 函数中传入 <code>Foo</code> 或 <code>Bar</code> 的实例，从而使得代码具有更好的灵活性。</p>
+<ol start="2">
+<li>不使用接口：</li>
+</ol>
+<figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> main</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> <span class="string">&quot;fmt&quot;</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">type</span> Foo <span class="keyword">struct</span>&#123;&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="params">(f Foo)</span></span> Do() &#123;</span><br><span class="line">    fmt.Println(<span class="string">&quot;Foo does something.&quot;</span>)</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">type</span> Bar <span class="keyword">struct</span>&#123;&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="params">(b Bar)</span></span> Do() &#123;</span><br><span class="line">    fmt.Println(<span class="string">&quot;Bar does something else.&quot;</span>)</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">DoSomethingWithFoo</span><span class="params">(f Foo)</span></span> &#123;</span><br><span class="line">    f.Do()</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">DoSomethingWithBar</span><span class="params">(b Bar)</span></span> &#123;</span><br><span class="line">    b.Do()</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">main</span><span class="params">()</span></span> &#123;</span><br><span class="line">    f := Foo&#123;&#125;</span><br><span class="line">    b := Bar&#123;&#125;</span><br><span class="line"></span><br><span class="line">    DoSomethingWithFoo(f)</span><br><span class="line">    DoSomethingWithBar(b)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>在这个例子中，我们没有使用接口。取而代之的是，我们为 <code>Foo</code> 和 <code>Bar</code> 分别定义了两个函数 <code>DoSomethingWithFoo</code> 和 <code>DoSomethingWithBar</code>。这样，我们也可以在 <code>main</code> 函数中调用这些函数，但相比于使用接口的方式，这种设计缺乏灵活性，因为每个函数只能处理一种类型的值。</p>
+<p>通过以上两个示例的对比，我们可以看到，使用接口可以使得我们的代码更具有抽象性、可替换性和灵活性。在需要抽象、可替换性或灵活性的场景中，使用接口是一个不错的选择。</p>
+<p><em>实现接口的作用是让用户的代码更具可读性，相同的代码出现的频率变低，更低的耦合度。</em></p>
+<h5 id="工厂函数"><a href="#工厂函数" class="headerlink" title="工厂函数"></a>工厂函数</h5><p>工厂函数一般用于创建自定义的结构体，便于使用者调用。</p>
+<figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">new</span><span class="params">(a <span class="type">string</span>)</span></span> *IPhone&#123;</span><br><span class="line">   <span class="keyword">return</span> &amp;IPhone&#123;name: a&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>我定义了一个工厂函数new,接受一个string的类型的参数，用于表示手机的名字，同时返回一个*Iphone。</p>
+<p>通过工厂函数创建自定义结构的方式，让调用者不用太关注结构体内部的字段，只用传给工厂函数就可以了。</p>
+<figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> main</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> <span class="string">&quot;fmt&quot;</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">type</span> Animal <span class="keyword">interface</span> &#123;</span><br><span class="line">    Speak() <span class="type">string</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">type</span> Dog <span class="keyword">struct</span>&#123;&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="params">(d Dog)</span></span> Speak() <span class="type">string</span> &#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="string">&quot;Woof!&quot;</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">type</span> Cat <span class="keyword">struct</span>&#123;&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="params">(c Cat)</span></span> Speak() <span class="type">string</span> &#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="string">&quot;Meow!&quot;</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">CreateAnimal</span><span class="params">(kind <span class="type">string</span>)</span></span> Animal &#123;</span><br><span class="line">    <span class="keyword">switch</span> kind &#123;</span><br><span class="line">    <span class="keyword">case</span> <span class="string">&quot;dog&quot;</span>:</span><br><span class="line">        <span class="keyword">return</span> Dog&#123;&#125;</span><br><span class="line">    <span class="keyword">case</span> <span class="string">&quot;cat&quot;</span>:</span><br><span class="line">        <span class="keyword">return</span> Cat&#123;&#125;</span><br><span class="line">    <span class="keyword">default</span>:</span><br><span class="line">        <span class="keyword">return</span> <span class="literal">nil</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">main</span><span class="params">()</span></span> &#123;</span><br><span class="line">    dog := CreateAnimal(<span class="string">&quot;dog&quot;</span>)</span><br><span class="line">    fmt.Println(dog.Speak()) <span class="comment">// 输出：Woof!</span></span><br><span class="line"></span><br><span class="line">    cat := CreateAnimal(<span class="string">&quot;cat&quot;</span>)</span><br><span class="line">    fmt.Println(cat.Speak()) <span class="comment">// 输出：Meow!</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>我们并不需要在意结构体内部的字段，只需要传给工厂函数就行了。</p>
+<h4 id="继承和组合"><a href="#继承和组合" class="headerlink" title="继承和组合"></a>继承和组合</h4><p>在Go语言中没有继承的概念，所以结构体、接口之间也没有父子关系，Go语言提倡的是组合，利用组合达到代码复用的目的，这也更灵活。类型的组合就是可以称之为嵌套。</p>
+<p>当然可以。以下是一个使用 Go 语言实现的简单嵌套示例。这个例子定义了一个嵌套结构体，用于表示学生和课程信息。</p>
+<figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> main</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> <span class="string">&quot;fmt&quot;</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">type</span> Student <span class="keyword">struct</span> &#123;</span><br><span class="line">    Name <span class="type">string</span></span><br><span class="line">    Age <span class="type">int</span></span><br><span class="line">    Course []Course</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">type</span> Course <span class="keyword">struct</span> &#123;</span><br><span class="line">    Name <span class="type">string</span></span><br><span class="line">    Credit <span class="type">int</span></span><br><span class="line">&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>我们先定义了一个名为 <code>Student</code> 的结构体，其中包含了姓名（Name）、年龄（Age）和课程（Course）信息。课程信息是由一个嵌套结构体 <code>Course</code> 表示。</p>
+<h4 id="类型断言"><a href="#类型断言" class="headerlink" title="类型断言"></a>类型断言</h4><p>有了接口和实现接口的类型，就会有类型断言。类型断言用来判断一个接口的值是否是实现该接口的某个具体类型。类型断言（Type Assertion）用于确定一个接口变量（interface{}）实际指向的类型。类型断言的语法形式如下：</p>
+<figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">value, ok := <span class="keyword">interface</span>&#123;&#125;.(T)</span><br></pre></td></tr></table></figure>
+
+<p>其中的 <code>value</code> 是类型为 <code>T</code> 的值，<code>ok</code> 是一个布尔值，表示断言是否成功。如果断言成功，<code>ok</code> 为 <code>true</code>，<code>value</code> 包含接口变量实际指向的值；如果断言失败，<code>ok</code> 为 <code>false</code>，<code>value</code> 为 <code>T</code> 类型的零值。</p>
+<p>以下是一个使用类型断言的示例：</p>
+<figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> main</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> <span class="string">&quot;fmt&quot;</span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">main</span><span class="params">()</span></span> &#123;</span><br><span class="line">    <span class="keyword">var</span> x <span class="keyword">interface</span>&#123;&#125; = <span class="string">&quot;Hello, World!&quot;</span></span><br><span class="line"></span><br><span class="line">    s, ok := x.(<span class="type">string</span>)</span><br><span class="line">    <span class="keyword">if</span> ok &#123;</span><br><span class="line">        fmt.Println(s)</span><br><span class="line">    &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">        fmt.Println(<span class="string">&quot;断言失败&quot;</span>)</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    i, ok := x.(<span class="type">int</span>)</span><br><span class="line">    <span class="keyword">if</span> ok &#123;</span><br><span class="line">        fmt.Println(i)</span><br><span class="line">    &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">        fmt.Println(<span class="string">&quot;断言失败&quot;</span>)</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>在这个例子中，我们首先定义了一个接口变量 <code>x</code>，并将其赋值为字符串 “Hello, World!”。然后，我们使用类型断言尝试将该接口变量转换为字符串类型和整数类型。成功时，<code>ok</code> 为 <code>true</code>，<code>value</code> 包含实际值；失败时，<code>ok</code> 为 <code>false</code>，<code>value</code> 为相应类型的零值。。</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      
+      
+      <div>
+        <ul class="post-copyright">
+          <li class="post-copyright-author">
+          <strong>本文作者:  </strong>yangyan</a>
+          </li>
+          <li class="post-copyright-link">
+          <strong>本文链接:  </strong>
+          <a href="/2023/11/23/goland-struct和interface/" target="_blank" title="goland-struct和interface">http://example.com/2023/11/23/goland-struct和interface/</a>
+          </li>
+          <li class="post-copyright-license">
+            <strong>版权声明:   </strong>
+            本博客所有文章除特别声明外，均采用 <a rel="license" href="https://creativecommons.org/licenses/by-nc-nd/4.0/" target="_blank" title="Attribution-NonCommercial-NoDerivatives 4.0 International (CC BY-NC-ND 4.0)">CC BY-NC-ND 4.0</a>
+            许可协议。转载请注明出处
+          </li>
+         
+        </ul>
+<div>
+
+      
+      
+        
+	<div id="comment">
+		<!-- 来必力City版安装代码 -->
+		<div id="lv-container" data-id="city" data-uid="MTAyMC8yOTQ4MS82MDQ5">
+		<script type="text/javascript">
+		   (function(d, s) {
+		       var j, e = d.getElementsByTagName(s)[0];
+
+		       if (typeof LivereTower === 'function') { return; }
+
+		       j = d.createElement(s);
+		       j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
+		       j.async = true;
+
+		       e.parentNode.insertBefore(j, e);
+		   })(document, 'script');
+		</script>
+		<noscript>为正常使用来必力评论功能请激活JavaScript</noscript>
+		</div>
+		<!-- City版安装代码已完成 -->
+	</div>
+
+
+
+      
+      
+        
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/goland/" rel="tag">goland</a></li></ul>
+
+      
+
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2023/11/26/goland-%E9%94%99%E8%AF%AF/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">上一篇</strong>
+      <div class="article-nav-title">
+        
+          goland-错误
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2023/11/21/goland-%E5%87%BD%E6%95%B0%E5%92%8C%E6%96%B9%E6%B3%95/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">下一篇</strong>
+      <div class="article-nav-title">goland-函数和方法</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+<!-- Table of Contents -->
+
+  <aside id="toc-sidebar">
+    <div id="toc" class="toc-article">
+    <strong class="toc-title">文章目录</strong>
+    
+        <ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E7%BB%93%E6%9E%84%E4%BD%93"><span class="nav-number">1.</span> <span class="nav-text">结构体</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#%E7%BB%93%E6%9E%84%E4%BD%93%E7%9A%84%E5%AE%9A%E4%B9%89"><span class="nav-number">1.1.</span> <span class="nav-text">结构体的定义</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#%E5%A3%B0%E6%98%8E%E5%92%8C%E4%BD%BF%E7%94%A8"><span class="nav-number">1.2.</span> <span class="nav-text">声明和使用</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#%E7%BB%93%E6%9E%84%E4%BD%93%E7%9A%84%E5%AD%97%E6%AE%B5"><span class="nav-number">1.3.</span> <span class="nav-text">结构体的字段</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E6%8E%A5%E5%8F%A3"><span class="nav-number">2.</span> <span class="nav-text">接口</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#%E6%8E%A5%E5%8F%A3%E7%9A%84%E5%AE%9A%E4%B9%89"><span class="nav-number">2.1.</span> <span class="nav-text">接口的定义</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#%E6%8E%A5%E5%8F%A3%E7%9A%84%E5%AE%9E%E7%8E%B0"><span class="nav-number">2.2.</span> <span class="nav-text">接口的实现</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#%E5%80%BC%E5%92%8C%E6%8C%87%E9%92%88%E7%B1%BB%E5%9E%8B%E6%8E%A5%E6%94%B6%E8%80%85"><span class="nav-number">2.3.</span> <span class="nav-text">值和指针类型接收者</span></a><ol class="nav-child"><li class="nav-item nav-level-6"><a class="nav-link" href="#%E6%8E%A5%E5%8F%A3%E7%9A%84%E7%90%86%E8%A7%A3%E6%98%AF%E4%B8%80%E4%B8%AA%E5%9B%B0%E9%9A%BE%E7%9A%84%E8%BF%87%E7%A8%8B-%E4%BB%A5%E4%B8%8B%E6%98%AF%E6%88%91%E7%90%86%E8%A7%A3%E6%8E%A5%E5%8F%A3%E7%9A%84%E8%BF%87%E7%A8%8B%E5%92%8C%E7%A8%8B%E5%BA%8F%E3%80%82"><span class="nav-number">2.3.1.</span> <span class="nav-text">接口的理解是一个困难的过程,以下是我理解接口的过程和程序。</span></a></li></ol></li><li class="nav-item nav-level-5"><a class="nav-link" href="#%E5%B7%A5%E5%8E%82%E5%87%BD%E6%95%B0"><span class="nav-number">2.4.</span> <span class="nav-text">工厂函数</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E7%BB%A7%E6%89%BF%E5%92%8C%E7%BB%84%E5%90%88"><span class="nav-number">3.</span> <span class="nav-text">继承和组合</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E7%B1%BB%E5%9E%8B%E6%96%AD%E8%A8%80"><span class="nav-number">4.</span> <span class="nav-text">类型断言</span></a></li></ol>
+    
+    </div>
+  </aside>
+
+</section>
+        
+      </div>
+      
+      <footer id="footer">
+  
+
+  <div class="container">
+      	<div class="row">
+	      <p> Powered by <a href="http://hexo.io/" target="_blank">Hexo</a> and <a href="https://github.com/iTimeTraveler/hexo-theme-hiker" target="_blank">Hexo-theme-hiker</a> </p>
+	      <p id="copyRightEn">Copyright &copy; 2023 - 2024 😀 All Rights Reserved.</p>
+	      
+	      
+    		<p class="busuanzi_uv">
+				访客数 : <span id="busuanzi_value_site_uv"></span> |  
+				访问量 : <span id="busuanzi_value_site_pv"></span>
+		    </p>
+  		   
+		</div>
+
+		
+  </div>
+</footer>
+
+
+<!-- min height -->
+
+<script>
+    var wrapdiv = document.getElementById("wrap");
+    var contentdiv = document.getElementById("content");
+    var allheader = document.getElementById("allheader");
+
+    wrapdiv.style.minHeight = document.body.offsetHeight + "px";
+    if (allheader != null) {
+      contentdiv.style.minHeight = document.body.offsetHeight - allheader.offsetHeight - document.getElementById("footer").offsetHeight + "px";
+    } else {
+      contentdiv.style.minHeight = document.body.offsetHeight - document.getElementById("footer").offsetHeight + "px";
+    }
+</script>
+    </div>
+    <!-- <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+    <a href="/categories" class="mobile-nav-link">Categories</a>
+  
+    <a href="/tags" class="mobile-nav-link">Tags</a>
+  
+    <a href="/about" class="mobile-nav-link">About</a>
+  
+</nav> -->
+    
+
+<!-- mathjax config similar to math.stackexchange -->
+
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+    tex2jax: {
+      inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+      processEscapes: true
+    }
+  });
+</script>
+
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+      tex2jax: {
+        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+      }
+    });
+</script>
+
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax(), i;
+        for(i=0; i < all.length; i += 1) {
+            all[i].SourceElement().parentNode.className += ' has-jax';
+        }
+    });
+</script>
+
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
+
+
+  
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+
+  
+<script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+
+
+<script src="/js/scripts.js"></script>
+
+
+
+
+
+  
+<script src="/js/dialog.js"></script>
+
+
+
+
+
+
+
+
+
+	<div style="display: none;">
+    <script src="https://s95.cnzz.com/z_stat.php?id=1260716016&web_id=1260716016" language="JavaScript"></script>
+  </div>
+
+
+
+	<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js">
+	</script>
+
+
+
+
+
+
+  </div>
+
+  <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" style="display: none;">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h2 class="modal-title" id="myModalLabel">设置</h2>
+      </div>
+      <hr style="margin-top:0px; margin-bottom:0px; width:80%; border-top: 3px solid #000;">
+      <hr style="margin-top:2px; margin-bottom:0px; width:80%; border-top: 1px solid #000;">
+
+
+      <div class="modal-body">
+          <div style="margin:6px;">
+            <a data-toggle="collapse" data-parent="#accordion" href="#collapseOne" onclick="javascript:setFontSize();" aria-expanded="true" aria-controls="collapseOne">
+              正文字号大小
+            </a>
+          </div>
+          <div id="collapseOne" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingOne">
+          <div class="panel-body">
+            您已调整页面字体大小
+          </div>
+        </div>
+      
+
+
+          <div style="margin:6px;">
+            <a data-toggle="collapse" data-parent="#accordion" href="#collapseTwo" onclick="javascript:setBackground();" aria-expanded="true" aria-controls="collapseTwo">
+              夜间护眼模式
+            </a>
+        </div>
+          <div id="collapseTwo" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingTwo">
+          <div class="panel-body">
+            夜间模式已经开启，再次单击按钮即可关闭 
+          </div>
+        </div>
+
+        <div>
+            <a data-toggle="collapse" data-parent="#accordion" href="#collapseThree" aria-expanded="true" aria-controls="collapseThree">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;关 于&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</a>
+        </div>
+         <div id="collapseThree" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingThree">
+          <div class="panel-body">
+            😀
+          </div>
+          <div class="panel-body">
+            Copyright © 2024 yangyan All Rights Reserved.
+          </div>
+        </div>
+      </div>
+
+
+      <hr style="margin-top:0px; margin-bottom:0px; width:80%; border-top: 1px solid #000;">
+      <hr style="margin-top:2px; margin-bottom:0px; width:80%; border-top: 3px solid #000;">
+      <div class="modal-footer">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button>
+      </div>
+    </div>
+  </div>
+</div>
+  
+  <a id="rocket" href="#top" class=""></a>
+  <script type="text/javascript" src="/js/totop.js?v=1.0.0" async=""></script>
+  
+    <a id="menu-switch"><i class="fa fa-bars fa-lg"></i></a>
+  
+</body>
+</html>

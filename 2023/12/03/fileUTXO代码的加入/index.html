@@ -1,0 +1,587 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>utxo代码的加入 | 😀</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  
+  <meta name="keywords" content="区块链goland" />
+  
+  
+  
+  
+  <meta name="description" content="交易信息与UTXO模型区块链中的货币存储是记录交易的过程，而非记录最终的货币数量。平时使用支付宝和微信支付时，货币的存储在中央，所以调用和更改很容易，在确保中心诚实可信的情况下，我们的货币才是安全的，但是一旦它被攻破或者服务器出现问题，那么交易就会被终止，我们的货币也处在一种不安全的状态。uxto记录的交易过程拥有一个存在输入和输出的账本，剩余的货币则会在创建一个输出到自己的过程。 首先创建交易信">
+<meta property="og:type" content="article">
+<meta property="og:title" content="UTXO代码的加入">
+<meta property="og:url" content="http://example.com/2023/12/03/fileUTXO%E4%BB%A3%E7%A0%81%E7%9A%84%E5%8A%A0%E5%85%A5/index.html">
+<meta property="og:site_name" content="😀">
+<meta property="og:description" content="交易信息与UTXO模型区块链中的货币存储是记录交易的过程，而非记录最终的货币数量。平时使用支付宝和微信支付时，货币的存储在中央，所以调用和更改很容易，在确保中心诚实可信的情况下，我们的货币才是安全的，但是一旦它被攻破或者服务器出现问题，那么交易就会被终止，我们的货币也处在一种不安全的状态。uxto记录的交易过程拥有一个存在输入和输出的账本，剩余的货币则会在创建一个输出到自己的过程。 首先创建交易信">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2023-12-03T05:28:37.000Z">
+<meta property="article:modified_time" content="2023-12-13T12:59:11.245Z">
+<meta property="article:author" content="yangyan">
+<meta property="article:tag" content="区块链">
+<meta property="article:tag" content="goland">
+<meta name="twitter:card" content="summary">
+  
+    <link rel="alternate" href="/atom.xml" title="😀" type="application/atom+xml">
+  
+
+  
+
+  <link rel="icon" href="/css/images/mylogo.jpg">
+  <link rel="apple-touch-icon" href="/css/images/mylogo.jpg">
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans|Montserrat:700" rel="stylesheet" type="text/css">
+  <link href="https://fonts.googleapis.com/css?family=Roboto:400,300,300italic,400italic" rel="stylesheet" type="text/css">
+  <link href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" rel="stylesheet">
+  <style type="text/css">
+    @font-face{font-family:futura-pt; src:url("/css/fonts/FuturaPTBold.otf") format("woff");font-weight:500;font-style:normal;}
+    @font-face{font-family:futura-pt-light; src:url("/css/fonts/FuturaPTBook.otf") format("woff");font-weight:lighter;font-style:normal;}
+    @font-face{font-family:futura-pt-italic; src:url("/css/fonts/FuturaPTBookOblique.otf") format("woff");font-weight:400;font-style:italic;}
+}
+
+  </style>
+  
+<link rel="stylesheet" href="/css/style.css">
+
+
+  
+<script src="/js/jquery-3.1.1.min.js"></script>
+
+  
+<script src="/js/bootstrap.js"></script>
+
+
+  <!-- Bootstrap core CSS -->
+  <link rel="stylesheet" href="/css/bootstrap.css" >
+
+  
+    
+<link rel="stylesheet" href="/css/dialog.css">
+
+  
+
+  
+
+  
+    <link rel="stylesheet" href="/css/header-post.css" >
+  
+
+  
+  
+  
+
+<meta name="generator" content="Hexo 6.3.0"></head>
+
+
+
+  <body data-spy="scroll" data-target="#toc" data-offset="50">
+
+
+  
+  <div id="container">
+    <div id="wrap">
+      
+        <header>
+
+    <div id="allheader" class="navbar navbar-default navbar-static-top" role="navigation">
+        <div class="navbar-inner">
+          
+          <div class="container"> 
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+              <span class="sr-only">Toggle navigation</span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+            </button>
+
+            
+              <a class="brand" style="
+                 margin-top: 0px;"  
+                href="#" data-toggle="modal" data-target="#myModal" >
+                  <img width="124px" height="124px" alt="Hike News" src="/css/images/mylogo.jpg">
+              </a>
+            
+            
+            <div class="navbar-collapse collapse">
+              <ul class="hnav navbar-nav">
+                
+                  <li> <a class="main-nav-link" href="/">首页</a> </li>
+                
+                  <li> <a class="main-nav-link" href="/archives">归档</a> </li>
+                
+                  <li> <a class="main-nav-link" href="/categories">分类</a> </li>
+                
+                  <li> <a class="main-nav-link" href="/tags">标签</a> </li>
+                
+                  <li> <a class="main-nav-link" href="/about">关于</a> </li>
+                
+                  <li><div id="search-form-wrap">
+
+    <form class="search-form">
+        <input type="text" class="ins-search-input search-form-input" placeholder="" />
+        <button type="submit" class="search-form-submit"></button>
+    </form>
+    <div class="ins-search">
+    <div class="ins-search-mask"></div>
+    <div class="ins-search-container">
+        <div class="ins-input-wrapper">
+            <input type="text" class="ins-search-input" placeholder="请输入关键词..." />
+            <span class="ins-close ins-selectable"><i class="fa fa-times-circle"></i></span>
+        </div>
+        <div class="ins-section-wrapper">
+            <div class="ins-section-container"></div>
+        </div>
+    </div>
+</div>
+<script>
+(function (window) {
+    var INSIGHT_CONFIG = {
+        TRANSLATION: {
+            POSTS: '文章',
+            PAGES: '页面',
+            CATEGORIES: '分类',
+            TAGS: '标签',
+            UNTITLED: '(无标题)',
+        },
+        ROOT_URL: '/',
+        CONTENT_URL: '/content.json',
+    };
+    window.INSIGHT_CONFIG = INSIGHT_CONFIG;
+})(window);
+</script>
+
+<script src="/js/insight.js"></script>
+
+
+</div></li>
+            </div>
+          </div>
+                
+      </div>
+    </div>
+
+</header>
+
+
+
+      
+            
+      <div id="content" class="outer">
+        
+          <section id="main" style="float:none;"><article id="post-fileUTXO代码的加入" style="width: 75%; float:left;" class="article article-type-post" itemscope itemprop="blogPost" >
+  <div id="articleInner" class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="thumb" class="article-title" itemprop="name">
+      UTXO代码的加入
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-meta">
+      
+	<a href="/2023/12/03/fileUTXO%E4%BB%A3%E7%A0%81%E7%9A%84%E5%8A%A0%E5%85%A5/" class="article-date">
+	  <time datetime="2023-12-03T05:28:37.000Z" itemprop="datePublished">2023-12-03</time>
+	</a>
+
+      
+    <a class="article-category-link" href="/categories/%E5%8C%BA%E5%9D%97%E9%93%BE/">区块链</a>
+
+      
+	<a class="article-views">
+	<span id="busuanzi_container_page_pv">
+		阅读量<span id="busuanzi_value_page_pv"></span>
+	</span>
+	</a>
+
+      
+
+    </div>
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="交易信息与UTXO模型"><a href="#交易信息与UTXO模型" class="headerlink" title="交易信息与UTXO模型"></a>交易信息与UTXO模型</h1><p>区块链中的货币存储是记录交易的过程，而非记录最终的货币数量。平时使用支付宝和微信支付时，货币的存储在中央，所以调用和更改很容易，在确保中心诚实可信的情况下，我们的货币才是安全的，但是一旦它被攻破或者服务器出现问题，那么交易就会被终止，我们的货币也处在一种不安全的状态。uxto记录的交易过程拥有一个存在输入和输出的账本，剩余的货币则会在创建一个输出到自己的过程。</p>
+<p>首先创建交易信息的两部分，input和output。</p>
+<p>首先创建一个transaction文件夹，用于分类，装我们要用的交易内容一类。</p>
+<p>首先创建inoutput.go创建结构体作交易账本。分为两部分。</p>
+<figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">type</span> TXoutput <span class="keyword">struct</span> &#123;</span><br><span class="line">   Value <span class="type">int</span></span><br><span class="line">   Toaddress []<span class="type">byte</span></span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">type</span> TXintput <span class="keyword">struct</span>&#123;</span><br><span class="line">   TXid []<span class="type">byte</span></span><br><span class="line">   Outidx <span class="type">int</span></span><br><span class="line">   Fromaddress []<span class="type">byte</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>输入的有txid是上一次交易的信息，还有有发起人的地址和位于上次交易的第几条。输出的是输出多少币和接收者的地址。</p>
+<p>创建transaction.go，放入本次交易的结构体</p>
+<figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">type</span> Transaction <span class="keyword">struct</span> &#123;</span><br><span class="line">	Id []<span class="type">byte</span></span><br><span class="line">	Inputs []TXintput</span><br><span class="line">	Outputs []TXoutput</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p><em>首字母大写才能在别的file里边用这些参数，不然没办法引用的。</em></p>
+<p>transaction里由本身的哈希值和输入输出的交易。inouts则会记载上一次交易中对本id进行的outputs。txoutput则可以实现找零，即多出来的币要交易给自己。</p>
+<p>首先计算每个transaction的哈希值。然后返回充当id。</p>
+<figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">func</span> <span class="params">(tx *Transaction)</span></span>TXhash() []<span class="type">byte</span>  &#123;</span><br><span class="line">   <span class="keyword">var</span> encoded bytes.Buffer</span><br><span class="line">   <span class="keyword">var</span> hash [<span class="number">32</span>]<span class="type">byte</span></span><br><span class="line">   encoder:=gob.NewEncoder(&amp;encoded)</span><br><span class="line">   err:=encoder.Encode(tx)</span><br><span class="line">   utils.Handle(err)</span><br><span class="line">   hash=sha256.Sum256(encoded.Bytes())</span><br><span class="line">   <span class="keyword">return</span> hash[:]</span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">func</span>  <span class="params">(tx* Transaction)</span></span>Setid()  &#123;</span><br><span class="line">   tx.Id=tx.TXhash()</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p><em>var encoded bytes.Buffer创建一个字节缓冲区，用于事后的编码和哈希值的计算。而handle我们之前已经说过了，是处理错误的函数</em></p>
+<p>第二步setid将计算好的哈希值返回给结构体。</p>
+<p>之前创建了初始区块，现在丰富一下初始区块的交易信息作为内容，之前的date得淘汰了。</p>
+<figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">BaseTX</span> <span class="params">(toaddress []<span class="type">byte</span>)</span></span> *Transaction  &#123;</span><br><span class="line">   txin:=TXintput&#123;[]<span class="type">byte</span>&#123;&#125;,<span class="number">-1</span>,[]<span class="type">byte</span>&#123;&#125;&#125;</span><br><span class="line">   txout:=TXoutput&#123;constcoe.Initcoin,toaddress&#125;</span><br><span class="line">   tx:=Transaction&#123;[]<span class="type">byte</span>(<span class="string">&quot;god&quot;</span>),[]TXintput&#123;txin&#125;,[]TXoutput&#123;txout&#125;&#125;</span><br><span class="line">    <span class="keyword">return</span> &amp;tx</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="params">(tx *Transaction )</span></span>Isbase() <span class="type">bool</span>&#123;</span><br><span class="line">   <span class="keyword">return</span> <span class="built_in">len</span>(tx.Inputs)==<span class="number">1</span> &amp;&amp; tx.Inputs[<span class="number">0</span>].Outidx==<span class="number">-1</span></span><br></pre></td></tr></table></figure>
+
+<p>创建一个basetx的函数，输入第一笔交易要给的地址，因为第一笔交易之前没有交易，所以-1表示。constcoe则是我们定义的常量用作我们创建时的总的比特币数目，我们转到之前就创建的constcoe.go中设置。</p>
+<figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> Difficulty = <span class="number">10</span></span><br><span class="line"><span class="keyword">const</span> Initcoin=<span class="number">500</span></span><br></pre></td></tr></table></figure>
+
+<p>isbase则判断是否是初始交易，用作之后的计算utxo的辅助。只用判断长度是不是1，和内容的outidx是不是-1就好了。</p>
+<p>我们上边设置了第一笔交易的内容，id我们也可以自己设置。这是一种特权。</p>
+<figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">func</span> <span class="params">(in *TXintput)</span></span>Fromaddressright(address []<span class="type">byte</span>)  <span class="type">bool</span>&#123;</span><br><span class="line">   <span class="keyword">return</span> bytes.Equal(in.Fromaddress,address)</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="params">(out *TXoutput)</span></span>Toaddressright(address []<span class="type">byte</span>)  <span class="type">bool</span>&#123;</span><br><span class="line"><span class="keyword">return</span> bytes.Equal(out.Toaddress,address)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>转到inoutput.go创建上边的俩个函数，以后计算utxo时能起到辅助作用。</p>
+<p>现在代码写完了，重构一下之前的内容。首先是结构体block。</p>
+<figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">type</span> Block <span class="keyword">struct</span> &#123;</span><br><span class="line">   Timestamp <span class="type">int64</span></span><br><span class="line">   Hash      []<span class="type">byte</span></span><br><span class="line">   PrevHash  []<span class="type">byte</span></span><br><span class="line">   Target []<span class="type">byte</span></span><br><span class="line">   Nonce <span class="type">int64</span></span><br><span class="line">   transactions []*transaaction.Transaction</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>在返回区块哈希的函数中，我们创建一个函数来处理交易信息，让它成为一个序列。</p>
+<figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">func</span> <span class="params">(b *Block)</span></span>Backtrasactionsummary() []<span class="type">byte</span> &#123;</span><br><span class="line">   txids:=<span class="built_in">make</span>([][]<span class="type">byte</span>,<span class="number">0</span>)</span><br><span class="line">   <span class="keyword">for</span> _,tx:=<span class="keyword">range</span> b.transactions&#123;</span><br><span class="line">      txids=<span class="built_in">append</span>(txids,tx.Id)</span><br><span class="line">   &#125;</span><br><span class="line">  summary:=bytes.Join(txids,[]<span class="type">byte</span>&#123;&#125;)</span><br><span class="line">  <span class="keyword">return</span> summary</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="params">(b *Block)</span></span> SetHash() &#123;</span><br><span class="line">   information := bytes.Join([][]<span class="type">byte</span>&#123;utils.ToHexInt(b.Timestamp), b.PrevHash, b.Target,utils.ToHexInt(b.Nonce),b.Backtrasactionsummary()&#125;, []<span class="type">byte</span>&#123;&#125;)</span><br><span class="line">   hash := sha256.Sum256(information)</span><br><span class="line">   b.Hash = hash[:]</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>内容就是先创建一个空切片用来装集合起来的交易数据，遍历整个交易数据，将输入输出的哈希值也就是id集合起来进行哈希值的计算。</p>
+<p>用到的append函数和join函数都与切片的操作有关系，append函数如果原始切片有足够的容量，新元素会被添加到原切片的后面；如果没有足够容量，则会重新分配内存并拷贝原有元素和新元素。此外，<code>append</code>函数还可以用于合并多个数组或切片。它是一个内置函数，无需引入任何包即可使用。join函数不是Go语言的标准库函数，因此可能需要根据具体的应用场景来实现。一般来说，<code>join</code>可能用于将多个字符串或其他类型的元素连接成一个单独的字符串或元素。</p>
+<p>在这里的append输出切片没办法勇总哈希值计算，所以用bytes.join转为字节切片再输出。</p>
+<p>然后修改CreateBlock与GenesisBlock两个函数。</p>
+<figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">CreateBlock</span><span class="params">(prevhash []<span class="type">byte</span>, txs []*transaaction.Transaction)</span></span> *Block &#123;</span><br><span class="line">   block := Block&#123;time.Now().Unix(), []<span class="type">byte</span>&#123;&#125;, prevhash, []<span class="type">byte</span>&#123;&#125;, <span class="number">0</span>, txs&#125;</span><br><span class="line">   block.Target = block.GetTarget()</span><br><span class="line">   block.Nonce=block.FindNonce()</span><br><span class="line">   block.SetHash()</span><br><span class="line">   <span class="keyword">return</span> &amp;block</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">GenesisBlock</span><span class="params">()</span></span> *Block &#123;</span><br><span class="line">tx:=transaaction.BaseTX([]<span class="type">byte</span>(<span class="string">&quot;yangyan&quot;</span>))</span><br><span class="line">   <span class="keyword">return</span> CreateBlock([]<span class="type">byte</span>&#123;&#125;, []*transaaction.Transaction&#123;tx&#125;)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>我们在创建创世区块的同时一并创建了初始交易信息，并且把所有的币都转了。</p>
+<p>现在转到proofofwork.go修改getbse4nonce函数。</p>
+<p>函数用作合成带随机数的数据。</p>
+<figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">func</span> <span class="params">(b *Block)</span></span> GetBase4Nonce(nonce <span class="type">int64</span>) []<span class="type">byte</span> &#123;</span><br><span class="line">	data := bytes.Join([][]<span class="type">byte</span>&#123;</span><br><span class="line">		utils.ToHexInt(b.Timestamp),</span><br><span class="line">		b.PrevHash,</span><br><span class="line">		utils.ToHexInt(<span class="type">int64</span>(nonce)),</span><br><span class="line">		b.Target,</span><br><span class="line">		b.Backtrasactionsummary(),</span><br><span class="line">	&#125;,</span><br><span class="line">		[]<span class="type">byte</span>&#123;&#125;,</span><br><span class="line">	)</span><br><span class="line">	<span class="keyword">return</span> data</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>修改AddBlock与CreateBlockChain两个函数。</p>
+<figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">func</span> <span class="params">(bc *BlockChain)</span></span> AddBlock(txs []*transaaction.Transaction) &#123;</span><br><span class="line">   newBlock := CreateBlock(bc.Blocks[<span class="built_in">len</span>(bc.Blocks)<span class="number">-1</span>].Hash, txs)</span><br><span class="line">   bc.Blocks = <span class="built_in">append</span>(bc.Blocks, newBlock)</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">CreateBlockChain</span><span class="params">()</span></span> *BlockChain &#123;</span><br><span class="line">   blockchain := BlockChain&#123;&#125;</span><br><span class="line">   blockchain.Blocks = <span class="built_in">append</span>(blockchain.Blocks, GenesisBlock())</span><br><span class="line">   <span class="keyword">return</span> &amp;blockchain</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>接下来如果创建createtransaction这样的函数，创建交易信息重点就在于找到足够的前置交易信息来支撑本次交易。</p>
+<figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">func</span> <span class="params">(bc *BlockChain)</span></span>Findunspentransactions(address []<span class="type">byte</span>)[]transaaction.Transaction  &#123;</span><br><span class="line"><span class="keyword">var</span> unspenttxs []transaaction.Transaction</span><br><span class="line">    spenttxs:=<span class="built_in">make</span>(<span class="keyword">map</span>[<span class="type">string</span>][]<span class="type">int</span>)</span><br><span class="line">   <span class="keyword">for</span> idx:=<span class="built_in">len</span>(bc.Blocks)<span class="number">-1</span>;idx&gt;=<span class="number">0</span>;idx-- &#123;</span><br><span class="line">      block:=bc.Blocks[idx]</span><br><span class="line">      <span class="keyword">for</span> _,tx:=<span class="keyword">range</span> block.transactions&#123;</span><br><span class="line">         txid:=hex.EncodeToString(tx.Id)</span><br><span class="line">   interoutputs:</span><br><span class="line">      <span class="keyword">for</span> outidx,out:=<span class="keyword">range</span> tx.Outputs&#123;</span><br><span class="line">         <span class="keyword">if</span> spenttxs[txid]!=<span class="literal">nil</span> &#123;</span><br><span class="line">            <span class="keyword">for</span> _,spentout:=<span class="keyword">range</span> spenttxs[txid]&#123;</span><br><span class="line">               <span class="keyword">if</span> spentout == outidx&#123;</span><br><span class="line">                  <span class="keyword">continue</span>  interoutputs</span><br><span class="line">               &#125;</span><br><span class="line">            &#125;</span><br><span class="line">         &#125;</span><br><span class="line">         <span class="keyword">if</span> out.Toaddressright(address)&#123;</span><br><span class="line">            unspenttxs=<span class="built_in">append</span>(unspenttxs,*tx)</span><br><span class="line">         &#125;</span><br><span class="line">      &#125;</span><br><span class="line">         <span class="keyword">if</span> !tx.Isbase() &#123;</span><br><span class="line">            <span class="keyword">for</span> _,in:=<span class="keyword">range</span> tx.Inputs&#123;</span><br><span class="line">               <span class="keyword">if</span> in.Fromaddressright(address)&#123;</span><br><span class="line">                  intxid:=hex.EncodeToString(in.TXid)</span><br><span class="line">                  spenttxs[intxid]=<span class="built_in">append</span>(spenttxs[intxid],in.Outidx)</span><br><span class="line">               &#125;</span><br><span class="line">            &#125;</span><br><span class="line"></span><br><span class="line">         &#125;</span><br><span class="line">      &#125;</span><br><span class="line"></span><br><span class="line">   &#125;</span><br><span class="line"><span class="keyword">return</span> unspenttxs</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>这段代码解读就是先创建一个没有花费的结构体集合和一个用于装已经花费的映射，映射里是id映射前置第几比交易。进行区块的倒循环，遍历没一个区块的id。然后遍历输出的地址在映射里是不是能找得到，找得到的话切片里也对的上也是前置交易的第几比交易，那么就是已经花费并且已经记录的交易。如果不一样那么看是不是输入到这个地址，如果是那就是没被花费的。判断是否是初始交易如果不是即遍历前置交易，如果是对应的地址就代表已经花费，则计入映射和来自前置交易第几比交易。</p>
+<p><em>有点乱，理解一下就懂了</em></p>
+<p>利用findunspenttransactions函数返回的没消费的交易，我们可以计算一个地址的所有uxto。</p>
+<figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">func</span> <span class="params">(bc *BlockChain)</span></span> FindUTXOs(address []<span class="type">byte</span>) (<span class="type">int</span>, <span class="keyword">map</span>[<span class="type">string</span>]<span class="type">int</span>) &#123;</span><br><span class="line">   unspentOuts := <span class="built_in">make</span>(<span class="keyword">map</span>[<span class="type">string</span>]<span class="type">int</span>)</span><br><span class="line">   unspentTxs := bc.Findunspentransactions(address)</span><br><span class="line">   accumulated := <span class="number">0</span></span><br><span class="line"></span><br><span class="line">Work:</span><br><span class="line">   <span class="keyword">for</span> _, tx := <span class="keyword">range</span> unspentTxs &#123;</span><br><span class="line">      txID := hex.EncodeToString(tx.Id)</span><br><span class="line">      <span class="keyword">for</span> outIdx, out := <span class="keyword">range</span> tx.Outputs &#123;</span><br><span class="line">         <span class="keyword">if</span> out.Toaddressright(address) &#123;</span><br><span class="line">            accumulated += out.Value</span><br><span class="line">            unspentOuts[txID] = outIdx<span class="comment">//如果一笔交易有好多次转向这个地址的交易，只会记录最后一笔的outidx</span></span><br><span class="line">            <span class="keyword">continue</span> Work</span><br><span class="line">         &#125;</span><br><span class="line">      &#125;</span><br><span class="line">   &#125;</span><br><span class="line">   <span class="keyword">return</span> accumulated, unspentOuts</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>遍历没有花费的交易里边的outputs，遍历一下把value汇总一下，地址添加到索引里。每个交易只能有一个输出跟给定的地址相关联。</p>
+<figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">func</span> <span class="params">(bc *BlockChain)</span></span>Findspendableoutputs(address []<span class="type">byte</span>,amount <span class="type">int</span>)(<span class="type">int</span>,<span class="keyword">map</span>[<span class="type">string</span>]<span class="type">int</span>) &#123;</span><br><span class="line">	unspentouts := <span class="built_in">make</span>(<span class="keyword">map</span>[<span class="type">string</span>]<span class="type">int</span>)</span><br><span class="line">	unspenttxs := bc.Findunspentransactions(address)</span><br><span class="line">	accumulated:=<span class="number">0</span></span><br><span class="line"></span><br><span class="line">	work:</span><br><span class="line">		<span class="keyword">for</span> _,tx:=<span class="keyword">range</span> unspenttxs&#123;</span><br><span class="line">			txid:=hex.EncodeToString(tx.Id)</span><br><span class="line">			<span class="keyword">for</span> outidx,out:=<span class="keyword">range</span> tx.Outputs&#123;</span><br><span class="line">				<span class="keyword">if</span> out.Toaddressright(address)&amp;&amp;accumulated&lt;amount&#123;</span><br><span class="line">					accumulated+=out.Value</span><br><span class="line">					unspentouts[txid]=outidx</span><br><span class="line">					<span class="keyword">if</span> accumulated&gt;=amount&#123;<span class="keyword">break</span> work</span><br><span class="line">                                          &#125;</span><br><span class="line">					<span class="keyword">continue</span> work</span><br><span class="line">				&#125;</span><br><span class="line"></span><br><span class="line">			&#125;</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="keyword">return</span> accumulated,unspentouts</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<p>只需要找到资产总量大于本次交易转账的一部分utxo就可以了，没必要每一笔都计算在内。</p>
+<figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">func</span> <span class="params">(bc *BlockChain)</span></span>Creatransaction(from,to []<span class="type">byte</span>,amount <span class="type">int</span>)(*transaaction.Transaction,<span class="type">bool</span>)  &#123;</span><br><span class="line">   <span class="keyword">var</span> inputs []transaaction.TXintput</span><br><span class="line">   <span class="keyword">var</span> outputs []transaaction.TXoutput</span><br><span class="line">   acc,validoutputs:=bc.Findspendableoutputs(from,amount)</span><br><span class="line">   <span class="keyword">if</span> acc&lt;amount&#123;</span><br><span class="line">      fmt.Println(<span class="string">&quot;不够&quot;</span>)</span><br><span class="line">      <span class="keyword">return</span> &amp;transaaction.Transaction&#123;&#125;,<span class="literal">false</span></span><br><span class="line">   &#125;</span><br><span class="line">   <span class="keyword">for</span> txid,outidx:=<span class="keyword">range</span> validoutputs &#123;</span><br><span class="line">      txid,err:=hex.DecodeString(txid)</span><br><span class="line">      utils.Handle(err)</span><br><span class="line">      intput:=transaaction.TXintput&#123;txid,outidx,from&#125;</span><br><span class="line">      inputs=<span class="built_in">append</span>(inputs,intput)</span><br><span class="line">   &#125;</span><br><span class="line">   outputs = <span class="built_in">append</span>(outputs, transaaction.TXoutput&#123;amount, to&#125;)</span><br><span class="line">   <span class="keyword">if</span> acc &gt; amount &#123;</span><br><span class="line">      outputs = <span class="built_in">append</span>(outputs, transaaction.TXoutput&#123;acc - amount, from&#125;)</span><br><span class="line">   &#125;</span><br><span class="line">   tx := transaaction.Transaction&#123;<span class="literal">nil</span>, inputs, outputs&#125;</span><br><span class="line">   tx.Setid()</span><br><span class="line"></span><br><span class="line">   <span class="keyword">return</span> &amp;tx, <span class="literal">true</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>这一段函数比较简单，先小于再等于再大于，小于就报错返回不够，等于就直接输出，大于就在等于的基础上添加一笔将剩余币返回给自己的程序。</p>
+<figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">func</span> <span class="params">(bc *BlockChain)</span></span>Mine(txs []*transaaction.Transaction)  &#123;</span><br><span class="line">   bc.AddBlock(txs)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>这段函数模拟矿工的打包过程</p>
+<figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">main</span><span class="params">()</span></span> &#123;</span><br><span class="line">   txPool := <span class="built_in">make</span>([]*transaaction.Transaction, <span class="number">0</span>)</span><br><span class="line">   <span class="keyword">var</span> tempTx *transaaction.Transaction</span><br><span class="line">   <span class="keyword">var</span> ok <span class="type">bool</span></span><br><span class="line">   <span class="keyword">var</span> property <span class="type">int</span></span><br><span class="line">   chain := blockchain.CreateBlockChain()</span><br><span class="line">   property, _ = chain.FindUTXOs([]<span class="type">byte</span>(<span class="string">&quot;yangyan&quot;</span>))</span><br><span class="line">   fmt.Println(<span class="string">&quot;Balance of yangyan: &quot;</span>, property)</span><br><span class="line"></span><br><span class="line">   tempTx, ok = chain.Creatransaction([]<span class="type">byte</span>(<span class="string">&quot;yangyan&quot;</span>), []<span class="type">byte</span>(<span class="string">&quot;K&quot;</span>), <span class="number">100</span>)</span><br><span class="line">   <span class="keyword">if</span> ok &#123;</span><br><span class="line">      txPool = <span class="built_in">append</span>(txPool, tempTx)</span><br><span class="line">   &#125;</span><br><span class="line">   chain.Mine(txPool)</span><br><span class="line">   txPool = <span class="built_in">make</span>([]*transaaction.Transaction, <span class="number">0</span>)</span><br><span class="line">   property, _ = chain.FindUTXOs([]<span class="type">byte</span>(<span class="string">&quot;Leo Cao&quot;</span>))</span><br><span class="line">   fmt.Println(<span class="string">&quot;Balance of yangyan: &quot;</span>, property)</span><br><span class="line"></span><br><span class="line">   tempTx, ok = chain.Creatransaction([]<span class="type">byte</span>(<span class="string">&quot;K&quot;</span>), []<span class="type">byte</span>(<span class="string">&quot;E&quot;</span>), <span class="number">200</span>) <span class="comment">// this transaction is invalid</span></span><br><span class="line">   <span class="keyword">if</span> ok &#123;</span><br><span class="line">      txPool = <span class="built_in">append</span>(txPool, tempTx)</span><br><span class="line">   &#125;</span><br><span class="line"></span><br><span class="line">   tempTx, ok = chain.Creatransaction([]<span class="type">byte</span>(<span class="string">&quot;K&quot;</span>), []<span class="type">byte</span>(<span class="string">&quot;E&quot;</span>), <span class="number">50</span>)</span><br><span class="line">   <span class="keyword">if</span> ok &#123;</span><br><span class="line">      txPool = <span class="built_in">append</span>(txPool, tempTx)</span><br><span class="line">   &#125;</span><br><span class="line"></span><br><span class="line">   tempTx, ok = chain.Creatransaction([]<span class="type">byte</span>(<span class="string">&quot;yangyan&quot;</span>), []<span class="type">byte</span>(<span class="string">&quot;E&quot;</span>), <span class="number">100</span>)</span><br><span class="line">   <span class="keyword">if</span> ok &#123;</span><br><span class="line">      txPool = <span class="built_in">append</span>(txPool, tempTx)</span><br><span class="line">   &#125;</span><br><span class="line">   chain.Mine(txPool)</span><br><span class="line">   txPool = <span class="built_in">make</span>([]*transaaction.Transaction, <span class="number">0</span>)</span><br><span class="line">   property, _ = chain.FindUTXOs([]<span class="type">byte</span>(<span class="string">&quot;yangyan&quot;</span>))</span><br><span class="line">   fmt.Println(<span class="string">&quot;Balance of Leo Cao: &quot;</span>, property)</span><br><span class="line">   property, _ = chain.FindUTXOs([]<span class="type">byte</span>(<span class="string">&quot;K&quot;</span>))</span><br><span class="line">   fmt.Println(<span class="string">&quot;Balance of Krad: &quot;</span>, property)</span><br><span class="line">   property, _ = chain.FindUTXOs([]<span class="type">byte</span>(<span class="string">&quot;E&quot;</span>))</span><br><span class="line">   fmt.Println(<span class="string">&quot;Balance of Exia: &quot;</span>, property)</span><br><span class="line"></span><br><span class="line">   <span class="keyword">for</span> _, block := <span class="keyword">range</span> chain.Blocks &#123;</span><br><span class="line">      fmt.Printf(<span class="string">&quot;Timestamp: %d\n&quot;</span>, block.Timestamp)</span><br><span class="line">      fmt.Printf(<span class="string">&quot;hash: %x\n&quot;</span>, block.Hash)</span><br><span class="line">      fmt.Printf(<span class="string">&quot;Previous hash: %x\n&quot;</span>, block.PrevHash)</span><br><span class="line">      fmt.Printf(<span class="string">&quot;nonce: %d\n&quot;</span>, block.Nonce)</span><br><span class="line">      fmt.Println(<span class="string">&quot;Proof of Work validation:&quot;</span>, block.ValidatePoW())</span><br><span class="line">   &#125;</span><br><span class="line"></span><br><span class="line">  <span class="comment">//展示一下双花问题</span></span><br><span class="line"></span><br><span class="line">   tempTx, ok = chain.Creatransaction([]<span class="type">byte</span>(<span class="string">&quot;Krad&quot;</span>), []<span class="type">byte</span>(<span class="string">&quot;E&quot;</span>), <span class="number">30</span>)</span><br><span class="line">   <span class="keyword">if</span> ok &#123;</span><br><span class="line">      txPool = <span class="built_in">append</span>(txPool, tempTx)</span><br><span class="line">   &#125;</span><br><span class="line"></span><br><span class="line">   tempTx, ok = chain.Creatransaction([]<span class="type">byte</span>(<span class="string">&quot;Krad&quot;</span>), []<span class="type">byte</span>(<span class="string">&quot;yangyan&quot;</span>), <span class="number">30</span>)</span><br><span class="line">   <span class="keyword">if</span> ok &#123;</span><br><span class="line">      txPool = <span class="built_in">append</span>(txPool, tempTx)</span><br><span class="line">   &#125;</span><br><span class="line"></span><br><span class="line">   chain.Mine(txPool)</span><br><span class="line">   txPool = <span class="built_in">make</span>([]*transaaction.Transaction, <span class="number">0</span>)</span><br><span class="line"></span><br><span class="line">   <span class="keyword">for</span> _, block := <span class="keyword">range</span> chain.Blocks &#123;</span><br><span class="line">      fmt.Printf(<span class="string">&quot;Timestamp: %d\n&quot;</span>, block.Timestamp)</span><br><span class="line">      fmt.Printf(<span class="string">&quot;hash: %x\n&quot;</span>, block.Hash)</span><br><span class="line">      fmt.Printf(<span class="string">&quot;Previous hash: %x\n&quot;</span>, block.PrevHash)</span><br><span class="line">      fmt.Printf(<span class="string">&quot;nonce: %d\n&quot;</span>, block.Nonce)</span><br><span class="line">      fmt.Println(<span class="string">&quot;Proof of Work validation:&quot;</span>, block.ValidatePoW())</span><br><span class="line">   &#125;</span><br><span class="line"></span><br><span class="line">   property, _ = chain.FindUTXOs([]<span class="type">byte</span>(<span class="string">&quot;yangyan&quot;</span>))</span><br><span class="line">   fmt.Println(<span class="string">&quot;Balance of Leo Cao: &quot;</span>, property)</span><br><span class="line">   property, _ = chain.FindUTXOs([]<span class="type">byte</span>(<span class="string">&quot;K&quot;</span>))</span><br><span class="line">   fmt.Println(<span class="string">&quot;Balance of Krad: &quot;</span>, property)</span><br><span class="line">   property, _ = chain.FindUTXOs([]<span class="type">byte</span>(<span class="string">&quot;E&quot;</span>))</span><br><span class="line">   fmt.Println(<span class="string">&quot;Balance of Exia: &quot;</span>, property)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>这是调试的过程</p>
+<ol>
+<li>创建一个空的交易池（txPool）和一个临时交易变量（tempTx）。</li>
+<li>创建一个区块链实例（chain）。</li>
+<li>查找名为”yangyan”的地址的UTXOs（未使用的交易输出），并打印其余额。</li>
+<li>尝试创建一个从”yangyan”到”K”的转账交易，金额为100，如果成功则将其添加到交易池中。</li>
+<li>对交易池中的交易进行挖矿操作。</li>
+<li>清空交易池，再次查找”L”的地址的UTXOs，并打印其余额。</li>
+<li>尝试创建一个无效的交易，从”K”到”E”的转账交易，金额为200，如果成功则将其添加到交易池中。</li>
+<li>尝试创建一个有效的交易，从”K”到”E”的转账交易，金额为50，如果成功则将其添加到交易池中。</li>
+<li>尝试创建一个有效的交易，从”yangyan”到”E”的转账交易，金额为100，如果成功则将其添加到交易池中。</li>
+<li>对交易池中的交易进行挖矿操作。</li>
+<li>清空交易池。</li>
+<li>遍历区块链中的所有区块，打印每个区块的时间戳、哈希值、前一个区块的哈希值、随机数以及工作量证明验证结果。</li>
+<li>尝试创建一个从”K”到”E”的转账交易，金额为30，如果成功则将其添加到交易池中。</li>
+<li>尝试创建一个从”K”到”yangyan”的转账交易，金额为30，如果成功则将其添加到交易池中。</li>
+<li>对交易池中的交易进行挖矿操作。</li>
+<li>清空交易池。</li>
+<li>遍历区块链中的所有区块，打印每个区块的时间戳、哈希值、前一个区块的哈希值、随机数以及工作量证明验证结果。</li>
+<li>查找各个地址的UTXOs，并打印其余额。</li>
+</ol>
+
+      
+    </div>
+    <footer class="article-footer">
+      
+      
+      <div>
+        <ul class="post-copyright">
+          <li class="post-copyright-author">
+          <strong>本文作者:  </strong>yangyan</a>
+          </li>
+          <li class="post-copyright-link">
+          <strong>本文链接:  </strong>
+          <a href="/2023/12/03/fileUTXO代码的加入/" target="_blank" title="UTXO代码的加入">http://example.com/2023/12/03/fileUTXO代码的加入/</a>
+          </li>
+          <li class="post-copyright-license">
+            <strong>版权声明:   </strong>
+            本博客所有文章除特别声明外，均采用 <a rel="license" href="https://creativecommons.org/licenses/by-nc-nd/4.0/" target="_blank" title="Attribution-NonCommercial-NoDerivatives 4.0 International (CC BY-NC-ND 4.0)">CC BY-NC-ND 4.0</a>
+            许可协议。转载请注明出处
+          </li>
+         
+        </ul>
+<div>
+
+      
+      
+        
+	<div id="comment">
+		<!-- 来必力City版安装代码 -->
+		<div id="lv-container" data-id="city" data-uid="MTAyMC8yOTQ4MS82MDQ5">
+		<script type="text/javascript">
+		   (function(d, s) {
+		       var j, e = d.getElementsByTagName(s)[0];
+
+		       if (typeof LivereTower === 'function') { return; }
+
+		       j = d.createElement(s);
+		       j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
+		       j.async = true;
+
+		       e.parentNode.insertBefore(j, e);
+		   })(document, 'script');
+		</script>
+		<noscript>为正常使用来必力评论功能请激活JavaScript</noscript>
+		</div>
+		<!-- City版安装代码已完成 -->
+	</div>
+
+
+
+      
+      
+        
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/goland/" rel="tag">goland</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E5%8C%BA%E5%9D%97%E9%93%BE/" rel="tag">区块链</a></li></ul>
+
+      
+
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2023/12/18/Badger%E5%AD%A6%E4%B9%A0%E4%BD%BF%E7%94%A8/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">上一篇</strong>
+      <div class="article-nav-title">
+        
+          Badger学习使用
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2023/12/02/%E7%AE%80%E5%8D%95%E5%8C%BA%E5%9D%97%E9%93%BE%E7%9A%84pow%E9%AA%8C%E8%AF%81%E6%9C%BA%E5%88%B6%E7%9A%84%E6%B7%BB%E5%8A%A0/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">下一篇</strong>
+      <div class="article-nav-title">简单区块链的pow验证机制的添加</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+<!-- Table of Contents -->
+
+  <aside id="toc-sidebar">
+    <div id="toc" class="toc-article">
+    <strong class="toc-title">文章目录</strong>
+    
+        <ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E4%BA%A4%E6%98%93%E4%BF%A1%E6%81%AF%E4%B8%8EUTXO%E6%A8%A1%E5%9E%8B"><span class="nav-number">1.</span> <span class="nav-text">交易信息与UTXO模型</span></a></li></ol>
+    
+    </div>
+  </aside>
+
+</section>
+        
+      </div>
+      
+      <footer id="footer">
+  
+
+  <div class="container">
+      	<div class="row">
+	      <p> Powered by <a href="http://hexo.io/" target="_blank">Hexo</a> and <a href="https://github.com/iTimeTraveler/hexo-theme-hiker" target="_blank">Hexo-theme-hiker</a> </p>
+	      <p id="copyRightEn">Copyright &copy; 2023 - 2024 😀 All Rights Reserved.</p>
+	      
+	      
+    		<p class="busuanzi_uv">
+				访客数 : <span id="busuanzi_value_site_uv"></span> |  
+				访问量 : <span id="busuanzi_value_site_pv"></span>
+		    </p>
+  		   
+		</div>
+
+		
+  </div>
+</footer>
+
+
+<!-- min height -->
+
+<script>
+    var wrapdiv = document.getElementById("wrap");
+    var contentdiv = document.getElementById("content");
+    var allheader = document.getElementById("allheader");
+
+    wrapdiv.style.minHeight = document.body.offsetHeight + "px";
+    if (allheader != null) {
+      contentdiv.style.minHeight = document.body.offsetHeight - allheader.offsetHeight - document.getElementById("footer").offsetHeight + "px";
+    } else {
+      contentdiv.style.minHeight = document.body.offsetHeight - document.getElementById("footer").offsetHeight + "px";
+    }
+</script>
+    </div>
+    <!-- <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+    <a href="/categories" class="mobile-nav-link">Categories</a>
+  
+    <a href="/tags" class="mobile-nav-link">Tags</a>
+  
+    <a href="/about" class="mobile-nav-link">About</a>
+  
+</nav> -->
+    
+
+<!-- mathjax config similar to math.stackexchange -->
+
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+    tex2jax: {
+      inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+      processEscapes: true
+    }
+  });
+</script>
+
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+      tex2jax: {
+        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+      }
+    });
+</script>
+
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax(), i;
+        for(i=0; i < all.length; i += 1) {
+            all[i].SourceElement().parentNode.className += ' has-jax';
+        }
+    });
+</script>
+
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
+
+
+  
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+
+  
+<script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+
+
+<script src="/js/scripts.js"></script>
+
+
+
+
+
+  
+<script src="/js/dialog.js"></script>
+
+
+
+
+
+
+
+
+
+	<div style="display: none;">
+    <script src="https://s95.cnzz.com/z_stat.php?id=1260716016&web_id=1260716016" language="JavaScript"></script>
+  </div>
+
+
+
+	<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js">
+	</script>
+
+
+
+
+
+
+  </div>
+
+  <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" style="display: none;">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h2 class="modal-title" id="myModalLabel">设置</h2>
+      </div>
+      <hr style="margin-top:0px; margin-bottom:0px; width:80%; border-top: 3px solid #000;">
+      <hr style="margin-top:2px; margin-bottom:0px; width:80%; border-top: 1px solid #000;">
+
+
+      <div class="modal-body">
+          <div style="margin:6px;">
+            <a data-toggle="collapse" data-parent="#accordion" href="#collapseOne" onclick="javascript:setFontSize();" aria-expanded="true" aria-controls="collapseOne">
+              正文字号大小
+            </a>
+          </div>
+          <div id="collapseOne" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingOne">
+          <div class="panel-body">
+            您已调整页面字体大小
+          </div>
+        </div>
+      
+
+
+          <div style="margin:6px;">
+            <a data-toggle="collapse" data-parent="#accordion" href="#collapseTwo" onclick="javascript:setBackground();" aria-expanded="true" aria-controls="collapseTwo">
+              夜间护眼模式
+            </a>
+        </div>
+          <div id="collapseTwo" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingTwo">
+          <div class="panel-body">
+            夜间模式已经开启，再次单击按钮即可关闭 
+          </div>
+        </div>
+
+        <div>
+            <a data-toggle="collapse" data-parent="#accordion" href="#collapseThree" aria-expanded="true" aria-controls="collapseThree">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;关 于&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</a>
+        </div>
+         <div id="collapseThree" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingThree">
+          <div class="panel-body">
+            😀
+          </div>
+          <div class="panel-body">
+            Copyright © 2024 yangyan All Rights Reserved.
+          </div>
+        </div>
+      </div>
+
+
+      <hr style="margin-top:0px; margin-bottom:0px; width:80%; border-top: 1px solid #000;">
+      <hr style="margin-top:2px; margin-bottom:0px; width:80%; border-top: 3px solid #000;">
+      <div class="modal-footer">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button>
+      </div>
+    </div>
+  </div>
+</div>
+  
+  <a id="rocket" href="#top" class=""></a>
+  <script type="text/javascript" src="/js/totop.js?v=1.0.0" async=""></script>
+  
+    <a id="menu-switch"><i class="fa fa-bars fa-lg"></i></a>
+  
+</body>
+</html>

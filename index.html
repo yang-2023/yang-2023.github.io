@@ -1,0 +1,956 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>😀</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  
+  
+  
+  
+  <meta property="og:type" content="website">
+<meta property="og:title" content="😀">
+<meta property="og:url" content="http://example.com/index.html">
+<meta property="og:site_name" content="😀">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:author" content="yangyan">
+<meta name="twitter:card" content="summary">
+  
+    <link rel="alternate" href="/atom.xml" title="😀" type="application/atom+xml">
+  
+
+  
+
+  <link rel="icon" href="/css/images/mylogo.jpg">
+  <link rel="apple-touch-icon" href="/css/images/mylogo.jpg">
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans|Montserrat:700" rel="stylesheet" type="text/css">
+  <link href="https://fonts.googleapis.com/css?family=Roboto:400,300,300italic,400italic" rel="stylesheet" type="text/css">
+  <link href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" rel="stylesheet">
+  <style type="text/css">
+    @font-face{font-family:futura-pt; src:url("/css/fonts/FuturaPTBold.otf") format("woff");font-weight:500;font-style:normal;}
+    @font-face{font-family:futura-pt-light; src:url("/css/fonts/FuturaPTBook.otf") format("woff");font-weight:lighter;font-style:normal;}
+    @font-face{font-family:futura-pt-italic; src:url("/css/fonts/FuturaPTBookOblique.otf") format("woff");font-weight:400;font-style:italic;}
+}
+
+  </style>
+  
+<link rel="stylesheet" href="/css/style.css">
+
+
+  
+<script src="/js/jquery-3.1.1.min.js"></script>
+
+  
+<script src="/js/bootstrap.js"></script>
+
+
+  <!-- Bootstrap core CSS -->
+  <link rel="stylesheet" href="/css/bootstrap.css" >
+
+  
+    <link rel="stylesheet" href="/css/home.css" >
+  
+
+  
+
+  
+
+  
+  
+  
+
+<meta name="generator" content="Hexo 6.3.0"></head>
+
+
+
+  <body>
+
+
+  
+    <header id="header">
+
+	<!-- 背景图模式 -->
+	
+
+    
+      <div id="intrologo" class="intro-logo">
+    
+ 
+
+
+    <canvas width="100%" height="100%"></canvas>
+    <script>
+      var c = document.getElementsByTagName('canvas')[0],
+          x = c.getContext('2d'),
+          w = window.innerWidth,
+          h = window.innerHeight,
+          pr = window.devicePixelRatio || 1,
+          f = 90,
+          q,
+          m = Math,
+          r = 0,
+          u = m.PI*2,
+          v = m.cos,
+          z = m.random
+      c.width = w*pr
+      c.height = h*pr
+      x.scale(pr, pr)
+      x.globalAlpha = 0.6
+
+      <!-- 折线Polyline背景 -->
+      
+        function i(){
+            x.clearRect(0,0,w,h)
+            q=[{x:0,y:h*.7+f},{x:0,y:h*.7-f}]
+            while(q[1].x<w+f) d(q[0], q[1])
+        }
+        function d(i,j){   
+            x.beginPath()
+            x.moveTo(i.x, i.y)
+            x.lineTo(j.x, j.y)
+            var k = j.x + (z()*2-0.25)*f,
+                n = y(j.y)
+            x.lineTo(k, n)
+            x.closePath()
+            r-=u/-50
+            x.fillStyle = '#'+(v(r)*127+128<<16 | v(r+u/3)*127+128<<8 | v(r+u/3*2)*127+128).toString(16)
+            x.fill()
+            q[0] = q[1]
+            q[1] = {x:k,y:n}
+        }
+        function y(p){
+            var t = p + (z()*2-1.1)*f
+            return (t>h||t<0) ? y(p) : t
+        }
+        document.getElementById("intrologo").onclick = i
+        document.getElementById("intrologo").ontouchstart = i
+        i()
+
+      <!-- 多边形trianglify背景 -->
+      
+    </script>
+    
+
+    
+      <div id="homelogo" class="homelogo"> 
+    
+
+        
+          <div class="homelogoback" >
+            <h1><a href="#content" id="logo">😀</a></h1>
+            <h3></h3>
+            <h5>yangyan</h5>
+            <!-- <p><a href="https://github.com/iTimeTraveler" target="_blank">Github</a></p> -->
+          </div>
+        
+    
+    </div>
+  </div>
+
+  <!-- 自适应主页背景大图 -->
+  
+
+ <!-- home_logo_image居中 -->
+ 
+    <script>
+        var homelogodiv = document.getElementById("homelogo");
+        if (document.all.homelogo.offsetWidth > document.body.clientWidth) {
+          homelogodiv.style.width = document.body.clientWidth + "px";
+          homelogodiv.style.marginLeft = document.body.clientWidth * -0.5 + "px";
+        } else {
+          homelogodiv.style.width = homelogodiv.clientWidth  + "px";
+          homelogodiv.style.marginLeft = (homelogodiv.clientWidth)  * -0.5 + "px";
+        }
+    </script>
+  
+
+  <div class="intro-navigate">
+      <p class="navigater-list">
+        
+          <a id="beautifont" class="main-nav-link" href="/">首页</a>
+        
+          <a id="beautifont" class="main-nav-link" href="/archives">归档</a>
+        
+          <a id="beautifont" class="main-nav-link" href="/categories">分类</a>
+        
+          <a id="beautifont" class="main-nav-link" href="/tags">标签</a>
+        
+          <a id="beautifont" class="main-nav-link" href="/about">关于</a>
+        
+      </p>
+  </div>
+
+</header>
+  
+  <div id="container">
+    <div id="wrap">
+      
+            
+      <div id="content" class="outer">
+        
+          <section id="main" style="float:none;">
+  
+    <article id="file-区块链的存储读取和管理"  class="article article-type-file" itemscope itemprop="blogPost" >
+  <div id="articleInner" class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="thumb" itemprop="name">
+      <a class="article-title" href="/2024/01/18/%E5%8C%BA%E5%9D%97%E9%93%BE%E7%9A%84%E5%AD%98%E5%82%A8%E8%AF%BB%E5%8F%96%E5%92%8C%E7%AE%A1%E7%90%86/">区块链的存储读取和管理</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-meta">
+      
+	<a href="/2024/01/18/%E5%8C%BA%E5%9D%97%E9%93%BE%E7%9A%84%E5%AD%98%E5%82%A8%E8%AF%BB%E5%8F%96%E5%92%8C%E7%AE%A1%E7%90%86/" class="article-date">
+	  <time datetime="2024-01-18T01:15:49.000Z" itemprop="datePublished">2024-01-18</time>
+	</a>
+
+      
+    <a class="article-category-link" href="/categories/%E5%8C%BA%E5%9D%97%E9%93%BE/">区块链</a>
+
+      
+      
+
+    </div>
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p class="article-excerpt-content">
+          Go语言实现区块链存储、读取与管理。之前了解的基本结构，我们每次调试都要创建，重构区块链，但是区块链并没有的到保存，这与实际的区块链系统不符，伴随我们扩展我们的区块链，我们需要一个统一的功能管理模块来操作。
+Badger键值对数据库对于区块链的储存，一种想法是序列化，然后用每个区块的哈希值作为文件名储存在磁盘上，但是考虑到我们频繁的对已经存储的区块进行查询，我们用数据库方式存储管理区块。
+Badger是dgraph.io开发的一款基于 Log Structured Merge (LSM) ...
+        </p>
+        <p class="article-more-link">
+          <a href="/2024/01/18/%E5%8C%BA%E5%9D%97%E9%93%BE%E7%9A%84%E5%AD%98%E5%82%A8%E8%AF%BB%E5%8F%96%E5%92%8C%E7%AE%A1%E7%90%86/#more">阅读全文</a>
+        </p>
+      
+    </div>
+    <footer class="article-footer">
+      
+      
+      
+      
+
+    </footer>
+  </div>
+  
+</article>
+
+<!-- Table of Contents -->
+
+
+  
+    <article id="file-算法"  class="article article-type-file" itemscope itemprop="blogPost" >
+  <div id="articleInner" class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="thumb" itemprop="name">
+      <a class="article-title" href="/2023/12/18/%E7%AE%97%E6%B3%95/">算法</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-meta">
+      
+	<a href="/2023/12/18/%E7%AE%97%E6%B3%95/" class="article-date">
+	  <time datetime="2023-12-18T11:27:53.000Z" itemprop="datePublished">2023-12-18</time>
+	</a>
+
+      
+    <a class="article-category-link" href="/categories/%E7%AE%97%E6%B3%95/">算法</a>
+
+      
+      
+
+    </div>
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p class="article-excerpt-content">
+          1.P1000 超级玛丽游戏P1000 超级玛丽游戏 - 洛谷 | 计算机科学教育新生态 (luogu.com.cn)
+1234567package mainimport &quot;fmt&quot;func main()  &#123;fmt.Println(&quot;                ********\n               ************\n               ####....#.\n             #..###.....##....
+        </p>
+        <p class="article-more-link">
+          <a href="/2023/12/18/%E7%AE%97%E6%B3%95/#more">阅读全文</a>
+        </p>
+      
+    </div>
+    <footer class="article-footer">
+      
+      
+      
+      
+
+    </footer>
+  </div>
+  
+</article>
+
+<!-- Table of Contents -->
+
+
+  
+    <article id="file-Badger学习使用"  class="article article-type-file" itemscope itemprop="blogPost" >
+  <div id="articleInner" class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="thumb" itemprop="name">
+      <a class="article-title" href="/2023/12/18/Badger%E5%AD%A6%E4%B9%A0%E4%BD%BF%E7%94%A8/">Badger学习使用</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-meta">
+      
+	<a href="/2023/12/18/Badger%E5%AD%A6%E4%B9%A0%E4%BD%BF%E7%94%A8/" class="article-date">
+	  <time datetime="2023-12-18T08:49:04.000Z" itemprop="datePublished">2023-12-18</time>
+	</a>
+
+      
+    <a class="article-category-link" href="/categories/%E5%8C%BA%E5%9D%97%E9%93%BE/">区块链</a>
+
+      
+      
+
+    </div>
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p class="article-excerpt-content">
+          BADGER简单实用简介一种kv引擎，KV 引擎是一种键值存储引擎，用于存储键值对。其中，键是唯一的标识符，值是任意数据类型。KV 引擎通常用于缓存、数据库等场景。是 go 生态中比较生产级的存储引擎。
+安装指令输入
+1go get github.com/dgraph-io/badger
+
+在这里我的安装出了一些错误，所以我是自己下载的然后自己安装的，如果你也出错了可以下载仓库 · Gitee 极速下载&#x2F;Badger - Gitee.com下载之后，通过goland的命令行cd到...
+        </p>
+        <p class="article-more-link">
+          <a href="/2023/12/18/Badger%E5%AD%A6%E4%B9%A0%E4%BD%BF%E7%94%A8/#more">阅读全文</a>
+        </p>
+      
+    </div>
+    <footer class="article-footer">
+      
+      
+      
+      
+
+    </footer>
+  </div>
+  
+</article>
+
+<!-- Table of Contents -->
+
+
+  
+    <article id="post-fileUTXO代码的加入"  class="article article-type-post" itemscope itemprop="blogPost" >
+  <div id="articleInner" class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="thumb" itemprop="name">
+      <a class="article-title" href="/2023/12/03/fileUTXO%E4%BB%A3%E7%A0%81%E7%9A%84%E5%8A%A0%E5%85%A5/">UTXO代码的加入</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-meta">
+      
+	<a href="/2023/12/03/fileUTXO%E4%BB%A3%E7%A0%81%E7%9A%84%E5%8A%A0%E5%85%A5/" class="article-date">
+	  <time datetime="2023-12-03T05:28:37.000Z" itemprop="datePublished">2023-12-03</time>
+	</a>
+
+      
+    <a class="article-category-link" href="/categories/%E5%8C%BA%E5%9D%97%E9%93%BE/">区块链</a>
+
+      
+      
+
+    </div>
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p class="article-excerpt-content">
+          交易信息与UTXO模型区块链中的货币存储是记录交易的过程，而非记录最终的货币数量。平时使用支付宝和微信支付时，货币的存储在中央，所以调用和更改很容易，在确保中心诚实可信的情况下，我们的货币才是安全的，但是一旦它被攻破或者服务器出现问题，那么交易就会被终止，我们的货币也处在一种不安全的状态。uxto记录的交易过程拥有一个存在输入和输出的账本，剩余的货币则会在创建一个输出到自己的过程。
+首先创建交易信息的两部分，input和output。
+首先创建一个transaction文件夹，用于分类，装...
+        </p>
+        <p class="article-more-link">
+          <a href="/2023/12/03/fileUTXO%E4%BB%A3%E7%A0%81%E7%9A%84%E5%8A%A0%E5%85%A5/#more">阅读全文</a>
+        </p>
+      
+    </div>
+    <footer class="article-footer">
+      
+      
+      
+      
+
+    </footer>
+  </div>
+  
+</article>
+
+<!-- Table of Contents -->
+
+
+  
+    <article id="file-简单区块链的pow验证机制的添加"  class="article article-type-file" itemscope itemprop="blogPost" >
+  <div id="articleInner" class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="thumb" itemprop="name">
+      <a class="article-title" href="/2023/12/02/%E7%AE%80%E5%8D%95%E5%8C%BA%E5%9D%97%E9%93%BE%E7%9A%84pow%E9%AA%8C%E8%AF%81%E6%9C%BA%E5%88%B6%E7%9A%84%E6%B7%BB%E5%8A%A0/">简单区块链的pow验证机制的添加</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-meta">
+      
+	<a href="/2023/12/02/%E7%AE%80%E5%8D%95%E5%8C%BA%E5%9D%97%E9%93%BE%E7%9A%84pow%E9%AA%8C%E8%AF%81%E6%9C%BA%E5%88%B6%E7%9A%84%E6%B7%BB%E5%8A%A0/" class="article-date">
+	  <time datetime="2023-12-02T13:04:48.000Z" itemprop="datePublished">2023-12-02</time>
+	</a>
+
+      
+    <a class="article-category-link" href="/categories/%E5%8C%BA%E5%9D%97%E9%93%BE/">区块链</a>
+
+      
+      
+
+    </div>
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p class="article-excerpt-content">
+          pow工作量证明机制工作量证明机制加到区块链里就是整个随机数，随机数在矿工挖矿时决定了下一个区块会给到谁的手里，随机数加到数据里边然后进行哈希值的计算，看看是不是在一个范围里边。
+进行pow扩展之前先给代码规范一下，创建一些文件夹进行代码的管理
+先整个文件夹constcoe然后整个全局变量，用来装挖矿的难度。
+1234567//constcoe.gopackage constcoeconst (	Difficulty = 12)
+
+整个函数包。先整个错误函数，错误直接停止。
+12345fu...
+        </p>
+        <p class="article-more-link">
+          <a href="/2023/12/02/%E7%AE%80%E5%8D%95%E5%8C%BA%E5%9D%97%E9%93%BE%E7%9A%84pow%E9%AA%8C%E8%AF%81%E6%9C%BA%E5%88%B6%E7%9A%84%E6%B7%BB%E5%8A%A0/#more">阅读全文</a>
+        </p>
+      
+    </div>
+    <footer class="article-footer">
+      
+      
+      
+      
+
+    </footer>
+  </div>
+  
+</article>
+
+<!-- Table of Contents -->
+
+
+  
+    <article id="post-filegoland-goroutine和channel：并发的基础"  class="article article-type-post" itemscope itemprop="blogPost" >
+  <div id="articleInner" class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="thumb" itemprop="name">
+      <a class="article-title" href="/2023/11/29/filegoland-goroutine%E5%92%8Cchannel%EF%BC%9A%E5%B9%B6%E5%8F%91%E7%9A%84%E5%9F%BA%E7%A1%80/">goland-goroutine和channel：并发的基础</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-meta">
+      
+	<a href="/2023/11/29/filegoland-goroutine%E5%92%8Cchannel%EF%BC%9A%E5%B9%B6%E5%8F%91%E7%9A%84%E5%9F%BA%E7%A1%80/" class="article-date">
+	  <time datetime="2023-11-29T13:37:11.000Z" itemprop="datePublished">2023-11-29</time>
+	</a>
+
+      
+    <a class="article-category-link" href="/categories/goland/">goland</a>
+
+      
+      
+
+    </div>
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p class="article-excerpt-content">
+          goroutine和channel：并发的基础啥是并发听说很有特点的就是goland的并发，所写的代码都按照顺序执行，也就是上一句代码执行完，才会执行下一句，这样的代码逻辑简单，也符合我们的阅读习惯。但这样是不够的，因为计算机很强大，如果只让它干完一件事情再干另外一件事情就太浪费了。比如一款音乐软件，使用它听音乐的时候还想让它下载歌曲，同一时刻做了两件事，在编程中，这就是并发。并发可以让你编写的程序在同一时刻多做几件事情。
+进程和线程进程操作系统中，进程是非常重要的概念。当你启动一个软件，...
+        </p>
+        <p class="article-more-link">
+          <a href="/2023/11/29/filegoland-goroutine%E5%92%8Cchannel%EF%BC%9A%E5%B9%B6%E5%8F%91%E7%9A%84%E5%9F%BA%E7%A1%80/#more">阅读全文</a>
+        </p>
+      
+    </div>
+    <footer class="article-footer">
+      
+      
+      
+      
+
+    </footer>
+  </div>
+  
+</article>
+
+<!-- Table of Contents -->
+
+
+  
+    <article id="post-file初识区块链-动手制作一个简单的区块链"  class="article article-type-post" itemscope itemprop="blogPost" >
+  <div id="articleInner" class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="thumb" itemprop="name">
+      <a class="article-title" href="/2023/11/27/file%E5%88%9D%E8%AF%86%E5%8C%BA%E5%9D%97%E9%93%BE-%E5%8A%A8%E6%89%8B%E5%88%B6%E4%BD%9C%E4%B8%80%E4%B8%AA%E7%AE%80%E5%8D%95%E7%9A%84%E5%8C%BA%E5%9D%97%E9%93%BE/">初识区块链-动手制作一个简单的区块链</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-meta">
+      
+	<a href="/2023/11/27/file%E5%88%9D%E8%AF%86%E5%8C%BA%E5%9D%97%E9%93%BE-%E5%8A%A8%E6%89%8B%E5%88%B6%E4%BD%9C%E4%B8%80%E4%B8%AA%E7%AE%80%E5%8D%95%E7%9A%84%E5%8C%BA%E5%9D%97%E9%93%BE/" class="article-date">
+	  <time datetime="2023-11-27T14:58:45.000Z" itemprop="datePublished">2023-11-27</time>
+	</a>
+
+      
+    <a class="article-category-link" href="/categories/%E5%8C%BA%E5%9D%97%E9%93%BE/">区块链</a>
+
+      
+      
+
+    </div>
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p class="article-excerpt-content">
+          尝试制作一个简单的区块链其实主要是对于go的基础语法刚刚学完所以拿来练手
+1.用struct函数制作一个块，块在区块链中用来储存数据信息，它内部包含上一个区块的hash值连接上一个区块，包含头部信息总结区块，然后再区块数据的存放区存放要保存的重要数据。
+123456type Block struct &#123;   Timestamp int64//时间戳   Hash []byte//本身哈希值   PrevHash []byte//指向上一个区块   Data []byte//属性&...
+        </p>
+        <p class="article-more-link">
+          <a href="/2023/11/27/file%E5%88%9D%E8%AF%86%E5%8C%BA%E5%9D%97%E9%93%BE-%E5%8A%A8%E6%89%8B%E5%88%B6%E4%BD%9C%E4%B8%80%E4%B8%AA%E7%AE%80%E5%8D%95%E7%9A%84%E5%8C%BA%E5%9D%97%E9%93%BE/#more">阅读全文</a>
+        </p>
+      
+    </div>
+    <footer class="article-footer">
+      
+      
+      
+      
+
+    </footer>
+  </div>
+  
+</article>
+
+<!-- Table of Contents -->
+
+
+  
+    <article id="file-goland-错误"  class="article article-type-file" itemscope itemprop="blogPost" >
+  <div id="articleInner" class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="thumb" itemprop="name">
+      <a class="article-title" href="/2023/11/26/goland-%E9%94%99%E8%AF%AF/">goland-错误</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-meta">
+      
+	<a href="/2023/11/26/goland-%E9%94%99%E8%AF%AF/" class="article-date">
+	  <time datetime="2023-11-26T08:33:26.000Z" itemprop="datePublished">2023-11-26</time>
+	</a>
+
+      
+    <a class="article-category-link" href="/categories/goland/">goland</a>
+
+      
+      
+
+    </div>
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p class="article-excerpt-content">
+          错误在Go语言中，错误是通过内置的error接口表示的。
+只有一个Error()方法用来返回具体的错误信息。
+error工厂函数除了可以使用其他函数，自己定义的函数也可以发挥错误信息给调用者。
+add函数会在a或者b任何一个为负数的情况下，返回一个错误信息；如果a、b都不为负数，错误信息部分会返回nil，这也是常见的做法。所以调用者可以通过错误信息是否为nil进行判断。下面的add函数示例是使用errors.New这个工厂函数来生成错误信息的。errors.New函数接收一个字符串参数，返...
+        </p>
+        <p class="article-more-link">
+          <a href="/2023/11/26/goland-%E9%94%99%E8%AF%AF/#more">阅读全文</a>
+        </p>
+      
+    </div>
+    <footer class="article-footer">
+      
+      
+      
+      
+
+    </footer>
+  </div>
+  
+</article>
+
+<!-- Table of Contents -->
+
+
+  
+    <article id="file-goland-struct和interface"  class="article article-type-file" itemscope itemprop="blogPost" >
+  <div id="articleInner" class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="thumb" itemprop="name">
+      <a class="article-title" href="/2023/11/23/goland-struct%E5%92%8Cinterface/">goland-struct和interface</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-meta">
+      
+	<a href="/2023/11/23/goland-struct%E5%92%8Cinterface/" class="article-date">
+	  <time datetime="2023-11-23T04:30:38.000Z" itemprop="datePublished">2023-11-23</time>
+	</a>
+
+      
+    <a class="article-category-link" href="/categories/goland/">goland</a>
+
+      
+      
+
+    </div>
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p class="article-excerpt-content">
+          结构体结构体的定义这里我们定义了一个结构体类型，名称为IPhone，含有字段name
+123type Phone struct &#123;  name string&#125;
+
+在定义结构体时，字段的声明方法与平时声明一个变量是一样的，都是变量名在前，类型在后，只不过在结构体中，变量名称为成员名或字段名。
+声明和使用123p:=IPhone&#123;   name: &quot;ASD&quot;&#125;fmt.Println(p.name)
+
+1p:=IPhone&#123;&...
+        </p>
+        <p class="article-more-link">
+          <a href="/2023/11/23/goland-struct%E5%92%8Cinterface/#more">阅读全文</a>
+        </p>
+      
+    </div>
+    <footer class="article-footer">
+      
+      
+      
+      
+
+    </footer>
+  </div>
+  
+</article>
+
+<!-- Table of Contents -->
+
+
+  
+    <article id="post-goland-函数和方法"  class="article article-type-post" itemscope itemprop="blogPost" >
+  <div id="articleInner" class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="thumb" itemprop="name">
+      <a class="article-title" href="/2023/11/21/goland-%E5%87%BD%E6%95%B0%E5%92%8C%E6%96%B9%E6%B3%95/">goland-函数和方法</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-meta">
+      
+	<a href="/2023/11/21/goland-%E5%87%BD%E6%95%B0%E5%92%8C%E6%96%B9%E6%B3%95/" class="article-date">
+	  <time datetime="2023-11-21T11:52:23.000Z" itemprop="datePublished">2023-11-21</time>
+	</a>
+
+      
+    <a class="article-category-link" href="/categories/goland/">goland</a>
+
+      
+      
+
+    </div>
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p class="article-excerpt-content">
+          函数函数声明12func sum(a int,b int) int&#123;   return a+b
+
+注意形参名后加类型
+函数定义以下部分：
+1.关键词func
+2.函数名sum
+3.函数参数a，b
+4.返回值
+5.代码实体
+多值返回123func sum(a int,b int) (int,error)&#123;   return a+b,errors.New(&quot;f&quot;)&#125;
+
+error是go语言内置的错误信息
+可变参数123456func sum(a...
+        </p>
+        <p class="article-more-link">
+          <a href="/2023/11/21/goland-%E5%87%BD%E6%95%B0%E5%92%8C%E6%96%B9%E6%B3%95/#more">阅读全文</a>
+        </p>
+      
+    </div>
+    <footer class="article-footer">
+      
+      
+      
+      
+
+    </footer>
+  </div>
+  
+</article>
+
+<!-- Table of Contents -->
+
+
+  
+
+
+  <nav id="page-nav">
+    
+    <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="extend next" rel="next" href="/page/2/">下一页 &amp;raquo;</a>
+  </nav>
+
+</section>
+        
+      </div>
+      
+        <div align="center" style="margin-top: 30px;"><hr class="hr" style="margin:0px; height:3px;"></div>
+      
+      <footer id="footer">
+  
+
+  <div class="container">
+      	<div class="row">
+	      <p> Powered by <a href="http://hexo.io/" target="_blank">Hexo</a> and <a href="https://github.com/iTimeTraveler/hexo-theme-hiker" target="_blank">Hexo-theme-hiker</a> </p>
+	      <p id="copyRightEn">Copyright &copy; 2023 - 2024 😀 All Rights Reserved.</p>
+	      
+	      
+    		<p class="busuanzi_uv">
+				访客数 : <span id="busuanzi_value_site_uv"></span> |  
+				访问量 : <span id="busuanzi_value_site_pv"></span>
+		    </p>
+  		   
+		</div>
+
+		
+  </div>
+</footer>
+
+
+<!-- min height -->
+
+<script>
+    var wrapdiv = document.getElementById("wrap");
+    var contentdiv = document.getElementById("content");
+    var allheader = document.getElementById("allheader");
+
+    wrapdiv.style.minHeight = document.body.offsetHeight + "px";
+    if (allheader != null) {
+      contentdiv.style.minHeight = document.body.offsetHeight - allheader.offsetHeight - document.getElementById("footer").offsetHeight + "px";
+    } else {
+      contentdiv.style.minHeight = document.body.offsetHeight - document.getElementById("footer").offsetHeight + "px";
+    }
+</script>
+    </div>
+    <!-- <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+    <a href="/categories" class="mobile-nav-link">Categories</a>
+  
+    <a href="/tags" class="mobile-nav-link">Tags</a>
+  
+    <a href="/about" class="mobile-nav-link">About</a>
+  
+</nav> -->
+    
+
+<!-- mathjax config similar to math.stackexchange -->
+
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+    tex2jax: {
+      inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+      processEscapes: true
+    }
+  });
+</script>
+
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+      tex2jax: {
+        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+      }
+    });
+</script>
+
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax(), i;
+        for(i=0; i < all.length; i += 1) {
+            all[i].SourceElement().parentNode.className += ' has-jax';
+        }
+    });
+</script>
+
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
+
+
+  
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+
+  
+<script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+
+
+<script src="/js/scripts.js"></script>
+
+
+
+  
+<script src="/js/home.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+	<div style="display: none;">
+    <script src="https://s95.cnzz.com/z_stat.php?id=1260716016&web_id=1260716016" language="JavaScript"></script>
+  </div>
+
+
+
+	<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js">
+	</script>
+
+
+
+
+
+
+  </div>
+
+  <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" style="display: none;">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h2 class="modal-title" id="myModalLabel">设置</h2>
+      </div>
+      <hr style="margin-top:0px; margin-bottom:0px; width:80%; border-top: 3px solid #000;">
+      <hr style="margin-top:2px; margin-bottom:0px; width:80%; border-top: 1px solid #000;">
+
+
+      <div class="modal-body">
+          <div style="margin:6px;">
+            <a data-toggle="collapse" data-parent="#accordion" href="#collapseOne" onclick="javascript:setFontSize();" aria-expanded="true" aria-controls="collapseOne">
+              正文字号大小
+            </a>
+          </div>
+          <div id="collapseOne" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingOne">
+          <div class="panel-body">
+            您已调整页面字体大小
+          </div>
+        </div>
+      
+
+
+          <div style="margin:6px;">
+            <a data-toggle="collapse" data-parent="#accordion" href="#collapseTwo" onclick="javascript:setBackground();" aria-expanded="true" aria-controls="collapseTwo">
+              夜间护眼模式
+            </a>
+        </div>
+          <div id="collapseTwo" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingTwo">
+          <div class="panel-body">
+            夜间模式已经开启，再次单击按钮即可关闭 
+          </div>
+        </div>
+
+        <div>
+            <a data-toggle="collapse" data-parent="#accordion" href="#collapseThree" aria-expanded="true" aria-controls="collapseThree">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;关 于&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</a>
+        </div>
+         <div id="collapseThree" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingThree">
+          <div class="panel-body">
+            😀
+          </div>
+          <div class="panel-body">
+            Copyright © 2024 yangyan All Rights Reserved.
+          </div>
+        </div>
+      </div>
+
+
+      <hr style="margin-top:0px; margin-bottom:0px; width:80%; border-top: 1px solid #000;">
+      <hr style="margin-top:2px; margin-bottom:0px; width:80%; border-top: 3px solid #000;">
+      <div class="modal-footer">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button>
+      </div>
+    </div>
+  </div>
+</div>
+  
+  <a id="rocket" href="#top" class=""></a>
+  <script type="text/javascript" src="/js/totop.js?v=1.0.0" async=""></script>
+  
+</body>
+</html>

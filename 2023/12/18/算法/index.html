@@ -1,0 +1,572 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>算法 | 😀</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  
+  <meta name="keywords" content="goland算法" />
+  
+  
+  
+  
+  <meta name="description" content="1.P1000 超级玛丽游戏P1000 超级玛丽游戏 - 洛谷 | 计算机科学教育新生态 (luogu.com.cn) 1234567package mainimport &quot;fmt&quot;func main()  &amp;#123;fmt.Println(&quot;                ********\n               ************\n">
+<meta property="og:type" content="article">
+<meta property="og:title" content="算法">
+<meta property="og:url" content="http://example.com/2023/12/18/%E7%AE%97%E6%B3%95/index.html">
+<meta property="og:site_name" content="😀">
+<meta property="og:description" content="1.P1000 超级玛丽游戏P1000 超级玛丽游戏 - 洛谷 | 计算机科学教育新生态 (luogu.com.cn) 1234567package mainimport &quot;fmt&quot;func main()  &amp;#123;fmt.Println(&quot;                ********\n               ************\n">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2023-12-18T11:27:53.000Z">
+<meta property="article:modified_time" content="2024-01-11T06:44:18.762Z">
+<meta property="article:author" content="yangyan">
+<meta property="article:tag" content="goland">
+<meta property="article:tag" content="算法">
+<meta name="twitter:card" content="summary">
+  
+    <link rel="alternate" href="/atom.xml" title="😀" type="application/atom+xml">
+  
+
+  
+
+  <link rel="icon" href="/css/images/mylogo.jpg">
+  <link rel="apple-touch-icon" href="/css/images/mylogo.jpg">
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans|Montserrat:700" rel="stylesheet" type="text/css">
+  <link href="https://fonts.googleapis.com/css?family=Roboto:400,300,300italic,400italic" rel="stylesheet" type="text/css">
+  <link href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" rel="stylesheet">
+  <style type="text/css">
+    @font-face{font-family:futura-pt; src:url("/css/fonts/FuturaPTBold.otf") format("woff");font-weight:500;font-style:normal;}
+    @font-face{font-family:futura-pt-light; src:url("/css/fonts/FuturaPTBook.otf") format("woff");font-weight:lighter;font-style:normal;}
+    @font-face{font-family:futura-pt-italic; src:url("/css/fonts/FuturaPTBookOblique.otf") format("woff");font-weight:400;font-style:italic;}
+}
+
+  </style>
+  
+<link rel="stylesheet" href="/css/style.css">
+
+
+  
+<script src="/js/jquery-3.1.1.min.js"></script>
+
+  
+<script src="/js/bootstrap.js"></script>
+
+
+  <!-- Bootstrap core CSS -->
+  <link rel="stylesheet" href="/css/bootstrap.css" >
+
+  
+    
+<link rel="stylesheet" href="/css/dialog.css">
+
+  
+
+  
+
+  
+    <link rel="stylesheet" href="/css/header-post.css" >
+  
+
+  
+  
+  
+
+<meta name="generator" content="Hexo 6.3.0"></head>
+
+
+
+  <body data-spy="scroll" data-target="#toc" data-offset="50">
+
+
+  
+  <div id="container">
+    <div id="wrap">
+      
+        <header>
+
+    <div id="allheader" class="navbar navbar-default navbar-static-top" role="navigation">
+        <div class="navbar-inner">
+          
+          <div class="container"> 
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+              <span class="sr-only">Toggle navigation</span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+            </button>
+
+            
+              <a class="brand" style="
+                 margin-top: 0px;"  
+                href="#" data-toggle="modal" data-target="#myModal" >
+                  <img width="124px" height="124px" alt="Hike News" src="/css/images/mylogo.jpg">
+              </a>
+            
+            
+            <div class="navbar-collapse collapse">
+              <ul class="hnav navbar-nav">
+                
+                  <li> <a class="main-nav-link" href="/">首页</a> </li>
+                
+                  <li> <a class="main-nav-link" href="/archives">归档</a> </li>
+                
+                  <li> <a class="main-nav-link" href="/categories">分类</a> </li>
+                
+                  <li> <a class="main-nav-link" href="/tags">标签</a> </li>
+                
+                  <li> <a class="main-nav-link" href="/about">关于</a> </li>
+                
+                  <li><div id="search-form-wrap">
+
+    <form class="search-form">
+        <input type="text" class="ins-search-input search-form-input" placeholder="" />
+        <button type="submit" class="search-form-submit"></button>
+    </form>
+    <div class="ins-search">
+    <div class="ins-search-mask"></div>
+    <div class="ins-search-container">
+        <div class="ins-input-wrapper">
+            <input type="text" class="ins-search-input" placeholder="请输入关键词..." />
+            <span class="ins-close ins-selectable"><i class="fa fa-times-circle"></i></span>
+        </div>
+        <div class="ins-section-wrapper">
+            <div class="ins-section-container"></div>
+        </div>
+    </div>
+</div>
+<script>
+(function (window) {
+    var INSIGHT_CONFIG = {
+        TRANSLATION: {
+            POSTS: '文章',
+            PAGES: '页面',
+            CATEGORIES: '分类',
+            TAGS: '标签',
+            UNTITLED: '(无标题)',
+        },
+        ROOT_URL: '/',
+        CONTENT_URL: '/content.json',
+    };
+    window.INSIGHT_CONFIG = INSIGHT_CONFIG;
+})(window);
+</script>
+
+<script src="/js/insight.js"></script>
+
+
+</div></li>
+            </div>
+          </div>
+                
+      </div>
+    </div>
+
+</header>
+
+
+
+      
+            
+      <div id="content" class="outer">
+        
+          <section id="main" style="float:none;"><article id="file-算法" style="width: 75%; float:left;" class="article article-type-file" itemscope itemprop="blogPost" >
+  <div id="articleInner" class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="thumb" class="article-title" itemprop="name">
+      算法
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-meta">
+      
+	<a href="/2023/12/18/%E7%AE%97%E6%B3%95/" class="article-date">
+	  <time datetime="2023-12-18T11:27:53.000Z" itemprop="datePublished">2023-12-18</time>
+	</a>
+
+      
+    <a class="article-category-link" href="/categories/%E7%AE%97%E6%B3%95/">算法</a>
+
+      
+	<a class="article-views">
+	<span id="busuanzi_container_page_pv">
+		阅读量<span id="busuanzi_value_page_pv"></span>
+	</span>
+	</a>
+
+      
+
+    </div>
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="1-P1000-超级玛丽游戏"><a href="#1-P1000-超级玛丽游戏" class="headerlink" title="1.P1000 超级玛丽游戏"></a>1.P1000 超级玛丽游戏</h1><p><a target="_blank" rel="noopener" href="https://www.luogu.com.cn/problem/P1000">P1000 超级玛丽游戏 - 洛谷 | 计算机科学教育新生态 (luogu.com.cn)</a></p>
+<figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> main</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> <span class="string">&quot;fmt&quot;</span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">main</span><span class="params">()</span></span>  &#123;</span><br><span class="line">fmt.Println(<span class="string">&quot;                ********\n               ************\n               ####....#.\n             #..###.....##....\n             ###.......######              ###            ###\n                ...........               #...#          #...#\n               ##*#######                 #.#.#          #.#.#\n            ####*******######             #.#.#          #.#.#\n           ...#***.****.*###....          #...#          #...#\n           ....**********##.....           ###            ###\n           ....****    *****....\n             ####        ####\n           ######        ######\n##############################################################\n#...#......#.##...#......#.##...#......#.##------------------#\n###########################################------------------#\n#..#....#....##..#....#....##..#....#....#####################\n##########################################    #----------#\n#.....#......##.....#......##.....#......#    #----------#\n##########################################    #----------#\n#.#..#....#..##.#..#....#..##.#..#....#..#    #----------#\n##########################################    ############&quot;</span>)&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<h1 id="2-P1001-A-B-Problem"><a href="#2-P1001-A-B-Problem" class="headerlink" title="2.P1001 A+B Problem"></a>2.P1001 A+B Problem</h1><p><a target="_blank" rel="noopener" href="https://www.luogu.com.cn/problem/P1001">P1001 A+B Problem - 洛谷 | 计算机科学教育新生态 (luogu.com.cn)</a></p>
+<figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> main</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> <span class="string">&quot;fmt&quot;</span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">main</span><span class="params">()</span></span>  &#123;</span><br><span class="line">	<span class="keyword">var</span> a <span class="type">int</span></span><br><span class="line">	<span class="keyword">var</span> b <span class="type">int</span></span><br><span class="line">_,_=fmt.Scanln(&amp;a,&amp;b)</span><br><span class="line">	<span class="keyword">var</span> sum = a+b</span><br><span class="line">fmt.Println(sum)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h1 id="3-P4327-COCI2006-2007-1-Okviri"><a href="#3-P4327-COCI2006-2007-1-Okviri" class="headerlink" title="3.P4327 [COCI2006-2007#1] Okviri"></a>3.P4327 [COCI2006-2007#1] Okviri</h1><p>[P4327 <a target="_blank" rel="noopener" href="https://www.luogu.com.cn/problem/P4327">COCI2006-2007#1] Okviri - 洛谷 | 计算机科学教育新生态 (luogu.com.cn)</a></p>
+<figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> main</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> (</span><br><span class="line">   <span class="string">&quot;fmt&quot;</span></span><br><span class="line">   <span class="string">&quot;strings&quot;</span></span><br><span class="line">)</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">main</span><span class="params">()</span></span> &#123;</span><br><span class="line">   <span class="keyword">var</span> input <span class="type">string</span></span><br><span class="line">   fmt.Scan(&amp;input)</span><br><span class="line">   input = strings.ToUpper(input)</span><br><span class="line">   <span class="keyword">for</span> g, _ := <span class="keyword">range</span> input &#123;</span><br><span class="line"></span><br><span class="line">      fmt.Print(<span class="string">&quot;.&quot;</span>)</span><br><span class="line">      <span class="keyword">if</span> (g+<span class="number">1</span>)%<span class="number">3</span> == <span class="number">0</span> &#123;</span><br><span class="line">         fmt.Print(<span class="string">&quot;.*.&quot;</span>)</span><br><span class="line">         <span class="keyword">continue</span></span><br><span class="line">      &#125;</span><br><span class="line">      fmt.Print(<span class="string">&quot;.#.&quot;</span>)</span><br><span class="line">   &#125;</span><br><span class="line">   fmt.Print(<span class="string">&quot;.&quot;</span>)</span><br><span class="line">   fmt.Println(<span class="string">&quot;&quot;</span>)</span><br><span class="line">   fmt.Print(<span class="string">&quot;.&quot;</span>)</span><br><span class="line">   <span class="keyword">for</span> g, _ := <span class="keyword">range</span> input &#123;</span><br><span class="line">      <span class="keyword">if</span> (g+<span class="number">1</span>)%<span class="number">3</span> == <span class="number">0</span> &#123;</span><br><span class="line">         fmt.Print(<span class="string">&quot;*.*.&quot;</span>)</span><br><span class="line">         <span class="keyword">continue</span></span><br><span class="line">      &#125;</span><br><span class="line">      fmt.Print(<span class="string">&quot;#.#.&quot;</span>)</span><br><span class="line">   &#125;</span><br><span class="line">   fmt.Println(<span class="string">&quot;&quot;</span>)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">   fmt.Print(<span class="string">&quot;#&quot;</span>)</span><br><span class="line">   <span class="keyword">for</span> g, va := <span class="keyword">range</span> input &#123;</span><br><span class="line">      <span class="keyword">if</span> (g+<span class="number">2</span>)%<span class="number">3</span> == <span class="number">0</span> || (g+<span class="number">1</span>)%<span class="number">3</span>==<span class="number">0</span>&#123;</span><br><span class="line">         <span class="keyword">if</span> g+<span class="number">1</span>==<span class="built_in">len</span>(input)&amp;&amp;(g+<span class="number">1</span>)%<span class="number">3</span>!=<span class="number">0</span> &#123;</span><br><span class="line">            fmt.Printf(<span class="string">&quot;.%c.#&quot;</span>, va)</span><br><span class="line">            <span class="keyword">continue</span></span><br><span class="line">         &#125;</span><br><span class="line">         fmt.Printf(<span class="string">&quot;.%c.*&quot;</span>, va)</span><br><span class="line">         <span class="keyword">continue</span></span><br><span class="line">      &#125;</span><br><span class="line">      fmt.Printf(<span class="string">&quot;.%c.#&quot;</span>,va)</span><br><span class="line">   &#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">   fmt.Println(<span class="string">&quot;&quot;</span>)</span><br><span class="line">   fmt.Print(<span class="string">&quot;.&quot;</span>)</span><br><span class="line">   <span class="keyword">for</span> g, _ := <span class="keyword">range</span> input &#123;</span><br><span class="line">      <span class="keyword">if</span> (g+<span class="number">1</span>)%<span class="number">3</span> == <span class="number">0</span> &#123;</span><br><span class="line">         fmt.Print(<span class="string">&quot;*.*.&quot;</span>)</span><br><span class="line">         <span class="keyword">continue</span></span><br><span class="line">      &#125;</span><br><span class="line">      fmt.Print(<span class="string">&quot;#.#.&quot;</span>)</span><br><span class="line">   &#125;</span><br><span class="line">   fmt.Println(<span class="string">&quot;&quot;</span>)</span><br><span class="line">   <span class="keyword">for</span> g, _ := <span class="keyword">range</span> input &#123;</span><br><span class="line"></span><br><span class="line">      fmt.Print(<span class="string">&quot;.&quot;</span>)</span><br><span class="line">      <span class="keyword">if</span> (g+<span class="number">1</span>)%<span class="number">3</span> == <span class="number">0</span> &#123;</span><br><span class="line">         fmt.Print(<span class="string">&quot;.*.&quot;</span>)</span><br><span class="line">         <span class="keyword">continue</span></span><br><span class="line">      &#125;</span><br><span class="line">      fmt.Print(<span class="string">&quot;.#.&quot;</span>)</span><br><span class="line">   &#125;</span><br><span class="line">   fmt.Print(<span class="string">&quot;.&quot;</span>)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>真的麻烦啊我超，差点没死了，不过就是控制语句的充分利用，成功了就觉得其实没什么难度了😶。</p>
+<h1 id="4-P1003-NOIP2011-提高组-铺地毯"><a href="#4-P1003-NOIP2011-提高组-铺地毯" class="headerlink" title="4.P1003 [NOIP2011 提高组] 铺地毯"></a>4.P1003 [NOIP2011 提高组] 铺地毯</h1><p>[P1003 <a target="_blank" rel="noopener" href="https://www.luogu.com.cn/problem/P1003">NOIP2011 提高组] 铺地毯 - 洛谷 | 计算机科学教育新生态 (luogu.com.cn)</a></p>
+<figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> main</span><br><span class="line"><span class="keyword">import</span> (<span class="string">&quot;fmt&quot;</span>)</span><br><span class="line"><span class="keyword">type</span> di <span class="keyword">struct</span> &#123;ditans []*ditan&#125;<span class="comment">//这里定义的是数组类型的结构体嵌套？</span></span><br><span class="line"><span class="keyword">type</span> ditan <span class="keyword">struct</span> &#123;</span><br><span class="line">   a <span class="type">int</span></span><br><span class="line">   b <span class="type">int</span></span><br><span class="line">   g <span class="type">int</span></span><br><span class="line">   k <span class="type">int</span></span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">creatditan</span><span class="params">(a,b,g,k <span class="type">int</span>)</span></span> *ditan &#123;</span><br><span class="line">    ditan:=ditan&#123;a,b,g,k&#125;</span><br><span class="line">    <span class="keyword">return</span> &amp;ditan</span><br><span class="line">&#125;<span class="comment">//输入数据输出一个ditan类型的结构体</span></span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="params">(dit *di)</span></span>addditan(a,b,g,k <span class="type">int</span>)&#123;newditan:=creatditan(a,b,g,k)</span><br><span class="line">dit.ditans=<span class="built_in">append</span>(dit.ditans,newditan)</span><br><span class="line">&#125;<span class="comment">//把ditan加到di里，就可以数组调用了。</span></span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">main</span><span class="params">()</span></span> &#123;</span><br><span class="line">   <span class="keyword">var</span> (</span><br><span class="line">   n <span class="type">int</span></span><br><span class="line">   l <span class="type">int</span></span><br><span class="line">   a, b, g, k <span class="type">int</span></span><br><span class="line">   )</span><br><span class="line">   fmt.Scan(&amp;n)</span><br><span class="line">   <span class="keyword">var</span> newditan di</span><br><span class="line">   <span class="keyword">for</span> l = <span class="number">0</span>; l &lt; n; l++ &#123;fmt.Scan(&amp;a, &amp;b, &amp;g, &amp;k)</span><br><span class="line">   newditan.addditan(a, b, g, k)</span><br><span class="line">   &#125;</span><br><span class="line">   <span class="keyword">var</span> (x,y <span class="type">int</span>)</span><br><span class="line">    fmt.Scan(&amp;x,&amp;y)</span><br><span class="line">   <span class="keyword">var</span> q = <span class="number">0</span></span><br><span class="line">   <span class="keyword">for</span> num,bb:=<span class="keyword">range</span> newditan.ditans&#123;</span><br><span class="line">      <span class="keyword">if</span> (x&gt;=bb.a || x&lt;=(bb.g+bb.a))||(y&gt;=bb.b || y&lt;=(bb.k+bb.b))&#123;</span><br><span class="line">         q+=<span class="number">1</span></span><br><span class="line">         fmt.Print(n-num)</span><br><span class="line">         <span class="keyword">break</span>&#125;</span><br><span class="line">   &#125;</span><br><span class="line">   <span class="keyword">if</span> q==<span class="number">0</span> &#123;fmt.Print(<span class="number">-1</span>)&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>这第一种方法，对结构体嵌套的那个算个扩展，实际下边的方法对于切片的使用更合适。</p>
+<p>还有第二个方法</p>
+<figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> main</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> (</span><br><span class="line">   <span class="string">&quot;fmt&quot;</span></span><br><span class="line">)</span><br><span class="line"></span><br><span class="line"><span class="keyword">type</span> Carpet <span class="keyword">struct</span> &#123;</span><br><span class="line">x1, y1, x2, y2 <span class="type">int</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">main</span><span class="params">()</span></span> &#123;</span><br><span class="line">   <span class="keyword">var</span> x,y <span class="type">int</span></span><br><span class="line">n := <span class="number">0</span></span><br><span class="line">fmt.Scan(&amp;n)</span><br><span class="line">carpets := <span class="built_in">make</span>([]Carpet, n)<span class="comment">//这里可以直接定义一个数组类型的结构体。比上边方便多了</span></span><br><span class="line"><span class="keyword">for</span> i := <span class="number">0</span>; i &lt; n; i++ &#123;</span><br><span class="line">fmt.Scan(&amp;carpets[i].x1, &amp;carpets[i].y1, &amp;carpets[i].x2, &amp;carpets[i].y2)</span><br><span class="line">&#125;</span><br><span class="line">fmt.Scan(&amp;x, &amp;y)</span><br><span class="line"></span><br><span class="line">maxCovered := <span class="number">-1</span></span><br><span class="line">covered := <span class="literal">false</span></span><br><span class="line"><span class="keyword">for</span> i := n - <span class="number">1</span>; i &gt;= <span class="number">0</span>; i-- &#123;</span><br><span class="line"><span class="keyword">if</span> x &gt;= carpets[i].x1 &amp;&amp; x &lt;= (carpets[i].x2+carpets[i].x1) &amp;&amp; y &gt;= carpets[i].y1 &amp;&amp; y &lt;= (carpets[i].y2+carpets[i].y1) &#123;</span><br><span class="line">covered = <span class="literal">true</span></span><br><span class="line">maxCovered = i + <span class="number">1</span></span><br><span class="line"><span class="keyword">break</span></span><br><span class="line">&#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> covered &#123;</span><br><span class="line">fmt.Println(maxCovered)</span><br><span class="line">&#125; <span class="keyword">else</span> &#123;</span><br><span class="line">fmt.Println(<span class="number">-1</span>)</span><br><span class="line">&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>下边的方法更简单，因为上边的是我从区块链学的，忘了怎么整这个切片了😔。</p>
+<h1 id="5-P1035-NOIP2002-普及组-级数求和"><a href="#5-P1035-NOIP2002-普及组-级数求和" class="headerlink" title="5.P1035 [NOIP2002 普及组] 级数求和"></a>5.P1035 [NOIP2002 普及组] 级数求和</h1><p>[P1035 <a target="_blank" rel="noopener" href="https://www.luogu.com.cn/problem/P1035">NOIP2002 普及组] 级数求和 - 洛谷 | 计算机科学教育新生态 (luogu.com.cn)</a></p>
+<figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> main</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> <span class="string">&quot;fmt&quot;</span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">main</span><span class="params">()</span></span> &#123;</span><br><span class="line">    <span class="keyword">var</span> k <span class="type">float64</span></span><br><span class="line">    <span class="keyword">var</span> num <span class="type">float64</span></span><br><span class="line">    <span class="keyword">var</span> n <span class="type">float64</span> = <span class="number">1</span></span><br><span class="line">    fmt.Scan(&amp;k)</span><br><span class="line">    <span class="keyword">for</span> ; ; n++ &#123;</span><br><span class="line">       num += (<span class="number">1</span> / n)</span><br><span class="line">       <span class="keyword">if</span> num &gt; k &#123;</span><br><span class="line">          fmt.Println(n)</span><br><span class="line">          <span class="keyword">break</span></span><br><span class="line">       &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>这道题很简单啊，错误点就是会一直循环这是因为我们定义的数据类型是整形数据，改成浮点型就好了。</p>
+<h1 id="6-P1046-NOIP2005-普及组-陶陶摘苹果"><a href="#6-P1046-NOIP2005-普及组-陶陶摘苹果" class="headerlink" title="6.P1046 [NOIP2005 普及组] 陶陶摘苹果"></a>6.P1046 [NOIP2005 普及组] 陶陶摘苹果</h1><p>[P1046 <a target="_blank" rel="noopener" href="https://www.luogu.com.cn/problem/P1046">NOIP2005 普及组] 陶陶摘苹果 - 洛谷 | 计算机科学教育新生态 (luogu.com.cn)</a></p>
+<figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> main</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> <span class="string">&quot;fmt&quot;</span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">main</span><span class="params">()</span></span> &#123;</span><br><span class="line">    <span class="keyword">var</span> x1, x2, x3, x4, x5, x6, x7, x8, x9, x10 <span class="type">int</span></span><br><span class="line">    fmt.Scan(&amp;x1, &amp;x2, &amp;x3, &amp;x4, &amp;x5, &amp;x6, &amp;x7, &amp;x8, &amp;x9, &amp;x10)</span><br><span class="line">    a := []<span class="type">int</span>&#123;x1, x2, x3, x4, x5, x6, x7, x8, x9, x10&#125;</span><br><span class="line">    <span class="keyword">var</span> high <span class="type">int</span></span><br><span class="line">    <span class="keyword">var</span> n <span class="type">int</span></span><br><span class="line">    fmt.Scan(&amp;high)</span><br><span class="line">    <span class="keyword">for</span> _, h := <span class="keyword">range</span> a &#123;</span><br><span class="line">       <span class="keyword">if</span> high &gt;= h &#123;</span><br><span class="line">          n++</span><br><span class="line">       &#125; <span class="keyword">else</span> <span class="keyword">if</span> high+<span class="number">30</span> &gt;= h &#123;</span><br><span class="line">          n++</span><br><span class="line">       &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    fmt.Print(n)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>很简单的一题，没什么强调的。</p>
+<h1 id="7-P1047-NOIP2005-普及组-校门外的树"><a href="#7-P1047-NOIP2005-普及组-校门外的树" class="headerlink" title="7.P1047 [NOIP2005 普及组] 校门外的树"></a>7.P1047 [NOIP2005 普及组] 校门外的树</h1><p>[P1047 <a target="_blank" rel="noopener" href="https://www.luogu.com.cn/problem/P1047">NOIP2005 普及组] 校门外的树 - 洛谷 | 计算机科学教育新生态 (luogu.com.cn)</a></p>
+<figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> main</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> (</span><br><span class="line">    <span class="string">&quot;fmt&quot;</span></span><br><span class="line">)</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">main</span><span class="params">()</span></span> &#123;</span><br><span class="line">    <span class="keyword">var</span> l, m <span class="type">int</span></span><br><span class="line">    fmt.Scan(&amp;l, &amp;m)</span><br><span class="line">    <span class="keyword">var</span> a, b <span class="type">int</span></span><br><span class="line">    list := <span class="built_in">make</span>([]<span class="type">int</span>, l+<span class="number">1</span>)</span><br><span class="line">    <span class="keyword">for</span> ; m &gt; <span class="number">0</span>; m-- &#123;</span><br><span class="line">       a = <span class="number">0</span></span><br><span class="line">       b = <span class="number">0</span></span><br><span class="line">       fmt.Scan(&amp;a, &amp;b)</span><br><span class="line">       <span class="keyword">for</span> ; a &lt;= b; a++ &#123;</span><br><span class="line">          list[a] = <span class="number">1</span></span><br><span class="line">       &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">var</span> num <span class="type">int</span></span><br><span class="line">    <span class="keyword">for</span> _, n := <span class="keyword">range</span> list &#123;</span><br><span class="line">       num += n</span><br><span class="line">    &#125;</span><br><span class="line">    fmt.Print(l + <span class="number">1</span> - num)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>这道题如果用那种划分范围的比大小太麻烦了，这种用切片的方法好像更好一点。</p>
+<p>这道题出现一个错误就是定义list切片那一行，不然树木总数不一样。因为容量是从1开始的如果不加1的话就少一个了。</p>
+<h1 id="8-P1075-NOIP2012-普及组-质因数分解"><a href="#8-P1075-NOIP2012-普及组-质因数分解" class="headerlink" title="8.P1075 [NOIP2012 普及组] 质因数分解"></a>8.P1075 [NOIP2012 普及组] 质因数分解</h1><p>[P1075 <a target="_blank" rel="noopener" href="https://www.luogu.com.cn/problem/P1075">NOIP2012 普及组] 质因数分解 - 洛谷 | 计算机科学教育新生态 (luogu.com.cn)</a></p>
+<p>傻方法但是超时</p>
+<figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> main</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> <span class="string">&quot;fmt&quot;</span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">zhishu</span><span class="params">(int2 <span class="type">int</span>)</span></span> <span class="type">bool</span> &#123;</span><br><span class="line">    <span class="keyword">if</span> int2 &lt;= <span class="number">1</span> &#123;</span><br><span class="line">       <span class="keyword">return</span> <span class="literal">false</span></span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">for</span> i := <span class="number">2</span>; i &lt; int2; i++ &#123;</span><br><span class="line">       <span class="keyword">if</span> int2%i == <span class="number">0</span> &#123;</span><br><span class="line">          <span class="keyword">return</span> <span class="literal">false</span></span><br><span class="line">       &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="literal">true</span></span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">maxzhishu</span><span class="params">(int2 <span class="type">int</span>)</span></span> (<span class="type">int</span>, <span class="type">bool</span>) &#123;</span><br><span class="line">    <span class="keyword">for</span> n := int2; n &gt;= <span class="number">0</span>; n-- &#123;</span><br><span class="line">       <span class="keyword">if</span> zhishu(n) &#123;</span><br><span class="line">          <span class="keyword">if</span> int2%n == <span class="number">0</span> &#123;</span><br><span class="line">             <span class="keyword">if</span> zhishu(int2 / n) &#123;</span><br><span class="line">                <span class="keyword">return</span> n, <span class="literal">true</span></span><br><span class="line">             &#125;</span><br><span class="line">          &#125;</span><br><span class="line">       &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>, <span class="literal">false</span></span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">main</span><span class="params">()</span></span> &#123;</span><br><span class="line">    <span class="keyword">var</span> num <span class="type">int</span></span><br><span class="line">    fmt.Scan(&amp;num)</span><br><span class="line">    num, <span class="type">bool</span> := maxzhishu(num)</span><br><span class="line">    <span class="keyword">if</span> <span class="type">bool</span> &#123;</span><br><span class="line">       fmt.Print(num)</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>二解，其实我觉得他这个不太合适这个题。可能题目有问题。</p>
+<figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> main</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> <span class="string">&quot;fmt&quot;</span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">main</span><span class="params">()</span></span> &#123;</span><br><span class="line">    <span class="keyword">var</span> n, i <span class="type">int64</span></span><br><span class="line">    fmt.Scan(&amp;n)</span><br><span class="line">    <span class="keyword">for</span> i = <span class="number">2</span>; i &lt;= n; i++ &#123;</span><br><span class="line">       <span class="keyword">if</span> n%i == <span class="number">0</span> &#123;</span><br><span class="line">          fmt.Println(n / i)</span><br><span class="line">          <span class="keyword">break</span></span><br><span class="line">       &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h1 id="9-P1085-NOIP2004-普及组-不高兴的津津"><a href="#9-P1085-NOIP2004-普及组-不高兴的津津" class="headerlink" title="9.P1085 [NOIP2004 普及组] 不高兴的津津"></a>9.P1085 [NOIP2004 普及组] 不高兴的津津</h1><p>[P1085 <a target="_blank" rel="noopener" href="https://www.luogu.com.cn/problem/P1085">NOIP2004 普及组] 不高兴的津津 - 洛谷 | 计算机科学教育新生态 (luogu.com.cn)</a></p>
+<figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> main</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> (</span><br><span class="line">    <span class="string">&quot;fmt&quot;</span></span><br><span class="line">)</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">main</span><span class="params">()</span></span> &#123;</span><br><span class="line">    <span class="keyword">var</span> a, b, num <span class="type">int</span></span><br><span class="line">    <span class="keyword">var</span> n []<span class="type">int</span></span><br><span class="line">    <span class="keyword">for</span> i := <span class="number">1</span>; i &lt;= <span class="number">7</span>; i++ &#123;</span><br><span class="line">       fmt.Scan(&amp;a, &amp;b)</span><br><span class="line">       num = a + b</span><br><span class="line">       n = <span class="built_in">append</span>(n, num)</span><br><span class="line">    &#125;</span><br><span class="line">    max := <span class="number">8</span></span><br><span class="line">    xingqi := <span class="number">0</span></span><br><span class="line">    <span class="keyword">for</span> we, time := <span class="keyword">range</span> n &#123;</span><br><span class="line">       <span class="keyword">if</span> time &gt; max &#123;</span><br><span class="line">          max = time</span><br><span class="line">          xingqi = we + <span class="number">1</span></span><br><span class="line">       &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">if</span> max &gt; <span class="number">8</span> &#123;</span><br><span class="line">       fmt.Print(xingqi)</span><br><span class="line">    &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">       fmt.Print(<span class="number">0</span>)</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>注意比较大小，没有难度。</p>
+<h1 id="10-P1089-NOIP2004-提高组-津津的储蓄计划"><a href="#10-P1089-NOIP2004-提高组-津津的储蓄计划" class="headerlink" title="10.P1089 [NOIP2004 提高组] 津津的储蓄计划"></a>10.P1089 [NOIP2004 提高组] 津津的储蓄计划</h1><p>[P1089 <a target="_blank" rel="noopener" href="https://www.luogu.com.cn/problem/P1089">NOIP2004 提高组] 津津的储蓄计划 - 洛谷 | 计算机科学教育新生态 (luogu.com.cn)</a></p>
+<figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> main</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> <span class="string">&quot;fmt&quot;</span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">main</span><span class="params">()</span></span> &#123;</span><br><span class="line">    <span class="keyword">var</span> money <span class="type">int</span></span><br><span class="line">    <span class="keyword">var</span> sum <span class="type">int</span></span><br><span class="line">    <span class="keyword">var</span> lost <span class="type">int</span></span><br><span class="line">    <span class="keyword">var</span> a [<span class="number">12</span>]<span class="type">int</span></span><br><span class="line">    i := <span class="number">1</span></span><br><span class="line">    <span class="keyword">for</span> ; i &lt;= <span class="number">12</span>; i++ &#123;</span><br><span class="line">       fmt.Scan(&amp;money)</span><br><span class="line">       lost = lost + <span class="number">300</span> - money</span><br><span class="line">       <span class="keyword">if</span> lost &gt;= <span class="number">100</span> &#123;</span><br><span class="line">          sum += lost - lost%<span class="number">100</span></span><br><span class="line">          lost = lost % <span class="number">100</span></span><br><span class="line">       &#125;</span><br><span class="line">       <span class="keyword">if</span> lost &lt; <span class="number">0</span> &#123;</span><br><span class="line">          a[i] = <span class="number">1</span></span><br><span class="line">       &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    q := <span class="number">0</span></span><br><span class="line">    <span class="keyword">for</span> w, nu := <span class="keyword">range</span> a &#123;</span><br><span class="line">       <span class="keyword">if</span> nu == <span class="number">1</span> &#123;</span><br><span class="line">          fmt.Print(-w)</span><br><span class="line">          <span class="keyword">return</span></span><br><span class="line">       &#125;</span><br><span class="line">       <span class="keyword">if</span> nu == <span class="number">0</span> &#123;</span><br><span class="line">          q++</span><br><span class="line">          <span class="keyword">if</span> q == <span class="number">12</span> &#123;</span><br><span class="line">             <span class="keyword">var</span> over1 <span class="type">float64</span> = <span class="type">float64</span>(lost)</span><br><span class="line">             <span class="keyword">var</span> over <span class="type">float64</span> = <span class="type">float64</span>(sum)</span><br><span class="line">             fmt.Print(<span class="number">1.2</span>*over + over1)</span><br><span class="line">          &#125;</span><br><span class="line">       &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>重点在类型转换和最后要加上12月没用完的钱呢。</p>
+<h1 id="11-P1150-Peter-的烟"><a href="#11-P1150-Peter-的烟" class="headerlink" title="11.P1150 Peter 的烟"></a>11.P1150 Peter 的烟</h1><p><a target="_blank" rel="noopener" href="https://www.luogu.com.cn/problem/P1150">P1150 Peter 的烟 - 洛谷 | 计算机科学教育新生态 (luogu.com.cn)</a></p>
+<figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> main</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> <span class="string">&quot;fmt&quot;</span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">main</span><span class="params">()</span></span> &#123;</span><br><span class="line">    <span class="keyword">var</span> n, k <span class="type">int</span></span><br><span class="line">    fmt.Scan(&amp;n, &amp;k)</span><br><span class="line">    <span class="keyword">var</span> sum <span class="type">int</span></span><br><span class="line">    <span class="keyword">var</span> l, o <span class="type">int</span></span><br><span class="line">    o = n</span><br><span class="line">    <span class="keyword">for</span> &#123;</span><br><span class="line">       <span class="keyword">if</span> o &lt; k &#123;</span><br><span class="line">          o += l</span><br><span class="line">          l = <span class="number">0</span></span><br><span class="line">       &#125;</span><br><span class="line">       <span class="keyword">if</span> o &lt; k &#123;</span><br><span class="line">          <span class="keyword">break</span></span><br><span class="line">       &#125;</span><br><span class="line">       <span class="keyword">if</span> o &gt;= k &#123;</span><br><span class="line">          o -= k</span><br><span class="line">          l++</span><br><span class="line">          sum++</span><br><span class="line">       &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    fmt.Print(n + sum)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>没难度，就是有点绕弯。</p>
+<h1 id="12-P1151-子数整数"><a href="#12-P1151-子数整数" class="headerlink" title="12.P1151 子数整数"></a>12.P1151 子数整数</h1><p><a target="_blank" rel="noopener" href="https://www.luogu.com.cn/problem/P1151#submit">P1151 子数整数 - 洛谷 | 计算机科学教育新生态 (luogu.com.cn)</a></p>
+<figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> main</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> <span class="string">&quot;fmt&quot;</span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">main</span><span class="params">()</span></span> &#123;</span><br><span class="line">    <span class="keyword">var</span> k <span class="type">int</span></span><br><span class="line">    fmt.Scan(&amp;k)</span><br><span class="line">    <span class="keyword">var</span> o <span class="type">int</span> = <span class="number">0</span></span><br><span class="line">    <span class="keyword">for</span> i := <span class="number">10000</span>; i &lt;= <span class="number">30000</span>; i++ &#123;</span><br><span class="line">       <span class="keyword">var</span> s1, s2, s3 <span class="type">int</span></span><br><span class="line">       s1 = (i - i%<span class="number">100</span>) / <span class="number">100</span></span><br><span class="line">       s2 = ((i % <span class="number">10000</span>) - (i%<span class="number">10000</span>)%<span class="number">10</span>) / <span class="number">10</span></span><br><span class="line">       s3 = i % <span class="number">1000</span></span><br><span class="line">       <span class="keyword">if</span> s1%k == <span class="number">0</span> &amp;&amp; s2%k == <span class="number">0</span> &amp;&amp; s3%k == <span class="number">0</span> &#123;</span><br><span class="line">          fmt.Println(i)</span><br><span class="line">          o++</span><br><span class="line">       &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">if</span> o == <span class="number">0</span> &#123;</span><br><span class="line">       fmt.Print(<span class="string">&quot;No&quot;</span>)</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>没难度</p>
+<h1 id="13-P1152-欢乐的跳"><a href="#13-P1152-欢乐的跳" class="headerlink" title="13.P1152 欢乐的跳"></a>13.P1152 欢乐的跳</h1><p><a target="_blank" rel="noopener" href="https://www.luogu.com.cn/problem/P1152">P1152 欢乐的跳 - 洛谷 | 计算机科学教育新生态 (luogu.com.cn)</a></p>
+<figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> main</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> (</span><br><span class="line">    <span class="string">&quot;fmt&quot;</span></span><br><span class="line">)</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">isAvailable</span><span class="params">(alpha []<span class="type">int</span>, str <span class="type">int</span>)</span></span> <span class="type">bool</span> &#123;</span><br><span class="line">    <span class="keyword">for</span> i := <span class="number">0</span>; i &lt; <span class="built_in">len</span>(alpha); i++ &#123;</span><br><span class="line">       <span class="keyword">if</span> alpha[i] == str &#123;</span><br><span class="line">          <span class="keyword">return</span> <span class="literal">true</span></span><br><span class="line">       &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="literal">false</span></span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">main</span><span class="params">()</span></span> &#123;</span><br><span class="line">    <span class="keyword">var</span> n, num <span class="type">int</span></span><br><span class="line">    fmt.Scan(&amp;n)</span><br><span class="line">    list := <span class="built_in">make</span>([]<span class="type">int</span>, n)</span><br><span class="line">    <span class="keyword">for</span> i := <span class="number">0</span>; i &lt;= n<span class="number">-1</span>; i++ &#123;</span><br><span class="line">       fmt.Scan(&amp;num)</span><br><span class="line">       list[i] = num</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">var</span> cha []<span class="type">int</span></span><br><span class="line">    <span class="keyword">var</span> chazhi <span class="type">int</span></span><br><span class="line">    <span class="keyword">for</span> i := <span class="number">0</span>; i &lt;= n<span class="number">-2</span>; i++ &#123;</span><br><span class="line">       chazhi = list[i+<span class="number">1</span>] - list[i]</span><br><span class="line">       cha = <span class="built_in">append</span>(cha, chazhi)</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">for</span> x, y := <span class="keyword">range</span> cha &#123;</span><br><span class="line">       <span class="keyword">if</span> y &lt; <span class="number">0</span> &#123;</span><br><span class="line">          cha[x] = -y</span><br><span class="line">       &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">var</span> t <span class="type">int</span></span><br><span class="line">    <span class="keyword">for</span> m := <span class="number">1</span>; m &lt;= n<span class="number">-1</span>; m++ &#123;</span><br><span class="line">       <span class="keyword">if</span> isAvailable(cha, m) &#123;</span><br><span class="line">          t = t + <span class="number">1</span></span><br><span class="line">       &#125;</span><br><span class="line">       <span class="keyword">if</span> isAvailable(cha, m) == <span class="literal">false</span> &#123;</span><br><span class="line">          fmt.Println(<span class="string">&quot;Not jolly&quot;</span>)</span><br><span class="line">          <span class="keyword">return</span></span><br><span class="line">       &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">if</span> t &gt;= n<span class="number">-1</span> &#123;</span><br><span class="line">       fmt.Print(<span class="string">&quot;Jolly&quot;</span>)</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>没难度，添加个函数就过了。</p>
+<h1 id="14-P1161-开灯"><a href="#14-P1161-开灯" class="headerlink" title="14.P1161 开灯"></a>14.P1161 开灯</h1><p><a target="_blank" rel="noopener" href="https://www.luogu.com.cn/problem/P1161">P1161 开灯 - 洛谷 | 计算机科学教育新生态 (luogu.com.cn)</a></p>
+<figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> main</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> <span class="string">&quot;fmt&quot;</span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">main</span><span class="params">()</span></span> &#123;</span><br><span class="line">    <span class="keyword">var</span> n <span class="type">int</span></span><br><span class="line">    fmt.Scan(&amp;n)</span><br><span class="line">    <span class="keyword">var</span> t <span class="type">float64</span></span><br><span class="line">    <span class="keyword">var</span> a <span class="type">float64</span></span><br><span class="line">    light := <span class="built_in">make</span>(<span class="keyword">map</span>[<span class="type">int</span>]<span class="type">int</span>)</span><br><span class="line">    <span class="keyword">for</span> i := <span class="number">0</span>; i &lt; n; i++ &#123;</span><br><span class="line">       fmt.Scan(&amp;a, &amp;t)</span><br><span class="line">       <span class="keyword">for</span> n := <span class="number">1.0</span>; n &lt;= t; n++ &#123;</span><br><span class="line">          b := <span class="type">int</span>(a * n)</span><br><span class="line">          <span class="keyword">if</span> light[b] == <span class="number">1</span> &#123;</span><br><span class="line">             light[b] = <span class="number">0</span></span><br><span class="line">             <span class="keyword">continue</span></span><br><span class="line">          &#125;</span><br><span class="line">          light[b] = <span class="number">1</span></span><br><span class="line">       &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">for</span> k, l := <span class="keyword">range</span> light &#123;</span><br><span class="line">       <span class="keyword">if</span> l == <span class="number">1</span> &#123;</span><br><span class="line">          fmt.Println(k)</span><br><span class="line">       &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>从未有如此顺利的一道题，一次直接过，我只能说这题用映射真的没毛病。</p>
+<h1 id="15-P1179-NOIP2010-普及组-数字统计"><a href="#15-P1179-NOIP2010-普及组-数字统计" class="headerlink" title="15.P1179 [NOIP2010 普及组] 数字统计"></a>15.P1179 [NOIP2010 普及组] 数字统计</h1><p>[P1179 <a target="_blank" rel="noopener" href="https://www.luogu.com.cn/problem/P1179">NOIP2010 普及组] 数字统计 - 洛谷 | 计算机科学教育新生态 (luogu.com.cn)</a></p>
+<figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> main</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> (</span><br><span class="line">    <span class="string">&quot;fmt&quot;</span></span><br><span class="line">)</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">main</span><span class="params">()</span></span> &#123;</span><br><span class="line">    <span class="keyword">var</span> l, r, n, a <span class="type">int</span></span><br><span class="line">    fmt.Scan(&amp;l, &amp;r)</span><br><span class="line">    <span class="keyword">for</span> e := r; e &gt;= <span class="number">10</span>; &#123;</span><br><span class="line">       e = e / <span class="number">10</span></span><br><span class="line">       a++</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">for</span> ; l &lt;= r; l++ &#123;</span><br><span class="line">       q := l</span><br><span class="line">       <span class="keyword">if</span> q%<span class="number">10</span> == <span class="number">2</span> &#123;</span><br><span class="line">          n++</span><br><span class="line">       &#125;</span><br><span class="line">       <span class="keyword">for</span> i := <span class="number">1</span>; i &lt;= a; i++ &#123;</span><br><span class="line">          q = q / <span class="number">10</span></span><br><span class="line">          <span class="keyword">if</span> q%<span class="number">10</span> == <span class="number">2</span> &#123;</span><br><span class="line">             n++</span><br><span class="line">          &#125;</span><br><span class="line">       &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    fmt.Println(n)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>到最后超时了，本来那个计算a的for循环是在下边的for里边的，不过感觉现在这个还是有好多计算是没用的，不过效率居然提高了一半多。</p>
+<h1 id="16-P1200-USACO1-1-你的飞碟在这儿-Your-Ride-Is-Here"><a href="#16-P1200-USACO1-1-你的飞碟在这儿-Your-Ride-Is-Here" class="headerlink" title="16.P1200 [USACO1.1] 你的飞碟在这儿 Your Ride Is Here"></a>16.P1200 [USACO1.1] 你的飞碟在这儿 Your Ride Is Here</h1><p>[P1200 <a target="_blank" rel="noopener" href="https://www.luogu.com.cn/problem/P1200">USACO1.1] 你的飞碟在这儿 Your Ride Is Here - 洛谷 | 计算机科学教育新生态 (luogu.com.cn)</a></p>
+<figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> main</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> (</span><br><span class="line">    <span class="string">&quot;fmt&quot;</span></span><br><span class="line">    <span class="string">&quot;math&quot;</span></span><br><span class="line">)</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">main</span><span class="params">()</span></span> &#123;</span><br><span class="line">    map1 := <span class="built_in">make</span>(<span class="keyword">map</span>[<span class="type">string</span>]<span class="type">int</span>)</span><br><span class="line">    map1[<span class="string">&quot;A&quot;</span>] = <span class="number">1</span></span><br><span class="line">    map1[<span class="string">&quot;B&quot;</span>] = <span class="number">2</span></span><br><span class="line">    map1[<span class="string">&quot;C&quot;</span>] = <span class="number">3</span></span><br><span class="line">    map1[<span class="string">&quot;D&quot;</span>] = <span class="number">4</span></span><br><span class="line">    map1[<span class="string">&quot;E&quot;</span>] = <span class="number">5</span></span><br><span class="line">    map1[<span class="string">&quot;F&quot;</span>] = <span class="number">6</span></span><br><span class="line">    map1[<span class="string">&quot;G&quot;</span>] = <span class="number">7</span></span><br><span class="line">    map1[<span class="string">&quot;H&quot;</span>] = <span class="number">8</span></span><br><span class="line">    map1[<span class="string">&quot;I&quot;</span>] = <span class="number">9</span></span><br><span class="line">    map1[<span class="string">&quot;J&quot;</span>] = <span class="number">10</span></span><br><span class="line">    map1[<span class="string">&quot;K&quot;</span>] = <span class="number">11</span></span><br><span class="line">    map1[<span class="string">&quot;L&quot;</span>] = <span class="number">12</span></span><br><span class="line">    map1[<span class="string">&quot;M&quot;</span>] = <span class="number">13</span></span><br><span class="line">    map1[<span class="string">&quot;N&quot;</span>] = <span class="number">14</span></span><br><span class="line">    map1[<span class="string">&quot;O&quot;</span>] = <span class="number">15</span></span><br><span class="line">    map1[<span class="string">&quot;P&quot;</span>] = <span class="number">16</span></span><br><span class="line">    map1[<span class="string">&quot;Q&quot;</span>] = <span class="number">17</span></span><br><span class="line">    map1[<span class="string">&quot;R&quot;</span>] = <span class="number">18</span></span><br><span class="line">    map1[<span class="string">&quot;S&quot;</span>] = <span class="number">19</span></span><br><span class="line">    map1[<span class="string">&quot;T&quot;</span>] = <span class="number">20</span></span><br><span class="line">    map1[<span class="string">&quot;U&quot;</span>] = <span class="number">21</span></span><br><span class="line">    map1[<span class="string">&quot;V&quot;</span>] = <span class="number">22</span></span><br><span class="line">    map1[<span class="string">&quot;W&quot;</span>] = <span class="number">23</span></span><br><span class="line">    map1[<span class="string">&quot;X&quot;</span>] = <span class="number">24</span></span><br><span class="line">    map1[<span class="string">&quot;Y&quot;</span>] = <span class="number">25</span></span><br><span class="line">    map1[<span class="string">&quot;Z&quot;</span>] = <span class="number">26</span></span><br><span class="line">    <span class="keyword">var</span> hui, dui <span class="type">string</span></span><br><span class="line">    fmt.Scan(&amp;hui)</span><br><span class="line">    fmt.Scan(&amp;dui)</span><br><span class="line">    huin := <span class="number">1</span></span><br><span class="line">    duin := <span class="number">1</span></span><br><span class="line">    <span class="keyword">for</span> _, Q := <span class="keyword">range</span> hui &#123;</span><br><span class="line">       P := <span class="type">string</span>(Q)</span><br><span class="line">       huin *= map1[P]</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">for</span> _, Q := <span class="keyword">range</span> dui &#123;</span><br><span class="line">       P := <span class="type">string</span>(Q)</span><br><span class="line">       duin *= map1[P]</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">var</span> duif = <span class="type">float64</span>(duin)</span><br><span class="line">    <span class="keyword">var</span> huif = <span class="type">float64</span>(huin)</span><br><span class="line">    <span class="keyword">if</span> math.Mod(duif, <span class="number">47</span>) == math.Mod(huif, <span class="number">47</span>) &#123;</span><br><span class="line">       fmt.Println(<span class="string">&quot;GO&quot;</span>)</span><br><span class="line">    &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">       fmt.Println(<span class="string">&quot;STAY&quot;</span>)</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>类型转换多一点</p>
+<h1 id="17-P1304-哥德巴赫猜想"><a href="#17-P1304-哥德巴赫猜想" class="headerlink" title="17.P1304 哥德巴赫猜想"></a>17.P1304 哥德巴赫猜想</h1><p><a target="_blank" rel="noopener" href="https://www.luogu.com.cn/problem/P1304">P1304 哥德巴赫猜想 - 洛谷 | 计算机科学教育新生态 (luogu.com.cn)</a></p>
+<figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> main</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> (</span><br><span class="line">    <span class="string">&quot;fmt&quot;</span></span><br><span class="line">)</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">zhishu</span><span class="params">(n <span class="type">int</span>)</span></span> <span class="type">bool</span> &#123;</span><br><span class="line">    <span class="keyword">if</span> n &lt;= <span class="number">1</span> &#123;</span><br><span class="line">       <span class="keyword">return</span> <span class="literal">false</span></span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">for</span> i := <span class="number">2</span>; i &lt; n; i++ &#123;</span><br><span class="line">       <span class="keyword">if</span> n%i == <span class="number">0</span> &#123;</span><br><span class="line">          <span class="keyword">return</span> <span class="literal">false</span></span><br><span class="line">       &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="literal">true</span></span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">zhishuhe</span><span class="params">(int2 <span class="type">int</span>)</span></span> (<span class="type">int</span>, <span class="type">int</span>) &#123;</span><br><span class="line">    <span class="keyword">for</span> i := <span class="number">2</span>; i &lt;= int2; i++ &#123;</span><br><span class="line">       <span class="keyword">if</span> zhishu(i) &amp;&amp; zhishu(int2-i) &#123;</span><br><span class="line">          <span class="keyword">return</span> i, (int2 - i)</span><br><span class="line">       &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>, <span class="number">0</span></span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">main</span><span class="params">()</span></span> &#123;</span><br><span class="line">    <span class="keyword">var</span> N <span class="type">int</span></span><br><span class="line">    fmt.Scan(&amp;N)</span><br><span class="line">    <span class="keyword">for</span> i := <span class="number">4</span>; i &lt;= N; i += <span class="number">2</span> &#123;</span><br><span class="line">       x, y := zhishuhe(i)</span><br><span class="line">       fmt.Print(i, <span class="string">&quot;=&quot;</span>, x, <span class="string">&quot;+&quot;</span>, y)</span><br><span class="line">       fmt.Println()</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>写一个判断是否是质数的函数就ok了</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      
+      
+      <div>
+        <ul class="post-copyright">
+          <li class="post-copyright-author">
+          <strong>本文作者:  </strong>yangyan</a>
+          </li>
+          <li class="post-copyright-link">
+          <strong>本文链接:  </strong>
+          <a href="/2023/12/18/算法/" target="_blank" title="算法">http://example.com/2023/12/18/算法/</a>
+          </li>
+          <li class="post-copyright-license">
+            <strong>版权声明:   </strong>
+            本博客所有文章除特别声明外，均采用 <a rel="license" href="https://creativecommons.org/licenses/by-nc-nd/4.0/" target="_blank" title="Attribution-NonCommercial-NoDerivatives 4.0 International (CC BY-NC-ND 4.0)">CC BY-NC-ND 4.0</a>
+            许可协议。转载请注明出处
+          </li>
+         
+        </ul>
+<div>
+
+      
+      
+        
+	<div id="comment">
+		<!-- 来必力City版安装代码 -->
+		<div id="lv-container" data-id="city" data-uid="MTAyMC8yOTQ4MS82MDQ5">
+		<script type="text/javascript">
+		   (function(d, s) {
+		       var j, e = d.getElementsByTagName(s)[0];
+
+		       if (typeof LivereTower === 'function') { return; }
+
+		       j = d.createElement(s);
+		       j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
+		       j.async = true;
+
+		       e.parentNode.insertBefore(j, e);
+		   })(document, 'script');
+		</script>
+		<noscript>为正常使用来必力评论功能请激活JavaScript</noscript>
+		</div>
+		<!-- City版安装代码已完成 -->
+	</div>
+
+
+
+      
+      
+        
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/goland/" rel="tag">goland</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E7%AE%97%E6%B3%95/" rel="tag">算法</a></li></ul>
+
+      
+
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2024/01/18/%E5%8C%BA%E5%9D%97%E9%93%BE%E7%9A%84%E5%AD%98%E5%82%A8%E8%AF%BB%E5%8F%96%E5%92%8C%E7%AE%A1%E7%90%86/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">上一篇</strong>
+      <div class="article-nav-title">
+        
+          区块链的存储读取和管理
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2023/12/18/Badger%E5%AD%A6%E4%B9%A0%E4%BD%BF%E7%94%A8/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">下一篇</strong>
+      <div class="article-nav-title">Badger学习使用</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+<!-- Table of Contents -->
+
+  <aside id="toc-sidebar">
+    <div id="toc" class="toc-article">
+    <strong class="toc-title">文章目录</strong>
+    
+        <ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#1-P1000-%E8%B6%85%E7%BA%A7%E7%8E%9B%E4%B8%BD%E6%B8%B8%E6%88%8F"><span class="nav-number">1.</span> <span class="nav-text">1.P1000 超级玛丽游戏</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#2-P1001-A-B-Problem"><span class="nav-number">2.</span> <span class="nav-text">2.P1001 A+B Problem</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#3-P4327-COCI2006-2007-1-Okviri"><span class="nav-number">3.</span> <span class="nav-text">3.P4327 [COCI2006-2007#1] Okviri</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#4-P1003-NOIP2011-%E6%8F%90%E9%AB%98%E7%BB%84-%E9%93%BA%E5%9C%B0%E6%AF%AF"><span class="nav-number">4.</span> <span class="nav-text">4.P1003 [NOIP2011 提高组] 铺地毯</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#5-P1035-NOIP2002-%E6%99%AE%E5%8F%8A%E7%BB%84-%E7%BA%A7%E6%95%B0%E6%B1%82%E5%92%8C"><span class="nav-number">5.</span> <span class="nav-text">5.P1035 [NOIP2002 普及组] 级数求和</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#6-P1046-NOIP2005-%E6%99%AE%E5%8F%8A%E7%BB%84-%E9%99%B6%E9%99%B6%E6%91%98%E8%8B%B9%E6%9E%9C"><span class="nav-number">6.</span> <span class="nav-text">6.P1046 [NOIP2005 普及组] 陶陶摘苹果</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#7-P1047-NOIP2005-%E6%99%AE%E5%8F%8A%E7%BB%84-%E6%A0%A1%E9%97%A8%E5%A4%96%E7%9A%84%E6%A0%91"><span class="nav-number">7.</span> <span class="nav-text">7.P1047 [NOIP2005 普及组] 校门外的树</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#8-P1075-NOIP2012-%E6%99%AE%E5%8F%8A%E7%BB%84-%E8%B4%A8%E5%9B%A0%E6%95%B0%E5%88%86%E8%A7%A3"><span class="nav-number">8.</span> <span class="nav-text">8.P1075 [NOIP2012 普及组] 质因数分解</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#9-P1085-NOIP2004-%E6%99%AE%E5%8F%8A%E7%BB%84-%E4%B8%8D%E9%AB%98%E5%85%B4%E7%9A%84%E6%B4%A5%E6%B4%A5"><span class="nav-number">9.</span> <span class="nav-text">9.P1085 [NOIP2004 普及组] 不高兴的津津</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#10-P1089-NOIP2004-%E6%8F%90%E9%AB%98%E7%BB%84-%E6%B4%A5%E6%B4%A5%E7%9A%84%E5%82%A8%E8%93%84%E8%AE%A1%E5%88%92"><span class="nav-number">10.</span> <span class="nav-text">10.P1089 [NOIP2004 提高组] 津津的储蓄计划</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#11-P1150-Peter-%E7%9A%84%E7%83%9F"><span class="nav-number">11.</span> <span class="nav-text">11.P1150 Peter 的烟</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#12-P1151-%E5%AD%90%E6%95%B0%E6%95%B4%E6%95%B0"><span class="nav-number">12.</span> <span class="nav-text">12.P1151 子数整数</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#13-P1152-%E6%AC%A2%E4%B9%90%E7%9A%84%E8%B7%B3"><span class="nav-number">13.</span> <span class="nav-text">13.P1152 欢乐的跳</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#14-P1161-%E5%BC%80%E7%81%AF"><span class="nav-number">14.</span> <span class="nav-text">14.P1161 开灯</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#15-P1179-NOIP2010-%E6%99%AE%E5%8F%8A%E7%BB%84-%E6%95%B0%E5%AD%97%E7%BB%9F%E8%AE%A1"><span class="nav-number">15.</span> <span class="nav-text">15.P1179 [NOIP2010 普及组] 数字统计</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#16-P1200-USACO1-1-%E4%BD%A0%E7%9A%84%E9%A3%9E%E7%A2%9F%E5%9C%A8%E8%BF%99%E5%84%BF-Your-Ride-Is-Here"><span class="nav-number">16.</span> <span class="nav-text">16.P1200 [USACO1.1] 你的飞碟在这儿 Your Ride Is Here</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#17-P1304-%E5%93%A5%E5%BE%B7%E5%B7%B4%E8%B5%AB%E7%8C%9C%E6%83%B3"><span class="nav-number">17.</span> <span class="nav-text">17.P1304 哥德巴赫猜想</span></a></li></ol>
+    
+    </div>
+  </aside>
+
+</section>
+        
+      </div>
+      
+      <footer id="footer">
+  
+
+  <div class="container">
+      	<div class="row">
+	      <p> Powered by <a href="http://hexo.io/" target="_blank">Hexo</a> and <a href="https://github.com/iTimeTraveler/hexo-theme-hiker" target="_blank">Hexo-theme-hiker</a> </p>
+	      <p id="copyRightEn">Copyright &copy; 2023 - 2024 😀 All Rights Reserved.</p>
+	      
+	      
+    		<p class="busuanzi_uv">
+				访客数 : <span id="busuanzi_value_site_uv"></span> |  
+				访问量 : <span id="busuanzi_value_site_pv"></span>
+		    </p>
+  		   
+		</div>
+
+		
+  </div>
+</footer>
+
+
+<!-- min height -->
+
+<script>
+    var wrapdiv = document.getElementById("wrap");
+    var contentdiv = document.getElementById("content");
+    var allheader = document.getElementById("allheader");
+
+    wrapdiv.style.minHeight = document.body.offsetHeight + "px";
+    if (allheader != null) {
+      contentdiv.style.minHeight = document.body.offsetHeight - allheader.offsetHeight - document.getElementById("footer").offsetHeight + "px";
+    } else {
+      contentdiv.style.minHeight = document.body.offsetHeight - document.getElementById("footer").offsetHeight + "px";
+    }
+</script>
+    </div>
+    <!-- <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+    <a href="/categories" class="mobile-nav-link">Categories</a>
+  
+    <a href="/tags" class="mobile-nav-link">Tags</a>
+  
+    <a href="/about" class="mobile-nav-link">About</a>
+  
+</nav> -->
+    
+
+<!-- mathjax config similar to math.stackexchange -->
+
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+    tex2jax: {
+      inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+      processEscapes: true
+    }
+  });
+</script>
+
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+      tex2jax: {
+        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+      }
+    });
+</script>
+
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax(), i;
+        for(i=0; i < all.length; i += 1) {
+            all[i].SourceElement().parentNode.className += ' has-jax';
+        }
+    });
+</script>
+
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
+
+
+  
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+
+  
+<script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+
+
+<script src="/js/scripts.js"></script>
+
+
+
+
+
+  
+<script src="/js/dialog.js"></script>
+
+
+
+
+
+
+
+
+
+	<div style="display: none;">
+    <script src="https://s95.cnzz.com/z_stat.php?id=1260716016&web_id=1260716016" language="JavaScript"></script>
+  </div>
+
+
+
+	<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js">
+	</script>
+
+
+
+
+
+
+  </div>
+
+  <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" style="display: none;">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h2 class="modal-title" id="myModalLabel">设置</h2>
+      </div>
+      <hr style="margin-top:0px; margin-bottom:0px; width:80%; border-top: 3px solid #000;">
+      <hr style="margin-top:2px; margin-bottom:0px; width:80%; border-top: 1px solid #000;">
+
+
+      <div class="modal-body">
+          <div style="margin:6px;">
+            <a data-toggle="collapse" data-parent="#accordion" href="#collapseOne" onclick="javascript:setFontSize();" aria-expanded="true" aria-controls="collapseOne">
+              正文字号大小
+            </a>
+          </div>
+          <div id="collapseOne" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingOne">
+          <div class="panel-body">
+            您已调整页面字体大小
+          </div>
+        </div>
+      
+
+
+          <div style="margin:6px;">
+            <a data-toggle="collapse" data-parent="#accordion" href="#collapseTwo" onclick="javascript:setBackground();" aria-expanded="true" aria-controls="collapseTwo">
+              夜间护眼模式
+            </a>
+        </div>
+          <div id="collapseTwo" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingTwo">
+          <div class="panel-body">
+            夜间模式已经开启，再次单击按钮即可关闭 
+          </div>
+        </div>
+
+        <div>
+            <a data-toggle="collapse" data-parent="#accordion" href="#collapseThree" aria-expanded="true" aria-controls="collapseThree">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;关 于&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</a>
+        </div>
+         <div id="collapseThree" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingThree">
+          <div class="panel-body">
+            😀
+          </div>
+          <div class="panel-body">
+            Copyright © 2024 yangyan All Rights Reserved.
+          </div>
+        </div>
+      </div>
+
+
+      <hr style="margin-top:0px; margin-bottom:0px; width:80%; border-top: 1px solid #000;">
+      <hr style="margin-top:2px; margin-bottom:0px; width:80%; border-top: 3px solid #000;">
+      <div class="modal-footer">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button>
+      </div>
+    </div>
+  </div>
+</div>
+  
+  <a id="rocket" href="#top" class=""></a>
+  <script type="text/javascript" src="/js/totop.js?v=1.0.0" async=""></script>
+  
+    <a id="menu-switch"><i class="fa fa-bars fa-lg"></i></a>
+  
+</body>
+</html>

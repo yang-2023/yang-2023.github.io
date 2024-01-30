@@ -1,0 +1,514 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>爬虫爬取b站视频 | 😀</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  
+  <meta name="keywords" content="python爬虫" />
+  
+  
+  
+  
+  <meta name="description" content="尝试用python爬取bilibili的视频。123456789101112131415161718192021222324252627282930313233343536373839404142434445import os#用于操作系统的交换模块import requests#发送http请求模块import json#解析jsonimport re#正则表达式from pprint impo">
+<meta property="og:type" content="article">
+<meta property="og:title" content="爬虫爬取b站视频">
+<meta property="og:url" content="http://example.com/2023/11/15/%E7%88%AC%E8%99%AB%E7%88%AC%E5%8F%96b%E7%AB%99%E8%A7%86%E9%A2%91/index.html">
+<meta property="og:site_name" content="😀">
+<meta property="og:description" content="尝试用python爬取bilibili的视频。123456789101112131415161718192021222324252627282930313233343536373839404142434445import os#用于操作系统的交换模块import requests#发送http请求模块import json#解析jsonimport re#正则表达式from pprint impo">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2023-11-15T04:25:28.000Z">
+<meta property="article:modified_time" content="2023-12-06T07:49:28.988Z">
+<meta property="article:author" content="yangyan">
+<meta property="article:tag" content="python">
+<meta property="article:tag" content="爬虫">
+<meta name="twitter:card" content="summary">
+  
+    <link rel="alternate" href="/atom.xml" title="😀" type="application/atom+xml">
+  
+
+  
+
+  <link rel="icon" href="/css/images/mylogo.jpg">
+  <link rel="apple-touch-icon" href="/css/images/mylogo.jpg">
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans|Montserrat:700" rel="stylesheet" type="text/css">
+  <link href="https://fonts.googleapis.com/css?family=Roboto:400,300,300italic,400italic" rel="stylesheet" type="text/css">
+  <link href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" rel="stylesheet">
+  <style type="text/css">
+    @font-face{font-family:futura-pt; src:url("/css/fonts/FuturaPTBold.otf") format("woff");font-weight:500;font-style:normal;}
+    @font-face{font-family:futura-pt-light; src:url("/css/fonts/FuturaPTBook.otf") format("woff");font-weight:lighter;font-style:normal;}
+    @font-face{font-family:futura-pt-italic; src:url("/css/fonts/FuturaPTBookOblique.otf") format("woff");font-weight:400;font-style:italic;}
+}
+
+  </style>
+  
+<link rel="stylesheet" href="/css/style.css">
+
+
+  
+<script src="/js/jquery-3.1.1.min.js"></script>
+
+  
+<script src="/js/bootstrap.js"></script>
+
+
+  <!-- Bootstrap core CSS -->
+  <link rel="stylesheet" href="/css/bootstrap.css" >
+
+  
+    
+<link rel="stylesheet" href="/css/dialog.css">
+
+  
+
+  
+
+  
+    <link rel="stylesheet" href="/css/header-post.css" >
+  
+
+  
+  
+  
+
+<meta name="generator" content="Hexo 6.3.0"></head>
+
+
+
+  <body data-spy="scroll" data-target="#toc" data-offset="50">
+
+
+  
+  <div id="container">
+    <div id="wrap">
+      
+        <header>
+
+    <div id="allheader" class="navbar navbar-default navbar-static-top" role="navigation">
+        <div class="navbar-inner">
+          
+          <div class="container"> 
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+              <span class="sr-only">Toggle navigation</span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+            </button>
+
+            
+              <a class="brand" style="
+                 margin-top: 0px;"  
+                href="#" data-toggle="modal" data-target="#myModal" >
+                  <img width="124px" height="124px" alt="Hike News" src="/css/images/mylogo.jpg">
+              </a>
+            
+            
+            <div class="navbar-collapse collapse">
+              <ul class="hnav navbar-nav">
+                
+                  <li> <a class="main-nav-link" href="/">首页</a> </li>
+                
+                  <li> <a class="main-nav-link" href="/archives">归档</a> </li>
+                
+                  <li> <a class="main-nav-link" href="/categories">分类</a> </li>
+                
+                  <li> <a class="main-nav-link" href="/tags">标签</a> </li>
+                
+                  <li> <a class="main-nav-link" href="/about">关于</a> </li>
+                
+                  <li><div id="search-form-wrap">
+
+    <form class="search-form">
+        <input type="text" class="ins-search-input search-form-input" placeholder="" />
+        <button type="submit" class="search-form-submit"></button>
+    </form>
+    <div class="ins-search">
+    <div class="ins-search-mask"></div>
+    <div class="ins-search-container">
+        <div class="ins-input-wrapper">
+            <input type="text" class="ins-search-input" placeholder="请输入关键词..." />
+            <span class="ins-close ins-selectable"><i class="fa fa-times-circle"></i></span>
+        </div>
+        <div class="ins-section-wrapper">
+            <div class="ins-section-container"></div>
+        </div>
+    </div>
+</div>
+<script>
+(function (window) {
+    var INSIGHT_CONFIG = {
+        TRANSLATION: {
+            POSTS: '文章',
+            PAGES: '页面',
+            CATEGORIES: '分类',
+            TAGS: '标签',
+            UNTITLED: '(无标题)',
+        },
+        ROOT_URL: '/',
+        CONTENT_URL: '/content.json',
+    };
+    window.INSIGHT_CONFIG = INSIGHT_CONFIG;
+})(window);
+</script>
+
+<script src="/js/insight.js"></script>
+
+
+</div></li>
+            </div>
+          </div>
+                
+      </div>
+    </div>
+
+</header>
+
+
+
+      
+            
+      <div id="content" class="outer">
+        
+          <section id="main" style="float:none;"><article id="post-爬虫爬取b站视频" style="width: 75%; float:left;" class="article article-type-post" itemscope itemprop="blogPost" >
+  <div id="articleInner" class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="thumb" class="article-title" itemprop="name">
+      爬虫爬取b站视频
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-meta">
+      
+	<a href="/2023/11/15/%E7%88%AC%E8%99%AB%E7%88%AC%E5%8F%96b%E7%AB%99%E8%A7%86%E9%A2%91/" class="article-date">
+	  <time datetime="2023-11-15T04:25:28.000Z" itemprop="datePublished">2023-11-15</time>
+	</a>
+
+      
+    <a class="article-category-link" href="/categories/python/">python</a>
+
+      
+	<a class="article-views">
+	<span id="busuanzi_container_page_pv">
+		阅读量<span id="busuanzi_value_page_pv"></span>
+	</span>
+	</a>
+
+      
+
+    </div>
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h4 id="尝试用python爬取bilibili的视频。"><a href="#尝试用python爬取bilibili的视频。" class="headerlink" title="尝试用python爬取bilibili的视频。"></a><em>尝试用python爬取bilibili的视频</em>。</h4><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="keyword">import</span> os<span class="comment">#用于操作系统的交换模块</span></span><br><span class="line"><span class="keyword">import</span> requests<span class="comment">#发送http请求模块</span></span><br><span class="line"><span class="keyword">import</span> json<span class="comment">#解析json</span></span><br><span class="line"><span class="keyword">import</span> re<span class="comment">#正则表达式</span></span><br><span class="line"><span class="keyword">from</span> pprint <span class="keyword">import</span> pprint<span class="comment">#美观打印输出json</span></span><br><span class="line"><span class="comment">#输入视频网址.只输入前半部分。</span></span><br><span class="line"><span class="comment">#网址格式最后到/BV****/</span></span><br><span class="line">url=<span class="string">r&#x27;https://www.bilibili.com/video/BV15H4y1o7UH/&#x27;</span></span><br><span class="line"><span class="comment">#设置请求头</span></span><br><span class="line">header=&#123;</span><br><span class="line">    <span class="string">&quot;User-Agent&quot;</span>:<span class="string">&quot;Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/119.0.0.0 Safari/537.36 Edg/119.0.0.0&quot;</span>,</span><br><span class="line">    <span class="string">&quot;Preferer&quot;</span>:<span class="string">&quot;https://www.bilibili.com/&quot;</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">resp=requests.get(url=url,headers=header)<span class="comment">#获取http</span></span><br><span class="line"></span><br><span class="line"><span class="comment">#print(resp.text)</span></span><br><span class="line"><span class="comment"># 获取网页.baseurl是视频地址</span></span><br><span class="line">obj=re.<span class="built_in">compile</span>(<span class="string">r&#x27;window.__playinfo__=(.*?)&lt;/script&gt;&#x27;</span>,re.S)</span><br><span class="line">html_data=re.findall(obj,resp.text)[<span class="number">0</span>]<span class="comment">#返回一个列表</span></span><br><span class="line"><span class="comment">#正则表达式对应匹配网页视频音频</span></span><br><span class="line"><span class="comment">#转字符串到json</span></span><br><span class="line"><span class="comment">#print(html_data)</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">json_data=json.loads(html_data)</span><br><span class="line"><span class="comment">#pprint(json_data)</span></span><br><span class="line"><span class="comment">#格式化输出</span></span><br><span class="line"><span class="comment">#video和audio分别是视频和音频.爬取下来需要合成</span></span><br><span class="line">videos=json_data[<span class="string">&#x27;data&#x27;</span>][<span class="string">&#x27;dash&#x27;</span>][<span class="string">&#x27;video&#x27;</span>]<span class="comment">#列表</span></span><br><span class="line">video_url=videos[<span class="number">0</span>][<span class="string">&#x27;baseUrl&#x27;</span>]<span class="comment">#视频地址</span></span><br><span class="line">audios=json_data[<span class="string">&#x27;data&#x27;</span>][<span class="string">&#x27;dash&#x27;</span>][<span class="string">&#x27;audio&#x27;</span>]</span><br><span class="line">audios_url=audios[<span class="number">0</span>][<span class="string">&#x27;baseUrl&#x27;</span>]<span class="comment">#音频地址</span></span><br><span class="line"><span class="comment">#下载视频音频</span></span><br><span class="line">resp1=requests.get(url=video_url,headers=header)</span><br><span class="line"><span class="keyword">with</span> <span class="built_in">open</span>(<span class="string">&#x27;test.mp4&#x27;</span>,mode=<span class="string">&#x27;wb&#x27;</span>) <span class="keyword">as</span> f:</span><br><span class="line">    f.write(resp1.content)</span><br><span class="line">resp2=requests.get(url=audios_url,headers=header)</span><br><span class="line"><span class="keyword">with</span> <span class="built_in">open</span> (<span class="string">&#x27;test.mp3&#x27;</span>,mode=<span class="string">&#x27;wb&#x27;</span>) <span class="keyword">as</span> f:</span><br><span class="line">    f.write(resp2.content)</span><br><span class="line"><span class="comment">#爬取完成合并视频音频</span></span><br><span class="line"><span class="comment">#利用ffmpeg合并</span></span><br><span class="line">command=<span class="string">r&#x27;ffmpeg -i test.mp4 -i test.mp3 -acodec copy -vcodec copy testout.mp4&#x27;</span></span><br><span class="line">os.system(command=command)</span><br></pre></td></tr></table></figure>
+
+<p><em>然后左侧文件夹出现爬取的视频音频和合成的视频</em>。</p>
+<h4 id="关于我代码过程中出现的错误和解决的过程"><a href="#关于我代码过程中出现的错误和解决的过程" class="headerlink" title="关于我代码过程中出现的错误和解决的过程"></a><strong>关于我代码过程中出现的错误和解决的过程</strong></h4><h5 id="1-网页开发者模式获取过程中难以找到请求头-刷新解决。"><a href="#1-网页开发者模式获取过程中难以找到请求头-刷新解决。" class="headerlink" title="1.网页开发者模式获取过程中难以找到请求头.刷新解决。"></a>1.网页开发者模式获取过程中难以找到请求头.刷新解决。</h5><h5 id="2-ffmpeg的环境搭建出问题-通过官网下载插件-将文件夹中bin位置添加到path变量中。"><a href="#2-ffmpeg的环境搭建出问题-通过官网下载插件-将文件夹中bin位置添加到path变量中。" class="headerlink" title="2.ffmpeg的环境搭建出问题.通过官网下载插件.将文件夹中bin位置添加到path变量中。"></a>2.ffmpeg的环境搭建出问题.通过官网下载插件.将文件夹中bin位置添加到path变量中。</h5><blockquote>
+<p>1.cmd测试安装</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&gt;ffmpeg</span><br></pre></td></tr></table></figure>
+</blockquote>
+<blockquote>
+<p>2.pip安装ffmpy</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pip install ffmpy</span><br></pre></td></tr></table></figure>
+</blockquote>
+<blockquote>
+<p>3.pip安装ffmpy3<br>（目前 ffmpy3 具有ffmpeg和ffprobe命令的包装器）</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pip install ffmpy3</span><br></pre></td></tr></table></figure>
+</blockquote>
+<pre><code>* 我的问题这里就解决了.无法解决还有配置路径的方法*
+</code></pre>
+<h5 id="3-代码容易出现拼写错误。"><a href="#3-代码容易出现拼写错误。" class="headerlink" title="3.代码容易出现拼写错误。"></a>3.代码容易出现拼写错误。</h5><h5 id="4-附加ffmpy的下载途径。"><a href="#4-附加ffmpy的下载途径。" class="headerlink" title="4.附加ffmpy的下载途径。"></a>4.附加ffmpy的下载途径。</h5><blockquote>
+<p><a target="_blank" rel="noopener" href="https://www.gyan.dev/ffmpeg/builds/#release-builds">Builds - CODEX FFMPEG @ gyan.dev</a></p>
+<p><em>下载注意不要下载源码版本</em></p>
+</blockquote>
+<h5 id="5-出现中文乱码-设置调utl-8和电脑设置里的区域中勾选utl-8。"><a href="#5-出现中文乱码-设置调utl-8和电脑设置里的区域中勾选utl-8。" class="headerlink" title="5.出现中文乱码.设置调utl-8和电脑设置里的区域中勾选utl-8。"></a>5.出现中文乱码.设置调utl-8和电脑设置里的区域中勾选utl-8。</h5><h5 id="6-注意load和loads的用法load的是文件流另一个是字符串，注意甄别。"><a href="#6-注意load和loads的用法load的是文件流另一个是字符串，注意甄别。" class="headerlink" title="6.注意load和loads的用法load的是文件流另一个是字符串，注意甄别。"></a>6.注意load和loads的用法load的是文件流另一个是字符串，注意甄别。</h5><h5 id="7-首先正则表达式获取才能用相应的字符串代码进行操作。"><a href="#7-首先正则表达式获取才能用相应的字符串代码进行操作。" class="headerlink" title="7.首先正则表达式获取才能用相应的字符串代码进行操作。"></a>7.首先正则表达式获取才能用相应的字符串代码进行操作。</h5>
+      
+    </div>
+    <footer class="article-footer">
+      
+      
+      <div>
+        <ul class="post-copyright">
+          <li class="post-copyright-author">
+          <strong>本文作者:  </strong>yangyan</a>
+          </li>
+          <li class="post-copyright-link">
+          <strong>本文链接:  </strong>
+          <a href="/2023/11/15/爬虫爬取b站视频/" target="_blank" title="爬虫爬取b站视频">http://example.com/2023/11/15/爬虫爬取b站视频/</a>
+          </li>
+          <li class="post-copyright-license">
+            <strong>版权声明:   </strong>
+            本博客所有文章除特别声明外，均采用 <a rel="license" href="https://creativecommons.org/licenses/by-nc-nd/4.0/" target="_blank" title="Attribution-NonCommercial-NoDerivatives 4.0 International (CC BY-NC-ND 4.0)">CC BY-NC-ND 4.0</a>
+            许可协议。转载请注明出处
+          </li>
+         
+        </ul>
+<div>
+
+      
+      
+        
+	<div id="comment">
+		<!-- 来必力City版安装代码 -->
+		<div id="lv-container" data-id="city" data-uid="MTAyMC8yOTQ4MS82MDQ5">
+		<script type="text/javascript">
+		   (function(d, s) {
+		       var j, e = d.getElementsByTagName(s)[0];
+
+		       if (typeof LivereTower === 'function') { return; }
+
+		       j = d.createElement(s);
+		       j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
+		       j.async = true;
+
+		       e.parentNode.insertBefore(j, e);
+		   })(document, 'script');
+		</script>
+		<noscript>为正常使用来必力评论功能请激活JavaScript</noscript>
+		</div>
+		<!-- City版安装代码已完成 -->
+	</div>
+
+
+
+      
+      
+        
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/python/" rel="tag">python</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E7%88%AC%E8%99%AB/" rel="tag">爬虫</a></li></ul>
+
+      
+
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2023/11/17/goland-%E5%8F%98%E9%87%8F%E5%B8%B8%E9%87%8F/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">上一篇</strong>
+      <div class="article-nav-title">
+        
+          goland-变量常量
+        
+      </div>
+    </a>
+  
+  
+</nav>
+
+  
+</article>
+
+<!-- Table of Contents -->
+
+  <aside id="toc-sidebar">
+    <div id="toc" class="toc-article">
+    <strong class="toc-title">文章目录</strong>
+    
+        <ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%B0%9D%E8%AF%95%E7%94%A8python%E7%88%AC%E5%8F%96bilibili%E7%9A%84%E8%A7%86%E9%A2%91%E3%80%82"><span class="nav-number">1.</span> <span class="nav-text">尝试用python爬取bilibili的视频。</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%85%B3%E4%BA%8E%E6%88%91%E4%BB%A3%E7%A0%81%E8%BF%87%E7%A8%8B%E4%B8%AD%E5%87%BA%E7%8E%B0%E7%9A%84%E9%94%99%E8%AF%AF%E5%92%8C%E8%A7%A3%E5%86%B3%E7%9A%84%E8%BF%87%E7%A8%8B"><span class="nav-number">2.</span> <span class="nav-text">关于我代码过程中出现的错误和解决的过程</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#1-%E7%BD%91%E9%A1%B5%E5%BC%80%E5%8F%91%E8%80%85%E6%A8%A1%E5%BC%8F%E8%8E%B7%E5%8F%96%E8%BF%87%E7%A8%8B%E4%B8%AD%E9%9A%BE%E4%BB%A5%E6%89%BE%E5%88%B0%E8%AF%B7%E6%B1%82%E5%A4%B4-%E5%88%B7%E6%96%B0%E8%A7%A3%E5%86%B3%E3%80%82"><span class="nav-number">2.1.</span> <span class="nav-text">1.网页开发者模式获取过程中难以找到请求头.刷新解决。</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#2-ffmpeg%E7%9A%84%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA%E5%87%BA%E9%97%AE%E9%A2%98-%E9%80%9A%E8%BF%87%E5%AE%98%E7%BD%91%E4%B8%8B%E8%BD%BD%E6%8F%92%E4%BB%B6-%E5%B0%86%E6%96%87%E4%BB%B6%E5%A4%B9%E4%B8%ADbin%E4%BD%8D%E7%BD%AE%E6%B7%BB%E5%8A%A0%E5%88%B0path%E5%8F%98%E9%87%8F%E4%B8%AD%E3%80%82"><span class="nav-number">2.2.</span> <span class="nav-text">2.ffmpeg的环境搭建出问题.通过官网下载插件.将文件夹中bin位置添加到path变量中。</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#3-%E4%BB%A3%E7%A0%81%E5%AE%B9%E6%98%93%E5%87%BA%E7%8E%B0%E6%8B%BC%E5%86%99%E9%94%99%E8%AF%AF%E3%80%82"><span class="nav-number">2.3.</span> <span class="nav-text">3.代码容易出现拼写错误。</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#4-%E9%99%84%E5%8A%A0ffmpy%E7%9A%84%E4%B8%8B%E8%BD%BD%E9%80%94%E5%BE%84%E3%80%82"><span class="nav-number">2.4.</span> <span class="nav-text">4.附加ffmpy的下载途径。</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#5-%E5%87%BA%E7%8E%B0%E4%B8%AD%E6%96%87%E4%B9%B1%E7%A0%81-%E8%AE%BE%E7%BD%AE%E8%B0%83utl-8%E5%92%8C%E7%94%B5%E8%84%91%E8%AE%BE%E7%BD%AE%E9%87%8C%E7%9A%84%E5%8C%BA%E5%9F%9F%E4%B8%AD%E5%8B%BE%E9%80%89utl-8%E3%80%82"><span class="nav-number">2.5.</span> <span class="nav-text">5.出现中文乱码.设置调utl-8和电脑设置里的区域中勾选utl-8。</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#6-%E6%B3%A8%E6%84%8Fload%E5%92%8Cloads%E7%9A%84%E7%94%A8%E6%B3%95load%E7%9A%84%E6%98%AF%E6%96%87%E4%BB%B6%E6%B5%81%E5%8F%A6%E4%B8%80%E4%B8%AA%E6%98%AF%E5%AD%97%E7%AC%A6%E4%B8%B2%EF%BC%8C%E6%B3%A8%E6%84%8F%E7%94%84%E5%88%AB%E3%80%82"><span class="nav-number">2.6.</span> <span class="nav-text">6.注意load和loads的用法load的是文件流另一个是字符串，注意甄别。</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#7-%E9%A6%96%E5%85%88%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F%E8%8E%B7%E5%8F%96%E6%89%8D%E8%83%BD%E7%94%A8%E7%9B%B8%E5%BA%94%E7%9A%84%E5%AD%97%E7%AC%A6%E4%B8%B2%E4%BB%A3%E7%A0%81%E8%BF%9B%E8%A1%8C%E6%93%8D%E4%BD%9C%E3%80%82"><span class="nav-number">2.7.</span> <span class="nav-text">7.首先正则表达式获取才能用相应的字符串代码进行操作。</span></a></li></ol></li></ol>
+    
+    </div>
+  </aside>
+
+</section>
+        
+      </div>
+      
+      <footer id="footer">
+  
+
+  <div class="container">
+      	<div class="row">
+	      <p> Powered by <a href="http://hexo.io/" target="_blank">Hexo</a> and <a href="https://github.com/iTimeTraveler/hexo-theme-hiker" target="_blank">Hexo-theme-hiker</a> </p>
+	      <p id="copyRightEn">Copyright &copy; 2023 - 2024 😀 All Rights Reserved.</p>
+	      
+	      
+    		<p class="busuanzi_uv">
+				访客数 : <span id="busuanzi_value_site_uv"></span> |  
+				访问量 : <span id="busuanzi_value_site_pv"></span>
+		    </p>
+  		   
+		</div>
+
+		
+  </div>
+</footer>
+
+
+<!-- min height -->
+
+<script>
+    var wrapdiv = document.getElementById("wrap");
+    var contentdiv = document.getElementById("content");
+    var allheader = document.getElementById("allheader");
+
+    wrapdiv.style.minHeight = document.body.offsetHeight + "px";
+    if (allheader != null) {
+      contentdiv.style.minHeight = document.body.offsetHeight - allheader.offsetHeight - document.getElementById("footer").offsetHeight + "px";
+    } else {
+      contentdiv.style.minHeight = document.body.offsetHeight - document.getElementById("footer").offsetHeight + "px";
+    }
+</script>
+    </div>
+    <!-- <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+    <a href="/categories" class="mobile-nav-link">Categories</a>
+  
+    <a href="/tags" class="mobile-nav-link">Tags</a>
+  
+    <a href="/about" class="mobile-nav-link">About</a>
+  
+</nav> -->
+    
+
+<!-- mathjax config similar to math.stackexchange -->
+
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+    tex2jax: {
+      inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+      processEscapes: true
+    }
+  });
+</script>
+
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+      tex2jax: {
+        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+      }
+    });
+</script>
+
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax(), i;
+        for(i=0; i < all.length; i += 1) {
+            all[i].SourceElement().parentNode.className += ' has-jax';
+        }
+    });
+</script>
+
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
+
+
+  
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+
+  
+<script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+
+
+<script src="/js/scripts.js"></script>
+
+
+
+
+
+  
+<script src="/js/dialog.js"></script>
+
+
+
+
+
+
+
+
+
+	<div style="display: none;">
+    <script src="https://s95.cnzz.com/z_stat.php?id=1260716016&web_id=1260716016" language="JavaScript"></script>
+  </div>
+
+
+
+	<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js">
+	</script>
+
+
+
+
+
+
+  </div>
+
+  <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" style="display: none;">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h2 class="modal-title" id="myModalLabel">设置</h2>
+      </div>
+      <hr style="margin-top:0px; margin-bottom:0px; width:80%; border-top: 3px solid #000;">
+      <hr style="margin-top:2px; margin-bottom:0px; width:80%; border-top: 1px solid #000;">
+
+
+      <div class="modal-body">
+          <div style="margin:6px;">
+            <a data-toggle="collapse" data-parent="#accordion" href="#collapseOne" onclick="javascript:setFontSize();" aria-expanded="true" aria-controls="collapseOne">
+              正文字号大小
+            </a>
+          </div>
+          <div id="collapseOne" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingOne">
+          <div class="panel-body">
+            您已调整页面字体大小
+          </div>
+        </div>
+      
+
+
+          <div style="margin:6px;">
+            <a data-toggle="collapse" data-parent="#accordion" href="#collapseTwo" onclick="javascript:setBackground();" aria-expanded="true" aria-controls="collapseTwo">
+              夜间护眼模式
+            </a>
+        </div>
+          <div id="collapseTwo" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingTwo">
+          <div class="panel-body">
+            夜间模式已经开启，再次单击按钮即可关闭 
+          </div>
+        </div>
+
+        <div>
+            <a data-toggle="collapse" data-parent="#accordion" href="#collapseThree" aria-expanded="true" aria-controls="collapseThree">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;关 于&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</a>
+        </div>
+         <div id="collapseThree" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingThree">
+          <div class="panel-body">
+            😀
+          </div>
+          <div class="panel-body">
+            Copyright © 2024 yangyan All Rights Reserved.
+          </div>
+        </div>
+      </div>
+
+
+      <hr style="margin-top:0px; margin-bottom:0px; width:80%; border-top: 1px solid #000;">
+      <hr style="margin-top:2px; margin-bottom:0px; width:80%; border-top: 3px solid #000;">
+      <div class="modal-footer">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button>
+      </div>
+    </div>
+  </div>
+</div>
+  
+  <a id="rocket" href="#top" class=""></a>
+  <script type="text/javascript" src="/js/totop.js?v=1.0.0" async=""></script>
+  
+    <a id="menu-switch"><i class="fa fa-bars fa-lg"></i></a>
+  
+</body>
+</html>

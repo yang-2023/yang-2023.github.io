@@ -1,0 +1,588 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>badger学习使用 | 😀</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  
+  <meta name="keywords" content="区块链goland数据库" />
+  
+  
+  
+  
+  <meta name="description" content="BADGER简单实用简介一种kv引擎，KV 引擎是一种键值存储引擎，用于存储键值对。其中，键是唯一的标识符，值是任意数据类型。KV 引擎通常用于缓存、数据库等场景。是 go 生态中比较生产级的存储引擎。 安装指令输入 1go get github.com&#x2F;dgraph-io&#x2F;badger  在这里我的安装出了一些错误，所以我是自己下载的然后自己安装的，如果你也出错了可以下载仓库 · Gitee 极">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Badger学习使用">
+<meta property="og:url" content="http://example.com/2023/12/18/Badger%E5%AD%A6%E4%B9%A0%E4%BD%BF%E7%94%A8/index.html">
+<meta property="og:site_name" content="😀">
+<meta property="og:description" content="BADGER简单实用简介一种kv引擎，KV 引擎是一种键值存储引擎，用于存储键值对。其中，键是唯一的标识符，值是任意数据类型。KV 引擎通常用于缓存、数据库等场景。是 go 生态中比较生产级的存储引擎。 安装指令输入 1go get github.com&#x2F;dgraph-io&#x2F;badger  在这里我的安装出了一些错误，所以我是自己下载的然后自己安装的，如果你也出错了可以下载仓库 · Gitee 极">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2023-12-18T08:49:04.000Z">
+<meta property="article:modified_time" content="2023-12-22T12:14:50.788Z">
+<meta property="article:author" content="yangyan">
+<meta property="article:tag" content="区块链">
+<meta property="article:tag" content="goland">
+<meta property="article:tag" content="数据库">
+<meta name="twitter:card" content="summary">
+  
+    <link rel="alternate" href="/atom.xml" title="😀" type="application/atom+xml">
+  
+
+  
+
+  <link rel="icon" href="/css/images/mylogo.jpg">
+  <link rel="apple-touch-icon" href="/css/images/mylogo.jpg">
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans|Montserrat:700" rel="stylesheet" type="text/css">
+  <link href="https://fonts.googleapis.com/css?family=Roboto:400,300,300italic,400italic" rel="stylesheet" type="text/css">
+  <link href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" rel="stylesheet">
+  <style type="text/css">
+    @font-face{font-family:futura-pt; src:url("/css/fonts/FuturaPTBold.otf") format("woff");font-weight:500;font-style:normal;}
+    @font-face{font-family:futura-pt-light; src:url("/css/fonts/FuturaPTBook.otf") format("woff");font-weight:lighter;font-style:normal;}
+    @font-face{font-family:futura-pt-italic; src:url("/css/fonts/FuturaPTBookOblique.otf") format("woff");font-weight:400;font-style:italic;}
+}
+
+  </style>
+  
+<link rel="stylesheet" href="/css/style.css">
+
+
+  
+<script src="/js/jquery-3.1.1.min.js"></script>
+
+  
+<script src="/js/bootstrap.js"></script>
+
+
+  <!-- Bootstrap core CSS -->
+  <link rel="stylesheet" href="/css/bootstrap.css" >
+
+  
+    
+<link rel="stylesheet" href="/css/dialog.css">
+
+  
+
+  
+
+  
+    <link rel="stylesheet" href="/css/header-post.css" >
+  
+
+  
+  
+  
+
+<meta name="generator" content="Hexo 6.3.0"></head>
+
+
+
+  <body data-spy="scroll" data-target="#toc" data-offset="50">
+
+
+  
+  <div id="container">
+    <div id="wrap">
+      
+        <header>
+
+    <div id="allheader" class="navbar navbar-default navbar-static-top" role="navigation">
+        <div class="navbar-inner">
+          
+          <div class="container"> 
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+              <span class="sr-only">Toggle navigation</span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+            </button>
+
+            
+              <a class="brand" style="
+                 margin-top: 0px;"  
+                href="#" data-toggle="modal" data-target="#myModal" >
+                  <img width="124px" height="124px" alt="Hike News" src="/css/images/mylogo.jpg">
+              </a>
+            
+            
+            <div class="navbar-collapse collapse">
+              <ul class="hnav navbar-nav">
+                
+                  <li> <a class="main-nav-link" href="/">首页</a> </li>
+                
+                  <li> <a class="main-nav-link" href="/archives">归档</a> </li>
+                
+                  <li> <a class="main-nav-link" href="/categories">分类</a> </li>
+                
+                  <li> <a class="main-nav-link" href="/tags">标签</a> </li>
+                
+                  <li> <a class="main-nav-link" href="/about">关于</a> </li>
+                
+                  <li><div id="search-form-wrap">
+
+    <form class="search-form">
+        <input type="text" class="ins-search-input search-form-input" placeholder="" />
+        <button type="submit" class="search-form-submit"></button>
+    </form>
+    <div class="ins-search">
+    <div class="ins-search-mask"></div>
+    <div class="ins-search-container">
+        <div class="ins-input-wrapper">
+            <input type="text" class="ins-search-input" placeholder="请输入关键词..." />
+            <span class="ins-close ins-selectable"><i class="fa fa-times-circle"></i></span>
+        </div>
+        <div class="ins-section-wrapper">
+            <div class="ins-section-container"></div>
+        </div>
+    </div>
+</div>
+<script>
+(function (window) {
+    var INSIGHT_CONFIG = {
+        TRANSLATION: {
+            POSTS: '文章',
+            PAGES: '页面',
+            CATEGORIES: '分类',
+            TAGS: '标签',
+            UNTITLED: '(无标题)',
+        },
+        ROOT_URL: '/',
+        CONTENT_URL: '/content.json',
+    };
+    window.INSIGHT_CONFIG = INSIGHT_CONFIG;
+})(window);
+</script>
+
+<script src="/js/insight.js"></script>
+
+
+</div></li>
+            </div>
+          </div>
+                
+      </div>
+    </div>
+
+</header>
+
+
+
+      
+            
+      <div id="content" class="outer">
+        
+          <section id="main" style="float:none;"><article id="file-Badger学习使用" style="width: 75%; float:left;" class="article article-type-file" itemscope itemprop="blogPost" >
+  <div id="articleInner" class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="thumb" class="article-title" itemprop="name">
+      Badger学习使用
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-meta">
+      
+	<a href="/2023/12/18/Badger%E5%AD%A6%E4%B9%A0%E4%BD%BF%E7%94%A8/" class="article-date">
+	  <time datetime="2023-12-18T08:49:04.000Z" itemprop="datePublished">2023-12-18</time>
+	</a>
+
+      
+    <a class="article-category-link" href="/categories/%E5%8C%BA%E5%9D%97%E9%93%BE/">区块链</a>
+
+      
+	<a class="article-views">
+	<span id="busuanzi_container_page_pv">
+		阅读量<span id="busuanzi_value_page_pv"></span>
+	</span>
+	</a>
+
+      
+
+    </div>
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="BADGER简单实用"><a href="#BADGER简单实用" class="headerlink" title="BADGER简单实用"></a>BADGER简单实用</h2><h5 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h5><p>一种kv引擎，KV 引擎是一种键值存储引擎，用于存储键值对。其中，键是唯一的标识符，值是任意数据类型。KV 引擎通常用于缓存、数据库等场景。是 go 生态中比较生产级的存储引擎。</p>
+<h5 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h5><p>指令输入</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">go get github.com/dgraph-io/badger</span><br></pre></td></tr></table></figure>
+
+<p>在这里我的安装出了一些错误，所以我是自己下载的然后自己安装的，如果你也出错了可以<a target="_blank" rel="noopener" href="https://gitee.com/mirrors/Badger/repository/archive/main.zip">下载仓库 · Gitee 极速下载&#x2F;Badger - Gitee.com</a>下载之后，通过goland的命令行cd到你下载&#x2F;badger里，然后命令行输入go install就好了。</p>
+<h4 id="数据库操作"><a href="#数据库操作" class="headerlink" title="数据库操作"></a>数据库操作</h4><h5 id="打开数据库"><a href="#打开数据库" class="headerlink" title="打开数据库"></a>打开数据库</h5><figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">Open</span><span class="params">(path <span class="type">string</span>)</span></span> (*badger.DB, <span class="type">error</span>) &#123;</span><br><span class="line">	<span class="keyword">if</span> _, err := os.Stat(path); os.IsNotExist(err) &#123;</span><br><span class="line">		os.MkdirAll(path, <span class="number">0755</span>)</span><br><span class="line">	&#125;</span><br><span class="line">	opts := badger.DefaultOptions(path)</span><br><span class="line">	opts.Dir = path</span><br><span class="line">	opts.ValueDir = path</span><br><span class="line">	opts.SyncWrites = <span class="literal">false</span></span><br><span class="line">	opts.ValueThreshold = <span class="number">256</span></span><br><span class="line">	opts.CompactL0OnClose = <span class="literal">true</span></span><br><span class="line">	db, err := badger.Open(opts)</span><br><span class="line">	<span class="keyword">if</span> err != <span class="literal">nil</span> &#123;</span><br><span class="line">		log.Println(<span class="string">&quot;badger open failed&quot;</span>, <span class="string">&quot;path&quot;</span>, path, <span class="string">&quot;err&quot;</span>, err)</span><br><span class="line">		<span class="keyword">return</span> <span class="literal">nil</span>, err</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">return</span> db, <span class="literal">nil</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<p>用于打开或创建Badger数据库的函数。</p>
+<p>函数名为<code>Open</code>，接受一个字符串类型的参数<code>path</code>，表示数据库文件的路径。函数返回一个指向<code>badger.DB</code>类型的指针和一个错误信息。</p>
+<p>函数首先使用<code>os.Stat(path)</code>检查指定路径是否存在。如果不存在，则使用<code>os.MkdirAll(path, 0755)</code>创建该路径及其所有父目录，并设置权限为755。</p>
+<p>接下来，函数创建一个<code>badger.DefaultOptions(path)</code>对象，用于配置Badger数据库的选项。这些选项包括：</p>
+<ul>
+<li><code>Dir</code>: 数据库文件所在的目录。</li>
+<li><code>ValueDir</code>: 存储值的目录。</li>
+<li><code>SyncWrites</code>: 是否同步写入磁盘。设置为<code>false</code>可以提高性能，但可能会降低数据的一致性。</li>
+<li><code>ValueThreshold</code>: 触发L0压缩的阈值。当存储的值数量超过这个阈值时，会触发L0压缩以释放空间。</li>
+<li><code>CompactL0OnClose</code>: 是否在关闭数据库时自动进行L0压缩。设置为<code>true</code>可以在程序结束时自动压缩，减少磁盘空间的使用。</li>
+</ul>
+<p>然后，函数使用<code>badger.Open(opts)</code>打开或创建数据库，并将结果赋值给变量<code>db</code>。如果打开过程中出现错误，函数会记录错误信息，并返回<code>nil</code>和错误信息。</p>
+<p>最后，函数返回指向数据库的指针和<code>nil</code>作为错误信息，表示成功打开了数据库。</p>
+<h5 id="内存模式-无盘模式"><a href="#内存模式-无盘模式" class="headerlink" title="内存模式&#x2F;无盘模式"></a>内存模式&#x2F;无盘模式</h5><p>默认Badger 所有数据都保存在磁盘上。它还支持纯内存模式。当 Badger 在内存模式下运行时，所有数据都存储在内存中。在内存模式下读写速度要快得多，但在崩溃或关闭的情况下，存储在 Badger 中的所有数据都会丢失。要在内存模式下打开 badger，设置InMemory选项。</p>
+<figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">opts := badger.DefaultOptions(path).WithInMemory(<span class="literal">true</span>)</span><br></pre></td></tr></table></figure>
+
+<h5 id="关闭数据库"><a href="#关闭数据库" class="headerlink" title="关闭数据库"></a>关闭数据库</h5><figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">Close</span><span class="params">()</span></span> &#123;</span><br><span class="line">	err := badgerDB.Close()</span><br><span class="line">	<span class="keyword">if</span> err == <span class="literal">nil</span> &#123;</span><br><span class="line">		log.Println(<span class="string">&quot;database closed&quot;</span>, <span class="string">&quot;err&quot;</span>, err)</span><br><span class="line">	&#125; <span class="keyword">else</span> &#123;</span><br><span class="line">		log.Println(<span class="string">&quot;failed to close database&quot;</span>, <span class="string">&quot;err&quot;</span>, err)</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>的作用是关闭一个名为<code>badgerDB</code>的数据库连接。在函数内部，首先调用<code>badgerDB.Close()</code>方法来关闭数据库连接，并将返回的错误信息存储在变量<code>err</code>中。然后，通过判断<code>err</code>是否为<code>nil</code>来确定关闭操作是否成功。如果<code>err</code>为<code>nil</code>，则表示关闭操作成功，使用<code>log.Println</code>打印一条日志信息，显示”database closed”和错误信息；否则，表示关闭操作失败，同样使用<code>log.Println</code>打印一条日志信息，显示”failed to close database”和错误信息。</p>
+<h4 id="存储操作"><a href="#存储操作" class="headerlink" title="存储操作"></a>存储操作</h4><h5 id="写入数据"><a href="#写入数据" class="headerlink" title="写入数据"></a>写入数据</h5><p>保存键值对，使用下面Txn.Set()方法。</p>
+<figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">Set</span><span class="params">(key []<span class="type">byte</span>, value []<span class="type">byte</span>)</span></span> &#123;</span><br><span class="line">	wb := badgerDB.NewWriteBatch()</span><br><span class="line">	<span class="keyword">defer</span> wb.Cancel()</span><br><span class="line">	err := wb.SetEntry(badger.NewEntry(key, value).WithMeta(<span class="number">0</span>))</span><br><span class="line">	<span class="keyword">if</span> err != <span class="literal">nil</span> &#123;</span><br><span class="line">		log.Println(<span class="string">&quot;Failed to write data to cache.&quot;</span>,<span class="string">&quot;key&quot;</span>, <span class="type">string</span>(key), <span class="string">&quot;value&quot;</span>, <span class="type">string</span>(value), <span class="string">&quot;err&quot;</span>, err)</span><br><span class="line">	&#125;</span><br><span class="line">	err = wb.Flush()</span><br><span class="line">	<span class="keyword">if</span> err != <span class="literal">nil</span> &#123;</span><br><span class="line">		log.Println(<span class="string">&quot;Failed to flush data to cache.&quot;</span>,<span class="string">&quot;key&quot;</span>, <span class="type">string</span>(key), <span class="string">&quot;value&quot;</span>, <span class="type">string</span>(value), <span class="string">&quot;err&quot;</span>, err)</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<p>这段代码是一个用于将键值对存储到Badger数据库中的函数。函数名为<code>Set</code>，接受两个参数：<code>key</code>和<code>value</code>，它们都是字节切片类型。</p>
+<p>函数内部首先创建了一个<code>badgerDB.WriteBatch()</code>对象，命名为<code>wb</code>。然后使用<code>defer wb.Cancel()</code>来确保在函数执行完毕后取消批处理操作。</p>
+<p>接下来，通过调用<code>wb.SetEntry(badger.NewEntry(key, value).WithMeta(0))</code>将键值对存储到数据库中。这里使用了<code>badger.NewEntry(key, value)</code>来创建一个键值对条目，并通过<code>.WithMeta(0)</code>设置元数据为0。</p>
+<p>如果存储过程中出现错误，会捕获异常并打印日志信息，包括”Failed to write data to cache.”、键、值和错误信息。</p>
+<p>最后，调用<code>wb.Flush()</code>将批处理中的所有更改刷新到数据库中。如果刷新过程中出现错误，同样会捕获异常并打印日志信息，包括”Failed to flush data to cache.”、键、值和错误信息。</p>
+<p>请注意，这段代码中的<code>badgerDB</code>是一个未定义的变量，你需要在使用之前进行初始化或导入相应的库。</p>
+<p><em>通过使用<code>defer</code>关键字，可以在函数执行完毕后自动调用<code>wb.Cancel()</code>方法来释放这些资源，避免资源泄漏和系统性能下降。</em></p>
+<h5 id="设置TTL的写入数据"><a href="#设置TTL的写入数据" class="headerlink" title="设置TTL的写入数据"></a>设置TTL的写入数据</h5><p>Badger 允许在键上设置可选的生存时间 (TTL) 值。一旦 TTL 过去，密钥将不再可检索，并且将有资格进行垃圾收集。 可以使用和API 方法将 TTL 设置为<code>time.Duration</code>值。</p>
+<figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">SetWithTTL</span><span class="params">(key []<span class="type">byte</span>, value []<span class="type">byte</span>, ttl <span class="type">int64</span>)</span></span> &#123;</span><br><span class="line">	wb := badgerDB.NewWriteBatch()</span><br><span class="line">	<span class="keyword">defer</span> wb.Cancel()</span><br><span class="line">	err := wb.SetEntry(badger.NewEntry(key, value).WithMeta(<span class="number">0</span>).WithTTL(time.Duration(ttl * time.Second.Nanoseconds())))</span><br><span class="line">	<span class="keyword">if</span> err != <span class="literal">nil</span> &#123;</span><br><span class="line">		log.Println(<span class="string">&quot;Failed to write data to cache.&quot;</span>,<span class="string">&quot;key&quot;</span>, <span class="type">string</span>(key), <span class="string">&quot;value&quot;</span>, <span class="type">string</span>(value), <span class="string">&quot;err&quot;</span>, err)</span><br><span class="line">	&#125;</span><br><span class="line">	err = wb.Flush()</span><br><span class="line">	<span class="keyword">if</span> err != <span class="literal">nil</span> &#123;</span><br><span class="line">		log.Println(<span class="string">&quot;Failed to flush data to cache.&quot;</span>,<span class="string">&quot;key&quot;</span>, <span class="type">string</span>(key), <span class="string">&quot;value&quot;</span>, <span class="type">string</span>(value), <span class="string">&quot;err&quot;</span>, err)</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>名为<code>SetWithTTL</code>的函数，它接受三个参数：<code>key</code>、<code>value</code>和<code>ttl</code>。该函数的作用是将键值对存储到Badger数据库中，并设置一个过期时间（TTL）。</p>
+<p>函数内部首先创建了一个<code>badgerDB.WriteBatch()</code>对象，命名为<code>wb</code>。然后使用<code>defer wb.Cancel()</code>来确保在函数执行完毕后取消批处理操作。</p>
+<p>接下来，通过调用<code>wb.SetEntry()</code>方法将键值对存储到数据库中。在该方法中，使用<code>badger.NewEntry(key, value)</code>创建一个键值对条目，并通过<code>.WithMeta(0)</code>设置元数据为0。然后，使用<code>.WithTTL(time.Duration(ttl * time.Second.Nanoseconds()))</code>设置过期时间为传入的<code>ttl</code>参数所表示的时间。</p>
+<p>如果在存储过程中出现错误，会捕获异常并打印日志信息，包括”Failed to write data to cache.”、键、值和错误信息。</p>
+<p>最后，调用<code>wb.Flush()</code>将批处理中的更改刷新到数据库中。如果刷新过程中出现错误，同样会捕获异常并打印日志信息，包括”Failed to flush data to cache.”、键、值和错误信息。</p>
+<p>请注意，这段代码中的<code>badgerDB</code>是一个未定义的变量，需要在使用之前进行初始化或导入相应的库。</p>
+<h5 id="读取数据"><a href="#读取数据" class="headerlink" title="读取数据"></a>读取数据</h5><p>要读取数据，我们可以使用以下<code>Txn.Get()</code>方法</p>
+<figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">Get</span><span class="params">(key []<span class="type">byte</span>)</span></span> <span class="type">string</span> &#123;</span><br><span class="line">	<span class="keyword">var</span> ival []<span class="type">byte</span></span><br><span class="line">	err := badgerDB.View(<span class="function"><span class="keyword">func</span><span class="params">(txn *badger.Txn)</span></span> <span class="type">error</span> &#123;</span><br><span class="line">		item, err := txn.Get(key)</span><br><span class="line">		<span class="keyword">if</span> err != <span class="literal">nil</span> &#123;</span><br><span class="line">			<span class="keyword">return</span> err</span><br><span class="line">		&#125;</span><br><span class="line">		ival, err = item.ValueCopy(<span class="literal">nil</span>)</span><br><span class="line">		<span class="keyword">return</span> err</span><br><span class="line">	&#125;)</span><br><span class="line">	<span class="keyword">if</span> err != <span class="literal">nil</span> &#123;</span><br><span class="line">		log.Println(<span class="string">&quot;Failed to read data from the cache.&quot;</span>,<span class="string">&quot;key&quot;</span>, <span class="type">string</span>(key), <span class="string">&quot;error&quot;</span>, err)</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">return</span> <span class="type">string</span>(ival)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>接受一个字节切片作为参数（key），并返回一个字符串。这个函数的主要目的是从名为badgerDB的数据库中读取数据。</p>
+<p>函数首先声明了一个空的字节切片ival，用于存储从数据库中获取的值。然后，它调用badgerDB的View方法，该方法接受一个匿名函数作为参数。这个匿名函数接受一个badger.Txn类型的参数txn，并返回一个错误。</p>
+<p>在匿名函数内部，首先尝试从数据库中获取与给定键关联的项目。如果发生错误，函数将立即返回错误。否则，它将使用item.ValueCopy方法将项目的值复制到ival切片中。如果在复制过程中发生错误，函数也将返回错误。</p>
+<p>最后，如果在整个过程中发生任何错误，函数将使用log.Println打印一条错误消息，包括键和错误信息。如果没有错误，函数将返回ival切片转换为字符串的结果。</p>
+<h5 id="存在键"><a href="#存在键" class="headerlink" title="存在键"></a>存在键</h5><figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">Has</span><span class="params">(key []<span class="type">byte</span>)</span></span> (<span class="type">bool</span>, <span class="type">error</span>) &#123;</span><br><span class="line">	<span class="keyword">var</span> exist <span class="type">bool</span> = <span class="literal">false</span></span><br><span class="line">	err := badgerDB.View(<span class="function"><span class="keyword">func</span><span class="params">(txn *badger.Txn)</span></span> <span class="type">error</span> &#123;</span><br><span class="line">		_, err := txn.Get(key)</span><br><span class="line">		<span class="keyword">if</span> err != <span class="literal">nil</span> &#123;</span><br><span class="line">			<span class="keyword">return</span> err</span><br><span class="line">		&#125; <span class="keyword">else</span> &#123;</span><br><span class="line">			exist = <span class="literal">true</span></span><br><span class="line">		&#125;</span><br><span class="line">		<span class="keyword">return</span> err</span><br><span class="line">	&#125;)</span><br><span class="line">	<span class="comment">// align with leveldb, if the key doesn&#x27;t exist, leveldb returns nil</span></span><br><span class="line">	<span class="keyword">if</span> strings.HasSuffix(err.Error(), <span class="string">&quot;not found&quot;</span>) &#123;</span><br><span class="line">		err = <span class="literal">nil</span></span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">return</span> exist, err</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>名为<code>Has</code>的函数，它接受一个字节切片类型的参数<code>key</code>，并返回一个布尔值和一个错误。该函数的作用是检查给定的键是否存在于数据库中。</p>
+<p>函数内部首先声明了一个布尔变量<code>exist</code>并将其初始化为<code>false</code>。然后，使用<code>badgerDB.View</code>方法来遍历数据库中的每个事务。在每个事务中，通过调用<code>txn.Get(key)</code>来获取与给定键关联的值。如果获取成功，则将<code>exist</code>设置为<code>true</code>。如果在获取过程中发生错误，则直接返回该错误。</p>
+<p>最后，根据错误信息判断是否找到了对应的键。如果错误信息以”not found”结尾，说明没有找到对应的键，此时将错误设置为<code>nil</code>。最终，函数返回<code>exist</code>和<code>err</code>两个值，其中<code>exist</code>表示键是否存在，<code>err</code>表示可能发生的错误。</p>
+<h5 id="删除键"><a href="#删除键" class="headerlink" title="删除键"></a>删除键</h5><p>使用<code>Txn.Delete()</code>方法删除 key。</p>
+<figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">Delete</span><span class="params">(key []<span class="type">byte</span>)</span></span> <span class="type">error</span> &#123;</span><br><span class="line">	wb := badgerDB.NewWriteBatch()</span><br><span class="line">	<span class="keyword">defer</span> wb.Cancel()</span><br><span class="line">	<span class="keyword">return</span> wb.Delete(key)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>这段代码是一个用于删除键值对的函数。它使用了BadgerDB数据库，并使用<code>Delete</code>方法来删除指定的键。</p>
+<p>函数的参数是<code>key</code>，它是一个字节切片（<code>[]byte</code>），表示要删除的键。</p>
+<p>函数内部首先创建了一个<code>WriteBatch</code>对象<code>wb</code>，然后使用<code>defer wb.Cancel()</code>确保在函数执行完毕后取消批处理操作。最后，通过调用<code>wb.Delete(key)</code>来删除指定的键，并返回错误信息。</p>
+<p>请注意，这段代码中的<code>badgerDB</code>是一个未定义的变量，你需要在使用之前将其初始化为一个有效的BadgerDB实例。</p>
+<h4 id="查询操作"><a href="#查询操作" class="headerlink" title="查询操作"></a>查询操作</h4><h5 id="遍历key和value"><a href="#遍历key和value" class="headerlink" title="遍历key和value"></a>遍历key和value</h5><p>要迭代键，我们可以使用<code>Iterator</code>，可以使用 <code>Txn.NewIterator()</code>方法获得。迭代以按字节排序的字典顺序发生。</p>
+<figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">IteratorKeysAndValues</span><span class="params">()</span></span>&#123;</span><br><span class="line"></span><br><span class="line">	err := badgerDB.View(<span class="function"><span class="keyword">func</span><span class="params">(txn *badger.Txn)</span></span> <span class="type">error</span> &#123;</span><br><span class="line">		opts := badger.DefaultIteratorOptions</span><br><span class="line">		opts.PrefetchSize = <span class="number">10</span></span><br><span class="line">		it := txn.NewIterator(opts)</span><br><span class="line">		<span class="keyword">defer</span> it.Close()</span><br><span class="line">		<span class="keyword">for</span> it.Rewind(); it.Valid(); it.Next() &#123;</span><br><span class="line">			item := it.Item()</span><br><span class="line">			k := item.Key()</span><br><span class="line">			err := item.Value(<span class="function"><span class="keyword">func</span><span class="params">(v []<span class="type">byte</span>)</span></span> <span class="type">error</span> &#123;</span><br><span class="line">				fmt.Printf(<span class="string">&quot;key=%s, value=%s\n&quot;</span>, k, v)</span><br><span class="line">				<span class="keyword">return</span> <span class="literal">nil</span></span><br><span class="line">			&#125;)</span><br><span class="line">			<span class="keyword">if</span> err != <span class="literal">nil</span> &#123;</span><br><span class="line">				<span class="keyword">return</span> err</span><br><span class="line">			&#125;</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="keyword">return</span> <span class="literal">nil</span></span><br><span class="line">	&#125;)</span><br><span class="line">	<span class="keyword">if</span> err != <span class="literal">nil</span> &#123;</span><br><span class="line">		log.Println(<span class="string">&quot;Failed to iterator keys and values from the cache.&quot;</span>,<span class="string">&quot;error&quot;</span>, err)</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<p>名为<code>IteratorKeysAndValues</code>。它的作用是遍历BadgerDB数据库中的所有键值对，并打印出每个键和对应的值。</p>
+<p>函数内部使用了<code>badgerDB.View</code>方法来创建一个事务视图，然后使用<code>txn.NewIterator</code>方法创建一个新的迭代器对象<code>it</code>。通过设置迭代器的选项<code>opts</code>，可以指定预取大小为10。</p>
+<p>接下来，函数使用<code>it.Rewind()</code>将迭代器重置到第一个元素，然后使用<code>it.Valid()</code>判断是否还有下一个元素。如果有，就使用<code>it.Next()</code>移动到下一个元素。在每次迭代中，函数使用<code>it.Item()</code>获取当前元素的键值对，并将其存储在变量<code>item</code>中。</p>
+<p>然后，函数使用<code>item.Key()</code>获取键，并将其存储在变量<code>k</code>中。接着，函数使用<code>item.Value()</code>获取值，并将其存储在一个匿名函数中。在这个匿名函数中，使用<code>fmt.Printf</code>打印出键和值。</p>
+<p>如果在获取值的过程中发生错误，函数会返回该错误。如果迭代完成，函数会返回<code>nil</code>。</p>
+<p>最后，函数使用<code>log.Println</code>记录日志信息，如果迭代过程中发生错误，会输出”Failed to iterator keys and values from the cache.”以及错误信息。</p>
+<h5 id="遍历keys"><a href="#遍历keys" class="headerlink" title="遍历keys"></a>遍历keys</h5><p>Badger 支持一种独特的迭代模式，称为key-only迭代。它比常规迭代快几个数量级，因为它只涉及对 LSM 树的访问，它通常完全驻留在 RAM 中。要启用仅键迭代，您需要将该IteratorOptions.PrefetchValues 字段设置为false. 这也可用于在迭代期间对选定键进行稀疏读取，item.Value()仅在需要时调用。</p>
+<figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">IteratorKeys</span><span class="params">()</span></span>&#123;</span><br><span class="line">    err := badgerDB.View(<span class="function"><span class="keyword">func</span><span class="params">(txn *badger.Txn)</span></span> <span class="type">error</span> &#123;</span><br><span class="line">        opts := badger.DefaultIteratorOptions</span><br><span class="line">        opts.PrefetchValues = <span class="literal">false</span></span><br><span class="line">        it := txn.NewIterator(opts)</span><br><span class="line">        <span class="keyword">defer</span> it.Close()</span><br><span class="line">        <span class="keyword">for</span> it.Rewind(); it.Valid(); it.Next() &#123;</span><br><span class="line">            item := it.Item()</span><br><span class="line">            k := item.Key()</span><br><span class="line">            fmt.Printf(<span class="string">&quot;key=%s\n&quot;</span>, k)</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> <span class="literal">nil</span></span><br><span class="line">    &#125;)</span><br><span class="line"></span><br><span class="line">    <span class="keyword">if</span> err != <span class="literal">nil</span> &#123;</span><br><span class="line">        log.Println(<span class="string">&quot;Failed to iterator keys from the cache.&quot;</span>,<span class="string">&quot;error&quot;</span>, err)</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>这段代码是一个名为<code>IteratorKeys</code>的函数，它用于遍历BadgerDB数据库中的所有键。函数内部使用了<code>badgerDB.View</code>方法来创建一个事务视图，然后使用<code>txn.NewIterator</code>方法创建一个新的迭代器对象<code>it</code>。通过设置迭代器的选项<code>opts</code>，可以指定预取值（<code>PrefetchValues</code>）为<code>false</code>。</p>
+<p>在迭代过程中，函数使用<code>it.Rewind()</code>将迭代器重置到第一个元素，然后使用<code>it.Valid()</code>判断是否还有下一个元素。如果有，就使用<code>it.Next()</code>移动到下一个元素。在每次迭代中，函数使用<code>it.Item()</code>获取当前元素的键值对，并将其存储在变量<code>item</code>中。然后，使用<code>item.Key()</code>获取键，并将其存储在变量<code>k</code>中。最后，使用<code>fmt.Printf</code>打印出键。</p>
+<p>如果迭代过程中发生错误，函数会返回该错误。如果迭代完成，函数会返回<code>nil</code>。</p>
+<p>如果在执行过程中出现错误，函数会使用<code>log.Println</code>记录日志信息，并输出”Failed to iterator keys from the cache.”以及错误信息。</p>
+<h5 id="前缀扫描"><a href="#前缀扫描" class="headerlink" title="前缀扫描"></a>前缀扫描</h5><p>要遍历一个键前缀，您可以组合<code>Seek()</code>and <code>ValidForPrefix()</code>：</p>
+<figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">SeekWithPrefix</span><span class="params">(prefixStr <span class="type">string</span>)</span></span>&#123;</span><br><span class="line">	err := badgerDB.View(<span class="function"><span class="keyword">func</span><span class="params">(txn *badger.Txn)</span></span> <span class="type">error</span> &#123;</span><br><span class="line">		it := txn.NewIterator(badger.DefaultIteratorOptions)</span><br><span class="line">		<span class="keyword">defer</span> it.Close()</span><br><span class="line">		prefix := []<span class="type">byte</span>(prefixStr)</span><br><span class="line">		<span class="keyword">for</span> it.Seek(prefix); it.ValidForPrefix(prefix); it.Next() &#123;</span><br><span class="line">			item := it.Item()</span><br><span class="line">			k := item.Key()</span><br><span class="line">			err := item.Value(<span class="function"><span class="keyword">func</span><span class="params">(v []<span class="type">byte</span>)</span></span> <span class="type">error</span> &#123;</span><br><span class="line">				fmt.Printf(<span class="string">&quot;key=%s, value=%s\n&quot;</span>, k, v)</span><br><span class="line">				<span class="keyword">return</span> <span class="literal">nil</span></span><br><span class="line">			&#125;)</span><br><span class="line">			<span class="keyword">if</span> err != <span class="literal">nil</span> &#123;</span><br><span class="line">				<span class="keyword">return</span> err</span><br><span class="line">			&#125;</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="keyword">return</span> <span class="literal">nil</span></span><br><span class="line">	&#125;)</span><br><span class="line">	<span class="keyword">if</span> err != <span class="literal">nil</span> &#123;</span><br><span class="line">		log.Println(<span class="string">&quot;Failed to seek prefix from the cache.&quot;</span>, <span class="string">&quot;prefix&quot;</span>, prefixStr,<span class="string">&quot;error&quot;</span>, err)</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>这段代码是一个名为<code>SeekWithPrefix</code>的函数，它接受一个字符串参数<code>prefixStr</code>。该函数使用BadgerDB数据库进行操作，并遍历所有以给定前缀开头的键值对。</p>
+<p>函数内部首先创建一个迭代器对象<code>it</code>，然后使用<code>txn.NewIterator(badger.DefaultIteratorOptions)</code>方法初始化迭代器。接下来，将<code>prefixStr</code>转换为字节切片<code>prefix</code>，并使用<code>it.Seek(prefix)</code>方法从第一个匹配的前缀开始遍历。</p>
+<p>在循环中，每次迭代都会检查当前项是否仍然具有相同的前缀，这是通过调用<code>it.ValidForPrefix(prefix)</code>实现的。如果当前项仍然具有相同的前缀，则继续执行循环体中的代码。</p>
+<p>在循环体中，首先获取当前项的键和值，分别存储在变量<code>k</code>和<code>v</code>中。然后，使用<code>item.Value()</code>方法获取值，并将其打印出来。最后，返回<code>nil</code>表示成功处理了当前项。</p>
+<p>如果在处理过程中发生错误，函数会立即返回错误信息。否则，在循环结束后返回<code>nil</code>表示成功完成遍历。</p>
+<p>如果在执行过程中出现任何错误，函数会使用<code>log.Println()</code>记录日志信息，包括前缀字符串、错误信息等。</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      
+      
+      <div>
+        <ul class="post-copyright">
+          <li class="post-copyright-author">
+          <strong>本文作者:  </strong>yangyan</a>
+          </li>
+          <li class="post-copyright-link">
+          <strong>本文链接:  </strong>
+          <a href="/2023/12/18/Badger学习使用/" target="_blank" title="Badger学习使用">http://example.com/2023/12/18/Badger学习使用/</a>
+          </li>
+          <li class="post-copyright-license">
+            <strong>版权声明:   </strong>
+            本博客所有文章除特别声明外，均采用 <a rel="license" href="https://creativecommons.org/licenses/by-nc-nd/4.0/" target="_blank" title="Attribution-NonCommercial-NoDerivatives 4.0 International (CC BY-NC-ND 4.0)">CC BY-NC-ND 4.0</a>
+            许可协议。转载请注明出处
+          </li>
+         
+        </ul>
+<div>
+
+      
+      
+        
+	<div id="comment">
+		<!-- 来必力City版安装代码 -->
+		<div id="lv-container" data-id="city" data-uid="MTAyMC8yOTQ4MS82MDQ5">
+		<script type="text/javascript">
+		   (function(d, s) {
+		       var j, e = d.getElementsByTagName(s)[0];
+
+		       if (typeof LivereTower === 'function') { return; }
+
+		       j = d.createElement(s);
+		       j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
+		       j.async = true;
+
+		       e.parentNode.insertBefore(j, e);
+		   })(document, 'script');
+		</script>
+		<noscript>为正常使用来必力评论功能请激活JavaScript</noscript>
+		</div>
+		<!-- City版安装代码已完成 -->
+	</div>
+
+
+
+      
+      
+        
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/goland/" rel="tag">goland</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E5%8C%BA%E5%9D%97%E9%93%BE/" rel="tag">区块链</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E6%95%B0%E6%8D%AE%E5%BA%93/" rel="tag">数据库</a></li></ul>
+
+      
+
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2023/12/18/%E7%AE%97%E6%B3%95/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">上一篇</strong>
+      <div class="article-nav-title">
+        
+          算法
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2023/12/03/fileUTXO%E4%BB%A3%E7%A0%81%E7%9A%84%E5%8A%A0%E5%85%A5/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">下一篇</strong>
+      <div class="article-nav-title">UTXO代码的加入</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+<!-- Table of Contents -->
+
+  <aside id="toc-sidebar">
+    <div id="toc" class="toc-article">
+    <strong class="toc-title">文章目录</strong>
+    
+        <ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#BADGER%E7%AE%80%E5%8D%95%E5%AE%9E%E7%94%A8"><span class="nav-number">1.</span> <span class="nav-text">BADGER简单实用</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#%E7%AE%80%E4%BB%8B"><span class="nav-number">1.0.0.1.</span> <span class="nav-text">简介</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#%E5%AE%89%E8%A3%85"><span class="nav-number">1.0.0.2.</span> <span class="nav-text">安装</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E6%95%B0%E6%8D%AE%E5%BA%93%E6%93%8D%E4%BD%9C"><span class="nav-number">1.0.1.</span> <span class="nav-text">数据库操作</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#%E6%89%93%E5%BC%80%E6%95%B0%E6%8D%AE%E5%BA%93"><span class="nav-number">1.0.1.1.</span> <span class="nav-text">打开数据库</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#%E5%86%85%E5%AD%98%E6%A8%A1%E5%BC%8F-%E6%97%A0%E7%9B%98%E6%A8%A1%E5%BC%8F"><span class="nav-number">1.0.1.2.</span> <span class="nav-text">内存模式&#x2F;无盘模式</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#%E5%85%B3%E9%97%AD%E6%95%B0%E6%8D%AE%E5%BA%93"><span class="nav-number">1.0.1.3.</span> <span class="nav-text">关闭数据库</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%AD%98%E5%82%A8%E6%93%8D%E4%BD%9C"><span class="nav-number">1.0.2.</span> <span class="nav-text">存储操作</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#%E5%86%99%E5%85%A5%E6%95%B0%E6%8D%AE"><span class="nav-number">1.0.2.1.</span> <span class="nav-text">写入数据</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#%E8%AE%BE%E7%BD%AETTL%E7%9A%84%E5%86%99%E5%85%A5%E6%95%B0%E6%8D%AE"><span class="nav-number">1.0.2.2.</span> <span class="nav-text">设置TTL的写入数据</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#%E8%AF%BB%E5%8F%96%E6%95%B0%E6%8D%AE"><span class="nav-number">1.0.2.3.</span> <span class="nav-text">读取数据</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#%E5%AD%98%E5%9C%A8%E9%94%AE"><span class="nav-number">1.0.2.4.</span> <span class="nav-text">存在键</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#%E5%88%A0%E9%99%A4%E9%94%AE"><span class="nav-number">1.0.2.5.</span> <span class="nav-text">删除键</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E6%9F%A5%E8%AF%A2%E6%93%8D%E4%BD%9C"><span class="nav-number">1.0.3.</span> <span class="nav-text">查询操作</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#%E9%81%8D%E5%8E%86key%E5%92%8Cvalue"><span class="nav-number">1.0.3.1.</span> <span class="nav-text">遍历key和value</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#%E9%81%8D%E5%8E%86keys"><span class="nav-number">1.0.3.2.</span> <span class="nav-text">遍历keys</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#%E5%89%8D%E7%BC%80%E6%89%AB%E6%8F%8F"><span class="nav-number">1.0.3.3.</span> <span class="nav-text">前缀扫描</span></a></li></ol></li></ol></li></ol></li></ol>
+    
+    </div>
+  </aside>
+
+</section>
+        
+      </div>
+      
+      <footer id="footer">
+  
+
+  <div class="container">
+      	<div class="row">
+	      <p> Powered by <a href="http://hexo.io/" target="_blank">Hexo</a> and <a href="https://github.com/iTimeTraveler/hexo-theme-hiker" target="_blank">Hexo-theme-hiker</a> </p>
+	      <p id="copyRightEn">Copyright &copy; 2023 - 2024 😀 All Rights Reserved.</p>
+	      
+	      
+    		<p class="busuanzi_uv">
+				访客数 : <span id="busuanzi_value_site_uv"></span> |  
+				访问量 : <span id="busuanzi_value_site_pv"></span>
+		    </p>
+  		   
+		</div>
+
+		
+  </div>
+</footer>
+
+
+<!-- min height -->
+
+<script>
+    var wrapdiv = document.getElementById("wrap");
+    var contentdiv = document.getElementById("content");
+    var allheader = document.getElementById("allheader");
+
+    wrapdiv.style.minHeight = document.body.offsetHeight + "px";
+    if (allheader != null) {
+      contentdiv.style.minHeight = document.body.offsetHeight - allheader.offsetHeight - document.getElementById("footer").offsetHeight + "px";
+    } else {
+      contentdiv.style.minHeight = document.body.offsetHeight - document.getElementById("footer").offsetHeight + "px";
+    }
+</script>
+    </div>
+    <!-- <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+    <a href="/categories" class="mobile-nav-link">Categories</a>
+  
+    <a href="/tags" class="mobile-nav-link">Tags</a>
+  
+    <a href="/about" class="mobile-nav-link">About</a>
+  
+</nav> -->
+    
+
+<!-- mathjax config similar to math.stackexchange -->
+
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+    tex2jax: {
+      inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+      processEscapes: true
+    }
+  });
+</script>
+
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+      tex2jax: {
+        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+      }
+    });
+</script>
+
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax(), i;
+        for(i=0; i < all.length; i += 1) {
+            all[i].SourceElement().parentNode.className += ' has-jax';
+        }
+    });
+</script>
+
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
+
+
+  
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+
+  
+<script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+
+
+<script src="/js/scripts.js"></script>
+
+
+
+
+
+  
+<script src="/js/dialog.js"></script>
+
+
+
+
+
+
+
+
+
+	<div style="display: none;">
+    <script src="https://s95.cnzz.com/z_stat.php?id=1260716016&web_id=1260716016" language="JavaScript"></script>
+  </div>
+
+
+
+	<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js">
+	</script>
+
+
+
+
+
+
+  </div>
+
+  <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" style="display: none;">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h2 class="modal-title" id="myModalLabel">设置</h2>
+      </div>
+      <hr style="margin-top:0px; margin-bottom:0px; width:80%; border-top: 3px solid #000;">
+      <hr style="margin-top:2px; margin-bottom:0px; width:80%; border-top: 1px solid #000;">
+
+
+      <div class="modal-body">
+          <div style="margin:6px;">
+            <a data-toggle="collapse" data-parent="#accordion" href="#collapseOne" onclick="javascript:setFontSize();" aria-expanded="true" aria-controls="collapseOne">
+              正文字号大小
+            </a>
+          </div>
+          <div id="collapseOne" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingOne">
+          <div class="panel-body">
+            您已调整页面字体大小
+          </div>
+        </div>
+      
+
+
+          <div style="margin:6px;">
+            <a data-toggle="collapse" data-parent="#accordion" href="#collapseTwo" onclick="javascript:setBackground();" aria-expanded="true" aria-controls="collapseTwo">
+              夜间护眼模式
+            </a>
+        </div>
+          <div id="collapseTwo" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingTwo">
+          <div class="panel-body">
+            夜间模式已经开启，再次单击按钮即可关闭 
+          </div>
+        </div>
+
+        <div>
+            <a data-toggle="collapse" data-parent="#accordion" href="#collapseThree" aria-expanded="true" aria-controls="collapseThree">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;关 于&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</a>
+        </div>
+         <div id="collapseThree" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingThree">
+          <div class="panel-body">
+            😀
+          </div>
+          <div class="panel-body">
+            Copyright © 2024 yangyan All Rights Reserved.
+          </div>
+        </div>
+      </div>
+
+
+      <hr style="margin-top:0px; margin-bottom:0px; width:80%; border-top: 1px solid #000;">
+      <hr style="margin-top:2px; margin-bottom:0px; width:80%; border-top: 3px solid #000;">
+      <div class="modal-footer">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button>
+      </div>
+    </div>
+  </div>
+</div>
+  
+  <a id="rocket" href="#top" class=""></a>
+  <script type="text/javascript" src="/js/totop.js?v=1.0.0" async=""></script>
+  
+    <a id="menu-switch"><i class="fa fa-bars fa-lg"></i></a>
+  
+</body>
+</html>
